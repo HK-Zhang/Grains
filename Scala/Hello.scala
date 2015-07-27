@@ -81,3 +81,91 @@ object MapDemo extends App{
 
 
 }
+
+class Worker private{
+  def work()=println("I am the only worker")
+}
+
+object Worker{
+  val worker = new Worker
+  def GetWorkerInstance(): Worker={
+  worker.work()
+    worker
+  }
+}
+
+object Job{
+  def main(args: Array[String]): Unit={
+    for(i <- 1 to 5){
+      Worker.GetWorkerInstance()
+    }
+  }
+}
+
+object ByteDemo extends App{
+  var s='H'
+  println(s.toByte)
+  println(~(s.toByte & 0xFF)+1)
+
+  var str="Every value is an object"
+  for(c<-str) println(c)
+
+}
+
+import scala.collection.mutable.Map
+class ChecksumAccumulator{
+  private var sum=0
+  def add(b:Byte)={
+    sum+=b
+  }
+
+  def checkSum():Int= ~(sum & 0xFF) + 1
+}
+
+  object ChecksumAccumulator{
+    private val cache=Map[String,Int]()
+    def calculate(s:String):Int={
+      if(cache.contains(s))
+      cache(s)
+      else{
+        val acc=new ChecksumAccumulator
+        for(c<-s) acc.add(c.toByte)
+        val cs=acc.checkSum()
+        cache+=(s->cs)
+        cs
+      }
+    }
+  }
+
+object Summer{
+  def main (args: Array[String]) {
+    println(ChecksumAccumulator.calculate("Every value is an object"))
+  }
+}
+
+class Rational(n:Int,d:Int){
+  require(d!=0)
+  private val g=gcd(n.abs,d.abs)
+  val number = n/g
+  val denom = d/g
+  override def toString= {if(denom==1) number.toString else number+"/"+denom}
+  def add(that:Rational):Rational=new Rational(number*that.denom+denom*that.number,denom*that.denom)
+  def lessThan(that:Rational)=number*that.denom<denom*that.number
+  def max(that:Rational):Rational={
+    if(lessThan(that)) that else this
+  }
+  def this(i:Int)=this(i,1)
+  private def gcd(a:Int,b:Int): Int ={
+    if(b==0) a else gcd(b,a%b)
+  }
+
+}
+
+object TestRational{
+  def main(args: Array[String]) {
+    val r=new Rational(3,6)
+    val t=new Rational(1,2)
+    println(r.add(t).toString)
+    println(r.max(t))
+  }
+}
