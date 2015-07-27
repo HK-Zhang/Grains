@@ -148,24 +148,39 @@ class Rational(n:Int,d:Int){
   private val g=gcd(n.abs,d.abs)
   val number = n/g
   val denom = d/g
+
   override def toString= {if(denom==1) number.toString else number+"/"+denom}
-  def add(that:Rational):Rational=new Rational(number*that.denom+denom*that.number,denom*that.denom)
+
+  def +(that:Rational):Rational=new Rational(number*that.denom+denom*that.number,denom*that.denom)
+
+  def +(i:Int):Rational=new Rational(number+i*denom,denom)
+
+  def *(that:Rational):Rational=new Rational(number*that.number,denom*that.denom)
+
   def lessThan(that:Rational)=number*that.denom<denom*that.number
+
   def max(that:Rational):Rational={
     if(lessThan(that)) that else this
   }
+
   def this(i:Int)=this(i,1)
+
   private def gcd(a:Int,b:Int): Int ={
     if(b==0) a else gcd(b,a%b)
   }
+
+
 
 }
 
 object TestRational{
   def main(args: Array[String]) {
+    implicit def intToRational(x:Int) = new Rational(x)
     val r=new Rational(3,6)
     val t=new Rational(1,2)
-    println(r.add(t).toString)
+    println((r+t*r).toString)
+    println((r+1).toString)
+    println((1+r).toString)
     println(r.max(t))
   }
 }
