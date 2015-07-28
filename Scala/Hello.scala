@@ -184,3 +184,133 @@ object TestRational{
     println(r.max(t))
   }
 }
+
+object controlTest extends App{
+  val boolVal=if(true) "true" else "false"
+  println(boolVal)
+
+  def fileLines(file:java.io.File)=scala.io.Source.fromFile(file).getLines().toList
+
+  val filesHere = (new File("./src")).listFiles()
+  for(file<-filesHere
+      if file.isFile
+      if file.getName.endsWith(".iml")
+  )
+    println(file)
+
+  def grep(pattern:String)=
+  for(file<-filesHere
+      if file.getName.endsWith(".scala");
+  line<-fileLines(file)
+  if line.trim.matches(pattern)
+  )
+    println(file+":"+line.trim)
+
+  def grep2(pattern: String) =
+    for {file <- filesHere
+         if file.getName.endsWith(".scala")
+         line <- fileLines(file)
+         trimmed = line.trim
+         if trimmed.matches(pattern)
+    }
+      println(file + ":" + trimmed)
+
+  grep2(".*gcd.*")
+
+  def scalaFiles=for{
+    file <- filesHere
+    if file.getName.endsWith(".scala")
+  } yield file
+
+  println(scalaFiles.length)
+
+
+
+}
+
+object tryTest extends App{
+  val n=3
+
+
+ try{
+   val f = new java.io.FileReader("input.txt")
+ }catch{
+   case ex:FileNotFoundException => println("no this file")
+   case ex:java.io.IOException => println("this is a IO error")
+ }finally {
+   println("END")
+ }
+
+  def f():Int=try {return 1} finally {return 2}
+
+  println(f())
+
+  val half=
+    if(n%2==0)
+      n/2
+    else
+      throw new RuntimeException("n must be even")
+}
+
+object matchTest{
+  def main(args:Array[String]): Unit ={
+    val firstArg = if(args.length>0) args(0) else ""
+    val friend = firstArg match{
+      case "salt"=>"pepper"
+      case "chips"=>"salsa"
+      case "eggs" => "bacon"
+      case _ => "huh?"
+    }
+
+    println(friend)
+  }
+}
+
+object createArgs{
+  val greets=new Array[String](3)
+  greets(0)="Hello"
+  greets(1)=","
+  greets(2)="World.scala"
+
+}
+
+object breakTest extends App{
+  var i=0
+  var foundIt=false
+  var args2=createArgs.greets
+
+  while(i<args2.length && !foundIt){
+    if(!args2(i).startsWith("-")){
+      if(args2(i).endsWith(".scala")){
+        foundIt=true
+        println(args2(i))
+      }
+    }
+    i=i+1
+  }
+
+  i=0
+  def searchFrom(i:Int):Int=
+  if(i >= args2.length) -1
+  else if(args2(i).startsWith("-")) searchFrom(i+1)
+  else if(args2(i).endsWith(".scala")) i
+  else searchFrom(i+1)
+
+  val j=searchFrom(0)
+  println(args2(j))
+
+}
+
+import scala.io.Source
+object LongLines{
+  def processFile(fileName:String, width:Int): Unit ={
+    def processLine(line:String): Unit ={
+      if(line.length>width) println(fileName+":"+line.trim)
+    }
+
+
+    val source= Source.fromFile(fileName)
+    for (line <- source.getLines())
+      processLine(line)
+}
+}
