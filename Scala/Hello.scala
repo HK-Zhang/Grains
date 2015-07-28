@@ -314,3 +314,12 @@ object LongLines{
       processLine(line)
 }
 }
+
+object funTest extends App{
+  var increase=(x:Int)=>x+1
+  val someNumbers = List ( -11, -10, - 5, 0, 5, 10)
+  //println(someNumbers.foreach(increase))
+  someNumbers.foreach((x:Int) => println(x))
+
+
+}
