@@ -318,8 +318,104 @@ object LongLines{
 object funTest extends App{
   var increase=(x:Int)=>x+1
   val someNumbers = List ( -11, -10, - 5, 0, 5, 10)
+  def sum=(_:Int)+(_:Int)+(_:Int)
+  val sumb=sum(1,_:Int,2)
   //println(someNumbers.foreach(increase))
   someNumbers.foreach((x:Int) => println(x))
+  someNumbers.foreach(x=>println(x-1))
+  someNumbers.filter(_>1).foreach(println(_))
+  someNumbers.foreach(println)
+
+  val f=(_:Int)+(_:Int)
+  println(f(5,10))
+  println(sum(7,8,9))
+  println(sumb(3))
+
+}
+
+object closureTest extends App{
+  val more=1
+  def addMore=(x:Int)=>x+1
+  val minusMore=(x:Int)=>x-1
+  println(addMore(10))
+  println(minusMore(10))
+
+  val someNumbers = List ( -11, -10, - 5, 0, 5, 10)
+  var sum=0
+  someNumbers.foreach(sum+=_)
+  println(sum)
+}
+
+object functionArgsTest extends App{
+  def echo(args:String *): Unit ={
+    for(arg<-args) println(arg)
+  }
+
+  var arr=Array[String]("I","am","Scala")
+  echo("Hello", "World")
+  echo(arr:_*)
+
+  def speed(distance:Float,time:Float):Float=distance/time
+  println(speed(100,10))
+  println(speed(distance = 100,time=10))
+  println(speed(time=10,distance = 100))
+
+  def printTime(out:java.io.PrintStream=Console.out,divisor:Int=1)=
+    out.println("Time ="+System.currentTimeMillis()/divisor)
+
+  printTime()
+  printTime(divisor = 1000)
+}
+
+object recursionTest extends App{
+  def boom(x:Int):Int=if(x==0) throw new Exception("boom") else boom(x-1)+1
+
+  boom(5)
+}
+
+object tailRecursionTest extends App{
+  def boom(x:Int):Int=if(x==0) throw new Exception("boom") else boom(x-1)
+  boom(5)
+}
+
+object delegateTest extends App{
+    val filesHere = (new File("./src")).listFiles()
+    filesHere.foreach(println)
+
+    def filesMatching(matcher: (String) => Boolean) = {
+      for(file <- filesHere; if matcher(file.getName))
+        yield file
+    }
+
+    def rB(t:String,r:String):Boolean={
+      println(t+":"+r)
+      true
+    }
+
+    def filesEnding(query:String) = {
+      filesMatching(_.endsWith(query))
+    }
+
+    def filesContaining(query:String)= filesMatching(_.contains(query))
+
+    def filesRegex(query:String) = filesMatching(_.matches(query))
+
+    def filesrB(query:String) = {
+      filesMatching(rB(_,query))
+    }
 
 
+    print(filesEnding("iml"))
+    filesrB("iml")
+  }
+
+
+object curryTest extends App{
+  def curriedSum(x:Int)(y:Int)=x+y
+  println(curriedSum(1)(2))
+}
+
+object controlStructureTest extends App{
+  def twice(op:Double=>Double,x:Double)=op(op(x))
+  println(twice(_+1,5))
 }
