@@ -419,3 +419,80 @@ object controlStructureTest extends App{
   def twice(op:Double=>Double,x:Double)=op(op(x))
   println(twice(_+1,5))
 }
+
+object byNameTest extends App{
+  var assertionEnabled = true
+  def myNameAssert(predict: =>Boolean)=
+    if(assertionEnabled  && !predict)
+      println("true by name")
+
+  def boolAssert(predict:Boolean) =
+    if(assertionEnabled  && !predict)
+      println("true by value")
+
+  myNameAssert(5<3)
+  boolAssert(5<3)
+}
+
+object classTest extends App{
+  abstract class Element{
+    def contents:Array[String]
+    val height:Int = contents.length
+    val width:Int = if(height==0) 0 else contents(0).length
+    override def toString = contents mkString("\n")
+
+    def above(that:Element):Element = new ArrayElement(this.contents++that.contents)
+    def beside(that:Element):Element = {new ArrayElement(
+    for ((line1,line2) <- this.contents zip that.contents)
+      yield line1+line2
+    )}
+  }
+  
+  class ArrayElement(cons:Array[String]) extends Element{
+    def contents:Array[String] = cons
+    final def Demo: Unit ={
+      println("ArrayElement's implementation invoked")
+    }
+  }
+
+ 
+
+  final class ArrayElement2(val contents:Array[String]) extends Element{
+
+  }
+
+  val ae = new ArrayElement(Array("Hello","World"))
+  val ae2 = new ArrayElement2(Array("Hello","World"))
+
+  class Cat{
+    val dangerous = false
+  }
+
+  class Tiger(override val dangerous: Boolean,private var age:Int) extends Cat
+
+  class LineElement(s:String) extends Element{
+    val contents = Array(s)
+    override val width = s.length
+    override val height = 1
+  }
+
+  val le = new LineElement("Hello")
+  println(le.width)
+
+  class UniformElement (ch:Char,
+                        override val width:Int,
+                        override val height:Int
+                         ) extends Element{
+    val line = ch.toString * width
+    println("Initialize done")
+    def contents:Array[String] =  {
+      println("override done")
+      Array.fill(height)(ch.toString * width)
+    }
+    //def cons:Array[String] = Array.fill(height)(line)
+  }
+
+  val ue = new UniformElement('x',2,3)
+  println(ue.contents)
+
+}
