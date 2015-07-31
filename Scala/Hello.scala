@@ -112,6 +112,9 @@ object ByteDemo extends App{
 
 }
 
+import java.io.File
+import java.io.FileNotFoundException
+
 import scala.collection.mutable.Map
 class ChecksumAccumulator{
   private var sum=0
@@ -143,13 +146,15 @@ object Summer{
   }
 }
 
-class Rational(n:Int,d:Int){
+class Rational(n:Int,d:Int) extends Ordered[Rational]{
   require(d!=0)
   private val g=gcd(n.abs,d.abs)
   val number = n/g
   val denom = d/g
 
   override def toString= {if(denom==1) number.toString else number+"/"+denom}
+
+  override def compare(that:Rational)= (this.number*that.denom) - (that.number*that.denom)
 
   def +(that:Rational):Rational=new Rational(number*that.denom+denom*that.number,denom*that.denom)
 
@@ -434,65 +439,228 @@ object byNameTest extends App{
   boolAssert(5<3)
 }
 
-object classTest extends App{
-  abstract class Element{
-    def contents:Array[String]
-    val height:Int = contents.length
-    val width:Int = if(height==0) 0 else contents(0).length
-    override def toString = contents mkString("\n")
+object classTest extends App {
 
-    def above(that:Element):Element = new ArrayElement(this.contents++that.contents)
-    def beside(that:Element):Element = {new ArrayElement(
-    for ((line1,line2) <- this.contents zip that.contents)
-      yield line1+line2
-    )}
-  }
-  
-  class ArrayElement(cons:Array[String]) extends Element{
-    def contents:Array[String] = cons
-    final def Demo: Unit ={
-      println("ArrayElement's implementation invoked")
+  abstract class Element {
+    def contents: Array[String]
+
+    val height: Int = contents.length
+    val width: Int = if (height == 0) 0 else contents(0).length
+
+    override def toString = contents mkString ("\n")
+
+    def above(that: Element): Element = Element.elem(this.contents ++ that.contents)
+
+    def beside(that: Element): Element = {
+      Element.elem(
+        for ((line1, line2) <- this.contents zip that.contents)
+          yield line1 + line2
+      )
+    }
+
+    def widen(w: Int): Element = {
+      if (w <= width) this
+      else {
+        val left = Element.elem(' ', (w - width) / 2, height)
+        val right = Element.elem(' ', w - width - left.width, height)
+        left beside this beside right
+      }
+    }
+
+    def heighten(h: Int): Element = {
+      if (h <= height) this
+      else {
+        val top = Element.elem(' ', width, (h - height) / 2)
+        val bot = Element.elem(' ', width, h - height - top.height)
+        top above this above bot
+      }
     }
   }
 
- 
+  object Element {
+    def elem(contents: Array[String]): Element = new ArrayElement(contents)
 
-  final class ArrayElement2(val contents:Array[String]) extends Element{
+    def elem(chr: Char, width: Int, Height: Int): Element = new UniformElement(chr, width, Height)
 
-  }
+    def elem(line: String): Element = new LineElement(line)
 
-  val ae = new ArrayElement(Array("Hello","World"))
-  val ae2 = new ArrayElement2(Array("Hello","World"))
+    private class ArrayElement(cons: Array[String]) extends Element {
+      def contents: Array[String] = cons
 
-  class Cat{
-    val dangerous = false
-  }
-
-  class Tiger(override val dangerous: Boolean,private var age:Int) extends Cat
-
-  class LineElement(s:String) extends Element{
-    val contents = Array(s)
-    override val width = s.length
-    override val height = 1
-  }
-
-  val le = new LineElement("Hello")
-  println(le.width)
-
-  class UniformElement (ch:Char,
-                        override val width:Int,
-                        override val height:Int
-                         ) extends Element{
-    val line = ch.toString * width
-    println("Initialize done")
-    def contents:Array[String] =  {
-      println("override done")
-      Array.fill(height)(ch.toString * width)
+      final def Demo: Unit = {
+        println("ArrayElement's implementation invoked")
+      }
     }
-    //def cons:Array[String] = Array.fill(height)(line)
+
+    private class LineElement(s: String) extends Element {
+      def contents: Array[String] = Array(s)
+
+      override val width = s.length
+      override val height = 1
+    }
+
+    private class UniformElement(ch: Char,
+                                 override val width: Int,
+                                 override val height: Int
+                                  ) extends Element {
+      val line = ch.toString * width
+
+      //println("Initialize done")
+      def contents: Array[String] = {
+        //println("override done")
+        Array.fill(height)(ch.toString * width)
+      }
+
+      //def cons:Array[String] = Array.fill(height)(line)
+    }
+
+    object Spiral {
+      val space = elem(" ")
+      val corner = elem("+")
+
+      def spiral(nEdges: Int, direction: Int): Element = {
+        if (nEdges == 1)
+          elem("+")
+        else {
+          val sp = spiral(nEdges - 1, (direction + 3) % 4)
+          def verticalBar = elem('|', 1, sp.height)
+          def horizontalBar = elem('-', sp.width, 1)
+          if (direction == 0)
+            (corner beside horizontalBar) above (sp beside space)
+          else if (direction == 1)
+            (sp above space) beside (corner above verticalBar)
+          else if (direction == 2)
+            (space beside sp) above (horizontalBar beside corner)
+          else
+            (verticalBar above corner) beside (space above sp)
+        }
+      }
+
+      def main(args: Array[String]) {
+        val nSides = args(0).toInt
+        println(spiral(nSides, 0))
+      }
+
+    }
+
+    final class ArrayElement2(val contents: Array[String]) extends Element {
+
+    }
+
+    val ae = Element.elem(Array("Hello", "World"))
+    println(ae.toString)
+
+    val ae2 = new ArrayElement2(Array("Hello", "World"))
+
+    class Cat {
+      val dangerous = false
+    }
+
+    class Tiger(override val dangerous: Boolean, private var age: Int) extends Cat
+
+
+    val le = Element.elem("Hello")
+    println(le.toString)
+
+
+    val ue = Element.elem('x', 2, 3)
+    println(ue.toString)
+
+
   }
 
-  val ue = new UniformElement('x',2,3)
-  println(ue.contents)
+}
+
+object traitTest extends App{
+  trait Philosophical{
+    def philosophize(): Unit ={
+      println("I consume memory, therefor I am!")
+    }
+  }
+
+  class Animal
+  trait HasLegs
+
+  class BuleFrog extends Animal with Philosophical with HasLegs{
+    override def toString = "Blue"
+  }
+
+  class Frog extends Philosophical{
+    override def toString = "green"
+  }
+
+  val frog = new Frog
+  frog.philosophize()
+
+}
+
+import scala.collection.mutable.ArrayBuffer
+
+object orderTraitTest extends App{
+  val half = new Rational(1,2)
+  val third = new Rational(1,3)
+  println(half >= third)
+
+  abstract class IntQueue{
+    def get():Int
+    def put(x:Int)
+  }
+
+  class BasicIntQueue extends IntQueue{
+    private val buf =new ArrayBuffer[Int]
+    def get()= buf.remove(0)
+    def put(x:Int) { buf += x }
+  }
+
+  trait Doubling extends IntQueue{
+    abstract override def put(x:Int){super.put(2*x)}
+  }
+
+  trait Incrementing extends IntQueue{
+    abstract override def put(x:Int){super.put(x+1)}
+  }
+
+  trait Filtering extends IntQueue{
+    abstract override def put(x:Int): Unit ={
+      if(x>=0) super.put(x)
+    }
+  }
+
+  val queue2 = new BasicIntQueue with Incrementing  with Doubling
+  val queue1 = new BasicIntQueue with Doubling with Incrementing
+  val queue = new BasicIntQueue with Doubling with Incrementing with Filtering
+
+  queue.put(10)
+  queue.put(-4)
+  queue.put(20)
+
+
+
+}
+
+package bobsrockets{
+
+package navigation{
+private[bobsrockets] class Navigator{
+  protected[navigation] def useStarChart(){}
+  class LegOfJourney{
+    private[Navigator]  val distance=100
+  }
+
+  private[this] var speed = 200
+
+
+
+}
+}
+
+package launch{
+import navigation._
+object Vehicle{
+  private[launch] val guide=new Navigator
+}
+
+}
+
 
 }
