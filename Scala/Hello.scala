@@ -16,8 +16,23 @@ object hello extends App {
 }
 
 object listDemo extends App{
-  val onetwothreefour=1::2::3::Nil
-  print(onetwothreefour)
+  val onetwothreefour=1::2::3::4::Nil
+  val five=5::Nil
+  val newlst = onetwothreefour:::five
+  print(onetwothreefour(1))
+  println(onetwothreefour)
+  println(newlst)
+  println(newlst.exists(x=>x==5))
+  println(newlst.filter(x=>x<5))
+  println(newlst.forall(x=>x>1))
+  println(newlst.count(x=>x>3))
+  newlst.drop(2)
+  println(newlst.drop(2))
+  println(newlst)
+  println(newlst.dropRight(2))
+  newlst.dropRight(2)
+  println(newlst)
+  println(newlst.dropWhile(x=>x<4))
 }
 
 object TupleDeom extends App{
