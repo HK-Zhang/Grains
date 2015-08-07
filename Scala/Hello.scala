@@ -33,11 +33,13 @@ object listDemo extends App{
   newlst.dropRight(2)
   println(newlst)
   println(newlst.dropWhile(x=>x<4))
+
+
 }
 
 object TupleDeom extends App{
   val pair=(99,"one zero")
-  println(pair._1)
+  println(pair._1,pair._2)
 }
 
 object SetDemo extends App{
@@ -109,6 +111,7 @@ object Worker{
   }
 }
 
+
 object Job{
   def main(args: Array[String]): Unit={
     for(i <- 1 to 5){
@@ -154,6 +157,9 @@ class ChecksumAccumulator{
       }
     }
   }
+
+
+
 
 object Summer{
   def main (args: Array[String]) {
@@ -335,12 +341,33 @@ object LongLines{
 }
 }
 
+object arrayTest extends App{
+  var increase=(x:Int)=>x+1
+  val someNumbers = List ( -11, -10, - 5, 0, 5, 10)
+  var b = someNumbers.foreach(increase)
+  println(b.getClass)
+  var c = someNumbers.map(increase)
+  println(c.getClass)
+
+  c.foreach((x:Int)=>print(x+" "))
+  println()
+  c.map((x:Int)=>print(x+" "))
+
+}
+
 object funTest extends App{
   var increase=(x:Int)=>x+1
   val someNumbers = List ( -11, -10, - 5, 0, 5, 10)
   def sum=(_:Int)+(_:Int)+(_:Int)
   val sumb=sum(1,_:Int,2)
+
   //println(someNumbers.foreach(increase))
+  var b = someNumbers.foreach(increase)
+  println(b.getClass)
+  var c = someNumbers.map(increase)
+  println(c.getClass)
+
+
   someNumbers.foreach((x:Int) => println(x))
   someNumbers.foreach(x=>println(x-1))
   someNumbers.filter(_>1).foreach(println(_))
