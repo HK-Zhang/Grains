@@ -37,3 +37,68 @@ object LoopTest extends App {
     testMethod(100)(100000000)(whileLoop)
   }
 }
+
+object ImplicitTest {
+
+  def display(input:String):Unit = println(input)
+  def display2(input:String):Unit = println(input+",2")
+
+  implicit def typeConvertor(input:Int):String = input.toString
+
+  implicit def typeConvertor(input:Boolean):String = if(input) "true" else "false"
+
+  //  implicit def booleanTypeConvertor(input:Boolean):String = if(input) "true" else "false"
+  def booleanTypeConvertor(input:Boolean):String = if(input) "true" else "false"
+
+  def main(args: Array[String]): Unit = {
+    display("1212")
+    display(12)
+    display(true)
+    display2(12)
+    display2(true)
+  }
+
+}
+
+object ImplictParameterDemo {
+
+  object Context{
+    implicit val ccc:String = "implicit"
+  }
+
+
+  object Param{
+    def print(content:String)(implicit prefix:String){
+      println(prefix+":"+content)
+    }
+  }
+
+  def main(args: Array[String]) {
+    Param.print("jack")("hello")
+
+    import Context._
+    Param.print("jack")
+  }
+
+}
+
+import java.io.File
+
+import scala.io.Source
+
+class RichFile(val file:File){
+  def read = Source.fromFile(file.getPath()).mkString
+}
+
+object Context{
+  implicit def file2RichFile(f:File)= new RichFile(f)
+}
+
+object ImplictExtensionDemo {
+
+  def main(args: Array[String]) {
+    import Context.file2RichFile
+    println(new File("DemoScala.iml").read)
+  }
+
+}
