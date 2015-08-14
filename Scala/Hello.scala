@@ -706,3 +706,16 @@ object Vehicle{
 
 
 }
+
+object tipTest extends App{
+  println("P700058213111115432196".exists(_.isLetter))
+  println("700058213111115432196".exists(_.isLetter))
+  println("P700058213111115432196".exists(_.isDigit))
+  println("700058213111115432196".exists(_.isDigit))
+}
+
+object typeTest extends App{
+  type S = String
+  var sr:S = "abc"
+  println(sr)
+}
