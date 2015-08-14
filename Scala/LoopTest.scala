@@ -62,8 +62,13 @@ object ImplicitTest {
 
 object ImplictParameterDemo {
 
+  class RichString(val s:String){
+    def read = (s + "_r").mkString
+  }
+
   object Context{
     implicit val ccc:String = "implicit"
+    implicit def fun(s:String) = new RichString(s)
   }
 
 
@@ -77,7 +82,9 @@ object ImplictParameterDemo {
     Param.print("jack")("hello")
 
     import Context._
+    import Context.fun
     Param.print("jack")
+    print(new String("").read)
   }
 
 }
