@@ -60,15 +60,18 @@ object ImplicitTest {
 
 }
 
-object ImplictParameterDemo {
+object ImplictDemo {
 
   class RichString(val s:String){
-    def read = (s + "_r").mkString
+    def read = (s + "_fun").mkString
   }
 
   object Context{
-    implicit val ccc:String = "implicit"
+    implicit val impStr:String = "It is implicit"
     implicit def fun(s:String) = new RichString(s)
+    implicit class myString(val s:String){
+      def read2 = (s + "_class").mkString
+    }
   }
 
 
@@ -79,12 +82,13 @@ object ImplictParameterDemo {
   }
 
   def main(args: Array[String]) {
-    Param.print("jack")("hello")
+    Param.print("A")("It is not implicit")
 
     import Context._
     import Context.fun
-    Param.print("jack")
-    print(new String("").read)
+    Param.print("B")
+    println(new String("").read)
+    println(new String("").read2)
   }
 
 }
