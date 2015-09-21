@@ -113,3 +113,17 @@ object ImplictExtensionDemo {
   }
 
 }
+
+
+object NeighborMerge extends App{
+  var a=ArrayBuffer(1,2,4,3)
+  println(a.size)
+  var b = a.sliding(2,1).map(_.sum)
+  b.foreach(println)
+  var c = a.head +: a.drop(1).dropRight(1).sliding(2,1).map(_.sum).toArray :+ a.last
+  c.foreach(println)
+  var middle: Iterator[Int] = a.drop(1).dropRight(1).sliding(2,1).map(_.sum)
+  var d = (Iterator(a.head)++middle++Iterator(a.last)).toArray
+  d.foreach(println)
+
+}
