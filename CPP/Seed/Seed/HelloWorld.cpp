@@ -1,7 +1,18 @@
+#include <stdio.h>
+#include <iostream>
+#include <bitset>
+using namespace std;
+
+#define PRINT_STR "Hello World!!!"
+
+
 void helloWorld()
 {
 	std::cout<<"Hello World!!!"<<std::endl;
+	printf(PRINT_STR);
 }
+
+
 
 void addTwoNumber()
 {
@@ -14,8 +25,23 @@ void addTwoNumber()
 void moveBit()
 {
 	unsigned i,j;
+
+	unsigned short short11 = 1024;
+	std::bitset<16> bitset11(short11);
+	std::cout << bitset11 << std::endl;  
+
 	i=1;
+	std::bitset<32> bitset1(i);
+	std::cout << bitset1 << std::endl;  
+
 	j=1<<i;
+	bitset<32> bitset2(j);
+	cout << bitset2 << endl;  
+
+	j=i>>1;
+	bitset<32> bitset3(j);
+	cout << bitset3 << endl;  
+
 	std::cout<<j<<std::endl;
 }
 
@@ -28,14 +54,30 @@ void forTest()
 	}
 }
 
+void pointTest()
+{
+	int n = 5;
+	int *pn = &n;
+	int **ppn=&pn;
+
+	cout<< "Value of n:\n"
+		<<"direct value: "<<n<<endl
+		<<"indirect value: "<<*pn<<endl
+		<<"doubly indirect value: "<<**ppn<<endl
+		<<"address of n: "<<pn<<endl
+		<<"address of n via indirection:"<<*ppn<<endl;
+}
+
 int main()
 {
 	//forTest();
 	int a=0;
-	helloWorld();
-	moveBit();
-	addTwoNumber();
+	//helloWorld();
+	//moveBit();
+	//pointTest();
+	//addTwoNumber();
 
 	std::cin>>a;
 	return 0;
 }
+
