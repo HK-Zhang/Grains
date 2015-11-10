@@ -1,0 +1,2 @@
+int sineGraph();
+int mutipleSineGraph();
