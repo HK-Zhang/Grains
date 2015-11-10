@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <bitset>
+#include "SineGraph.h"
 using namespace std;
 
 #define PRINT_STR "Hello World!!!"
@@ -76,6 +77,8 @@ int main()
 	//moveBit();
 	//pointTest();
 	//addTwoNumber();
+	//sineGraph();
+	mutipleSineGraph();
 
 	std::cin>>a;
 	return 0;
