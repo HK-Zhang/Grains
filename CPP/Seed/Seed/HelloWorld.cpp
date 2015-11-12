@@ -1,11 +1,5 @@
-#include <stdio.h>
-#include <iostream>
-#include <bitset>
-#include "SineGraph.h"
+#include "Main.h"
 using namespace std;
-
-#define PRINT_STR "Hello World!!!"
-
 
 void helloWorld()
 {
@@ -69,6 +63,15 @@ void pointTest()
 		<<"address of n via indirection:"<<*ppn<<endl;
 }
 
+void rotateArrayTest()
+{
+	char source[11]="abcdefhigk";
+	printf(source);
+	printf("\n");
+	rotateArray(source,3,10);
+	printf(source);
+}
+
 int main()
 {
 	//forTest();
@@ -78,7 +81,8 @@ int main()
 	//pointTest();
 	//addTwoNumber();
 	//sineGraph();
-	mutipleSineGraph();
+	//mutipleSineGraph();
+	rotateArrayTest();
 
 	std::cin>>a;
 	return 0;
