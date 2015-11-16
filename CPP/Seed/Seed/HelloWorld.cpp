@@ -65,11 +65,14 @@ void pointTest()
 
 void rotateArrayTest()
 {
-	char source[11]="abcdefhigk";
+	char source[12]="abcdefhigkl";
 	printf(source);
 	printf("\n");
-	rotateArray(source,3,10);
+	//rotateArray(source,3,11);
+	//reverseArray(source,11);
+	rotateArray2(source,3,11);
 	printf(source);
+	//delete []source;
 }
 
 int main()
