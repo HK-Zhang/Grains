@@ -4,5 +4,6 @@
 int rotateArray(char* source,int k,int l);
 int reverseArray(char* source,int l);
 int rotateArray2(char* source,int k,int l);
+int arrayTrial();
 
 #endif
