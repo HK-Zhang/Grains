@@ -54,6 +54,22 @@ int rotateArray(char* source,int k,int l)
 	return 0;
 }
 
+int arrayTrial()
+{
+	//char* str1 = "0123456789";
+	//char str2[11]="0123456789";
+	//char str3[]="0123456789";
+	//printf(str1);
+	//printf(str2);
+	//printf(str3);
+
+	char str1[2]= {'a'};
+	char str2[2]= {'a','\0'};
+	printf(str1);
+	printf(str2);
+	return 0;
+}
+
 int maxSerial(int* s,int l)
 {
 	int f=0;
