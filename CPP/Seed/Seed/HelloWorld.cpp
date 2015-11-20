@@ -85,7 +85,12 @@ int main()
 	//addTwoNumber();
 	//sineGraph();
 	//mutipleSineGraph();
-	rotateArrayTest();
+	//rotateArrayTest();
+	//arrayTrial();
+
+	//pointTrial();
+
+	calTransMatrix();
 
 	std::cin>>a;
 	return 0;
