@@ -7,6 +7,10 @@
 #include "BookDiscount.h"
 #include "VectorOps.h"
 #include "MatrixChain.h"
+#include "LonComSequence.h"
+#include "MaxSubSum.h"
+#include "PolyGame.h"
+#include "ReferenceOps.h"
 
 #ifndef _MAIN_H_
 #define _MAIN_H_
