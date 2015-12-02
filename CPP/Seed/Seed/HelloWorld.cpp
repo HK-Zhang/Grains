@@ -90,7 +90,13 @@ int main()
 
 	//pointTrial();
 
-	calTransMatrix();
+	//calTransMatrix();
+	//freeVec();
+	//fun1();
+	//longCommonSequence();
+	//maxSubSumFun();
+	//polyGameFun();
+	refOpsTest();
 
 	std::cin>>a;
 	return 0;
