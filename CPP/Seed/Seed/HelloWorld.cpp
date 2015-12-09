@@ -96,7 +96,9 @@ int main()
 	//longCommonSequence();
 	//maxSubSumFun();
 	//polyGameFun();
-	refOpsTest();
+	//refOpsTest();
+	//pointTrial3();
+	sortTest();
 
 	std::cin>>a;
 	return 0;
