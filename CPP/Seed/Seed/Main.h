@@ -11,6 +11,8 @@
 #include "MaxSubSum.h"
 #include "PolyGame.h"
 #include "ReferenceOps.h"
+#include "Sort.h"
+#include <vector>
 
 #ifndef _MAIN_H_
 #define _MAIN_H_
