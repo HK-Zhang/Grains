@@ -87,9 +87,131 @@ int tailToHead(int target,vector<int>::iterator& head,vector<int>::iterator& tai
 	return 0;
 }
 
+int insertSort(vector<int>::iterator head,vector<int>::iterator tail)
+{
+
+	for(vector<int>::iterator cur=head;cur<tail;++cur)
+	{
+		if(*cur>*(cur+1))
+		{
+			int temp=*(cur+1);
+
+			for(vector<int>::iterator h=cur+1;h>head;--h)
+			{
+				if(*(h-1)>temp)
+				{
+					*h=*(h-1);
+				}
+				else
+				{
+					*h=temp;
+					break;
+				}
+			}
+
+			if(*head>temp)
+			{
+				*head=temp;
+			}
+		}
+	}
+
+	return 0;
+}
+
+int insertSortWithInterval(vector<int>::iterator head,vector<int>::iterator tail,int inv)
+{
+	for(vector<int>::iterator cur=head;cur<tail;cur=cur+inv)
+	{
+		if(*cur>*(cur+inv))
+		{
+			int temp=*(cur+inv);
+
+			for(vector<int>::iterator h=cur+inv;h>head;h=h-inv)
+			{
+				if(*(h-inv)>temp)
+				{
+					*h=*(h-inv);
+				}
+				else
+				{
+					*h=temp;
+					break;
+				}
+			}
+
+			if(*head>temp)
+			{
+				*head=temp;
+			}
+		}
+	}
+
+	return 0;
+}
+
+int shellSort(vector<int>::iterator head,vector<int>::iterator tail)
+{
+	for (int inv=(tail-head+1)/2;inv>0;inv=inv/2){
+
+		for(vector<int>::iterator cur=head;cur<head+inv;++cur)
+		{
+			insertSortWithInterval(cur,cur+inv*((tail-cur)/inv),inv);
+		}
+	}
+
+	return 0;
+}
+
 int quickSort(vector<int>::iterator head,vector<int>::iterator tail)
 {
 	//printf("%d\n",tail-head);
+	vector<int>::iterator tHead=head;
+	vector<int>::iterator tTail=tail;
+	int temp=*head;
+
+	while(head!=tail){
+
+		tailToHead(temp,head,tail);
+
+		if(head!=tail)
+		{
+			headToTail(temp,head,tail);
+		}
+
+	}
+
+	if(head==tail)
+	{
+		*head=temp;
+	}
+
+	//printf("%d",head-tHead);
+
+	if(tail-tHead>1)
+	{
+		quickSort(tHead,--tail);
+	}
+
+	if(tTail-head>1)
+	{
+		quickSort(++head,tTail);
+	}
+
+
+	return 0;
+}
+
+int advancedSort(vector<int>::iterator head,vector<int>::iterator tail)
+{
+	//printf("%d\n",tail-head);
+
+	if(tail-head<9)
+	{
+		insertSort(head,tail);
+		return 0;
+	}
+
 	vector<int>::iterator tHead=head;
 	vector<int>::iterator tTail=tail;
 	int temp=*head;
@@ -144,7 +266,11 @@ int sortTest()
 
 	printf("\n");
 
-	quickSort(c.begin(),--c.end());
+	//quickSort(c.begin(),--c.end());
+	//insertSort(c.begin(),--c.end());
+	//advancedSort(c.begin(),--c.end());
+	//insertSortWithInterval(c.begin(),--c.end(),1);
+	shellSort(c.begin(),--c.end());
 
 	for(vector<int>::iterator iter=c.begin();iter!=c.end();++iter)
 	{
