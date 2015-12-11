@@ -51,7 +51,7 @@ int generateRandomVector(vector<int>& c)
 		c[i]=random(100);
 		//printf("%d\n",c[i]);
 	}
-              
+
 	return 0;
 }
 
@@ -248,6 +248,55 @@ int advancedSort(vector<int>::iterator head,vector<int>::iterator tail)
 	return 0;
 }
 
+int selectSort(vector<int>::iterator head,vector<int>::iterator tail)
+{
+	vector<int>::iterator max=tail;
+	vector<int>::iterator min=head;
+
+	while ((tail-head)>0)
+	{
+		max=tail-1;
+		min=head+1;
+
+		for(vector<int>::iterator cur=head+1; cur<tail;++cur)
+		{
+			if(*cur>*max)
+				max=cur;
+
+			if(*cur<*min)
+				min=cur;
+		}
+
+		if(*tail<*head)
+		{ 
+			int tmp=*head;
+			*head = *tail;
+			*tail = tmp;
+		}
+
+		if(*min<*head)
+		{ 
+			int tmp=*min;
+			*min = *head;
+			*head = tmp;
+		}
+
+		if(*max>*tail)
+		{ 
+			int tmp=*max;
+			*max = *tail;
+			*tail = tmp;
+		}
+
+
+		++head;
+		--tail;
+
+	}
+
+	return 0;
+}
+
 int sortTest()
 {
 	const int N=30;
@@ -270,7 +319,8 @@ int sortTest()
 	//insertSort(c.begin(),--c.end());
 	//advancedSort(c.begin(),--c.end());
 	//insertSortWithInterval(c.begin(),--c.end(),1);
-	shellSort(c.begin(),--c.end());
+	//shellSort(c.begin(),--c.end());
+	selectSort(c.begin(),--c.end());
 
 	for(vector<int>::iterator iter=c.begin();iter!=c.end();++iter)
 	{
