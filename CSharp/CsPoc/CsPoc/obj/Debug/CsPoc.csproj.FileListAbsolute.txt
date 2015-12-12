@@ -1,0 +1,6 @@
+F:\VS\CsPoc\CsPoc\bin\Debug\CsPoc.exe.config
+F:\VS\CsPoc\CsPoc\bin\Debug\CsPoc.exe
+F:\VS\CsPoc\CsPoc\bin\Debug\CsPoc.pdb
+F:\VS\CsPoc\CsPoc\obj\Debug\CsPoc.csprojResolveAssemblyReference.cache
+F:\VS\CsPoc\CsPoc\obj\Debug\CsPoc.exe
+F:\VS\CsPoc\CsPoc\obj\Debug\CsPoc.pdb
