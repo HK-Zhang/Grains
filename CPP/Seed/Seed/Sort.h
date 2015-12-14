@@ -1,7 +1,10 @@
 #include <iostream>
 #include <stdio.h>
+#include <algorithm>
+#include <functional>
 #include <stdlib.h>
 #include <vector>
+#include "Heap.h"
 
 #ifndef _SORT_H_
 #define _SORT_H_
