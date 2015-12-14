@@ -18,7 +18,8 @@ namespace CsPoc
             //dd.DynamicProductDemo();
             //ReflectionDemo.Execute();
             //Singleton a = new Singleton();
-            StaticDemo.Execute();
+            //StaticDemo.Execute();
+            ExtensionDemo.Execute();
             Console.ReadLine();
         }
     }
