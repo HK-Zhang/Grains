@@ -320,7 +320,11 @@ int sortTest()
 	//advancedSort(c.begin(),--c.end());
 	//insertSortWithInterval(c.begin(),--c.end(),1);
 	//shellSort(c.begin(),--c.end());
-	selectSort(c.begin(),--c.end());
+	//selectSort(c.begin(),--c.end());
+	Heap<int> heap(c);
+	heap.Sort(less<int>());
+	heap.Sort(greater<int>());
+
 
 	for(vector<int>::iterator iter=c.begin();iter!=c.end();++iter)
 	{
