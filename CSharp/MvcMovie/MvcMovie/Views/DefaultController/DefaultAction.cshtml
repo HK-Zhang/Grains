@@ -1,0 +1,58 @@
+﻿@Html.ActionLink("LinkText","ActionName")
+@Html.ActionLink("LinkText", "ActionName","ControllerName")
+@Html.ActionLink("LinkText", "ActionName", new { id=1})
+<p></p>
+@Html.RouteLink("RouteLink", new { action = "ActionName"})
+@Html.RouteLink("RouteLink", new { action = "ActionName",controller="ControllerName" })
+@Html.RouteLink("RouteLink", new { action = "ActionName",id=1 })
+<p></p>
+@Html.TextBox("NameId")
+@Html.TextBox("NameId","Value")
+<p></p>
+@Html.Hidden("NameId")
+@Html.Hidden("NameID","Value")
+<p></p>
+@Html.Password("NameId")
+@Html.Password("NameId","Value")
+<p></p>
+@Html.CheckBox("NameId",true)
+@Html.CheckBox("NameId",false)
+<p></p>
+@Html.RadioButton("NameId","Value",true)
+@Html.RadioButton("NameId","Value",false)
+<p></p>
+@{
+    SelectListItem item;
+    List<SelectListItem> list = new List<SelectListItem>();
+    for (int i = 0; i < 5; ++i) 
+    {
+        item = new SelectListItem();
+        item.Text = "Text" + i;
+        item.Value = "Value" + i;
+        item.Selected = (i == 2);
+        list.Add(item);
+        
+    }
+    
+}
+@Html.DropDownList("Id",list)
+<p></p>
+@Html.ListBox("NameId",list)
+<p></p>
+@Html.TextBox("NameId", "Value", new { @class="classText",@style="width:200px"})
+<p></p>
+@using(Html.BeginForm("actionName","controllerName",FormMethod.Get))
+{
+    @Html.TextBox("NameId")
+    <input type="submit" value="SubmitButton" />
+}
+@{Html.BeginForm("actionName", "controllerName", FormMethod.Post);}
+@Html.TextBox("NameId")
+<input type="submit" value="SubmitButton" />
+@{Html.EndForm();}
+<p></p>
+@Html.Submit("SubmitButton")
+<p></p>
+@model MvcMovie.Models.Simple
+@Html.DisplayFor(m => m.Email)
+@Html.EditorFor(m => m.Email)

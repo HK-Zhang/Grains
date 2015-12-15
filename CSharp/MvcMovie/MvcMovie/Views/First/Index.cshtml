@@ -1,0 +1,52 @@
+﻿<html>
+<head>
+    @Styles.Render("~/Content/css")
+    <style>
+        div div div {
+            border: solid 1px gray;
+            margin-top: 3px;
+            background: #cccccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="padding:0">
+    <div id="width"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">.col-md-3</div>
+            <div class="col-md-3">.col-md-3</div>
+            <div class="col-md-3">.col-md-3</div>
+            <div class="col-md-3">.col-md-3</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">.col-md-6</div>
+            <div class="col-md-6">.col-md-6</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">.col-md-12</div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        function setWidth() {
+            $('#width').text("Window width:" + document.body.clientWidth);
+        }
+        setInterval("setWidth()", 100);
+    </script>
+</body>
+</html>

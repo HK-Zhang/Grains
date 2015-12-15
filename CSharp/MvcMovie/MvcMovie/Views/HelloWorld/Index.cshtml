@@ -1,0 +1,10 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p>Number: @ViewBag.Number</p>
+<p>Message: @ViewBag.Message</p>
+@{
+    foreach (string slark in ViewBag.Slarks) { 
+    <p>@slark</p>
+    }
+}
