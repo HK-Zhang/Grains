@@ -3,5 +3,7 @@
 
 
 int pointTrial();
-
+int pointTrial2();
+int pointTrial3();
+int pointTrial4();
 #endif
