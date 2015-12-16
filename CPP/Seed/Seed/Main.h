@@ -13,6 +13,8 @@
 #include "ReferenceOps.h"
 #include "Sort.h"
 #include <vector>
+#include "ExternTest1.h"
+#include "ExternTest2.h"
 
 #ifndef _MAIN_H_
 #define _MAIN_H_
