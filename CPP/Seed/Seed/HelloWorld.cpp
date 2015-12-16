@@ -98,7 +98,10 @@ int main()
 	//polyGameFun();
 	//refOpsTest();
 	//pointTrial3();
-	sortTest();
+	//sortTest();
+	externTestFun1();
+	externTestFun2();
+	externTestFun1();
 
 	std::cin>>a;
 	return 0;
