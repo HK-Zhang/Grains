@@ -10,7 +10,7 @@ namespace CsPoc
     {
         static void Main(string[] args)
         {
-            DynamicDemo dd = new DynamicDemo();
+            //DynamicDemo dd = new DynamicDemo();
             //dd.VsObject();
             //dd.PropertyDemo();
             //dd.ReflectionDemo();
@@ -19,7 +19,12 @@ namespace CsPoc
             //ReflectionDemo.Execute();
             //Singleton a = new Singleton();
             //StaticDemo.Execute();
-            ExtensionDemo.Execute();
+            //ExtensionDemo.Execute();
+            //LambdaDemo.Execute();
+
+            DelegateDemo ddemo = new DelegateDemo();
+            ddemo.Execute();
+            
             Console.ReadLine();
         }
     }
