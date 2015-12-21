@@ -37,4 +37,21 @@ namespace CsPoc
             Console.WriteLine("Y:"+Y.ToString());
         }
     }
+    
+    class StaticDemoC
+    {
+        static int i = 1;
+
+        static StaticDemoC() 
+        {
+            Console.WriteLine(i);
+            Console.WriteLine(j);
+        }
+
+        public static void Execute()
+        {
+        }
+
+        static int j = 1;
+    }
 }
