@@ -297,6 +297,72 @@ int selectSort(vector<int>::iterator head,vector<int>::iterator tail)
 	return 0;
 }
 
+int merge(vector<int>::iterator head,vector<int>::iterator tail)
+{
+	vector<int>::size_type len = tail-head +1;
+	vector<int>::iterator mid = head +len/2;
+
+	while(mid<=tail){
+
+		for(vector<int>::iterator i=mid-1,j=mid;i>=head;--i,--j)
+		{
+			if(*j<*i)
+			{
+				int temp=*j;
+				*j=*i;
+				*i=temp;
+			}
+			else{
+				break;
+			}
+
+			if(i==head)
+				break;
+		}
+
+		++mid;
+	}
+
+	return 0;
+}
+
+int mergeSort(vector<int>::iterator head,vector<int>::iterator tail)
+{
+	if(tail-head==0)
+		return 0;
+
+	vector<int>::size_type len = tail-head;
+	mergeSort(head,head+len/2);
+	mergeSort(head+len/2+1,tail);
+
+	merge(head,tail);
+
+	return 0;
+}
+
+int mergeSortDown2Up(vector<int>::iterator head,vector<int>::iterator tail)
+{
+	if(tail-head==0)
+		return 0;
+
+	vector<int>::size_type len = tail-head+1;
+
+	for(int i=2;i<=len;i=2*i)
+	{
+		for(int j=i;j<=len;j=j+i)
+		{
+			merge(head+j-i,head+j-1);
+
+			if(j*2>len)
+				merge(head+j,tail);
+		}
+	}
+
+	merge(head,tail);
+
+	return 0;
+}
+
 int sortTest()
 {
 	const int N=30;
@@ -321,10 +387,13 @@ int sortTest()
 	//insertSortWithInterval(c.begin(),--c.end(),1);
 	//shellSort(c.begin(),--c.end());
 	//selectSort(c.begin(),--c.end());
-	Heap<int> heap(c);
-	heap.Sort(less<int>());
-	heap.Sort(greater<int>());
 
+	//Heap<int> heap(c);
+	//heap.Sort(less<int>());
+	//heap.Sort(greater<int>());
+
+	//mergeSort(c.begin(),--c.end());
+	mergeSortDown2Up(c.begin(),--c.end());
 
 	for(vector<int>::iterator iter=c.begin();iter!=c.end();++iter)
 	{
