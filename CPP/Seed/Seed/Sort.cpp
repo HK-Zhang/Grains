@@ -363,6 +363,75 @@ int mergeSortDown2Up(vector<int>::iterator head,vector<int>::iterator tail)
 	return 0;
 }
 
+int maxbit(vector<int>::iterator head,vector<int>::iterator tail)
+{
+	int d=1;
+
+	for(vector<int>::iterator i=head;i<=tail;++i)
+	{
+		int c=1;
+
+		int p=*i;
+
+		while(p/10>0)
+		{
+			p=p/10;
+			++c;
+		}
+
+		if(c>d)
+			d=c;
+
+	}
+	
+
+	return d;
+}
+
+int radixSort(vector<int>::iterator head,vector<int>::iterator tail)
+{
+	int d=maxbit(head,tail);
+	int r=1;
+	int len=tail-head+1;
+	vector<int> tmp(len); 
+	for(int j=0;j<d;++j){
+
+
+		vector<int> count(10); 
+
+		for (int i = 0; i < len; ++i)
+		{
+			int k=*(head+i)/r;
+			int q=k%10;
+			++count[q];
+		}
+
+		for(vector<int>::iterator i=count.begin()+1;i<count.end();++i)
+		{
+			*i+=*(i-1);
+		}
+
+		for(vector<int>::iterator i=tail;i>=head;--i)
+		{
+			int k=*i/r;
+			int q=k%10;
+			tmp[count[q]-1]=*i;
+			--count[q];
+
+			if(i==head)
+				break;
+		}
+
+		for(int i=0;i<len;++i)
+		{
+			*(head+i)=tmp[i];
+		}
+
+		r=r*10;
+	}
+	return 0;
+}
+
 int sortTest()
 {
 	const int N=30;
@@ -393,7 +462,8 @@ int sortTest()
 	//heap.Sort(greater<int>());
 
 	//mergeSort(c.begin(),--c.end());
-	mergeSortDown2Up(c.begin(),--c.end());
+	//mergeSortDown2Up(c.begin(),--c.end());
+	radixSort(c.begin(),--c.end());
 
 	for(vector<int>::iterator iter=c.begin();iter!=c.end();++iter)
 	{
