@@ -1,0 +1,41 @@
+﻿@model MvcMovie.Models.DAModelStateModel
+@{
+    ViewBag.Title = "DataAnnotationAction";
+}
+
+<h2>Data Annotation Validation</h2>
+@Html.ValidationSummary()
+@using (@Html.BeginForm())
+{
+    if (@ViewData.ModelState.IsValid && ViewBag.Name != null)
+    {
+        <b>
+            Name: @ViewBag.Name
+            <br />
+            Email: @ViewBag.Email
+        </b>
+    }
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <br />
+        <input type="submit" value="Submit" />
+    </fieldset>
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
