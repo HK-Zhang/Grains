@@ -8,6 +8,12 @@ public:
 	int A;
 };
 
+int constructorTest(cA t)
+{
+	t.A=2;
+	return 0;
+}
+
 int refOpsTest()
 {
 	cA objA;
@@ -20,5 +26,15 @@ int refOpsTest()
 	cout<<&ra<<" "<<&objA<<" "<<&objB<<" "<<ra.A<<" "<<objA.A<<endl;
 	objB.A=3;
 	cout<<&ra<<" "<<&objA<<" "<<&objB<<" "<<ra.A<<" "<<objA.A<<" "<<objB.A<<endl;
+	return 0;
+}
+
+int constructorDemo()
+{
+	cA a;
+	a.A=1;
+	cout<<a.A<<endl;
+	constructorTest(a);
+	cout<<a.A<<endl;
 	return 0;
 }
