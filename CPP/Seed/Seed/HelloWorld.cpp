@@ -99,9 +99,11 @@ int main()
 	//refOpsTest();
 	//pointTrial3();
 	//sortTest();
-	externTestFun1();
-	externTestFun2();
-	externTestFun1();
+	//pointTrial4();
+	//externTestFun1();
+	//externTestFun2();
+	//externTestFun1();
+	constructorDemo();
 
 	std::cin>>a;
 	return 0;
