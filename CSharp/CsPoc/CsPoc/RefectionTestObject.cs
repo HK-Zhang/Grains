@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace CsPoc
 {
-    class RefectionTestObject
+    class RefectionTestObject:IRefection
     {
         public int Add(int a, int b)
         {
             return a + b;
         }
+    }
+
+    interface IRefection
+    {
+        int Add(int a, int b);
+        
     }
 }

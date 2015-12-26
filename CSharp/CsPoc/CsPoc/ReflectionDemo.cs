@@ -100,5 +100,11 @@ namespace CsPoc
 
         }
 
+        public static void RelectionTest() 
+        {
+            IRefection obj = (IRefection)Activator.CreateInstance(System.Type.GetType("CsPoc.RefectionTestObject"));
+            Console.WriteLine(obj.Add(1, 2).ToString());
+        }
+
     }
 }
