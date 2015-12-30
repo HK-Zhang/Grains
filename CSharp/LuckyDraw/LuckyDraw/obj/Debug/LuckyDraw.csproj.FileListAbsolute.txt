@@ -1,0 +1,9 @@
+D:\Demo Projects\LuckyDraw\LuckyDraw\bin\Debug\LuckyDraw.exe.config
+D:\Demo Projects\LuckyDraw\LuckyDraw\bin\Debug\LuckyDraw.exe
+D:\Demo Projects\LuckyDraw\LuckyDraw\bin\Debug\LuckyDraw.pdb
+D:\Demo Projects\LuckyDraw\LuckyDraw\obj\Debug\LuckyDraw.csprojResolveAssemblyReference.cache
+D:\Demo Projects\LuckyDraw\LuckyDraw\obj\Debug\LuckyDraw.Form1.resources
+D:\Demo Projects\LuckyDraw\LuckyDraw\obj\Debug\LuckyDraw.Properties.Resources.resources
+D:\Demo Projects\LuckyDraw\LuckyDraw\obj\Debug\LuckyDraw.csproj.GenerateResource.Cache
+D:\Demo Projects\LuckyDraw\LuckyDraw\obj\Debug\LuckyDraw.exe
+D:\Demo Projects\LuckyDraw\LuckyDraw\obj\Debug\LuckyDraw.pdb
