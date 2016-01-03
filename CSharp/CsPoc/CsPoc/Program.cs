@@ -28,7 +28,8 @@ namespace CsPoc
 
            // DelegateDemo ddemo = new DelegateDemo();
             //ReferenceDemo.Execute();
-            ReflectionDemo.RelectionTest();
+            //ReflectionDemo.RelectionTest();
+            PerformanceTest.Execute();
             //throw new Exception("err!!");
 
             //ddemo.Execute();
