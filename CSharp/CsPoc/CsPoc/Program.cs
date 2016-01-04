@@ -34,14 +34,17 @@ namespace CsPoc
 
             //ddemo.Execute();
 
-            ThreadDemo tdemo = new ThreadDemo();
+            //ThreadDemo tdemo = new ThreadDemo();
             //tdemo.Test1Foo();
             //tdemo.Test2Foo();
             //tdemo.Test3Foo();
             //tdemo.Test4Foo();
             //tdemo.Test5Foo();
             //tdemo.Test6Foo();
-            AsyncTest.Run3();
+            //AsyncTest.Run3();
+            SynchronizationDemo sdemo = new SynchronizationDemo();
+            //sdemo.Run();
+            sdemo.Run2();
 
 
             
