@@ -29,10 +29,22 @@ namespace CsPoc
            // DelegateDemo ddemo = new DelegateDemo();
             //ReferenceDemo.Execute();
             //ReflectionDemo.RelectionTest();
-            PerformanceTest.Execute();
+            //PerformanceTest.Execute();
             //throw new Exception("err!!");
 
             //ddemo.Execute();
+
+            ThreadDemo tdemo = new ThreadDemo();
+            //tdemo.Test1Foo();
+            //tdemo.Test2Foo();
+            //tdemo.Test3Foo();
+            //tdemo.Test4Foo();
+            //tdemo.Test5Foo();
+            //tdemo.Test6Foo();
+            AsyncTest.Run3();
+
+
+            
 
             Console.ReadLine();
         }
