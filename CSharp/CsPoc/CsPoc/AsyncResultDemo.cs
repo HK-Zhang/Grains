@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CSDemo
+namespace CsPoc
 {
     class AsyncResultDemo
     {
@@ -39,7 +39,7 @@ namespace CSDemo
         {
             EndOperation(ar);
             Console.WriteLine("Call back");
-        }  
+        }
 
         public void Run()
         {
@@ -48,7 +48,7 @@ namespace CSDemo
             Console.WriteLine("Complete call BeginOperation");
         }
 
-        private void lockForTest() 
+        private void lockForTest()
         {
             lock (_synLock)
             {
@@ -97,5 +97,50 @@ namespace CSDemo
         {
             get { return _eventWaitHandle; }
         }
+    }
+
+    class AsyncDelegateDemo
+    {
+        private delegate void ServeDelegate();
+        private ServeDelegate _sd;
+        private void Serve()
+        {
+            Console.WriteLine("Service start");
+            bool isThreadPoolThread = Thread.CurrentThread.IsThreadPoolThread;
+            if (isThreadPoolThread)
+            {
+                Console.WriteLine("Working Thread is serving");
+            }
+            Thread.Sleep(3000);
+            Console.WriteLine("Service Complete");
+        }
+
+        public AsyncDelegateDemo()
+        {
+            _sd = new ServeDelegate(Serve);
+
+        }
+
+        public void TestEnd()
+        {
+           IAsyncResult ia = _sd.BeginInvoke(null, null);
+           Console.WriteLine("Request Service");
+           _sd.EndInvoke(ia);
+           Console.WriteLine("Confirm Serivce is done");
+        }
+
+        public void Callback(IAsyncResult ia)
+        {
+            _sd.EndInvoke(ia);
+            Console.WriteLine("Confirm Serivce is done");
+        }
+
+        public void TestCallback()
+        {
+            IAsyncResult ia = _sd.BeginInvoke(new AsyncCallback(Callback), null);
+            Console.WriteLine("Request Service");
+            Console.WriteLine("Serving...");
+        }
+
     }
 }
