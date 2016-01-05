@@ -42,9 +42,11 @@ namespace CsPoc
             //tdemo.Test5Foo();
             //tdemo.Test6Foo();
             //AsyncTest.Run3();
-            SynchronizationDemo sdemo = new SynchronizationDemo();
+            //SynchronizationDemo sdemo = new SynchronizationDemo();
             //sdemo.Run();
-            sdemo.Run2();
+            //sdemo.Run2();
+            AsyncResultDemo ars = new AsyncResultDemo();
+            ars.Run();
 
 
             
