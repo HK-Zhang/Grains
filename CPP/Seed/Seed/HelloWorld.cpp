@@ -103,7 +103,9 @@ int main()
 	//externTestFun1();
 	//externTestFun2();
 	//externTestFun1();
-	constructorDemo();
+	//constructorDemo();
+	//findDemo();
+	RunInheritanceDemo();
 
 	std::cin>>a;
 	return 0;
