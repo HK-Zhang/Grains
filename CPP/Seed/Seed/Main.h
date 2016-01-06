@@ -16,6 +16,7 @@
 #include "ExternTest1.h"
 #include "ExternTest2.h"
 #include "FindDemo.h"
+#include "InheritanceDemo.h"
 
 #ifndef _MAIN_H_
 #define _MAIN_H_
