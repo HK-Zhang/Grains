@@ -45,9 +45,14 @@ namespace CsPoc
             //SynchronizationDemo sdemo = new SynchronizationDemo();
             //sdemo.Run();
             //sdemo.Run2();
-            AsyncResultDemo ars = new AsyncResultDemo();
-            ars.Run();
 
+            //AsyncDelegateDemo ad = new AsyncDelegateDemo();
+            //ad.TestEnd();
+            //ad.TestCallback();
+
+            //StringFormatDemo.Foo();
+            //StringFormatDemo.Foop();
+            StringFormatDemo.Food();
 
             
 
