@@ -14,6 +14,8 @@ namespace CsPoc
             AppDomain.CurrentDomain.ProcessExit+=CurrentDomain_ProcessExit;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
+            #region
+            
             //DynamicDemo dd = new DynamicDemo();
             //dd.VsObject();
             //dd.PropertyDemo();
@@ -52,8 +54,20 @@ namespace CsPoc
 
             //StringFormatDemo.Foo();
             //StringFormatDemo.Foop();
-            StringFormatDemo.Food();
+            //StringFormatDemo.Food();
 
+            #endregion
+            //AutofacDemo.BasicRun();
+            //AutofacDemo.ResolveFoo();
+            //AutofacDemo.RegisterFoo();
+            //AutofacDemo.LambdaFoo();
+            //AutofacDemo.RegisterFoo2();
+            //AutofacDemo.RegisterFoo3();
+            //AutofacDemo.IOCFoo();
+            //AutofacDemo.IOCLambdaFoo();
+            //AutofacDemo.IOCMethodFoo();
+            //AutofacDemo.IterfaceFoo();
+            AutofacDemo.EventFoo2();
             
 
             Console.ReadLine();
