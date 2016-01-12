@@ -17,7 +17,10 @@ namespace CSDemo
         {
             //CallViaDelegate();
             //CallViaDelegateSync();
-            CallViaEvent();
+            //CallViaEvent();
+            //CallViaThread();
+            //CallViaThreadPool();
+            CallViaBackgroundWorker();
         }
 
 
@@ -69,6 +72,51 @@ namespace CSDemo
         void client_OnCallCompleted(object sender, MyAsyncClient<string, string>.CallCompletedEventArgs e)
         {
             Console.WriteLine("completed;"+e.Result);
+        }
+
+        private void CallViaThread(object  p)
+        {
+            string a = Foo((string)p); 
+            Console.WriteLine("completed;" + a);
+        }
+
+        private void CallViaThread()
+        {
+            Thread th = new Thread(() => { CallViaThread("Hello"); });
+            Console.WriteLine("keep working");
+            th.Start();
+        }
+
+        private void CallViaThreadPool()
+        {
+            ThreadPool.QueueUserWorkItem(CallViaThread, "Hello");
+
+        }
+
+        private void CallViaBackgroundWorker()
+        {
+            UseBackgroundWorker("Hello");
+            Console.WriteLine("keep working");
+        }
+
+        private void UseBackgroundWorker(string str) 
+        {
+            BackgroundWorker bw = new BackgroundWorker();
+            bw.RunWorkerCompleted += bw_RunWorkerCompleted;
+            bw.DoWork += bw_DoWork;
+            bw.RunWorkerAsync("Hello");
+        }
+
+        void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            string a = (string)e.Result;
+            Console.WriteLine("completed;" + a);
+        }
+
+        void bw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string a = (string)e.Argument;
+            e.Result = Foo(a);
         }
 
 
