@@ -67,7 +67,11 @@ namespace CsPoc
             //AutofacDemo.IOCLambdaFoo();
             //AutofacDemo.IOCMethodFoo();
             //AutofacDemo.IterfaceFoo();
-            AutofacDemo.EventFoo2();
+            //AutofacDemo.EventFoo2();
+            //AOPCastleDemo.Run();
+
+            CSDemo.AsyncDemonstration AD = new CSDemo.AsyncDemonstration();
+            AD.Run();
             
 
             Console.ReadLine();

@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CSDemo
 {
-    class AsyncDemo
+    class AsyncDemonstration
     {
         Func<string, string> func;
 
@@ -20,7 +21,8 @@ namespace CSDemo
             //CallViaEvent();
             //CallViaThread();
             //CallViaThreadPool();
-            CallViaBackgroundWorker();
+            //CallViaBackgroundWorker();
+            CallViaTask();
         }
 
 
@@ -91,6 +93,82 @@ namespace CSDemo
         {
             ThreadPool.QueueUserWorkItem(CallViaThread, "Hello");
 
+        }
+
+        private void CallViaTask()
+        {
+            var t1 = Task<int>.Run(() =>
+            {
+                Thread.Sleep(2000);
+                return 100;
+            }).ContinueWith(new Action<Task<int>>(t =>
+            {
+                Console.WriteLine(t.Result);
+            }));
+
+            Console.WriteLine("Start");
+            t1.Wait();
+            Console.WriteLine("End");
+
+
+            DoSomethingAsync("HELLO WORLD").ContinueWith(new Action<Task<string>>(t =>
+            {
+                Console.WriteLine(t.Result);
+            }));
+
+
+            ProcessAsync("HELLO WORLD").ContinueWith(new Action<Task<string>>(t =>
+            {
+                Console.WriteLine(t.Result);
+            }));
+
+            ProcessAsync2("HELLO WORLD").ContinueWith(new Action<Task<string>>(t =>
+            {
+                Console.WriteLine(t.Result);
+            }));
+        }
+
+        private Task<string> DoSomethingAsync(string value)
+        {
+            return Task<string>.Run(() => {
+                Thread.Sleep(2000);
+                return value.ToLower();
+            });
+        }
+
+        private Task<string> DoSomethingAsync2(string value)
+        {
+            return Task<string>.Run(() =>
+            {
+                Thread.Sleep(2000);
+                return value.ToUpper();
+            });
+        }
+
+        private Task<string> ProcessAsync(string value)
+        {
+            AsyncTaskMethodBuilder<string> builder = new AsyncTaskMethodBuilder<string>();
+            var awaiter = DoSomethingAsync(value).GetAwaiter();
+            awaiter.OnCompleted(() =>
+            {
+                var awaiter2 = DoSomethingAsync2(awaiter.GetResult()).GetAwaiter();
+
+                awaiter2.OnCompleted(() =>
+                {
+                    builder.SetResult(awaiter2.GetResult());
+                });
+            });
+
+
+            return builder.Task;
+
+        }
+
+        private async Task<string> ProcessAsync2(string value) 
+        {
+            var r1 = await DoSomethingAsync(value);
+            var r2 = await DoSomethingAsync2(r1);
+            return r2;
         }
 
         private void CallViaBackgroundWorker()
