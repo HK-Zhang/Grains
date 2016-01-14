@@ -70,8 +70,9 @@ namespace CsPoc
             //AutofacDemo.EventFoo2();
             //AOPCastleDemo.Run();
 
-            CSDemo.AsyncDemonstration AD = new CSDemo.AsyncDemonstration();
-            AD.Run();
+            //CSDemo.AsyncDemonstration AD = new CSDemo.AsyncDemonstration();
+            //AD.Run();
+            InOutDemo.RUN();
             
 
             Console.ReadLine();
