@@ -105,7 +105,8 @@ int main()
 	//externTestFun1();
 	//constructorDemo();
 	//findDemo();
-	RunInheritanceDemo();
+	//RunInheritanceDemo();
+	GetKth();
 
 	std::cin>>a;
 	return 0;
