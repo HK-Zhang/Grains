@@ -18,6 +18,7 @@
 #include "FindDemo.h"
 #include "InheritanceDemo.h"
 #include "TopK.h"
+#include "Queen.h";
 
 #ifndef _MAIN_H_
 #define _MAIN_H_
