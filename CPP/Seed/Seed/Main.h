@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <bitset>
+#include <Windows.h>
 #include "SineGraph.h"
 #include "ArrayOps.h"
 #include "PointOps.h"
@@ -19,6 +20,7 @@
 #include "InheritanceDemo.h"
 #include "TopK.h"
 #include "Queen.h";
+#include "NumericLimit.h"
 
 #ifndef _MAIN_H_
 #define _MAIN_H_
