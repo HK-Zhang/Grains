@@ -1,7 +1,7 @@
 package dp.singleton;
 
 public class SingletonB {
-	private static SingletonB instance;
+	private volatile static SingletonB instance;
 	
 	private SingletonB() {
 
