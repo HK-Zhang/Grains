@@ -72,8 +72,14 @@ namespace CsPoc
 
             //CSDemo.AsyncDemonstration AD = new CSDemo.AsyncDemonstration();
             //AD.Run();
-            InOutDemo.RUN();
-            
+            //InOutDemo.RUN();
+            //AttributeDemo.RunDemo();
+
+            //ParallelDemo.RunDemo();
+
+            DynamicDemo dd = new DynamicDemo();
+            dd.XMLDemo();
+
 
             Console.ReadLine();
         }

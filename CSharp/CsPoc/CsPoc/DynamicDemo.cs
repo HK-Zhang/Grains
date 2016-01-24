@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Dynamic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CsPoc
 {
@@ -83,6 +85,78 @@ namespace CsPoc
             dyn.ID = 1;
             dyn.ID = dyn.ID + 3;
             dyn.ShowProduct();
+        }
+
+        public void ExcelDemo()
+        {
+            Type excelType = Type.GetTypeFromProgID("Excel.Application");
+            dynamic excel = Activator.CreateInstance(excelType);
+
+            excel.Visible = true;
+            excel.Workbooks.Add();
+
+            dynamic sheet = excel.ActiveSheet;
+            Process[] processes = Process.GetProcesses();
+
+            for (int i = 0; i < processes.Length; i++)
+            {
+                sheet.Cells[i + 1, "A"] = processes[i].ProcessName;
+                sheet.Cells[i + 1, "B"] = processes[i].Threads.Count;
+            }
+
+        }
+
+        public void XMLDemo()
+        {
+            var doc = XDocument.Load("Employees.xml");
+            foreach (var item in doc.Element("Employees").Elements("Employee"))
+            {
+                Console.WriteLine(item.Element("FirstName").Value );
+            }
+
+
+            // dynamic demo
+            var doc2 = XDocument.Load("Employees.xml").AsExpando();
+
+            foreach (var item in doc2.Employees)
+            {
+                Console.WriteLine(item.FirstName);
+            }
+        }
+
+
+
+    }
+
+    public static class ExpandoXML
+    {
+        public static dynamic AsExpando(this XDocument xDocument)
+        {
+            return CreateExpnado(xDocument.Root);
+        }
+
+        private static dynamic CreateExpnado(XElement element)
+        { 
+            var result = new ExpandoObject() as IDictionary<string,object>;
+
+            if (element.Elements().Any(e => e.HasElements))
+            {
+                var list = new List<ExpandoObject>();
+                result.Add(element.Name.ToString(), list);
+                foreach (var item in element.Elements())
+                {
+                    list.Add(CreateExpnado(item));
+                }
+            }
+            else
+            {
+                foreach (var item in element.Elements())
+                {
+                    result.Add(item.Name.ToString(), item.Value);
+                }
+            }
+
+            return result;
         }
     }
 }
