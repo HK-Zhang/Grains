@@ -8,7 +8,9 @@ public class SingletonB {
 	}
 	
 	private static synchronized void syncInit() {
-		instance = new SingletonB();
+		if (instance == null) {
+			instance = new SingletonB();
+		}
 	}
 	
 	public static SingletonB GetInstance() {
