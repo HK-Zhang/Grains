@@ -45,7 +45,7 @@ void forTest()
 	for(;;)
 	{
 		for(int i=0;i<9600000;i++)
-			_sleep(10);
+			Sleep(10);
 	}
 }
 
@@ -106,7 +106,15 @@ int main()
 	//constructorDemo();
 	//findDemo();
 	//RunInheritanceDemo();
-	GetKth();
+	//GetKth();
+	//numbericLimitRun1();
+	//numbericLimitRun2();
+	//opsHeap();
+	//priorityQueueTest();
+	//opsLargeHeap();
+	//opsSmallHeap();
+	//opsGreatHeap();
+	opsGreatHeap2();
 
 	std::cin>>a;
 	return 0;

@@ -8,7 +8,8 @@
 
 #include <iostream>
 #include <vector>
-using namespace std ;
+#include <algorithm>
+using namespace std;
 
 class MaxSubSum 
 {
@@ -79,7 +80,7 @@ private:
         int max0 = max1 + max2 ;
         max0 = (max0 > 0 ? max0 : 0) ;
         // cout << max0 << ", " << leftSum << ", " << rightSum << endl ;
-        return max (max0 , max (leftSum, rightSum)) ;
+		return max(max0, max(leftSum, rightSum));
     }
 
 private:

@@ -21,6 +21,7 @@
 #include "TopK.h"
 #include "Queen.h";
 #include "NumericLimit.h"
+#include "HeapDemo.h"
 
 #ifndef _MAIN_H_
 #define _MAIN_H_
