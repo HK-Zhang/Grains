@@ -77,8 +77,10 @@ namespace CsPoc
 
             //ParallelDemo.RunDemo();
 
-            DynamicDemo dd = new DynamicDemo();
-            dd.XMLDemo();
+            //DynamicDemo dd = new DynamicDemo();
+            //dd.XMLDemo();
+
+            EventDemo.RunDemo();
 
 
             Console.ReadLine();
