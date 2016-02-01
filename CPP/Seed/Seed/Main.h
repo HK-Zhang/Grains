@@ -22,6 +22,7 @@
 #include "Queen.h";
 #include "NumericLimit.h"
 #include "HeapDemo.h"
+#include "ShortestPath.h";
 
 #ifndef _MAIN_H_
 #define _MAIN_H_
