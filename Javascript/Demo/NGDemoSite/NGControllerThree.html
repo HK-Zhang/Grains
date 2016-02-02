@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="fighterController">
+        <script src="js/myApp.js"></script>
+        <script src="js/myAppControllers.js"></script>
+        <input ng-model="search" />
+        <ul>
+            <li ng-repeat="f in fighters|filter:search">{{ f.name }}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
