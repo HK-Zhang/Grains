@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+</head>
+<body>
+    <div ng-app="" data-ng-init="name='Kavlez';quantity=1;cost=5;firstName='Kavlez';lastName='Jin';person={firstName:'Kavlez',lastName:'Jin'};myArr=[0,2,4,6,8]">
+        <p>
+            Name:
+            <input type="text" ng-model="name">
+        </p>
+        <p ng-bind="name"></p>
+        {{name}}
+    {{6+8}}
+        <p>Total :￥{{ quantity * cost }}</p>
+        <p>The name is {{ firstName + " " + lastName }}</p>
+        <p>The name is {{ person.lastName }}</p>
+        <p ng-repeat="element in myArr">
+        {{ element }}
+    </p>
+    </div>
+</body>
+</html>
