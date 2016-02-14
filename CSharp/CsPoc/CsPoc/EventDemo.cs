@@ -19,6 +19,7 @@ namespace CsPoc
     public class SMS
     {
         public EventHandler<SmsEventArgs> SmsEvent = (o, e) => { };
+        //public event EventHandler SmsEvent2;
         public EventHandler SmsEvent2;
 
         protected virtual void OnSmsEvent(SmsEventArgs e)

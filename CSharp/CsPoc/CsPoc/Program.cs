@@ -44,7 +44,7 @@ namespace CsPoc
             //tdemo.Test5Foo();
             //tdemo.Test6Foo();
             //tdemo.Test7Foo();
-            tdemo.Test8Foo();
+            //tdemo.Test8Foo();
             //AsyncTest.Run3();
             //SynchronizationDemo sdemo = new SynchronizationDemo();
             //sdemo.Run();
@@ -84,6 +84,8 @@ namespace CsPoc
 
             //EventDemo.RunDemo();
 
+
+            LinqDemo.RunDemo();
 
             Console.ReadLine();
         }
