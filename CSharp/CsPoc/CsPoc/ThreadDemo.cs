@@ -127,6 +127,49 @@ namespace CsPoc
             //   autoEvent.WaitOne();
             Console.Read();
         }
+
+        public void Test7Foo()
+        {
+            CancellationTokenSource cts = new CancellationTokenSource();
+            Task t = new Task(() => LongRunTask(cts.Token));
+            t.Start();
+            Thread.Sleep(2000);
+            cts.Cancel(); 
+
+        }
+
+        public void Test8Foo()
+        {
+            Task parent = new Task(() =>
+            {
+                CancellationTokenSource cts = new CancellationTokenSource();
+                TaskFactory tf = new TaskFactory(cts.Token);
+                var childTask = new[] { tf.StartNew(() => LongRunTask(cts.Token)), tf.StartNew(() => LongRunTask(cts.Token)), tf.StartNew(() => LongRunTask(cts.Token)) };
+                Thread.Sleep(2000);
+                cts.Cancel();
+            });
+
+            parent.Start();
+        }
+
+        private void LongRunTask(CancellationToken cts)
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                if (!cts.IsCancellationRequested)
+                {
+                    Thread.Sleep(1000);
+                    Console.Write(".");
+                }
+                else
+                {
+                    Console.WriteLine("Thread is abort");
+                    break; 
+                }
+                
+            }
+        }
+
         static void ThreadMethod()
         {
             for (int i = 0; i < 5; i++)

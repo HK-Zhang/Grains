@@ -36,13 +36,15 @@ namespace CsPoc
 
             //ddemo.Execute();
 
-            //ThreadDemo tdemo = new ThreadDemo();
+            ThreadDemo tdemo = new ThreadDemo();
             //tdemo.Test1Foo();
             //tdemo.Test2Foo();
             //tdemo.Test3Foo();
             //tdemo.Test4Foo();
             //tdemo.Test5Foo();
             //tdemo.Test6Foo();
+            //tdemo.Test7Foo();
+            tdemo.Test8Foo();
             //AsyncTest.Run3();
             //SynchronizationDemo sdemo = new SynchronizationDemo();
             //sdemo.Run();
@@ -80,7 +82,7 @@ namespace CsPoc
             //DynamicDemo dd = new DynamicDemo();
             //dd.XMLDemo();
 
-            EventDemo.RunDemo();
+            //EventDemo.RunDemo();
 
 
             Console.ReadLine();
