@@ -32,7 +32,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\Lib\Castle.Core\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.37\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,21 +57,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DynamicDemo.cs" />
-    <Compile Include="DynamicProduct.cs" />
-    <Compile Include="Extensions.cs" />
-    <Compile Include="InitializerDemo.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="Collection\ImmutableDemo.cs" />
+    <Compile Include="DynamicFramework\AOPCastleDemo.cs" />
+    <Compile Include="Thread\AsyncDemo.cs" />
+    <Compile Include="Thread\AsyncResultDemo.cs" />
+    <Compile Include="Basic\AttributeDemo.cs" />
+    <Compile Include="DynamicFramework\AutofacDemo.cs" />
+    <Compile Include="DynamicFramework\AutoMapperDemo.cs" />
+    <Compile Include="Advanced\DataAnnotationDemo.cs" />
+    <Compile Include="Basic\DelegateDemo.cs" />
+    <Compile Include="Advanced\DynamicDemo.cs" />
+    <Compile Include="Advanced\DynamicProduct.cs" />
+    <Compile Include="Basic\EventDemo.cs" />
+    <Compile Include="Basic\Extensions.cs" />
+    <Compile Include="Basic\FlagDemo.cs" />
+    <Compile Include="Basic\Formula1.cs" />
+    <Compile Include="Basic\InheritenceDemo.cs" />
+    <Compile Include="Basic\InitializerDemo.cs" />
+    <Compile Include="Advanced\InOutDemo.cs" />
+    <Compile Include="Basic\LambdaDemo.cs" />
+    <Compile Include="Advanced\LinqDemo.cs" />
+    <Compile Include="Thread\LockDemo.cs" />
+    <Compile Include="Thread\ParallelDemo.cs" />
+    <Compile Include="Basic\PerformanceTest.cs" />
+    <Compile Include="Basic\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RefectionTestObject.cs" />
-    <Compile Include="ReflectionDemo.cs" />
-    <Compile Include="Singleton.cs" />
-    <Compile Include="StaticDemo.cs" />
+    <Compile Include="Basic\Racer.cs" />
+    <Compile Include="Advanced\RefectionTestObject.cs" />
+    <Compile Include="Basic\ReferenceDemo.cs" />
+    <Compile Include="Advanced\ReflectionDemo.cs" />
+    <Compile Include="Advanced\SearializerDemo.cs" />
+    <Compile Include="Basic\Singleton.cs" />
+    <Compile Include="Basic\StaticDemo.cs" />
+    <Compile Include="Basic\StringFormatDemo.cs" />
+    <Compile Include="Thread\SynchronizationDemo.cs" />
+    <Compile Include="Basic\Team.cs" />
+    <Compile Include="Thread\ThreadDemo.cs" />
+    <Compile Include="Thread\ThreadIsolation.cs" />
+    <Compile Include="Toolkit\DictionaryExtension.cs" />
+    <Compile Include="Advanced\ExpressionDemo.cs" />
+    <Compile Include="Toolkit\LinqDistinctDemo.cs" />
+    <Compile Include="Toolkit\SynchronizedCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

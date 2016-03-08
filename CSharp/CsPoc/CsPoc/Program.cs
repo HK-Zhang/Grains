@@ -85,7 +85,9 @@ namespace CsPoc
             //EventDemo.RunDemo();
 
 
-            LinqDemo.RunDemo();
+            //LinqDemo.RunDemo();
+            ImmutableDemo demo = new ImmutableDemo();
+            demo.Excecute();
 
             Console.ReadLine();
         }
