@@ -24,7 +24,8 @@ namespace CSDemo
             //Foo2();
             //Foo3();
             //Foo4();
-            Foo5();
+            //Foo5();
+            Foo6();
         }
 
 
@@ -55,6 +56,14 @@ namespace CSDemo
         public void Foo5()
         {
             var distinctProduct = products.Distinct(p => p.Id);
+            distinctProduct.ToList().ForEach((p) => Console.WriteLine(p.Name));
+
+            
+        }
+
+        public void Foo6()
+        {
+            var distinctProduct = DistinctExtensions.Distinct(products, p => p.Id);
             distinctProduct.ToList().ForEach((p) => Console.WriteLine(p.Name));
         }
     }
