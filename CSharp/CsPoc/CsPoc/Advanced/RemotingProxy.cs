@@ -19,6 +19,7 @@ namespace CSDemo
                 User user = new User() { Name = "lee", PassWord = "123123123123" };
                 UserProcessor userprocessor = TransparentProxy.Create<UserProcessor>();
                 userprocessor.RegUser(user);
+                Console.WriteLine(userprocessor.RegUser2(user));
             }
             catch (Exception ex)
             {
@@ -44,9 +45,47 @@ namespace CSDemo
             PreProceede(msg);
 
             IMethodCallMessage callMessage = (IMethodCallMessage)msg;
-            object returnValue = callMessage.MethodBase.Invoke(this._target, callMessage.Args);
+
+            //via reflection
+            //object returnValue = callMessage.MethodBase.Invoke(this._target, callMessage.Args);
+
+            //via Expression
+            Type[] te = new Type[callMessage.Args.Count()];
+            ConstantExpression[] ce = new ConstantExpression[callMessage.Args.Count()];
 
 
+            for(int i=0;i<callMessage.Args.Count();++i)
+            {
+                te[i] = callMessage.Args[i].GetType();
+                ce[i] = Expression.Constant(callMessage.Args[i], te[i]);
+            }
+
+            MethodInfo mthinfo = typeof(T).GetMethod(callMessage.MethodBase.Name, te);
+
+            var parameter = Expression.Parameter(typeof(T), "obj");
+            MethodCallExpression _methodCallexp = Expression.Call(Expression.Constant(this._target), mthinfo, ce);
+
+            object returnValue = null;
+
+            ParameterInfo pi = mthinfo.ReturnParameter;
+            
+            if (pi.ParameterType == typeof(void))
+            {
+                //no return value
+                Expression<Action> consoleLambdaExp = Expression.Lambda<Action>(_methodCallexp);
+                consoleLambdaExp.Compile()();
+            }
+            else 
+            {
+                //with return value
+                Expression<Func<object>> consoleLambdaExp = Expression.Lambda<Func<object>>(_methodCallexp);
+                returnValue = consoleLambdaExp.Compile()();
+            }
+  
+            //end
+
+            
+          
             PostProceede(msg);
 
             return new ReturnMessage(returnValue, new object[0], 0, null, callMessage);
@@ -91,6 +130,12 @@ namespace CSDemo
         public void RegUser(User user)
         {
             Console.WriteLine("Already registered.");
+        }
+
+        public string RegUser2(User user)
+        {
+            Console.WriteLine("Already registered.");
+            return "OK";
         }
     }
 }
