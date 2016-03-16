@@ -30,8 +30,12 @@ namespace CSDemo
         public virtual void RegUser(User user)
         {
             Console.WriteLine("User is registered。Name:{0},PassWord:{1}", user.Name, user.PassWord);
+
+
         }
     }
+
+
 
     public class MyCastleInterceptor : Castle.DynamicProxy.IInterceptor
     {
@@ -44,6 +48,33 @@ namespace CSDemo
         public void PreProceed(IInvocation invocation)
         {
             Console.WriteLine("before action executed");
+
+            int indent = 0;
+
+
+            if (indent > 0)
+            {
+                Console.Write(" ".PadRight(indent * 4, ' '));
+            }
+
+            indent++;
+
+            Console.Write("Intercepting: " + invocation.Method.Name + "(");
+
+            if (invocation.Arguments != null && invocation.Arguments.Length > 0)
+            {
+                for (int i = 0; i < invocation.Arguments.Length; i++)
+                {
+                    if (i != 0) Console.Write(", ");
+                    Console.Write(invocation.Arguments[i] == null
+                        ? "null"
+                        : invocation.Arguments[i].GetType() == typeof(string)
+                           ? "\"" + invocation.Arguments[i].ToString() + "\""
+                           : invocation.Arguments[i].ToString());
+                }
+            }
+
+            Console.WriteLine(")");
         }
 
         public void PostProceed(IInvocation invocation)
