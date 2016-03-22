@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CSDemo
@@ -30,7 +31,9 @@ namespace CSDemo
 
         private static void Foo3()
         {
+            Console.WriteLine("Master Thread ID:"+Thread.CurrentThread.ManagedThreadId);
             AsyncContext.Run(() => MainAsync());
+            Console.WriteLine("Master Thread ID:" + Thread.CurrentThread.ManagedThreadId);
             //remove System.Console.ReadLine(); from main() to see result
         }
 
@@ -51,7 +54,7 @@ namespace CSDemo
 
         public async Task<string> BackupAsync()
         {
-            return await Task.Run(() => "groovy");
+            return await Task.Run(() => "Task Thread ID:" + Thread.CurrentThread.ManagedThreadId.ToString());
         }
     }
 
