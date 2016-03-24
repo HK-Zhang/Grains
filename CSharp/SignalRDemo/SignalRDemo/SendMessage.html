@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.0.0.min.js"></script>
+    <!--这里要注意,这是虚拟目录,也就是你在OWIN Startup中注册的地址-->
+    <script src="signalr/hubs"></script>
+    <script>
+        $(function () {
+
+            $(function () {
+                // 声明一个代理引用该集线器,记得$.connection.后面的方法首字母必须要小写,这也是我为什么使用别名的原因
+                var chat = $.connection.getMessage;
+                // 这里是注册集线器调用的方法,和1.0不同的是需要chat.client后注册,1.0则不需要
+                chat.client.broadcastMessage = function (name) {
+                    // HTML编码的显示名称和消息。
+                    var encodedMsg = $('<div />').text(name).html();
+                    // 将消息添加到该页。
+                    $('#messsagebox').append('<li>' + encodedMsg + '</li>');
+                };
+                // 获取用户名称。
+                $('#username').html(prompt('请输入您的名称:', ''));
+                // 设置初始焦点到消息输入框。
+                $('#message').focus();
+
+                // 启动连接,这里和1.0也有区别
+                $.connection.hub.start().done(function () {
+                    $('#send').click(function () {
+                        var message = $('#username').html() + ":" + $('#message').val()
+                        // 这里是调用服务器的方法,同样,首字母小写
+                        chat.server.sendMessage(message);
+                        // 清空输入框的文字并给焦点.
+                        $('#message').val('').focus();
+                    });
+                });
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <div>名称:<p id="username"></p></div>
+        <div style="border-color:red;border:double">
+            <ul id="messsagebox">
+                <li>聊天窗口</li>
+                <li></li>
+            </ul>
+        </div>
+        <input type="text" value="asdasd" id="message" />
+        <button id="send">发送</button>
+    </div>
+</body>
+</html>
