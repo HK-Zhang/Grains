@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" Layout="ForceDirected" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@1 Namespace=Abp.Hangfire Type=AbpHangfireModule)" Category="CodeSchema_Class" Bounds="87.5413507671848,423,178.926666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AbpHangfireModule" UseManualLocation="True" />
+    <Node Id="(@10 Namespace=Abp.Tests.Localization.Json Type=MyLangModule)" Category="CodeSchema_Class" Bounds="367.463430318677,149.24995,151.36,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="MyLangModule" UseManualLocation="True" />
+    <Node Id="(@10 Namespace=Abp.Tests.Startup Type=MyEventCounterModuleBase)" Category="CodeSchema_Class" Bounds="301.314603521812,535.500075,227.903333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="MyEventCounterModuleBase" UseManualLocation="True" />
+    <Node Id="(@11 Namespace=Abp.NHibernate.Tests Type=NHibernateTestModule)" Category="CodeSchema_Class" Bounds="513.748765283306,335,195.733333333334,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="NHibernateTestModule" UseManualLocation="True" />
+    <Node Id="(@12 Namespace=Abp.TestBase.SampleApplication Type=SampleApplicationModule)" Category="CodeSchema_Class" Bounds="5.6843418860808E-14,275,213.39,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SampleApplicationModule" />
+    <Node Id="(@13 Namespace=Abp.TestBase Type=TestBaseModule)" Category="CodeSchema_Class" Bounds="238.934501908996,94.24985,155.666666666666,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TestBaseModule" UseManualLocation="True" />
+    <Node Id="(@2 Namespace=Abp Type=AbpKernelModule)" Category="CodeSchema_Class" Bounds="89.5995605763384,220,165.603333333333,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AbpKernelModule" />
+    <Node Id="(@2 Namespace=Abp.Modules Type=AbpModuleManager)" Category="CodeSchema_Class" Bounds="572.060404318592,259.25015,180.65,25" CodeSchemaProperty_IsInternal="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AbpModuleManager" UseManualLocation="True" />
+    <Node Id="(@3 Namespace=Abp.NHibernate Type=AbpNHibernateModule)" Category="CodeSchema_Class" Bounds="190.193160285718,480.499975,195.79,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AbpNHibernateModule" UseManualLocation="True" />
+    <Node Id="(@4 Namespace=Abp.WebApi Type=AbpWebApiModule)" Category="CodeSchema_Class" Bounds="28.6835376519248,367.000057408185,175.18,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AbpWebApiModule" UseManualLocation="True" />
+    <Node Id="(@5 Namespace=Abp.WebApi.OData Type=AbpWebApiODataModule)" Category="CodeSchema_Class" Bounds="448.347930369221,477.99995,211.836666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AbpWebApiODataModule" UseManualLocation="True" />
+    <Node Id="(@6 Namespace=Abp.Web.Api.Tests Type=AbpWebApiTestModule)" Category="CodeSchema_Class" Bounds="511.819654449184,398,198.893333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AbpWebApiTestModule" UseManualLocation="True" />
+    <Node Id="(@7 Namespace=Abp.Web Type=AbpWebModule)" Category="CodeSchema_Class" Bounds="146.228728408287,165,155.88,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AbpWebModule" />
+    <Node Id="(@8 Namespace=Abp.EntityFramework.Dependency Type=EntityFrameworkConventionalRegistrar)" Category="CodeSchema_Class" Bounds="484.182436790316,204.25005,284.74,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="EntityFrameworkConventionalRegistrar" UseManualLocation="True" />
+    <Node Id="@9" Category="CodeSchema_Interface" Bounds="243.3901,275,209.813333333334,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IAbpStartupConfiguration" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IAbpStartupConfiguration" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Configuration/Startup/IAbpStartupConfiguration.cs StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" />
+  </Nodes>
+  <Links>
+    <Link Source="(@1 Namespace=Abp.Hangfire Type=AbpHangfireModule)" Target="@9" Category="CodeSchema_Calls" Bounds="191.471930578907,305.884177757035,135.547477352649,117.115822242965" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="(@10 Namespace=Abp.Tests.Localization.Json Type=MyLangModule)" Target="@9" Category="CodeSchema_Calls" Bounds="363.14436326845,174.24995,70.5709805179237,93.564823938727" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="(@10 Namespace=Abp.Tests.Startup Type=MyEventCounterModuleBase)" Target="@9" Category="References" Bounds="353.751135592977,308.716667157047,58.3016264405672,226.783407842953" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="(@11 Namespace=Abp.NHibernate.Tests Type=NHibernateTestModule)" Target="@9" Category="CodeSchema_Calls" Bounds="411.929901065991,301.999496493542,144.827475616626,33.000503506458" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="(@12 Namespace=Abp.TestBase.SampleApplication Type=SampleApplicationModule)" Target="@9" Category="CodeSchema_Calls" Bounds="213.39,287.500044161515,21.0001000000007,8.69203080355874E-06" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="(@13 Namespace=Abp.TestBase Type=TestBaseModule)" Target="@9" Category="CodeSchema_Calls" Bounds="318.948256253111,119.24985,25.6215385071898,146.884124559461" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="(@2 Namespace=Abp Type=AbpKernelModule)" Target="@9" Category="CodeSchema_Calls" Bounds="212.377413518953,245,87.3533024387823,27.3141683137928" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="14" />
+    <Link Source="(@2 Namespace=Abp.Modules Type=AbpModuleManager)" Target="@9" Category="References" Bounds="462.192139319015,276.279490011741,109.868264999577,5.50933549607657" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="(@3 Namespace=Abp.NHibernate Type=AbpNHibernateModule)" Target="@9" Category="CodeSchema_Calls" Bounds="291.750486502519,308.637030417515,50.3534534112864,171.862944582485" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="(@4 Namespace=Abp.WebApi Type=AbpWebApiModule)" Target="@9" Category="CodeSchema_Calls" Bounds="147.798447493092,303.317443138229,160.607093864816,63.682614269956" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="(@5 Namespace=Abp.WebApi.OData Type=AbpWebApiODataModule)" Target="@9" Category="CodeSchema_Calls" Bounds="367.38962948346,306.317683883328,174.19377404482,171.682266116672" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="(@6 Namespace=Abp.Web.Api.Tests Type=AbpWebApiTestModule)" Target="@9" Category="CodeSchema_Calls" Bounds="383.173623238296,303.813117947421,201.368149661174,94.1868820525787" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="(@7 Namespace=Abp.Web Type=AbpWebModule)" Target="@9" Category="CodeSchema_Calls" Bounds="238.274161655042,189.9999,89.1814465365779,79.0311124944458" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="(@8 Namespace=Abp.EntityFramework.Dependency Type=EntityFrameworkConventionalRegistrar)" Target="@9" Category="References" Bounds="406.180974853093,229.25005,171.209717506715,43.5322524378506" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
+    <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
+    <Category Id="CodeSchema_Interface" Label="Interface" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Interface" NavigationActionLabel="Interfaces" />
+    <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
+    <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsAbstract" Label="Is Abstract" Description="Flag to indicate member is 'Abstract' does not provide a full implementation" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsFinal" Label="Is Final" Description="Flag to indicate the member is 'Final' and cannot be derived from" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsInternal" Label="Is Internal" Description="Flag to indicate the method is 'Internal'" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
+    <Property Id="CommonLabel" DataType="System.String" />
+    <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="DelayedChildNodesState" Label="Delayed Child Nodes State" Description="Unspecified if the delayed child nodes state is not specified. NotFetched if the group contains child nodes that are not fetched into the graph yet. Fetched if the group has all its delayed child nodes already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="DelayedCrossGroupLinksState" Label="Delayed Cross-Group Links State" Description="Unspecified if the delayed cross-group links state is not specified. NotFetched if delayed cross-group links on this node are not fetched into the graph yet. Fetched if all delayed cross-group links have already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsSourceVirtualized" Label="Link Source Virtualized" Description="If true, the link source end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="IsTargetVirtualized" Label="Link Target Virtualized" Description="If true, the link target end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="Language" Label="Language" Description="Language" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="SourceLocation" Label="Start Line Number" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />
+    <Property Id="Weight" Label="Weight" Description="Weight" DataType="System.Double" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
+    <Name Id="Namespace" Label="Namespace" ValueType="System.String" />
+    <Name Id="Type" Label="Type" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(58a5158c-c78b-4451-bfd8-ffc31d48d713.OutputPathUri)" />
+    <Alias n="2" Uri="Assembly=$(2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri)" />
+    <Alias n="3" Uri="Assembly=$(47853dca-c058-42f4-b020-e9ac659c9204.OutputPathUri)" />
+    <Alias n="4" Uri="Assembly=$(71962f97-5e4b-465c-9a21-2153d31992cf.OutputPathUri)" />
+    <Alias n="5" Uri="Assembly=$(99e64448-0f7c-4e5b-9373-289ec4b2f256.OutputPathUri)" />
+    <Alias n="6" Uri="Assembly=$(662a3c76-dc6e-425c-b389-23b1040ad2f8.OutputPathUri)" />
+    <Alias n="7" Uri="Assembly=$(d37c09d8-2f18-4f0b-a4d3-7a12c124e070.OutputPathUri)" />
+    <Alias n="8" Uri="Assembly=$(948f0caf-3382-4e03-9a0f-0ddb206fe40d.OutputPathUri)" />
+    <Alias n="9" Id="(@2 Namespace=Abp.Configuration.Startup Type=IAbpStartupConfiguration)" />
+    <Alias n="10" Uri="Assembly=$(d1e31e85-0f7e-43bc-91e2-f9e544ecebd5.OutputPathUri)" />
+    <Alias n="11" Uri="Assembly=$(0cf3083b-364d-42c9-b6f2-552789fb6ed5.OutputPathUri)" />
+    <Alias n="12" Uri="Assembly=$(81d64020-5e36-4344-acec-9b218b5246d0.OutputPathUri)" />
+    <Alias n="13" Uri="Assembly=$(f554b0ef-acf4-4f72-b711-ef36559dce43.OutputPathUri)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
+      <Condition Expression="HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFBCFFBE" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Assembly" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Assembly')" />
+      <Setter Property="Background" Value="#FF094167" />
+      <Setter Property="Stroke" Value="#FF094167" />
+      <Setter Property="Icon" Value="CodeSchema_Assembly" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Namespace" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+      <Setter Property="Background" Value="#FF0E619A" />
+      <Setter Property="Stroke" Value="#FF0E619A" />
+      <Setter Property="Icon" Value="CodeSchema_Namespace" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Interface" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Interface')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Interface" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Struct" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Struct')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Struct" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enumeration" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Enum')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Enum" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Delegate" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Delegate')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Delegate" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Class" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Type')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Class" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Property')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Property" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Method" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Method') Or HasCategory('CodeSchema_CallStackUnresolvedMethod')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Method" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Event" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Event')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Event" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field" ValueLabel="Has category">
+      <Condition Expression="HasCategory('CodeSchema_Field')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Field" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Out Parameter" ValueLabel="True">
+      <Condition Expression="CodeSchemaProperty_IsOut = 'True'" />
+      <Setter Property="Icon" Value="CodeSchema_OutParameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Parameter" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_Parameter')" />
+      <Setter Property="Icon" Value="CodeSchema_Parameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Local Variable" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_LocalExpression')" />
+      <Setter Property="Icon" Value="CodeSchema_LocalExpression" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Externals" ValueLabel="Has category">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FF424242" />
+      <Setter Property="Stroke" Value="#FF424242" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('InheritsFrom') And Target.HasCategory('CodeSchema_Class')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('Implements') And Target.HasCategory('CodeSchema_Interface')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Field Read" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Target.HasCategory('CodeSchema_Field') And HasCategory('CodeSchema_FieldRead')" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Comment Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Source.HasCategory('Comment')" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Cursor Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCursorLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Disabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="DisabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Enabled Breakpoint Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="EnabledBreakpointCount" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Instruction Pointer Location Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsInstructionPointerLocation" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Current Callstack Changed" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="IsCurrentCallstackFrame" />
+      <Setter Property="IndicatorWest" Value="WestIndicator" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="0cf3083b-364d-42c9-b6f2-552789fb6ed5.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Tests/Abp.NHibernate.Tests/bin/Debug/Abp.NHibernate.Tests.dll" />
+    <Path Id="2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp/bin/Debug/Abp.dll" />
+    <Path Id="47853dca-c058-42f4-b020-e9ac659c9204.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp.NHibernate/bin/Debug/Abp.NHibernate.dll" />
+    <Path Id="58a5158c-c78b-4451-bfd8-ffc31d48d713.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp.HangFire/bin/Debug/Abp.HangFire.dll" />
+    <Path Id="662a3c76-dc6e-425c-b389-23b1040ad2f8.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Tests/Abp.Web.Api.Tests/bin/Debug/Abp.Web.Api.Tests.dll" />
+    <Path Id="71962f97-5e4b-465c-9a21-2153d31992cf.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp.Web.Api/bin/Debug/Abp.Web.Api.dll" />
+    <Path Id="81d64020-5e36-4344-acec-9b218b5246d0.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/TestBase/Tests/Abp.TestBase.SampleApplication/bin/Debug/Abp.TestBase.SampleApplication.dll" />
+    <Path Id="948f0caf-3382-4e03-9a0f-0ddb206fe40d.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp.EntityFramework/bin/Debug/Abp.EntityFramework.dll" />
+    <Path Id="99e64448-0f7c-4e5b-9373-289ec4b2f256.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp.Web.Api.OData/bin/Debug/Abp.Web.Api.OData.dll" />
+    <Path Id="d1e31e85-0f7e-43bc-91e2-f9e544ecebd5.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Tests/Abp.Tests/bin/Debug/Abp.Tests.dll" />
+    <Path Id="d37c09d8-2f18-4f0b-a4d3-7a12c124e070.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp.Web/bin/Debug/Abp.Web.dll" />
+    <Path Id="f554b0ef-acf4-4f72-b711-ef36559dce43.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/TestBase/Abp.TestBase/bin/Debug/Abp.TestBase.dll" />
+  </Paths>
+</DirectedGraph>
