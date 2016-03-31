@@ -77,11 +77,19 @@ namespace CSDemo
                 yield return items[i];
         }
 
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            for (int i = count - 1; i >= 0; --i)
+                yield return items[i];
+        }
+
         //public IEnumerator<T> GetEnumerator()
         //{
         //    for (int i = count - 1; i >= 0; --i)
         //        yield return items[i];
         //}
+
+
 
 
     } 
