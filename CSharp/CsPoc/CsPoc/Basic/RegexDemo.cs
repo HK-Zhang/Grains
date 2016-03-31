@@ -15,7 +15,9 @@ namespace CSDemo
             //FooReplace();
             //Foo();
             //Foo2();
-            Foo3();
+            //Foo3();
+            //Foo1();
+            FooSplit();
         }
 
 
@@ -23,6 +25,39 @@ namespace CSDemo
         {
             Match m = Regex.Match("abracadabra", "(a|b|r)+");
             Console.WriteLine("Match=" + m.ToString()); //Match=abra
+        }
+
+        private void Foo1()
+        {
+            bool t = Regex.IsMatch("abracadabra", "(a|b|r)+");
+            Console.WriteLine(t);
+        }
+
+        private void FooSplit() 
+        {
+
+            string str = "ajaajsbbbjsccsc";
+            string[] sArray = Regex.Split(str, "js", RegexOptions.IgnoreCase);
+            foreach (string i in sArray)
+                Console.WriteLine(i);
+
+            sArray = Regex.Split(str, "js|j|s", RegexOptions.IgnoreCase);
+            foreach (string i in sArray)
+                Console.WriteLine(i);
+
+            sArray = Regex.Split(str, "j|s", RegexOptions.IgnorePatternWhitespace);
+            foreach (string i in sArray)
+                Console.WriteLine(i);
+
+            IEnumerable<string> se = Regex.Split(str, "j|s|js", RegexOptions.IgnoreCase).Where(x => x.Length > 0);
+            foreach (string i in se)
+                Console.WriteLine(i);
+
+            //string[] s =Regex.Split("abracadabra", "(a|b|r)+");
+            //foreach (string t in s)
+            //{
+            //    Console.WriteLine(t);
+            //}
         }
 
         private void FooReplace()
