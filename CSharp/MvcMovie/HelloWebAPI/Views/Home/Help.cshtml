@@ -1,0 +1,32 @@
+﻿@model HelloWebAPI.Models.ApiModel
+@{
+    ViewBag.Title = "API Help";
+}
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript">
+        $(function () { $(".accordion").accordion(); });
+    </script>
+}
+<div id="body" class="content-wrapper">
+    <h2>API Help</h2>
+    @foreach (var group in Model.GetApis())
+    {
+        <h3>@group.Key</h3>
+        <div class="accordion">
+            @foreach (var api in group)
+            {
+                <h4><a href="#">@api.HttpMethod @api.RelativePath</a></h4>
+                <div><p>@api.Documentation</p> 
+                    <ul>
+                        @foreach (var param in api.ParameterDescriptions)
+                        {
+                            <li><em>@param.Name</em> (@param.Source): @param.Documentation</li>
+
+                        }
+                    </ul> </div>
+            }
+        </div>
+    }
+</div>
