@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="FoursquareApp">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>Explore Foursquare</title>
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/amelia-bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/css/toaster.css" rel="stylesheet" />
+    <link href="content/css/loading-bar.min.css" rel="stylesheet" />
+    <link href="content/css/site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="favicon.ico" rel="shortcut icon" />
+</head>
+<body>
+    <div id="page">
+        <header class="container" data-ng-controller="navigationController">
+            <div id="menu" class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+                    <div id="logo">
+                        <a href='#/'>
+                            <h4>Explore Foursquare</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-collapse collapse" data-collapse="!navbarExpanded">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li data-ng-class="{'active':isActive('/explore')}"><a href="#/explore">Explore</a></li>
+                        <li data-ng-class="{'active':isActive('/places')}"><a href="#/places">My Places</a></li>
+                        <li data-ng-class="{'active':isActive('/about')}"><a href="#/about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="container" id="body">
+            <div data-ng-view=""></div>
+        </section>
+
+        <hr />
+
+        <footer class="container">
+            Created by Henry Zhang. Webchat: <a href="#" target="_blank">@@@@</a>
+
+            Henry Zhang Blog: <a href="http://1zhk.cnblogs.com" target="_blank">ZHK's Blog</a>
+        </footer>
+    </div>
+</body>
+</html>
+<!-- 3rd party libraries -->
+<script type="text/javascript" src="scripts/angularjs/1.5.3/angular.min.js"></script>
+<script type="text/javascript" src="scripts/angularjs/1.5.3/angular-route.min.js"></script>
+<script type="text/javascript" src="scripts/angularjs/1.5.3/angular-resource.min.js"></script>
+<script type="text/javascript" src="scripts/angularjs/1.5.3/angular-animate.min.js"></script>
+<script src="scripts/angular-ui-bootstrap/0.9.0/ui-bootstrap-0.9.0.min.js"></script>
+<script src="scripts/angular-ui-bootstrap/0.9.0/ui-bootstrap-tpls-0.9.0.min.js"></script>
+<script type="text/javascript" src="scripts/toaster.js"></script>
+<script type="text/javascript" src="scripts/loading-bar.min.js"></script>
+
+
+
+    <!-- Load app main script -->
+<script src="app/app.js"></script>
+<!-- Load services -->
+<script src="app/services/placesExplorerService.js"></script>
+<script src="app/services/placesPhotosService.js"></script>
+<script src="app/services/placesDataService.js"></script>
+<!-- Load controllers -->
+<script src="app/controllers/placesPhotosController.js"></script>
+<script src="app/controllers/placesExplorerController.js"></script>
+<script src="app/controllers/userContextController.js"></script>
+<script src="app/controllers/myPlacesController.js"></script>
+<script src="app/controllers/navigationController.js"></script>
+<script src="app/controllers/aboutController.js"></script>
+<!-- Load custom filters -->
+<script src="app/filters/placeNameCategoryFilter.js"></script>
+<!-- Load custom directives -->
+<script src="app/directives/fsUnique.js"></script>
