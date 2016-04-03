@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+    <title>Iterating with the ng-repeat Directive</title>
+</head>
+<body>
+    <div class="container" data-ng-init="names = ['Terry','William','Robert','Henry']">
+        <h3>Looping with the ng-repeat Directive</h3>
+        <ul>
+            <li data-ng-repeat="name in names">{{name}}</li>
+        </ul>
+    </div>
+    <script src="angular.min.js"></script>
+</body>
+</html>

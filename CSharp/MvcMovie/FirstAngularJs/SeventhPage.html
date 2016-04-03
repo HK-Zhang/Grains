@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="demoApp">
+<head>
+    <title>Using Controller</title>
+</head>
+<body>
+    <div data-ng-controller="SimpleController">
+        Names:
+        <br />
+        <input type="text" data-ng-model="name" />
+        <br />
+        <ul>
+            <li data-ng-repeat="cust in customers | filter:name | orderBy:'city'">{{cust.name | uppercase}} - {{cust.city | lowercase}}</li>
+        </ul>
+    </div>
+
+    <script src="angular.min.js"></script>
+
+    <script>
+        var demoApp = angular.module("demoApp", []);
+
+        var controllers = {};
+        controllers.SimpleController = function ($scope) {
+            $scope.customers = [
+                { name: 'Terry Wu', city: 'Phoenix' },
+                { name: 'Terry Song', city: 'NewYork' },
+                { name: 'Terry Dow', city: 'NewYork' },
+                { name: 'Henry Dow', city: 'NewYork' }
+            ];
+        }
+
+        demoApp.controller(controllers);
+    </script>
+</body>
+
+</html>

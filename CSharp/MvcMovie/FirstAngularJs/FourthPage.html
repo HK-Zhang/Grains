@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+    <title>Using Filter</title>
+</head>
+<body>
+    <div class="container" data-ng-init="customers = [{name:'Terry Wu',city:'Phoenix'},
+         {name:'Terry Song',city:'NewYork'},{name:'Terry Dow',city:'NewYork'},
+         {name:'Henry Dow',city:'NewYork'}]">
+        Names:
+        <br />
+        <input type="text" data-ng-model="name" />
+        <br />
+        <ul>
+            <li data-ng-repeat="cust in customers | filter:name | orderBy:'city'">{{cust.name | uppercase}} - {{cust.city | lowercase}}</li>
+        </ul>
+    </div>
+    <script src="angular.min.js"></script>
+</body>
+</html>
