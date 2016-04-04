@@ -1,0 +1,6 @@
+F:\VS\MvcMovie\AngularWebApiOauth\bin\AngularWebApiOauth.dll.config
+F:\VS\MvcMovie\AngularWebApiOauth\bin\AngularWebApiOauth.dll
+F:\VS\MvcMovie\AngularWebApiOauth\bin\AngularWebApiOauth.pdb
+F:\VS\MvcMovie\AngularWebApiOauth\obj\Debug\AngularWebApiOauth.csprojResolveAssemblyReference.cache
+F:\VS\MvcMovie\AngularWebApiOauth\obj\Debug\AngularWebApiOauth.dll
+F:\VS\MvcMovie\AngularWebApiOauth\obj\Debug\AngularWebApiOauth.pdb
