@@ -1,41 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1 @2 Type=IValueValidator)" Category="CodeSchema_Interface" Bounds="252.820965206796,18.3159406258137,148.803333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IValueValidator" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IValueValidator" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Validation/IValueValidator.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@10" Category="CodeSchema_Class" Bounds="240.644285766037,85.9627730754723,171.803333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ValueValidatorBase" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ValueValidatorBase" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Validation/ValueValidatorBase.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@3" Category="CodeSchema_Class" Bounds="558.143470188885,140.9473893461,213.736666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AlwaysValidValueValidator" />
-    <Node Id="@4" Category="CodeSchema_Class" Bounds="336.046803522217,140.962873075472,192.096666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="BooleanValueValidator" />
-    <Node Id="@7" Category="CodeSchema_Class" Bounds="-97.7465298111156,140.962798075472,194.273333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="NumericValueValidator" />
-    <Node Id="@8" Category="CodeSchema_Class" Bounds="126.526803522217,140.962873075472,179.52,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="StringValueValidator" />
-    <Node Id="@9" Category="CodeSchema_Class" Bounds="246.607473498762,223.962673075472,164.626666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ValidatorAttribute" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ValidatorAttribute" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Validation/ValidatorAttribute.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@10" Category="CodeSchema_Interface" Bounds="142.058765268302,-87.4287877252438,148.803333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IValueValidator" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IValueValidator" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Validation/IValueValidator.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@11" Category="CodeSchema_Class" Bounds="332.297619531138,77.5715122747562,212.14,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SingleLineStringInputType" />
+    <Node Id="@3" Category="CodeSchema_Class" Bounds="126.994186197804,77.5715122747563,175.303333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="CheckboxInputType" />
+    <Node Id="@4" Category="CodeSchema_Class" Bounds="-85.6375470295589,77.5457549527245,182.72,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="ComboboxInputType" />
+    <Node Id="@5" Category="CodeSchema_Class" Bounds="190.289173676712,132.571612274756,104.073333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Feature" />
+    <Node Id="@6" Category="CodeSchema_Class" Bounds="123.510641907479,242.571812274756,232.06,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="FeatureDefinitionContextBase" />
+    <Node Id="@7" Category="CodeSchema_Interface" Bounds="161.333485685182,187.571712274756,209.06,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IFeatureDefinitionContext" />
+    <Node Id="@8" Category="CodeSchema_Interface" Bounds="687.086836543328,74.5713122747562,122.676666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IInputType" UseManualLocation="True" />
+    <Node Id="@9" Category="CodeSchema_Class" Bounds="91.791954369124,22.5714122747562,145.676666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="InputTypeBase" UseManualLocation="True" />
   </Nodes>
   <Links>
-    <Link Source="@10" Target="(@1 @2 Type=IValueValidator)" Category="Implements" Bounds="326.670991443448,52.8154653649523,0.331576525196681,33.14730771052" Weight="1" />
-    <Link Source="@10" Target="@9" Category="References" Bounds="326.761066211716,110.962773075472,1.7897678497726,104.001232393475" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+    <Link Source="@11" Target="@10" Category="References" Bounds="240.496395609264,-57.0590797443219,181.087235598601,134.630592019078" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@11" Target="@9" Category="InheritsFrom" Bounds="236.14912436285,49.4301296327591,140.042827943895,28.1413826419971" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@3" Target="@10" Category="InheritsFrom" Bounds="412.868603016388,112.486101581225,175.197621440673,28.4612877648753" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@3" Target="@10" Category="References" Bounds="214.783320725931,-53.4293319213741,1.44067247208596,131.00084419613" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@3" Target="@9" Category="InheritsFrom" Bounds="182.388915078864,54.5998586374285,20.8897845527002,22.9716536373278" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@3" Target="@9" Category="CodeSchema_AttributeUse" Bounds="388.265012337426,165.9473893461,226.139996027382,55.8571223795117" Weight="1" />
-    <Link Source="@4" Target="@10" Category="InheritsFrom" Bounds="358.95917469507,115.352817991504,49.1475547705742,25.6100550839682" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@4" Target="@10" Category="References" Bounds="21.6899149454601,-56.880988032473,171.716312563343,134.426742985198" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@4" Target="@9" Category="InheritsFrom" Bounds="41.7695208389807,50.6770944924815,77.7473180787102,26.8944177822747" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@4" Target="@9" Category="CodeSchema_AttributeUse" Bounds="351.471677930194,165.962873075472,65.0851187691978,52.3584872282821" Weight="1" />
-    <Link Source="@7" Target="@10" Category="InheritsFrom" Bounds="73.7436975078312,112.537770207662,169.080162688956,28.4250278678097" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@5" Target="@3" Category="CodeSchema_Calls" Bounds="224.982697273067,110.610808999165,11.0522482630961,21.9608032755908" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@5" Target="@8" Category="References" Bounds="294.362507010045,95.1255610548577,383.782855563833,43.9825138240872" IsSourceVirtualized="True" Weight="6">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@7" Target="@9" Category="CodeSchema_AttributeUse" Bounds="49.0183245450722,165.962798075472,221.546871855606,55.8016729428104" Weight="1" />
-    <Link Source="@8" Target="@10" Category="InheritsFrom" Bounds="241.345655440325,115.203314308747,51.6403974888916,25.7595587667252" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="11">
+    <Link Source="@6" Target="@5" Category="References" Bounds="151.199264526367,160.595138549805,54.2231292724609,81.9766693115234" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
       <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@8" Target="@9" Category="CodeSchema_AttributeUse" Bounds="233.249796702604,165.962873075472,71.4627086839,52.6607450141283" Weight="1" />
+    <Link Source="@6" Target="@7" Category="Implements" Bounds="245.523095525224,221.140868308654,10.2567702609343,21.4309439661021" Weight="1" />
+    <Link Source="@6" Target="@8" Category="References" Bounds="277.403961359593,102.392748371312,424.611574165945,140.179063903444" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@7" Target="@5" Category="CodeSchema_ReturnTypeLink" Bounds="251.216269555837,165.84575890784,9.29776100521721,21.7259533669165" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@7" Target="@8" Category="References" Bounds="319.244014005379,101.623312865064,367.037677501168,85.9483994096921" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@8" Target="@10" Category="References" Bounds="266.116692431729,-59.806884726134,441.261840904146,134.37819700089" IsSourceVirtualized="True" Weight="2">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@9" Target="@10" Category="References" Bounds="170.5200661111,-54.2872836673955,36.2144550301226,76.8586959421517" IsSourceVirtualized="True" Weight="5">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@9" Target="@8" Category="Implements" Bounds="237.468621035791,41.5480117256322,440.155697011572,39.2153503637885" Weight="1" />
   </Links>
   <Categories>
-    <Category Id="CodeSchema_AttributeUse" Label="Uses Attribute" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Used by" OutgoingActionLabel="Uses Attribute" />
     <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
     <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
     <Category Id="CodeSchema_Interface" Label="Interface" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Interface" NavigationActionLabel="Interfaces" />
+    <Category Id="CodeSchema_ReturnTypeLink" Label="Return" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Return types" OutgoingActionLabel="Return types" />
     <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
     <Category Id="Implements" Label="Implements" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
     <Category Id="InheritsFrom" Label="Inherits From" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Inherited By" OutgoingActionLabel="Inherits From" />
@@ -80,13 +93,16 @@
   </QualifiedNames>
   <IdentifierAliases>
     <Alias n="1" Uri="Assembly=$(2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri)" />
-    <Alias n="2" Id="Namespace=Abp.Runtime.Validation" />
-    <Alias n="3" Id="(@1 @2 Type=AlwaysValidValueValidator)" />
-    <Alias n="4" Id="(@1 @2 Type=BooleanValueValidator)" />
-    <Alias n="7" Id="(@1 @2 Type=NumericValueValidator)" />
-    <Alias n="8" Id="(@1 @2 Type=StringValueValidator)" />
-    <Alias n="9" Id="(@1 @2 Type=ValidatorAttribute)" />
-    <Alias n="10" Id="(@1 @2 Type=ValueValidatorBase)" />
+    <Alias n="2" Id="Namespace=Abp.UI.Inputs" />
+    <Alias n="3" Id="(@1 @2 Type=CheckboxInputType)" />
+    <Alias n="4" Id="(@1 @2 Type=ComboboxInputType)" />
+    <Alias n="5" Id="(@1 Namespace=Abp.Application.Features Type=Feature)" />
+    <Alias n="6" Id="(@1 Namespace=Abp.Application.Features Type=FeatureDefinitionContextBase)" />
+    <Alias n="7" Id="(@1 Namespace=Abp.Application.Features Type=IFeatureDefinitionContext)" />
+    <Alias n="8" Id="(@1 @2 Type=IInputType)" />
+    <Alias n="9" Id="(@1 @2 Type=InputTypeBase)" />
+    <Alias n="10" Id="(@1 Namespace=Abp.Runtime.Validation Type=IValueValidator)" />
+    <Alias n="11" Id="(@1 @2 Type=SingleLineStringInputType)" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
@@ -216,7 +232,6 @@
     </Style>
   </Styles>
   <Paths>
-    <Path Id="2c221d3b-5f54-4c5b-8082-318636415132.OutputPath" Value="F:\VS\aspnetboilerplate-master\src\Abp\bin\Debug\Abp.dll" />
     <Path Id="2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp/bin/Debug/Abp.dll" />
   </Paths>
 </DirectedGraph>

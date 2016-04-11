@@ -1,40 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1 @2 Type=IValueValidator)" Category="CodeSchema_Interface" Bounds="252.820965206796,18.3159406258137,148.803333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IValueValidator" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IValueValidator" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Validation/IValueValidator.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@10" Category="CodeSchema_Class" Bounds="240.644285766037,85.9627730754723,171.803333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ValueValidatorBase" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ValueValidatorBase" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Validation/ValueValidatorBase.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@3" Category="CodeSchema_Class" Bounds="558.143470188885,140.9473893461,213.736666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AlwaysValidValueValidator" />
-    <Node Id="@4" Category="CodeSchema_Class" Bounds="336.046803522217,140.962873075472,192.096666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="BooleanValueValidator" />
-    <Node Id="@7" Category="CodeSchema_Class" Bounds="-97.7465298111156,140.962798075472,194.273333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="NumericValueValidator" />
-    <Node Id="@8" Category="CodeSchema_Class" Bounds="126.526803522217,140.962873075472,179.52,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="StringValueValidator" />
-    <Node Id="@9" Category="CodeSchema_Class" Bounds="246.607473498762,223.962673075472,164.626666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ValidatorAttribute" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ValidatorAttribute" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Validation/ValidatorAttribute.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@1 Namespace=Abp Type=AbpRedisCacheConfig)" Category="CodeSchema_Class" Bounds="152.805,-0.16673333333334,188.793333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AbpRedisCacheConfig" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AbpRedisCacheConfig" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp.RedisCache/AbpRedisCacheConfig.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" />
+    <Node Id="(@1 Namespace=Abp.RedisCache Type=AbpRedisCacheModule)" Category="CodeSchema_Class" Bounds="373,109.833466666667,195.14,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AbpRedisCacheModule" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AbpRedisCacheModule" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp.RedisCache/RedisCache/AbpRedisCacheModule.cs StartLineNumber=5 StartCharacterOffset=4 EndLineNumber=5 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@1 Namespace=Abp.RedisCache.RedisImpl Type=SerializeUtil)" Category="CodeSchema_Class" Bounds="372.171666666667,-0.16673333333334,128.06,25" CodeSchemaProperty_IsPublic="True" CommonLabel="SerializeUtil" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="SerializeUtil" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp.RedisCache/RedisCache/RedisImpl/SerializeUtil.cs StartLineNumber=6 StartCharacterOffset=4 EndLineNumber=6 EndCharacterOffset=4)" />
+    <Node Id="(@5 Namespace=Abp.Dependency Type=ISingletonDependency)" Category="CodeSchema_Interface" Bounds="794.563333333333,0,191.276666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="ISingletonDependency" />
+    <Node Id="(@5 Namespace=Abp.Runtime.Caching Type=CacheBase)" Category="CodeSchema_Class" Bounds="2.8421709430404E-14,0,122.403333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="CacheBase" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CacheBase" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Caching/CacheBase.cs StartLineNumber=0 StartCharacterOffset=0 EndLineNumber=0 EndCharacterOffset=0)" />
+    <Node Id="(@5 Namespace=Abp.Runtime.Caching Type=CacheManagerBase)" Category="CodeSchema_Class" Bounds="146.273333333333,55,173.856666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="CacheManagerBase" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="CacheManagerBase" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Caching/CacheManagerBase.cs StartLineNumber=0 StartCharacterOffset=0 EndLineNumber=0 EndCharacterOffset=0)" />
+    <Node Id="@2" Category="CodeSchema_Class" Bounds="350.845,54.8333666666667,150.713333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AbpRedisCache" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AbpRedisCache" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp.RedisCache/RedisCache/AbpRedisCache.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" />
+    <Node Id="@3" Category="CodeSchema_Class" Bounds="132.118333333333,110,202.166666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AbpRedisCacheManager" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AbpRedisCacheManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp.RedisCache/RedisCache/AbpRedisCacheManager.cs StartLineNumber=6 StartCharacterOffset=4 EndLineNumber=6 EndCharacterOffset=4)" />
+    <Node Id="@4" Category="CodeSchema_Class" Bounds="532.245,54.8333666666667,229.913333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="AbpRedisConnectionProvider" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AbpRedisConnectionProvider" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp.RedisCache/RedisCache/Configuration/RedisConnectionProvider.cs StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="@6" Category="CodeSchema_Interface" Bounds="530.481666666666,-0.16673333333333,233.44,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IAbpRedisConnectionProvider" />
   </Nodes>
   <Links>
-    <Link Source="@10" Target="(@1 @2 Type=IValueValidator)" Category="Implements" Bounds="326.670991443448,52.8154653649523,0.331576525196681,33.14730771052" Weight="1" />
-    <Link Source="@10" Target="@9" Category="References" Bounds="326.761066211716,110.962773075472,1.7897678497726,104.001232393475" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+    <Link Source="@2" Target="(@1 Namespace=Abp Type=AbpRedisCacheConfig)" Category="References" Bounds="296.486459120344,27.4766661830436,89.0334633313126,27.3567004836231" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@3" Target="@10" Category="InheritsFrom" Bounds="412.868603016388,112.486101581225,175.197621440673,28.4612877648753" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@2" Target="(@1 Namespace=Abp.RedisCache.RedisImpl Type=SerializeUtil)" Category="CodeSchema_Calls" Bounds="428.47438980717,33.6880963727545,3.84458760873389,21.1452702939121" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@2" Target="(@5 Namespace=Abp.Runtime.Caching Type=CacheBase)" Category="InheritsFrom" Bounds="131.517097732141,23.0632940972082,220.849846627291,33.1779800092493" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@3" Target="@9" Category="CodeSchema_AttributeUse" Bounds="388.265012337426,165.9473893461,226.139996027382,55.8571223795117" Weight="1" />
-    <Link Source="@4" Target="@10" Category="InheritsFrom" Bounds="358.95917469507,115.352817991504,49.1475547705742,25.6100550839682" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@2" Target="@6" Category="References" Bounds="476.428848071791,27.0067912904027,111.812035944559,27.826575376264" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@4" Target="@9" Category="CodeSchema_AttributeUse" Bounds="351.471677930194,165.962873075472,65.0851187691978,52.3584872282821" Weight="1" />
-    <Link Source="@7" Target="@10" Category="InheritsFrom" Bounds="73.7436975078312,112.537770207662,169.080162688956,28.4250278678097" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
+    <Link Source="@3" Target="(@5 Namespace=Abp.Runtime.Caching Type=CacheManagerBase)" Category="InheritsFrom" Bounds="233.201666666667,89.5,0,20.5001" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_FieldRead" />
     </Link>
-    <Link Source="@7" Target="@9" Category="CodeSchema_AttributeUse" Bounds="49.0183245450722,165.962798075472,221.546871855606,55.8016729428104" Weight="1" />
-    <Link Source="@8" Target="@10" Category="InheritsFrom" Bounds="241.345655440325,115.203314308747,51.6403974888916,25.7595587667252" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="11">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@8" Target="@9" Category="CodeSchema_AttributeUse" Bounds="233.249796702604,165.962873075472,71.4627086839,52.6607450141283" Weight="1" />
+    <Link Source="@3" Target="@2" Category="References" Bounds="276.932731644232,82.3068465307104,96.8844373524543,27.6932534692896" IsSourceVirtualized="True" Weight="2" />
+    <Link Source="@4" Target="(@5 Namespace=Abp.Dependency Type=ISingletonDependency)" Category="Implements" Bounds="702.596769769947,27.0911138768714,122.942796288639,27.7422527897953" Weight="1" />
+    <Link Source="@4" Target="@6" Category="Implements" Bounds="647.201666666667,34.3332666666667,0,20.5001" Weight="1" />
   </Links>
   <Categories>
-    <Category Id="CodeSchema_AttributeUse" Label="Uses Attribute" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Used by" OutgoingActionLabel="Uses Attribute" />
     <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
     <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
+    <Category Id="CodeSchema_FieldRead" Label="Field Read" BasedOn="CodeSchema_FieldReference" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Read By" OutgoingActionLabel="Reads Fields" />
+    <Category Id="CodeSchema_FieldReference" Label="Field Reference" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References Fields" />
     <Category Id="CodeSchema_Interface" Label="Interface" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Interface" NavigationActionLabel="Interfaces" />
     <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
     <Category Id="Implements" Label="Implements" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
@@ -79,14 +80,12 @@
     <Name Id="Type" Label="Type" ValueType="System.Object" />
   </QualifiedNames>
   <IdentifierAliases>
-    <Alias n="1" Uri="Assembly=$(2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri)" />
-    <Alias n="2" Id="Namespace=Abp.Runtime.Validation" />
-    <Alias n="3" Id="(@1 @2 Type=AlwaysValidValueValidator)" />
-    <Alias n="4" Id="(@1 @2 Type=BooleanValueValidator)" />
-    <Alias n="7" Id="(@1 @2 Type=NumericValueValidator)" />
-    <Alias n="8" Id="(@1 @2 Type=StringValueValidator)" />
-    <Alias n="9" Id="(@1 @2 Type=ValidatorAttribute)" />
-    <Alias n="10" Id="(@1 @2 Type=ValueValidatorBase)" />
+    <Alias n="1" Uri="Assembly=$(f4a8466e-4e68-4d6f-81d4-7f0892b9b5e0.OutputPathUri)" />
+    <Alias n="2" Id="(@1 Namespace=Abp.RedisCache Type=AbpRedisCache)" />
+    <Alias n="3" Id="(@1 Namespace=Abp.RedisCache Type=AbpRedisCacheManager)" />
+    <Alias n="4" Id="(@1 Namespace=Abp.RedisCache.Configuration Type=AbpRedisConnectionProvider)" />
+    <Alias n="5" Uri="Assembly=$(2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri)" />
+    <Alias n="6" Id="(@1 Namespace=Abp.RedisCache.Configuration Type=IAbpRedisConnectionProvider)" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
@@ -216,7 +215,7 @@
     </Style>
   </Styles>
   <Paths>
-    <Path Id="2c221d3b-5f54-4c5b-8082-318636415132.OutputPath" Value="F:\VS\aspnetboilerplate-master\src\Abp\bin\Debug\Abp.dll" />
     <Path Id="2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp/bin/Debug/Abp.dll" />
+    <Path Id="f4a8466e-4e68-4d6f-81d4-7f0892b9b5e0.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp.RedisCache/bin/Debug/Abp.RedisCache.dll" />
   </Paths>
 </DirectedGraph>

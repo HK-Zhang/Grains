@@ -1,44 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DirectedGraph DataVirtualized="True" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+<DirectedGraph DataVirtualized="True" GraphDirection="BottomToTop" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1 @2 Type=IValueValidator)" Category="CodeSchema_Interface" Bounds="252.820965206796,18.3159406258137,148.803333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IValueValidator" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IValueValidator" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Validation/IValueValidator.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@10" Category="CodeSchema_Class" Bounds="240.644285766037,85.9627730754723,171.803333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ValueValidatorBase" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ValueValidatorBase" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Validation/ValueValidatorBase.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@3" Category="CodeSchema_Class" Bounds="558.143470188885,140.9473893461,213.736666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AlwaysValidValueValidator" />
-    <Node Id="@4" Category="CodeSchema_Class" Bounds="336.046803522217,140.962873075472,192.096666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="BooleanValueValidator" />
-    <Node Id="@7" Category="CodeSchema_Class" Bounds="-97.7465298111156,140.962798075472,194.273333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="NumericValueValidator" />
-    <Node Id="@8" Category="CodeSchema_Class" Bounds="126.526803522217,140.962873075472,179.52,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="StringValueValidator" />
-    <Node Id="@9" Category="CodeSchema_Class" Bounds="246.607473498762,223.962673075472,164.626666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ValidatorAttribute" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ValidatorAttribute" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Runtime/Validation/ValidatorAttribute.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@1 @3 Type=MenuDefinition)" Category="CodeSchema_Class" Bounds="438.18,0,150.896666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="MenuDefinition" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="MenuDefinition" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Application/Navigation/MenuDefinition.cs StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" />
+    <Node Id="(@1 Namespace=Abp.Configuration.Startup Type=NavigationConfiguration)" Category="CodeSchema_Class" Bounds="-2.8421709430404E-14,110,203.256666666667,25" CodeSchemaProperty_IsInternal="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="NavigationConfiguration" />
+    <Node Id="@2" Category="CodeSchema_Interface" Bounds="84.2366666666667,55,206.783333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="INavigationConfiguration" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="INavigationConfiguration" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Configuration/Startup/INavigationConfiguration.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" />
+    <Node Id="@4" Category="CodeSchema_Interface" Bounds="352.198333333333,55,178.86,25" CodeSchemaProperty_IsPublic="True" CommonLabel="INavigationManager" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="INavigationManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Application/Navigation/INavigationManager.cs StartLineNumber=7 StartCharacterOffset=4 EndLineNumber=7 EndCharacterOffset=4)" />
+    <Node Id="@5" Category="CodeSchema_Class" Bounds="233.961666666667,110,175.333333333333,25" CodeSchemaProperty_IsInternal="True" CommonLabel="NavigationManager" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="NavigationManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Application/Navigation/NavigationManager.cs StartLineNumber=7 StartCharacterOffset=4 EndLineNumber=7 EndCharacterOffset=4)" />
+    <Node Id="@6" Category="CodeSchema_Class" Bounds="235.628333333333,0,172,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="NavigationProvider" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="NavigationProvider" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Application/Navigation/NavigationProvider.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" />
   </Nodes>
   <Links>
-    <Link Source="@10" Target="(@1 @2 Type=IValueValidator)" Category="Implements" Bounds="326.670991443448,52.8154653649523,0.331576525196681,33.14730771052" Weight="1" />
-    <Link Source="@10" Target="@9" Category="References" Bounds="326.761066211716,110.962773075472,1.7897678497726,104.001232393475" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+    <Link Source="(@1 Namespace=Abp.Configuration.Startup Type=NavigationConfiguration)" Target="@2" Category="Implements" Bounds="121.173789978027,85.1183700561523,38.9058151245117,24.8816299438477" Weight="1" />
+    <Link Source="@2" Target="@6" Category="References" Bounds="218.082885742188,28.4173717498779,64.7649536132813,26.5826282501221" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@4" Target="(@1 @3 Type=MenuDefinition)" Category="References" Bounds="457.991973876953,30.4633636474609,32.1206970214844,24.5366363525391" IsSourceVirtualized="True" Weight="2">
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+    </Link>
+    <Link Source="@5" Target="@2" Category="References" Bounds="226.408843994141,83.4173736572266,64.7649536132813,26.5826263427734" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@3" Target="@10" Category="InheritsFrom" Bounds="412.868603016388,112.486101581225,175.197621440673,28.4612877648753" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@3" Target="@9" Category="CodeSchema_AttributeUse" Bounds="388.265012337426,165.9473893461,226.139996027382,55.8571223795117" Weight="1" />
-    <Link Source="@4" Target="@10" Category="InheritsFrom" Bounds="358.95917469507,115.352817991504,49.1475547705742,25.6100550839682" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@4" Target="@9" Category="CodeSchema_AttributeUse" Bounds="351.471677930194,165.962873075472,65.0851187691978,52.3584872282821" Weight="1" />
-    <Link Source="@7" Target="@10" Category="InheritsFrom" Bounds="73.7436975078312,112.537770207662,169.080162688956,28.4250278678097" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@7" Target="@9" Category="CodeSchema_AttributeUse" Bounds="49.0183245450722,165.962798075472,221.546871855606,55.8016729428104" Weight="1" />
-    <Link Source="@8" Target="@10" Category="InheritsFrom" Bounds="241.345655440325,115.203314308747,51.6403974888916,25.7595587667252" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="11">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@8" Target="@9" Category="CodeSchema_AttributeUse" Bounds="233.249796702604,165.962873075472,71.4627086839,52.6607450141283" Weight="1" />
+    <Link Source="@5" Target="@4" Category="Implements" Bounds="348.901062011719,83.9582214355469,56.8184204101563,26.0417785644531" Weight="1" />
+    <Link Source="@5" Target="@6" Category="CodeSchema_Calls" Bounds="321.628326416016,34,0,76" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
   </Links>
   <Categories>
-    <Category Id="CodeSchema_AttributeUse" Label="Uses Attribute" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Used by" OutgoingActionLabel="Uses Attribute" />
     <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
     <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
     <Category Id="CodeSchema_Interface" Label="Interface" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Interface" NavigationActionLabel="Interfaces" />
+    <Category Id="CodeSchema_ReturnTypeLink" Label="Return" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Return types" OutgoingActionLabel="Return types" />
     <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
     <Category Id="Implements" Label="Implements" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
-    <Category Id="InheritsFrom" Label="Inherits From" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Inherited By" OutgoingActionLabel="Inherits From" />
     <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
   </Categories>
   <Properties>
@@ -46,6 +34,7 @@
     <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
     <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsAbstract" Label="Is Abstract" Description="Flag to indicate member is 'Abstract' does not provide a full implementation" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsInternal" Label="Is Internal" Description="Flag to indicate the method is 'Internal'" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
     <Property Id="CommonLabel" DataType="System.String" />
     <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
@@ -53,6 +42,7 @@
     <Property Id="DelayedChildNodesState" Label="Delayed Child Nodes State" Description="Unspecified if the delayed child nodes state is not specified. NotFetched if the group contains child nodes that are not fetched into the graph yet. Fetched if the group has all its delayed child nodes already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
     <Property Id="DelayedCrossGroupLinksState" Label="Delayed Cross-Group Links State" Description="Unspecified if the delayed cross-group links state is not specified. NotFetched if delayed cross-group links on this node are not fetched into the graph yet. Fetched if all delayed cross-group links have already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
     <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
     <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
     <Property Id="GroupLabel" DataType="System.String" />
     <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
@@ -67,7 +57,6 @@
     <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
     <Property Id="SourceLocation" Label="Start Line Number" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
     <Property Id="TargetType" DataType="System.Type" />
-    <Property Id="UseManualLocation" DataType="System.Boolean" />
     <Property Id="Value" DataType="System.String" />
     <Property Id="ValueLabel" DataType="System.String" />
     <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />
@@ -80,13 +69,11 @@
   </QualifiedNames>
   <IdentifierAliases>
     <Alias n="1" Uri="Assembly=$(2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri)" />
-    <Alias n="2" Id="Namespace=Abp.Runtime.Validation" />
-    <Alias n="3" Id="(@1 @2 Type=AlwaysValidValueValidator)" />
-    <Alias n="4" Id="(@1 @2 Type=BooleanValueValidator)" />
-    <Alias n="7" Id="(@1 @2 Type=NumericValueValidator)" />
-    <Alias n="8" Id="(@1 @2 Type=StringValueValidator)" />
-    <Alias n="9" Id="(@1 @2 Type=ValidatorAttribute)" />
-    <Alias n="10" Id="(@1 @2 Type=ValueValidatorBase)" />
+    <Alias n="2" Id="(@1 Namespace=Abp.Configuration.Startup Type=INavigationConfiguration)" />
+    <Alias n="3" Id="Namespace=Abp.Application.Navigation" />
+    <Alias n="4" Id="(@1 @3 Type=INavigationManager)" />
+    <Alias n="5" Id="(@1 @3 Type=NavigationManager)" />
+    <Alias n="6" Id="(@1 @3 Type=NavigationProvider)" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
@@ -216,7 +203,6 @@
     </Style>
   </Styles>
   <Paths>
-    <Path Id="2c221d3b-5f54-4c5b-8082-318636415132.OutputPath" Value="F:\VS\aspnetboilerplate-master\src\Abp\bin\Debug\Abp.dll" />
     <Path Id="2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp/bin/Debug/Abp.dll" />
   </Paths>
 </DirectedGraph>
