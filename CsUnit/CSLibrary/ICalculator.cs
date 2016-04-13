@@ -5,6 +5,7 @@ namespace LiveTDD
     {
         int Add(int a, int b);
         int Subtract(int a, int b);
+        int Multiply(int a, int b);
         string Mode { get; set; }
         event EventHandler PoweringUp;
     }
