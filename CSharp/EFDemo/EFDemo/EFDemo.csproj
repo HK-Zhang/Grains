@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B45D6D8-4983-45B7-BC85-620255DEE225}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EFDemo</RootNamespace>
+    <AssemblyName>EFDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blog.cs" />
+    <Compile Include="BlogDetails.cs" />
+    <Compile Include="Course.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="DepartmentDetail.cs" />
+    <Compile Include="Details.cs" />
+    <Compile Include="Flower.cs" />
+    <Compile Include="FlowerMap.cs" />
+    <Compile Include="Grade.cs" />
+    <Compile Include="GradeMap.cs" />
+    <Compile Include="LazyLoadingDBContext.cs" />
+    <Compile Include="Migrations\201603050249433_First.cs" />
+    <Compile Include="Migrations\201603050249433_First.Designer.cs">
+      <DependentUpon>201603050249433_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603050251001_Second.cs" />
+    <Compile Include="Migrations\201603050251001_Second.Designer.cs">
+      <DependentUpon>201603050251001_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603050300122_DefaultDataTime.cs" />
+    <Compile Include="Migrations\201603050300122_DefaultDataTime.Designer.cs">
+      <DependentUpon>201603050300122_DefaultDataTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603050307083_Third.cs" />
+    <Compile Include="Migrations\201603050307083_Third.Designer.cs">
+      <DependentUpon>201603050307083_Third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603050613521_M2M.cs" />
+    <Compile Include="Migrations\201603050613521_M2M.Designer.cs">
+      <DependentUpon>201603050613521_M2M.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603050645000_nullableFK.cs" />
+    <Compile Include="Migrations\201603050645000_nullableFK.Designer.cs">
+      <DependentUpon>201603050645000_nullableFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603060108072_MapToSP.cs" />
+    <Compile Include="Migrations\201603060108072_MapToSP.Designer.cs">
+      <DependentUpon>201603060108072_MapToSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603060114594_newsp.cs" />
+    <Compile Include="Migrations\201603060114594_newsp.Designer.cs">
+      <DependentUpon>201603060114594_newsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603060121574_newsp2.cs" />
+    <Compile Include="Migrations\201603060121574_newsp2.Designer.cs">
+      <DependentUpon>201603060121574_newsp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="OnlineCourse.cs" />
+    <Compile Include="OnsiteCourse.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Post.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchoolDBInitializer.cs" />
+    <Compile Include="SchoolEFContext.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentMap.cs" />
+    <Compile Include="Weibo.cs" />
+    <Compile Include="WeiPost.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201603050249433_First.resx">
+      <DependentUpon>201603050249433_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603050251001_Second.resx">
+      <DependentUpon>201603050251001_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603050300122_DefaultDataTime.resx">
+      <DependentUpon>201603050300122_DefaultDataTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603050307083_Third.resx">
+      <DependentUpon>201603050307083_Third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603050613521_M2M.resx">
+      <DependentUpon>201603050613521_M2M.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603050645000_nullableFK.resx">
+      <DependentUpon>201603050645000_nullableFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603060108072_MapToSP.resx">
+      <DependentUpon>201603060108072_MapToSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603060114594_newsp.resx">
+      <DependentUpon>201603060114594_newsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603060121574_newsp2.resx">
+      <DependentUpon>201603060121574_newsp2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
