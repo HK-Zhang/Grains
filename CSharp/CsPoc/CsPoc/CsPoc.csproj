@@ -40,8 +40,33 @@
       <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Castle.Core">
-      <HintPath>..\..\Lib\Castle.Core\lib\net45\Castle.Core.dll</HintPath>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -50,6 +75,9 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,9 +85,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Advanced\CastleAutoDemo.cs" />
+    <Compile Include="Advanced\CastleDynamicProxy.cs" />
+    <Compile Include="Advanced\CastleInterceptor.cs" />
+    <Compile Include="Advanced\DataValidationDemo.cs" />
+    <Compile Include="Advanced\EmitInterceptorDemo.cs" />
+    <Compile Include="Advanced\InterceptorDemo.cs" />
+    <Compile Include="Advanced\LazySingleton.cs" />
+    <Compile Include="Advanced\MixinDemo.cs" />
+    <Compile Include="Advanced\RemotingProxy.cs" />
+    <Compile Include="Advanced\SerializeDemo.cs" />
+    <Compile Include="Reflections\MethodDemo.cs" />
+    <Compile Include="Thread\AwaitDemo.cs" />
+    <Compile Include="Basic\MarshalDemo.cs" />
+    <Compile Include="Basic\MemoryCacheDemo.cs" />
+    <Compile Include="Basic\RegexDemo.cs" />
+    <Compile Include="Basic\TaskDemo.cs" />
+    <Compile Include="Basic\TimerDemo.cs" />
+    <Compile Include="Basic\TypeDescriptorDemo.cs" />
+    <Compile Include="Basic\YieldDemo.cs" />
     <Compile Include="Collection\ImmutableDemo.cs" />
+    <Compile Include="Collection\ITypeList.cs" />
+    <Compile Include="Collection\ReadonlyCollectionDemo.cs" />
+    <Compile Include="Collection\ThreadSafeDicDemo.cs" />
+    <Compile Include="Collection\TypeList.cs" />
+    <Compile Include="Collection\TypeListDemo.cs" />
     <Compile Include="DynamicFramework\AOPCastleDemo.cs" />
+    <Compile Include="Thread\AsyncContextDemo.cs" />
     <Compile Include="Thread\AsyncDemo.cs" />
+    <Compile Include="Thread\AsyncLockDemo.cs" />
     <Compile Include="Thread\AsyncResultDemo.cs" />
     <Compile Include="Basic\AttributeDemo.cs" />
     <Compile Include="DynamicFramework\AutofacDemo.cs" />
@@ -77,6 +131,7 @@
     <Compile Include="Advanced\InOutDemo.cs" />
     <Compile Include="Basic\LambdaDemo.cs" />
     <Compile Include="Advanced\LinqDemo.cs" />
+    <Compile Include="Thread\CultureInfoDemo.cs" />
     <Compile Include="Thread\LockDemo.cs" />
     <Compile Include="Thread\ParallelDemo.cs" />
     <Compile Include="Basic\PerformanceTest.cs" />
@@ -91,17 +146,24 @@
     <Compile Include="Basic\Singleton.cs" />
     <Compile Include="Basic\StaticDemo.cs" />
     <Compile Include="Basic\StringFormatDemo.cs" />
+    <Compile Include="Thread\RealAsyncResultDemo.cs" />
+    <Compile Include="Thread\SpinLockDemo.cs" />
     <Compile Include="Thread\SynchronizationDemo.cs" />
     <Compile Include="Basic\Team.cs" />
     <Compile Include="Thread\ThreadDemo.cs" />
     <Compile Include="Thread\ThreadIsolation.cs" />
     <Compile Include="Toolkit\DictionaryExtension.cs" />
     <Compile Include="Advanced\ExpressionDemo.cs" />
+    <Compile Include="Toolkit\ExtenssionGroupDemo.cs" />
+    <Compile Include="Toolkit\JsonNetDemo.cs" />
     <Compile Include="Toolkit\LinqDistinctDemo.cs" />
+    <Compile Include="Toolkit\Log4NetDemo.cs" />
+    <Compile Include="Toolkit\LogHelper.cs" />
     <Compile Include="Toolkit\SynchronizedCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="log4net.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

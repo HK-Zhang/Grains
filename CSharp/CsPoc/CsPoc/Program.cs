@@ -1,9 +1,16 @@
-﻿using System;
+﻿using CsPoc.Basic;
+using CsPoc.Collection;
+using CsPoc.ThreadTest;
+using CsPoc.ThreadNS;
+using CsPoc.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CsPoc.Advanced;
+using CsPoc.Reflections;
 
 namespace CsPoc
 {
@@ -36,7 +43,7 @@ namespace CsPoc
 
             //ddemo.Execute();
 
-            ThreadDemo tdemo = new ThreadDemo();
+            //ThreadDemo tdemo = new ThreadDemo();
             //tdemo.Test1Foo();
             //tdemo.Test2Foo();
             //tdemo.Test3Foo();
@@ -86,8 +93,48 @@ namespace CsPoc
 
 
             //LinqDemo.RunDemo();
-            ImmutableDemo demo = new ImmutableDemo();
-            demo.Excecute();
+            //ImmutableDemo demo = new ImmutableDemo();
+            //demo.Excecute();
+
+            //AsyncLockDemo ad = new AsyncLockDemo();
+            //SpinLockDemo ad = new SpinLockDemo();
+            //TypeListDemo ad = new TypeListDemo();
+            //ad.Execute();
+
+            //CSDemo.LazySingletonDemo.Execute();
+            //MemoryCacheDemo.Execute();
+            //TaskDemo td = new TaskDemo();
+            //td.Execute();
+
+
+            //ParallelDemo.RunDemo();
+
+            //JsonNetDemo jd = new JsonNetDemo();
+            //jd.Execute();
+
+            //ReadonlyCollectionDemo tcd = new ReadonlyCollectionDemo();
+            //tcd.Execute();
+
+            //ThreadSafeDicDemo td = new ThreadSafeDicDemo();
+            //td.Execute();
+
+            //CultureInfoDemo gi = new CultureInfoDemo();
+            //gi.Execute();
+
+            //AsyncResultDemo ad = new AsyncResultDemo();
+            //ad.Run();
+
+            //RealAsyncResultDemo rd = new RealAsyncResultDemo();
+            //rd.Execute();
+            //AwaitDemo ad = new AwaitDemo();
+            //ad.Execute();
+
+            //SerializeDemo sd = new SerializeDemo();
+            //sd.Execute();
+
+            MethodDemo md = new MethodDemo();
+            md.Execute();
+
 
             Console.ReadLine();
         }
