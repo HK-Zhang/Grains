@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CsPoc.Advanced;
 using CsPoc.Reflections;
+using CsPoc.Network;
+using CsPoc.DynamicFramework;
 
 namespace CsPoc
 {
@@ -132,8 +134,18 @@ namespace CsPoc
             //SerializeDemo sd = new SerializeDemo();
             //sd.Execute();
 
-            MethodDemo md = new MethodDemo();
-            md.Execute();
+            //MethodDemo md = new MethodDemo();
+            //md.Execute();
+
+            //TaskCompletionSourceDemo rcsd = new TaskCompletionSourceDemo();
+            //rcsd.Execute();
+
+            //HttpBindingDemo hd = new HttpBindingDemo();
+            //hd.Execute();
+
+            CastleProxyDemo cd = new CastleProxyDemo();
+            cd.Execute();
+
 
 
             Console.ReadLine();
