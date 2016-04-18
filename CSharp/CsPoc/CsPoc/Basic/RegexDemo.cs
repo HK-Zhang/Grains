@@ -17,7 +17,29 @@ namespace CSDemo
             //Foo2();
             //Foo3();
             //Foo1();
-            FooSplit();
+            //FooSplit();
+            BasicFoo();
+        }
+
+        private void BasicFoo() 
+        {
+            string i = "\n";
+            string m = "3";
+            Regex r = new Regex(@"\D");
+            Console.WriteLine(r.IsMatch(i));//ture
+            Console.WriteLine(r.IsMatch(m));//flase
+
+            r = new Regex("[a-z0-9]");
+            Console.WriteLine(r.IsMatch(i));//false
+            Console.WriteLine(r.IsMatch(m));//true
+
+            i = "Live for nothing,die for something";
+            r = new Regex("^Live for nothing,die for something$");//true
+            Console.WriteLine(r.IsMatch(i));
+            r = new Regex("^Live for nothing,die for some$");//false
+            Console.WriteLine(r.IsMatch(i));
+            r = new Regex("^Live for nothing,die for some");//true
+            Console.WriteLine(r.IsMatch(i));
         }
 
 
@@ -109,7 +131,7 @@ namespace CSDemo
             }
         }
 
-        private void Foo2()
+        private void FooCapitalFirstCharacter()
         {
             string text = "the quick red fox jumped over the lazy brown dog.";
 
@@ -145,7 +167,7 @@ namespace CSDemo
             System.Console.WriteLine("result=[" + result + "]");
         }
 
-        private void Foo3()
+        private void FooCapitalFirstCharacter2()
         {
             string text = "the quick red fox jumped over the lazy brown dog.";
             System.Console.WriteLine("text=[" + text + "]");
