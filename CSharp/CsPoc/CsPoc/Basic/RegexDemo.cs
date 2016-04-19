@@ -18,7 +18,9 @@ namespace CSDemo
             //Foo3();
             //Foo1();
             //FooSplit();
-            BasicFoo();
+            //BasicFoo();
+            //PickOneFoo();
+            SpecialCharacterFoo();
         }
 
         private void BasicFoo() 
@@ -40,7 +42,131 @@ namespace CSDemo
             Console.WriteLine(r.IsMatch(i));
             r = new Regex("^Live for nothing,die for some");//true
             Console.WriteLine(r.IsMatch(i));
+
+            i = @"Live for nothing,
+die for something";//mutiple lines
+
+            r = new Regex("^Live for nothing,die for something$");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//0
+
+            r = new Regex("^Live for nothing,die for something$", RegexOptions.Multiline);
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//0
+
+            r = new Regex("^Live for nothing,\r\ndie for something$");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//1
+
+            r = new Regex("^Live for nothing,$");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//0
+
+            r = new Regex("^Live for nothing,$", RegexOptions.Multiline);
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//0
+
+            r = new Regex("^Live for nothing,\r\n$");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//0
+
+            r = new Regex("^Live for nothing,\r$");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//0
+
+            r = new Regex("^Live for nothing,\r$", RegexOptions.Multiline);
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//1
+
+            r = new Regex("^die for something$");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//0
+
+            r = new Regex("^die for something$", RegexOptions.Multiline);
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//1
+
+            r = new Regex("^");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//1
+
+            r = new Regex("$");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//1
+
+            r = new Regex("^", RegexOptions.Multiline);
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//2
+
+            r = new Regex("$", RegexOptions.Multiline);
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//2
+
+            r = new Regex("^Live for nothing,\r$\n^die for something$", RegexOptions.Multiline);
+            Console.WriteLine("r16 match count:" + r.Matches(i).Count);//1
+            //对于一个多行字符串，在设置了Multiline选项之后，^和$将出现多次匹配。
+
+            i = "Live for nothing,die for something";
+            m = "Live for nothing,die for some thing";
+
+            r = new Regex(@"\bthing\b");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//0
+
+            r = new Regex(@"thing\b");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//2
+
+            r = new Regex(@"\bthing\b");
+            Console.WriteLine("r match count:" + r.Matches(m).Count);//1
+            
+            r = new Regex(@"\bfor something\b");
+            Console.WriteLine("r match count:" + r.Matches(i).Count);//1
+            //\b通常用于约束一个完整的单词
+
+            string x = "1024";
+            string y = "+1024";
+            string z = "1,024";
+            string a = "1";
+            string b = "-1024";
+            string c = "10000";
+            r = new Regex(@"^\+?[1-9],?\d{3}$");
+
+            Console.WriteLine("x match count:" + r.Matches(x).Count);//1
+            Console.WriteLine("y match count:" + r.Matches(y).Count);//1
+            Console.WriteLine("z match count:" + r.Matches(z).Count);//1
+            Console.WriteLine("a match count:" + r.Matches(a).Count);//0
+            Console.WriteLine("b match count:" + r.Matches(b).Count);//0
+            Console.WriteLine("c match count:" + r.Matches(c).Count);//0
+            //匹配1000到9999的整数。
+
         }
+
+        private void PickOneFoo() 
+        {
+            string x = "0";
+            string y = "0.23";
+            string z = "100";
+            string a = "100.01";
+            string b = "9.9";
+            string c = "99.9";
+            string d = "99.";
+            string e = "00.1";
+            Regex r = new Regex(@"^\+?((100(.0+)*)|([1-9]?[0-9])(\.\d+)*)$");
+            Console.WriteLine("x match count:" + r.Matches(x).Count);//1
+            Console.WriteLine("y match count:" + r.Matches(y).Count);//1
+            Console.WriteLine("z match count:" + r.Matches(z).Count);//1
+            Console.WriteLine("a match count:" + r.Matches(a).Count);//0
+            Console.WriteLine("b match count:" + r.Matches(b).Count);//1
+            Console.WriteLine("c match count:" + r.Matches(c).Count);//1
+            Console.WriteLine("d match count:" + r.Matches(d).Count);//0
+            Console.WriteLine("e match count:" + r.Matches(e).Count);//0
+            //匹配0到100的数。最外层的括号内包含两部分“(100(.0+)*)”，“([1-9]?[0-9])(\.\d+)*”，这两部分是“OR”的关系，即正则表达式引擎会先尝试匹配100，如果失败，则尝试匹配后一个表达式（表示[0,100)范围中的数字）。
+        }
+
+        private void SpecialCharacterFoo()
+        {
+            string x = "\\";
+            Regex r1 = new Regex("^\\\\$");
+            Console.WriteLine("r1 match count:" + r1.Matches(x).Count);//1
+            Regex r2 = new Regex(@"^\\$");
+            Console.WriteLine("r2 match count:" + r2.Matches(x).Count);//1
+            Regex r3 = new Regex("^\\$");
+            Console.WriteLine("r3 match count:" + r3.Matches(x).Count);//0
+            //匹配“\”
+
+            x = "\"";
+            r1 = new Regex("^\"$");
+            Console.WriteLine("r1 match count:" + r1.Matches(x).Count);//1
+            r2 = new Regex(@"^""$");
+            Console.WriteLine("r2 match count:" + r2.Matches(x).Count);//1
+            //匹配双引号
+        }
+
 
 
         private void FooMatch()
