@@ -20,7 +20,8 @@ namespace CSDemo
             //FooSplit();
             //BasicFoo();
             //PickOneFoo();
-            SpecialCharacterFoo();
+            //SpecialCharacterFoo();
+            GroupFoo();
         }
 
         private void BasicFoo() 
@@ -165,6 +166,50 @@ die for something";//mutiple lines
             r2 = new Regex(@"^""$");
             Console.WriteLine("r2 match count:" + r2.Matches(x).Count);//1
             //匹配双引号
+        }
+
+        private void GroupFoo()
+        {
+            string x = "Live for nothing,die for something";
+            string y = "Live for nothing,die for somebody";
+            Regex r = new Regex(@"^Live ([a-z]{3}) no([a-z]{5}),die \1 some\2$");
+            Console.WriteLine("x match count:" + r.Matches(x).Count);//1
+            Console.WriteLine("y match count:" + r.Matches(y).Count);//0
+            //正则表达式引擎会记忆“()”中匹配到的内容，作为一个“组”，并且可以通过索引的方式进行引用。表达式中的“\1”，用于反向引用表达式中出现的第一个组，即粗体标识的第一个括号内容，“\2”则依此类推。
+
+            x = "Live for nothing,die for something";
+            r = new Regex(@"^Live for no([a-z]{5}),die for some\1$");
+            if (r.IsMatch(x))
+            {
+                Console.WriteLine("group1 value:" + r.Match(x).Groups[1].Value);//输出：thing
+            }
+            //获取组中的内容。注意，此处是Groups[1]，因为Groups[0]是整个匹配的字符串，即整个变量x的内容。
+
+            x = "Live for nothing nothing";
+            r = new Regex(@"([a-z]+) \1");
+            if (r.IsMatch(x))
+            {
+                x = r.Replace(x, "$1");
+                Console.WriteLine("var x:" + x);//输出：Live for nothing
+            }
+            //删除原字符串中重复出现的“nothing”。在表达式之外，使用“$1”来引用第一个组，下面则是通过组名来引用：
+
+            //x = "Live for nothing nothing";
+            //r = new Regex(@"(?[a-z]+) \1");
+            //if (r.IsMatch(x))
+            //{
+            //    x = r.Replace(x, "${g1}");
+            //    Console.WriteLine("var x:" + x);//输出：Live for nothing
+            //}
+
+            x = "Live for nothing";
+            r = new Regex(@"^Live for no(?:[a-z]{5})$");
+            if (r.IsMatch(x))
+            {
+                Console.WriteLine("group1 value:" + r.Match(x).Groups[1].Value);//输出：(空)
+            }
+            //在组前加上“?:”表示这是个“非捕获组”，即引擎将不保存该组的内容。
+
         }
 
 
