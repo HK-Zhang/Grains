@@ -21,7 +21,8 @@ namespace CSDemo
             //BasicFoo();
             //PickOneFoo();
             //SpecialCharacterFoo();
-            GroupFoo();
+            //GroupFoo();
+            GreedyFoo();
         }
 
         private void BasicFoo() 
@@ -212,6 +213,36 @@ die for something";//mutiple lines
 
         }
 
+        private void GreedyFoo()
+        {
+            string x = "Live for nothing,die for something";
+            Regex r1 = new Regex(@".*thing");
+            if (r1.IsMatch(x))
+            {
+                Console.WriteLine("match:" + r1.Match(x).Value);//输出：Live for nothing,die for something
+            }
+            Regex r2 = new Regex(@".*?thing");
+            if (r2.IsMatch(x))
+            {
+                Console.WriteLine("match:" + r2.Match(x).Value);//输出：Live for nothing
+            }
+        }
+
+        private void reverseFoo()
+        {
+            string x = "Live for nothing,die for something";
+            Regex r1 = new Regex(@".*thing,");
+            if (r1.IsMatch(x))
+            {
+                Console.WriteLine("match:" + r1.Match(x).Value);//输出：Live for nothing,
+            }
+            Regex r2 = new Regex(@"(?>.*)thing,");
+            if (r2.IsMatch(x))//不匹配
+            {
+                Console.WriteLine("match:" + r2.Match(x).Value);
+            }
+            //在r1中，“.*”由于其贪婪特性，将一直匹配到字符串的最后，随后匹配“thing”，但在匹配“,”时失败，此时引擎将回溯，并在“thing,”处匹配成功。在r2中，由于强制非回溯，所以整个表达式匹配失败。
+        }
 
 
         private void FooMatch()
