@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        //var postdata = { ID: "1", NAME: "Jim", CREATETIME: "1988-09-11" };
+        //$.ajax({
+        //    type: "get",
+        //    url: "http://localhost:5236/api/Parm/GetAllChargingData",
+        //    data: postdata,
+        //    success: function (data, status) { }
+        //});
+
+        //$.ajax({
+        //    type: "get",
+        //    url: "http://localhost:5236/api/Parm/GetByModel",
+        //    contentType: "application/json",
+        //    data: { strQuery: JSON.stringify({ ID: "1", NAME: "Jim", CREATETIME: "1988-09-11" }) },
+        //    success: function (data, status) {
+        //        if (status == "success") {
+        //            $("#div_test").html(data);
+        //        }
+        //    }
+        //});
+
+        //SaveData([FromBody]string NAME)
+        //$.ajax({
+        //    type: "post",
+        //    url: "http://localhost:5236/api/Parm/SaveData",
+        //    data: { "": "Jim" },
+        //    success: function (data, status) {
+        //        if (status == "success") {
+        //            $("#div_test").html(data);
+        //        }
+        //    }
+        //});
+
+
+        //SaveObject(dynamic obj)
+        //$.ajax({
+        //    type: "post",
+        //    url: "http://localhost:5236/api/Parm/SaveObject",
+        //    contentType: 'application/json',
+        //    data: JSON.stringify({ NAME: "Jim", DES: "备注" }),
+        //    success: function (data, status) {
+        //        if (status == "success") {
+        //            $("#div_test").html(data);
+        //        }
+        //    }
+        //});
+
+        //SaveData(TB_CHARGING oData)
+        //$.ajax({
+        //    type: "post",
+        //    url: "http://localhost:5236/api/Parm/SaveData",
+        //    data: { ID: "1", NAME: "Jim", CREATETIME: "1988-09-11" },
+        //    success: function (data, status) {
+        //        if (status == "success") {
+        //            $("#div_test").html(data);
+        //        }
+        //    }
+        //});
+
+        //SaveData(TB_CHARGING oData)
+        //var postdata = { ID: "1", NAME: "Jim", CREATETIME: "1988-09-11" };
+        //$.ajax({
+        //    type: "post",
+        //    url: "http://localhost:5236/api/Parm/SaveData",
+        //    contentType: 'application/json',
+        //    data: JSON.stringify(postdata),
+        //    success: function (data, status) {
+        //        if (status == "success") {
+        //            $("#div_test").html(data);
+        //        }
+        //    }
+        //});
+
+        //SaveJsonData(dynamic obj)
+        //var postdata = { ID: "1", NAME: "Jim", CREATETIME: "1988-09-11" };
+        //$.ajax({
+        //    type: "post",
+        //    url: "http://localhost:5236/api/Parm/SaveData",
+        //    contentType: 'application/json',
+        //    data: JSON.stringify({ NAME: "Lilei", Charging: postdata }),
+        //    success: function (data, status) {
+        //        if (status == "success") {
+        //            $("#div_test").html(data);
+        //        }
+        //    }
+        //});
+
+        //SaveArrData(string[] ids)
+        //var arr = ["1", "2", "3", "4"];
+        //$.ajax({
+        //    type: "post",
+        //    url: "http://localhost:5236/api/Parm/SaveArrData",
+        //    contentType: 'application/json',
+        //    data: JSON.stringify(arr),
+        //    success: function (data, status){
+        //        if (status == "success") {
+        //            $("#div_test").html(data);
+        //        }
+        //    }
+        //});
+
+        //SaveListData(List<TB_CHARGING> lstCharging)
+        var arr = [
+    { ID: "1", NAME: "Jim", CREATETIME: "1988-09-11" },
+    { ID: "2", NAME: "Lilei", CREATETIME: "1990-12-11" },
+    { ID: "3", NAME: "Lucy", CREATETIME: "1986-01-10" }
+        ];
+        $.ajax({
+            type: "post",
+            url: "http://localhost:5236/api/Parm/SaveData",
+            contentType: 'application/json',
+            data: JSON.stringify(arr),
+            success: function (data, status) {
+                if (status == "success") {
+                    $("#div_test").html(data);
+                }
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <div id="div_test"></div>
+Testing
+</body>
+</html>
