@@ -1,10 +1,12 @@
-﻿using HelloWebAPI.Models;
+﻿using HelloWebAPI.Classes;
+using HelloWebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.ModelBinding;
 
 namespace HelloWebAPI.Controllers
 {
@@ -29,11 +31,23 @@ namespace HelloWebAPI.Controllers
             return "ChargingData" + obj.ID;
         }
 
+        public HttpResponseMessage Get([FromUri] GeoPoint location)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, "got you"); 
+        }
+
+
         [HttpGet]
         public string GetByModel(string strQuery)
         {
             TB_CHARGING oData = Newtonsoft.Json.JsonConvert.DeserializeObject<TB_CHARGING>(strQuery);
             return "ChargingData" + oData.ID;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetViaModelBinder([ModelBinder(typeof(GeoPointModelBinder))] GeoPoint location) 
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, "got you"); 
         }
 
         //[HttpPost]
