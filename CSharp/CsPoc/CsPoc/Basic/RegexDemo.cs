@@ -22,7 +22,9 @@ namespace CSDemo
             //PickOneFoo();
             //SpecialCharacterFoo();
             //GroupFoo();
-            GreedyFoo();
+            //GreedyFoo();
+            //reverseFoo();
+            directionFoo();
         }
 
         private void BasicFoo() 
@@ -230,7 +232,7 @@ die for something";//mutiple lines
 
         private void reverseFoo()
         {
-            string x = "Live for nothing,die for something";
+            string x = "Live for nothing,die for something,";
             Regex r1 = new Regex(@".*thing,");
             if (r1.IsMatch(x))
             {
@@ -242,6 +244,35 @@ die for something";//mutiple lines
                 Console.WriteLine("match:" + r2.Match(x).Value);
             }
             //在r1中，“.*”由于其贪婪特性，将一直匹配到字符串的最后，随后匹配“thing”，但在匹配“,”时失败，此时引擎将回溯，并在“thing,”处匹配成功。在r2中，由于强制非回溯，所以整个表达式匹配失败。
+        }
+
+        private void directionFoo()
+        {
+            string x = "1024 used 2048 free";
+            Regex r1 = new Regex(@"\d{4}(?= used)");
+            if (r1.Matches(x).Count == 1)
+            {
+                Console.WriteLine("r1 match:" + r1.Match(x).Value);//输出：1024
+            }
+            Regex r2 = new Regex(@"\d{4}(?! used)");
+            if (r2.Matches(x).Count == 1)
+            {
+                Console.WriteLine("r2 match:" + r2.Match(x).Value); //输出：2048
+            }
+            //r1中的正声明表示必须保证在四位数字的后面必须紧跟着“ used”，r2中的负声明表示四位数字之后不能跟有“ used”。
+
+            x = "used:1024 free:2048";
+            r1 = new Regex(@"(?<=used:)\d{4}");
+            if (r1.Matches(x).Count == 1)
+            {
+                Console.WriteLine("r1 match:" + r1.Match(x).Value);//输出：1024
+            }
+            r2 = new Regex(@"(?<!used:)\d{4}");
+            if (r2.Matches(x).Count == 1)
+            {
+                Console.WriteLine("r2 match:" + r2.Match(x).Value);//输出：2048
+            }
+            //r1中的反向正声明表示在4位数字之前必须紧跟着“used:”，r2中的反向负声明表示在4位数字之前必须紧跟着除“used:”之外的字符串。
         }
 
 
