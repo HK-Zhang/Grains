@@ -1,40 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1 @2 Type=ApplicationLanguageManager)" Category="CodeSchema_Class" Bounds="207.577160048344,2.29807008281137,234.32,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationLanguageManager" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationLanguageManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/ApplicationLanguageManager.cs StartLineNumber=18 StartCharacterOffset=4 EndLineNumber=18 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="(@1 @2 Type=ApplicationLanguageText)" Category="CodeSchema_Class" Bounds="242.437159047839,135.708466365891,207.11,24.9999999999999" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationLanguageText" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationLanguageText" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/ApplicationLanguageText.cs StartLineNumber=11 StartCharacterOffset=4 EndLineNumber=11 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="(@1 @2 Type=IApplicationLanguageTextManager)" Category="CodeSchema_Interface" Bounds="-50.4528409521607,57.2981700828114,262.09,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IApplicationLanguageTextManager" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IApplicationLanguageTextManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/IApplicationLanguageTextManager.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@3" Category="CodeSchema_Class" Bounds="-29.6243097566721,-121.935973222918,182.866666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationLanguage" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationLanguage" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/ApplicationLanguage.cs StartLineNumber=11 StartCharacterOffset=4 EndLineNumber=11 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@4" Category="CodeSchema_Class" Bounds="-53.4095066183227,-2.4678866114592,230.986666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationLanguageProvider" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationLanguageProvider" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/ApplicationLanguageProvider.cs StartLineNumber=10 StartCharacterOffset=4 EndLineNumber=10 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@5" Category="CodeSchema_Class" Bounds="-48.0161742854934,135.708366366557,258.563333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationLanguageTextManager" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationLanguageTextManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/ApplicationLanguageTextManager.cs StartLineNumber=12 StartCharacterOffset=4 EndLineNumber=12 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@6" Category="CodeSchema_Interface" Bounds="204.637159047839,-116.935873222918,237.846666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IApplicationLanguageManager" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IApplicationLanguageManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/IApplicationLanguageManager.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@1 @2 Type=AbpZeroConfig)" Category="CodeSchema_Class" Bounds="498.993333333333,-85,149.313333333333,25" CodeSchemaProperty_IsInternal="True" CommonLabel="AbpZeroConfig" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="AbpZeroConfig" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Zero/Configuration/AbpZeroConfig.cs StartLineNumber=2 StartCharacterOffset=4 EndLineNumber=2 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@1 @2 Type=LanguageManagementConfig)" Category="CodeSchema_Class" Bounds="474.53,61,232.24,25" CodeSchemaProperty_IsInternal="True" CommonLabel="LanguageManagementConfig" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="LanguageManagementConfig" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Zero/Configuration/LanguageManagementConfig.cs StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@1 @2 Type=RoleManagementConfig)" Category="CodeSchema_Class" Bounds="236.983333333333,55,201.333333333333,25" CodeSchemaProperty_IsInternal="True" CommonLabel="RoleManagementConfig" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="RoleManagementConfig" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Zero/Configuration/RoleManagementConfig.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@1 @2 Type=StaticRoleDefinition)" Category="CodeSchema_Class" Bounds="0,0,174.753333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="StaticRoleDefinition" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="StaticRoleDefinition" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Zero/Configuration/StaticRoleDefinition.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" />
+    <Node Id="(@1 @2 Type=UserManagementConfig)" Category="CodeSchema_Class" Bounds="1.76333333333328,55,201.773333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="UserManagementConfig" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="UserManagementConfig" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Zero/Configuration/UserManagementConfig.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" />
+    <Node Id="@3" Category="CodeSchema_Interface" Bounds="263.23,-85,152.84,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IAbpZeroConfig" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IAbpZeroConfig" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Zero/Configuration/IAbpZeroConfig.cs StartLineNumber=5 StartCharacterOffset=4 EndLineNumber=5 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@4" Category="CodeSchema_Interface" Bounds="471.766666666667,0,235.766666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ILanguageManagementConfig" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ILanguageManagementConfig" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Zero/Configuration/ILanguageManagementConfig.cs StartLineNumber=7 StartCharacterOffset=4 EndLineNumber=7 EndCharacterOffset=4)" />
+    <Node Id="@5" Category="CodeSchema_Interface" Bounds="236.22,0,204.86,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IRoleManagementConfig" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IRoleManagementConfig" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Zero/Configuration/IRoleManagementConfig.cs StartLineNumber=4 StartCharacterOffset=4 EndLineNumber=4 EndCharacterOffset=4)" />
+    <Node Id="@6" Category="CodeSchema_Interface" Bounds="-2.8421709430404E-14,0,205.3,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IUserManagementConfig" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IUserManagementConfig" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Zero/Configuration/IUserManagementConfig.cs StartLineNumber=7 StartCharacterOffset=4 EndLineNumber=7 EndCharacterOffset=4)" />
   </Nodes>
   <Links>
-    <Link Source="(@1 @2 Type=ApplicationLanguageManager)" Target="@6" Category="Implements" Bounds="323.777596199755,-82.4363357846657,0.836206812565081,84.7344058674771" Weight="1" />
-    <Link Source="@4" Target="@3" Category="References" Bounds="61.8584782979945,-87.9359970324223,0.196595640213594,85.4681104209631" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="18">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@4" Target="@6" Category="References" Bounds="90.6372975812469,-88.3265997609608,196.125141162147,85.8587131495017" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@5" Target="(@1 @2 Type=ApplicationLanguageText)" Category="References" Bounds="210.54715904784,148.208415202138,22.8899999999992,8.64659682520141E-06" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="20">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@5" Target="(@1 @2 Type=IApplicationLanguageTextManager)" Category="Implements" Bounds="80.7810770482631,91.797819827493,0.377073850990882,43.9105465390637" Weight="1" />
-    <Link Source="@6" Target="@3" Category="References" Bounds="162.240715289361,-107.51747968389,42.3964437584782,0.809876862983671" IsSourceVirtualized="True" Weight="4" />
+    <Link Source="(@1 @2 Type=AbpZeroConfig)" Target="@3" Category="Implements" Bounds="425.57,-72.5,73.4233333333333,0" Weight="1" />
+    <Link Source="(@1 @2 Type=LanguageManagementConfig)" Target="@4" Category="Implements" Bounds="590.01063481506,34.498723718675,0.43444715215287,26.501276281325" Weight="1" />
+    <Link Source="(@1 @2 Type=RoleManagementConfig)" Target="@5" Category="Implements" Bounds="337.87727231405,34.4983801469837,0.372756955951218,20.5016698530163" Weight="1" />
+    <Link Source="(@1 @2 Type=UserManagementConfig)" Target="@6" Category="Implements" Bounds="102.650001525879,34.5,0,20.5" Weight="1" />
+    <Link Source="@3" Target="@4" Category="CodeSchema_ReturnTypeLink" Bounds="376.414705882353,-60,167.949633531917,57.1028754008517" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@3" Target="@5" Category="CodeSchema_ReturnTypeLink" Bounds="338.902933998509,-60,0.600007091456575,51.0005727734559" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@3" Target="@6" Category="CodeSchema_ReturnTypeLink" Bounds="145.974588307201,-60,158.822450014586,56.9616046840394" IsSourceVirtualized="True" Weight="1" />
   </Links>
   <Categories>
-    <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
     <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
     <Category Id="CodeSchema_Interface" Label="Interface" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Interface" NavigationActionLabel="Interfaces" />
+    <Category Id="CodeSchema_ReturnTypeLink" Label="Return" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Return types" OutgoingActionLabel="Return types" />
     <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
     <Category Id="Implements" Label="Implements" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
-    <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
   </Categories>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />
     <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
     <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsInternal" Label="Is Internal" Description="Flag to indicate the method is 'Internal'" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
     <Property Id="CommonLabel" DataType="System.String" />
     <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
@@ -48,7 +45,6 @@
     <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
     <Property Id="IsSourceVirtualized" Label="Link Source Virtualized" Description="If true, the link source end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
-    <Property Id="IsTargetVirtualized" Label="Link Target Virtualized" Description="If true, the link target end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
     <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
     <Property Id="Language" Label="Language" Description="Language" DataType="System.String" />
     <Property Id="Layout" DataType="System.String" />
@@ -69,11 +65,11 @@
   </QualifiedNames>
   <IdentifierAliases>
     <Alias n="1" Uri="Assembly=$(70d916f2-9bff-43da-b3f7-3e0655114d48.OutputPathUri)" />
-    <Alias n="2" Id="Namespace=Abp.Localization" />
-    <Alias n="3" Id="(@1 @2 Type=ApplicationLanguage)" />
-    <Alias n="4" Id="(@1 @2 Type=ApplicationLanguageProvider)" />
-    <Alias n="5" Id="(@1 @2 Type=ApplicationLanguageTextManager)" />
-    <Alias n="6" Id="(@1 @2 Type=IApplicationLanguageManager)" />
+    <Alias n="2" Id="Namespace=Abp.Zero.Configuration" />
+    <Alias n="3" Id="(@1 @2 Type=IAbpZeroConfig)" />
+    <Alias n="4" Id="(@1 @2 Type=ILanguageManagementConfig)" />
+    <Alias n="5" Id="(@1 @2 Type=IRoleManagementConfig)" />
+    <Alias n="6" Id="(@1 @2 Type=IUserManagementConfig)" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">

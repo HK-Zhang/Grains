@@ -1,57 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1 @2 Type=ApplicationLanguageManager)" Category="CodeSchema_Class" Bounds="207.577160048344,2.29807008281137,234.32,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationLanguageManager" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationLanguageManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/ApplicationLanguageManager.cs StartLineNumber=18 StartCharacterOffset=4 EndLineNumber=18 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="(@1 @2 Type=ApplicationLanguageText)" Category="CodeSchema_Class" Bounds="242.437159047839,135.708466365891,207.11,24.9999999999999" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationLanguageText" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationLanguageText" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/ApplicationLanguageText.cs StartLineNumber=11 StartCharacterOffset=4 EndLineNumber=11 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="(@1 @2 Type=IApplicationLanguageTextManager)" Category="CodeSchema_Interface" Bounds="-50.4528409521607,57.2981700828114,262.09,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IApplicationLanguageTextManager" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IApplicationLanguageTextManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/IApplicationLanguageTextManager.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@3" Category="CodeSchema_Class" Bounds="-29.6243097566721,-121.935973222918,182.866666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationLanguage" DelayedChildNodesState="NotFetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationLanguage" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/ApplicationLanguage.cs StartLineNumber=11 StartCharacterOffset=4 EndLineNumber=11 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@4" Category="CodeSchema_Class" Bounds="-53.4095066183227,-2.4678866114592,230.986666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationLanguageProvider" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationLanguageProvider" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/ApplicationLanguageProvider.cs StartLineNumber=10 StartCharacterOffset=4 EndLineNumber=10 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@5" Category="CodeSchema_Class" Bounds="-48.0161742854934,135.708366366557,258.563333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ApplicationLanguageTextManager" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="ApplicationLanguageTextManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/ApplicationLanguageTextManager.cs StartLineNumber=12 StartCharacterOffset=4 EndLineNumber=12 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@6" Category="CodeSchema_Interface" Bounds="204.637159047839,-116.935873222918,237.846666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="IApplicationLanguageManager" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IApplicationLanguageManager" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/IApplicationLanguageManager.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@3 @4 @5 Member=MaxNameLength)" Category="CodeSchema_Field" Bounds="8.61396036330159,25.9655830804163,135.78825312,25.8364257066667" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" DelayedCrossGroupLinksState="Fetched" Label="MaxNameLength" />
+    <Node Id="(@3 @4 @5 Member=Name)" Category="CodeSchema_Property" Bounds="8.61395290254769,108.638449364266,92.8923947873815,25" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Name" />
+    <Node Id="(@3 Namespace=Abp.Authorization.Roles Type=RolePermissionSetting Member=RoleId)" Category="CodeSchema_Property" Bounds="-113.9068439154,223.506591323777,95.1190614540482,25" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="RoleId" />
+    <Node Id="(@3 Namespace=Abp.Authorization.Users Type=UserPermissionSetting Member=UserId)" Category="CodeSchema_Property" Bounds="106.013730203051,223.476724958826,95.5590614540482,25" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UserId" />
+    <Node Id="@10" Category="CodeSchema_Method" Bounds="-113.90262689558,195.638669308232,164.937133333333,25.8355354933333" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="RolePermissionSetting" />
+    <Node Id="@11" Category="CodeSchema_Method" Bounds="106.013730203051,195.639162288959,165.343333333333,25.8366666666667" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="UserPermissionSetting" />
+    <Node Id="@12" Category="CodeSchema_Property" Bounds="8.61488969230644,81.6384493642663,114.031708144832,25" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IsGranted" />
+    <Node Id="@2" Category="CodeSchema_Class" Bounds="-64.7665468260743,-64.3122707406998,277.263333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="CreationAuditedEntity‎&lt;TPrimaryKey‎&gt;" UseManualLocation="True" />
+    <Node Id="@6" Category="CodeSchema_Class" Bounds="-3.88245913761469,-0.0345138528067288,164.436666666667,139.673063217073" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="PermissionSetting" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="4" Group="Expanded" Icon="CodeSchema_Class" Label="PermissionSetting" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" LayoutSettings="List" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Authorization/PermissionSetting.cs StartLineNumber=9 StartCharacterOffset=4 EndLineNumber=9 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@7" Category="CodeSchema_Class" Bounds="-126.3899439154,169.638558870978,189.9075484291,84.8681324527988" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="RolePermissionSetting" LayoutSettings="List" UseManualLocation="True" />
+    <Node Id="@8" Category="CodeSchema_Class" Bounds="93.5134902030514,169.638714285759,190.343813333333,84.8384586762667" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="UserPermissionSetting" LayoutSettings="List" UseManualLocation="True" />
+    <Node Id="@9" Category="CodeSchema_Method" Bounds="8.61394289660885,53.8020241203943,139.443866666667,25.8364257066667" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsProtected="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="PermissionSetting" />
   </Nodes>
   <Links>
-    <Link Source="(@1 @2 Type=ApplicationLanguageManager)" Target="@6" Category="Implements" Bounds="323.777596199755,-82.4363357846657,0.836206812565081,84.7344058674771" Weight="1" />
-    <Link Source="@4" Target="@3" Category="References" Bounds="61.8584782979945,-87.9359970324223,0.196595640213594,85.4681104209631" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="18">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@4" Target="@6" Category="References" Bounds="90.6372975812469,-88.3265997609608,196.125141162147,85.8587131495017" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@5" Target="(@1 @2 Type=ApplicationLanguageText)" Category="References" Bounds="210.54715904784,148.208415202138,22.8899999999992,8.64659682520141E-06" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="20">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@5" Target="(@1 @2 Type=IApplicationLanguageTextManager)" Category="Implements" Bounds="80.7810770482631,91.797819827493,0.377073850990882,43.9105465390637" Weight="1" />
-    <Link Source="@6" Target="@3" Category="References" Bounds="162.240715289361,-107.51747968389,42.3964437584782,0.809876862983671" IsSourceVirtualized="True" Weight="4" />
+    <Link Source="@10" Target="@9" Category="CodeSchema_Calls" Weight="1" />
+    <Link Source="@11" Target="@9" Category="CodeSchema_Calls" Weight="1" />
+    <Link Source="@6" Target="(@3 @4 @5 Member=MaxNameLength)" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="(@3 @4 @5 Member=Name)" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@12" Category="Contains" FetchingParent="@6" />
+    <Link Source="@6" Target="@2" Category="InheritsFrom" Weight="1" />
+    <Link Source="@6" Target="@9" Category="Contains" FetchingParent="@6" />
+    <Link Source="@7" Target="(@3 Namespace=Abp.Authorization.Roles Type=RolePermissionSetting Member=RoleId)" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@10" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@6" Category="InheritsFrom" Weight="1" />
+    <Link Source="@8" Target="(@3 Namespace=Abp.Authorization.Users Type=UserPermissionSetting Member=UserId)" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@11" Category="Contains" FetchingParent="@8" />
+    <Link Source="@8" Target="@6" Category="InheritsFrom" Weight="1" />
+    <Link Source="@9" Target="@12" Category="CodeSchema_Calls" Bounds="22.6081867218018,-11.830548286438,0,20.9947204589844" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@9" Target="@2" Category="CodeSchema_Calls" Bounds="74.675805419524,-30.3186656708755,3.17282421895709,84.1206905494757" IsTargetVirtualized="True" Weight="1" />
   </Links>
   <Categories>
     <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
     <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
-    <Category Id="CodeSchema_Interface" Label="Interface" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Interface" NavigationActionLabel="Interfaces" />
+    <Category Id="CodeSchema_Field" Label="Field" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" NavigationActionLabel="Fields" />
+    <Category Id="CodeSchema_Member" Label="Member" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" NavigationActionLabel="Members" />
+    <Category Id="CodeSchema_Method" Label="Method" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Link:Forward:CodeSchema_Calls" Icon="CodeSchema_Method" NavigationActionLabel="Methods" />
+    <Category Id="CodeSchema_Property" Label="Property" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Property" NavigationActionLabel="Properties" />
     <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
-    <Category Id="Implements" Label="Implements" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
-    <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+    <Category Id="InheritsFrom" Label="Inherits From" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Inherited By" OutgoingActionLabel="Inherits From" />
   </Categories>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />
     <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
     <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsAbstract" Label="Is Abstract" Description="Flag to indicate member is 'Abstract' does not provide a full implementation" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsConstructor" Label="Is Constructor" Description="Flag to indicate the method is a constructor" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsGeneric" Label="Is Generic" Description="Flag to indicate the member is 'Generic'" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsProtected" Label="Is Protected" Description="Flag to indicate the scope is Protected" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsSpecialName" Label="Is Special Name" Description="Flag to indicate the method is treated in a special way by some compilers" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsStatic" Label="Is Static" Description="Flag to indicate the member is a static member" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsVirtual" Label="Is Virtual" Description="Flag to indicate the method can be overridden" DataType="System.Boolean" />
     <Property Id="CommonLabel" DataType="System.String" />
     <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
     <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
     <Property Id="DelayedChildNodesState" Label="Delayed Child Nodes State" Description="Unspecified if the delayed child nodes state is not specified. NotFetched if the group contains child nodes that are not fetched into the graph yet. Fetched if the group has all its delayed child nodes already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
     <Property Id="DelayedCrossGroupLinksState" Label="Delayed Cross-Group Links State" Description="Unspecified if the delayed cross-group links state is not specified. NotFetched if delayed cross-group links on this node are not fetched into the graph yet. Fetched if all delayed cross-group links have already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
     <Property Id="Expression" DataType="System.String" />
+    <Property Id="FetchedChildrenCount" DataType="System.Int32" />
+    <Property Id="FetchingParent" DataType="Microsoft.VisualStudio.GraphModel.GraphNodeId" />
     <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
     <Property Id="GroupLabel" DataType="System.String" />
     <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
     <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
-    <Property Id="IsSourceVirtualized" Label="Link Source Virtualized" Description="If true, the link source end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
     <Property Id="IsTargetVirtualized" Label="Link Target Virtualized" Description="If true, the link target end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
     <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
     <Property Id="Language" Label="Language" Description="Language" DataType="System.String" />
     <Property Id="Layout" DataType="System.String" />
+    <Property Id="LayoutSettings" DataType="Microsoft.VisualStudio.Diagrams.View.GroupLayoutStyle" />
     <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
     <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
     <Property Id="SourceLocation" Label="Start Line Number" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
@@ -64,16 +85,25 @@
   </Properties>
   <QualifiedNames>
     <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
+    <Name Id="GenericParameterCount" Label="Generic Parameter Count" ValueType="System.String" />
+    <Name Id="Member" Label="Member" ValueType="System.Object" />
+    <Name Id="Name" Label="Name" ValueType="System.String" />
     <Name Id="Namespace" Label="Namespace" ValueType="System.String" />
     <Name Id="Type" Label="Type" ValueType="System.Object" />
   </QualifiedNames>
   <IdentifierAliases>
-    <Alias n="1" Uri="Assembly=$(70d916f2-9bff-43da-b3f7-3e0655114d48.OutputPathUri)" />
-    <Alias n="2" Id="Namespace=Abp.Localization" />
-    <Alias n="3" Id="(@1 @2 Type=ApplicationLanguage)" />
-    <Alias n="4" Id="(@1 @2 Type=ApplicationLanguageProvider)" />
-    <Alias n="5" Id="(@1 @2 Type=ApplicationLanguageTextManager)" />
-    <Alias n="6" Id="(@1 @2 Type=IApplicationLanguageManager)" />
+    <Alias n="1" Uri="Assembly=$(2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri)" />
+    <Alias n="2" Id="(@1 Namespace=Abp.Domain.Entities.Auditing Type=(Name=CreationAuditedEntity GenericParameterCount=1))" />
+    <Alias n="3" Uri="Assembly=$(70d916f2-9bff-43da-b3f7-3e0655114d48.OutputPathUri)" />
+    <Alias n="4" Id="Namespace=Abp.Authorization" />
+    <Alias n="5" Id="Type=PermissionSetting" />
+    <Alias n="6" Id="(@3 @4 @5)" />
+    <Alias n="7" Id="(@3 Namespace=Abp.Authorization.Roles Type=RolePermissionSetting)" />
+    <Alias n="8" Id="(@3 Namespace=Abp.Authorization.Users Type=UserPermissionSetting)" />
+    <Alias n="9" Id="(@3 @4 @5 Member=.ctor)" />
+    <Alias n="10" Id="(@3 Namespace=Abp.Authorization.Roles Type=RolePermissionSetting Member=.ctor)" />
+    <Alias n="11" Id="(@3 Namespace=Abp.Authorization.Users Type=UserPermissionSetting Member=.ctor)" />
+    <Alias n="12" Id="(@3 @4 @5 Member=IsGranted)" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
@@ -203,6 +233,7 @@
     </Style>
   </Styles>
   <Paths>
+    <Path Id="2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp/bin/Debug/Abp.dll" />
     <Path Id="70d916f2-9bff-43da-b3f7-3e0655114d48.OutputPathUri" Value="file:///F:/VS/module-zero-master/src/Abp.Zero/bin/Debug/Abp.Zero.dll" />
   </Paths>
 </DirectedGraph>
