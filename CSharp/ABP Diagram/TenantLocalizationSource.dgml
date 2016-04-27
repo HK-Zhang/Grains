@@ -1,41 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DirectedGraph DataVirtualized="True" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+<DirectedGraph DataVirtualized="True" GraphDirection="BottomToTop" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1 Namespace=Abp.Localization.Dictionaries Type=ILocalizationDictionaryProvider)" Category="CodeSchema_Interface" Bounds="311.8984817663,32.8057426696653,239.293333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="ILocalizationDictionaryProvider" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ILocalizationDictionaryProvider" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Localization/Dictionaries/ILocalizationDictionaryProvider.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@2" Category="CodeSchema_Class" Bounds="395.310887149451,269.993201194384,342.82,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="JsonEmbeddedFileLocalizationDictionaryProvider" UseManualLocation="True" />
-    <Node Id="@3" Category="CodeSchema_Class" Bounds="629.644220482784,200.812692926069,280.666666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="JsonFileLocalizationDictionaryProvider" UseManualLocation="True" />
-    <Node Id="@4" Category="CodeSchema_Class" Bounds="623.931012563095,361,212.976666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="JsonLocalizationDictionary" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="JsonLocalizationDictionary" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Localization/Dictionaries/Json/JsonLocalizationDictionary.cs StartLineNumber=17 StartCharacterOffset=4 EndLineNumber=17 EndCharacterOffset=4)" UseManualLocation="True" />
-    <Node Id="@6" Category="CodeSchema_Class" Bounds="298.268880807866,124.637367499584,262.293333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="LocalizationDictionaryProviderBase" />
-    <Node Id="@7" Category="CodeSchema_Class" Bounds="-145.535779517216,203.993101194385,339.666666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="XmlEmbeddedFileLocalizationDictionaryProvider" UseManualLocation="True" />
-    <Node Id="@8" Category="CodeSchema_Class" Bounds="81.130887149451,268.850349260277,277.513333333334,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="XmlFileLocalizationDictionaryProvider" UseManualLocation="True" />
-    <Node Id="@9" Category="CodeSchema_Class" Bounds="-4.47005100512234,364.993001194385,209.823333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="XmlLocalizationDictionary" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="XmlLocalizationDictionary" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Localization/Dictionaries/Xml/XmlLocalizationDictionary.cs StartLineNumber=17 StartCharacterOffset=4 EndLineNumber=17 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="(@5 @6 Type=MultiTenantLocalizationDictionaryCacheCleaner)" Category="CodeSchema_Class" Bounds="240.373888821925,11.7279856508739,335.526666666667,25" CodeSchemaProperty_IsPublic="True" CommonLabel="MultiTenantLocalizationDictionaryCacheCleaner" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="MultiTenantLocalizationDictionaryCacheCleaner" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/MultiTenantLocalizationDictionaryCacheCleaner.cs StartLineNumber=10 StartCharacterOffset=4 EndLineNumber=10 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@10" Category="CodeSchema_Class" Bounds="-121.336305031151,12.7278856508739,330.416666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CommonLabel="MultiTenantLocalizationDictionaryCacheHelper" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="MultiTenantLocalizationDictionaryCacheHelper" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/MultiTenantLocalizationDictionaryCacheHelper.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@11" Category="CodeSchema_Class" Bounds="-173.277612060099,-152.939131012937,305.32,25.0000000000001" CodeSchemaProperty_IsPublic="True" CommonLabel="MultiTenantLocalizationDictionaryProvider" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="MultiTenantLocalizationDictionaryProvider" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/MultiTenantLocalizationDictionaryProvider.cs StartLineNumber=14 StartCharacterOffset=4 EndLineNumber=14 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@12" Category="CodeSchema_Class" Bounds="162.080361635516,-90.8556476810314,237.956666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="MultiTenantLocalizationSource" UseManualLocation="True" />
+    <Node Id="@2" Category="CodeSchema_Class" Bounds="-54.264324879176,-248.866996893137,261.21,25" CodeSchemaProperty_IsPublic="True" CommonLabel="DictionaryBasedLocalizationSource" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Class" Label="DictionaryBasedLocalizationSource" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Localization/Dictionaries/DictionaryBasedLocalizationSource.cs StartLineNumber=0 StartCharacterOffset=0 EndLineNumber=0 EndCharacterOffset=0)" UseManualLocation="True" />
+    <Node Id="@3" Category="CodeSchema_Interface" Bounds="-387.070984801306,-248.36708022647,191.173333333333,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ILocalizationDictionary" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ILocalizationDictionary" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Localization/Dictionaries/ILocalizationDictionary.cs StartLineNumber=0 StartCharacterOffset=0 EndLineNumber=0 EndCharacterOffset=0)" UseManualLocation="True" />
+    <Node Id="@4" Category="CodeSchema_Interface" Bounds="-10.8976514679739,-366.928109451781,171.93,25" CodeSchemaProperty_IsPublic="True" CommonLabel="ILocalizationSource" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="ILocalizationSource" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/aspnetboilerplate-master/src/Abp/Localization/Sources/ILocalizationSource.cs StartLineNumber=0 StartCharacterOffset=0 EndLineNumber=0 EndCharacterOffset=0)" UseManualLocation="True" />
+    <Node Id="@7" Category="CodeSchema_Interface" Bounds="-421.780991545843,-86.9390310129368,260.726666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IMultiTenantLocalizationDictionary" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IMultiTenantLocalizationDictionary" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/IMultiTenantLocalizationDictionary.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@8" Category="CodeSchema_Interface" Bounds="272.945675120824,-251.367046893137,241.483333333334,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IMultiTenantLocalizationSource" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Icon="CodeSchema_Interface" Label="IMultiTenantLocalizationSource" Language="{B5E9BD34-6D3E-4B5D-925E-8A43B79820B4}" SourceLocation="(Assembly=file:///F:/VS/module-zero-master/src/Abp.Zero/Localization/IMultiTenantLocalizationSource.cs StartLineNumber=8 StartCharacterOffset=4 EndLineNumber=8 EndCharacterOffset=4)" UseManualLocation="True" />
+    <Node Id="@9" Category="CodeSchema_Class" Bounds="-418.546001398751,13.1445523189686,257.2,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="MultiTenantLocalizationDictionary" UseManualLocation="True" />
   </Nodes>
   <Links>
-    <Link Source="@2" Target="@4" Category="CodeSchema_Calls" Bounds="589.205259319357,294.993201194384,110.86358873949,61.6336915601507" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="(@5 @6 Type=MultiTenantLocalizationDictionaryCacheCleaner)" Target="@10" Category="CodeSchema_Calls" Bounds="218.080327728635,24.6884923361974,22.2935610932896,0.0611953382133237" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@11" Target="@3" Category="References" Bounds="-247.515188216814,-220.376494626013,191.417050232853,67.4373636130765" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="21">
+      <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@2" Target="@6" Category="InheritsFrom" Bounds="447.746785382525,156.543403529082,107.166410927766,113.449797665302" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@3" Target="@4" Category="CodeSchema_Calls" Bounds="735.663944545418,225.812692926069,31.2267379821536,126.449789541016" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@11" Target="@7" Category="References" Bounds="-231.385803527382,-127.939131012937,159.48038164722,38.8689783709662" IsSourceVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@3" Target="@6" Category="InheritsFrom" Bounds="494.571029829256,151.711042716639,219.521956964195,49.1016502094305" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
+    <Link Source="@12" Target="@11" Category="References" Bounds="48.9377026374545,-126.124993243223,171.380943038382,35.2693455621911" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
       <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@6" Target="(@1 Namespace=Abp.Localization.Dictionaries Type=ILocalizationDictionaryProvider)" Category="Implements" Bounds="429.705425956262,67.3031892017006,1.32959556449447,57.3341782978838" Weight="1" />
-    <Link Source="@7" Target="@6" Category="InheritsFrom" Bounds="88.1111522160278,151.46355045443,268.167972403773,52.5295507399545" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@7" Target="@9" Category="CodeSchema_Calls" Bounds="30.2093635319488,228.993101194385,60.4725795379532,127.863933475428" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@8" Target="@6" Category="InheritsFrom" Bounds="238.048886372686,155.023511437255,165.379764445313,113.826837823021" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
+    <Link Source="@12" Target="@2" Category="InheritsFrom" Bounds="100.055960642316,-218.062383234881,164.807851738288,127.206735553849" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@8" Target="@9" Category="CodeSchema_Calls" Bounds="122.982407921334,293.850349260277,81.3753659594907,65.499451938914" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_ReturnTypeLink" />
+    <Link Source="@12" Target="@7" Category="References" Bounds="-152.054535501451,-77.541653319717,314.134897136967,2.14916470753694" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+      <Category Ref="CodeSchema_Calls" />
     </Link>
+    <Link Source="@12" Target="@8" Category="Implements" Bounds="289.82977348504,-218.590509296189,89.6298000385043,127.734861615158" Weight="1" />
+    <Link Source="@2" Target="@3" Category="References" Bounds="-186.897659780339,-236.189489607207,132.633334901164,0.180264027427341" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
+      <Category Ref="CodeSchema_Calls" />
+    </Link>
+    <Link Source="@2" Target="@4" Category="Implements" Bounds="75.3046195593003,-332.428661938185,0.901239092196718,83.5616650450485" Weight="1" />
+    <Link Source="@7" Target="@3" Category="Implements" Bounds="-291.47523347903,-213.867081036433,0.0524135301880051,126.928050023497" Weight="1" />
+    <Link Source="@8" Target="@4" Category="Implements" Bounds="118.462552953272,-338.688996906989,240.7603262591,87.3219500138516" Weight="1" />
+    <Link Source="@9" Target="@10" Category="CodeSchema_Calls" Bounds="-161.346001398751,25.4453298762448,31.0097033784384,0.0387058476046818" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
+    <Link Source="@9" Target="@7" Category="Implements" Bounds="-291.094179199852,-52.4400578714059,0.96437432844823,65.5846101903745" Weight="1" />
   </Links>
   <Categories>
     <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
@@ -45,12 +49,14 @@
     <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
     <Category Id="Implements" Label="Implements" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Implemented by" OutgoingActionLabel="Implements" />
     <Category Id="InheritsFrom" Label="Inherits From" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Inherited By" OutgoingActionLabel="Inherits From" />
+    <Category Id="References" Label="References" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
   </Categories>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />
     <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
     <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsAbstract" Label="Is Abstract" Description="Flag to indicate member is 'Abstract' does not provide a full implementation" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsFinal" Label="Is Final" Description="Flag to indicate the member is 'Final' and cannot be derived from" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
     <Property Id="CommonLabel" DataType="System.String" />
     <Property Id="DataVirtualized" Label="Data Virtualized" Description="If true, the graph can contain nodes and links that represent data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
@@ -58,6 +64,7 @@
     <Property Id="DelayedChildNodesState" Label="Delayed Child Nodes State" Description="Unspecified if the delayed child nodes state is not specified. NotFetched if the group contains child nodes that are not fetched into the graph yet. Fetched if the group has all its delayed child nodes already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
     <Property Id="DelayedCrossGroupLinksState" Label="Delayed Cross-Group Links State" Description="Unspecified if the delayed cross-group links state is not specified. NotFetched if delayed cross-group links on this node are not fetched into the graph yet. Fetched if all delayed cross-group links have already fetched." DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
     <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
     <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
     <Property Id="GroupLabel" DataType="System.String" />
     <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
@@ -85,14 +92,17 @@
   </QualifiedNames>
   <IdentifierAliases>
     <Alias n="1" Uri="Assembly=$(2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri)" />
-    <Alias n="2" Id="(@1 Namespace=Abp.Localization.Dictionaries.Json Type=JsonEmbeddedFileLocalizationDictionaryProvider)" />
-    <Alias n="3" Id="(@1 Namespace=Abp.Localization.Dictionaries.Json Type=JsonFileLocalizationDictionaryProvider)" />
-    <Alias n="4" Id="(@1 Namespace=Abp.Localization.Dictionaries.Json Type=JsonLocalizationDictionary)" />
-    <Alias n="5" Id="Namespace=Abp.Localization.Dictionaries.Xml" />
-    <Alias n="6" Id="(@1 @5 Type=LocalizationDictionaryProviderBase)" />
-    <Alias n="7" Id="(@1 @5 Type=XmlEmbeddedFileLocalizationDictionaryProvider)" />
-    <Alias n="8" Id="(@1 @5 Type=XmlFileLocalizationDictionaryProvider)" />
-    <Alias n="9" Id="(@1 @5 Type=XmlLocalizationDictionary)" />
+    <Alias n="2" Id="(@1 Namespace=Abp.Localization.Dictionaries Type=DictionaryBasedLocalizationSource)" />
+    <Alias n="3" Id="(@1 Namespace=Abp.Localization.Dictionaries Type=ILocalizationDictionary)" />
+    <Alias n="4" Id="(@1 Namespace=Abp.Localization.Sources Type=ILocalizationSource)" />
+    <Alias n="5" Uri="Assembly=$(70d916f2-9bff-43da-b3f7-3e0655114d48.OutputPathUri)" />
+    <Alias n="6" Id="Namespace=Abp.Localization" />
+    <Alias n="7" Id="(@5 @6 Type=IMultiTenantLocalizationDictionary)" />
+    <Alias n="8" Id="(@5 @6 Type=IMultiTenantLocalizationSource)" />
+    <Alias n="9" Id="(@5 @6 Type=MultiTenantLocalizationDictionary)" />
+    <Alias n="10" Id="(@5 @6 Type=MultiTenantLocalizationDictionaryCacheHelper)" />
+    <Alias n="11" Id="(@5 @6 Type=MultiTenantLocalizationDictionaryProvider)" />
+    <Alias n="12" Id="(@5 @6 Type=MultiTenantLocalizationSource)" />
   </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
@@ -222,6 +232,9 @@
     </Style>
   </Styles>
   <Paths>
+    <Path Id="2c221d3b-5f54-4c5b-8082-318636415132.OutputPath" Value="F:\VS\aspnetboilerplate-master\src\Abp\bin\Debug\Abp.dll" />
     <Path Id="2c221d3b-5f54-4c5b-8082-318636415132.OutputPathUri" Value="file:///F:/VS/aspnetboilerplate-master/src/Abp/bin/Debug/Abp.dll" />
+    <Path Id="70d916f2-9bff-43da-b3f7-3e0655114d48.OutputPath" Value="F:\VS\module-zero-master\src\Abp.Zero\bin\Debug\Abp.Zero.dll" />
+    <Path Id="70d916f2-9bff-43da-b3f7-3e0655114d48.OutputPathUri" Value="file:///F:/VS/module-zero-master/src/Abp.Zero/bin/Debug/Abp.Zero.dll" />
   </Paths>
 </DirectedGraph>
