@@ -24,7 +24,8 @@ namespace CSDemo
             //GroupFoo();
             //GreedyFoo();
             //reverseFoo();
-            directionFoo();
+            //directionFoo();
+            HexaDecimalFoo();
         }
 
         private void BasicFoo() 
@@ -273,6 +274,25 @@ die for something";//mutiple lines
                 Console.WriteLine("r2 match:" + r2.Match(x).Value);//输出：2048
             }
             //r1中的反向正声明表示在4位数字之前必须紧跟着“used:”，r2中的反向负声明表示在4位数字之前必须紧跟着除“used:”之外的字符串。
+        }
+
+        private void HexaDecimalFoo() 
+        {
+
+            string input = "好";
+            char[] values = input.ToCharArray();
+
+            foreach (char letter in values)
+            {
+                int value = Convert.ToInt32(letter);
+                Console.WriteLine("{0:X000}", value);
+            }
+
+            Regex r = new Regex(@"\u597D");
+            Console.WriteLine(r.IsMatch(input));//ture
+            
+            //Console.WriteLine(x.ToString();
+
         }
 
 
