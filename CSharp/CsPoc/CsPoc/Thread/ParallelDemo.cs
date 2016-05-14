@@ -16,9 +16,82 @@ namespace CsPoc
 
             //List<Action> lst = new List<Action>() { Credit, Email };
             //var result= Parallel.For(0, lst.Count, (i) => { lst[i](); });
-            
+            //Foo1();
 
-            var list = new List<int>() {10,20,30,40,50 };
+            int maxThreadNum, portThreadNum;
+
+            int minThreadNum;
+
+            ThreadPool.GetMaxThreads(out maxThreadNum, out portThreadNum);
+
+            ThreadPool.SetMinThreads(10, portThreadNum);
+            ThreadPool.SetMaxThreads(250, portThreadNum);
+
+            ThreadPool.GetMaxThreads(out maxThreadNum, out portThreadNum);
+            ThreadPool.GetMinThreads(out minThreadNum, out portThreadNum);
+
+ 
+
+            Console.WriteLine("最大线程数：{0}", maxThreadNum);
+
+            Console.WriteLine("最小空闲线程数：{0}", minThreadNum);
+
+            //Foo3();
+            Foo4();
+
+        }
+
+        static void Foo2()
+        {
+            int a = 0;
+            System.Threading.Tasks.Parallel.For(0, 100000, new ParallelOptions { MaxDegreeOfParallelism = 100 }, (i) =>
+            {
+                a++;
+            });
+            Console.Write(a);
+        }
+
+        static void Foo3()
+        {
+            int a = 0;
+            var w = new ManualResetEvent(false);
+            System.Threading.Tasks.Parallel.For(0, 101, (i) =>
+            {
+
+                //Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+                if (i < 100)
+                {
+                    w.WaitOne();
+                }
+                else
+                {
+                    w.Set();
+                }
+
+                Console.WriteLine(i);
+                ++a;
+            });
+            
+            Console.Write(a);
+        }
+
+        static void Foo4()
+        {
+            int a = 0;
+            Random r = new Random();
+            System.Threading.Tasks.Parallel.For(0, 1000, (i) =>
+            {
+                Thread.Sleep(r.Next(1000/10));
+                Console.WriteLine(i);
+                ++a;
+            });
+
+            Console.Write(a);
+        }
+
+        static void Foo1()
+        {
+                        var list = new List<int>() {10,20,30,40,50 };
             var options = new ParallelOptions();
             var total = 0;
             var result = Parallel.For(0, list.Count,
