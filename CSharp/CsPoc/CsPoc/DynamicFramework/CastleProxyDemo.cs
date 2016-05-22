@@ -68,6 +68,7 @@ namespace CsPoc.DynamicFramework
         {
             Console.WriteLine("How are you doing?");
         }
+
     }
     public class FooController 
     {
