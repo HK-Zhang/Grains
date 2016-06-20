@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>获取对象宽度</title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(function ()
+        {
+            alert("attr(\"width\"):" + $("#testDiv").attr("width"));
+            alert("css(\"width\"):" + $("#testDiv").css("width"));
+            alert("width():" + $("#testDiv").width());
+            alert("style.width:" + $("#testDiv")[0].style.width); 
+        }
+            )
+
+    </script>
+    <div id="testDiv">测试文本</div>
+</body>
+</html>

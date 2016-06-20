@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>动态创建对象</title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+    <div id="testDiv">测试图层</div>
+    <script type="text/javascript">
+        //$(
+        //    function () { testDiv.innerHTML += "<div style=\"border:solid 1px #FF0000\">使用$(function)方法</div>"; }
+        //    );
+
+        //$("<div style=\"border:solid 1px #FF0000\">动态创建的div</div>").appendTo(testDiv);
+
+//        $(document).ready(
+//        function () { testDiv.innerHTML = "<div style=\"border:solid 1px #FF0000\">使用动态创建的$(document).ready(function)方法</div>"; }
+        //);
+
+        $("<div style=\"border:solid 1px #FF0000\">动态创建的div</div>").appendTo(testDiv);
+
+    </script>
+</body>
+</html>

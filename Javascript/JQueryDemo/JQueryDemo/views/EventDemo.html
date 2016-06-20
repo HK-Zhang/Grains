@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Event</title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+    <div id="testDiv1" onclick="showMsg();">单击事件 1</div>
+    <div id="testDiv2">单击事件 2</div>
+    <div id="testDiv4">单击事件 4</div>
+    <div id="testDiv5" customer="customer data 1">获取自定义数据-1</div>
+    <div id="testDiv6">获取自定义数据-2</div>
+    <script type="text/javascript">
+        $(function () {
+            document.getElementById("testDiv2").onclick = showMsg;
+            $("#testDiv4").bind("click", function (event) { alert("One"); });
+            $("#testDiv4").bind("click", function (event) { alert("Two"); });
+            $("#testDiv5").bind("click", function (event) { alert($(event.target).attr("customer")); });
+            $("#testDiv6").bind("click", { customer: "customer data 2" }, function (event) { alert(event.data.customer);});
+        })
+
+        function showMsg(event) {
+            alert("!!!");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Toggle Demo</title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("li").toggle(
+                function () {
+                    $(this).css({ "list-style-type": "disc", "color": "blue" });
+                },
+                function () {
+                    $(this).css({ "list-style-type": "square", "color": "red" });
+                },
+                function () {
+                    $(this).css({ "list-style-type": "none", "color": "" });
+                }
+                );
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li style="cursor:pointer">click me</li>
+    </ul>
+</body>
+</html>

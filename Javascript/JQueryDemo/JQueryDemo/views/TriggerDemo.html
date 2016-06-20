@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Trigger Demo</title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#old").click(function () {
+                $("#divResult").html("");
+                $("input").trigger("focus");
+            });
+            $("#new").click(function () {
+                $("#divResult").html("");
+                $("input").triggerHandler("focus");
+            });
+            $("input").focus(function () {
+                $("<span>Focused!</span>").appendTo("#divResult");
+            });
+        })
+    </script>
+</head>
+<body>
+    <button id="old">
+        .trigger("focus")
+    </button>
+    <button id="new">
+        .triggerHandler("focus")
+    </button><br />
+    <br />
+    <input type="text" value="To Be Focused" />
+    <div id="divResult"></div>
+</body>
+</html>
