@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Page Info</title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("div").click(function () {
+                console.log($(window).height() + "浏览器显示区域（可视区域）的高度");
+                console.log($(window).width() + "浏览器显示区域（可视区域）的宽度");
+
+                console.log($(document).height() + "页面的文档高度");
+                console.log($(document).width() + "页面的文档宽度");
+
+                console.log($(document.body).height() + "浏览器当前窗口文档body的高度");
+                console.log($(document.body).width() + "浏览器当前窗口文档body的宽度");
+
+                console.log($(document.body).scrollTop() + "滚动条到顶部的垂直高度(即网页被卷上去的高度)");
+                console.log($(document.body).scrollLeft() + "滚动条到左边的垂直宽度");
+
+                console.log($(this).width() + "获取或设置元素的宽度");
+                console.log($(this).height() + "获取或设置元素的高度");
+
+                console.log($(this).offset().top + "相对于文档body最顶部的距离");
+                console.log($(this).offset().left + "相对于文档body最左边的距离");
+
+                console.log($(this).position().top + "相对于父元素最顶部的距离");
+                console.log($(this).position().left + "相对于父元素最左边的距离");
+
+                console.log(event.pageX + "鼠标Ｘ");
+                console.log(event.pageY + "鼠标Ｙ");
+
+                $(this).offset().top;//某个元素的上边界到body最顶部的距离：（在元素的包含元素不含滚动条的情况下）
+                $(this).offset().left;//某个元素的左边界到body最左边的距离：（在元素的包含元素不含滚动条的情况下）
+                $(this).offset().top;//返回当前元素的上边界到它的包含元素的上边界的偏移量：（在元素的包含元素含滚动条的情况下）
+                $(this).offset().left;//返回当前元素的左边界到它的包含元素的左边界的偏移量：（在元素的包含元素含滚动条的情况下）
+
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>Output Page Information in Console</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>URL</title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#button").click(function () {
+                var _counter = $(this).attr("data-counter");
+                _counter++;
+
+                $(this).attr("data-counter", _counter);
+                console.log(_counter);
+
+                var thisurl = "http://" + window.location.host + "/test/" + _counter + ".html";
+
+                if (window.history.pushState) {
+                    window.history.pushState({ pageIndex: 1 }, "aaaa", thisurl);
+                    return true;
+                }
+            });
+
+            
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="变更浏览器地址栏的url" id="button" data-counter="0"/>
+</body>
+</html>

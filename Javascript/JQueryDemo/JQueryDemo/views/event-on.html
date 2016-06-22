@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Event On</title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("div").on("click", "p", function () {//P是未来元素。这样的写法可满足delegate、live、bind这三种老写法
+                alert($(this).html() + $(this).index());
+            });
+            $("button").click(function () {
+                $("<p>aaaaaa</p>").insertAfter("button");
+                //console.log("event on");
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <button>test</button>
+    </div>
+</body>
+</html>
