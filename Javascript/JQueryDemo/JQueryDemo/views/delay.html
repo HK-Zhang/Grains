@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Delay</title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var me = $("#button"); //var me = $(this);
+            me.queue("fx", []);
+            me.delay(1111).queue(function () {
+                me.css("background", "red");
+            });
+        });
+</script>
+</head>
+<body>
+    <div id="button">aaa</div>
+</body>
+</html>

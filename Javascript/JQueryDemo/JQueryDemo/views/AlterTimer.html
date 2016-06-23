@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Alert Timer</title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var Alert = {
+                counter: 0,
+                timer: 0,
+                stopwatch: function () {
+                    console.log("START");
+                    Alert.timer = setInterval(function () {
+                        Alert.counter++;
+                        console.log(Alert.counter);
+                    },100);
+                },
+                clear: function () {
+                    clearInterval(Alert.timer);
+                    console.log("END");
+                },
+            };
+
+            $("#button1").click(function () { Alert.stopwatch(); });
+            $("#button2").click(function () { Alert.clear(); });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="start" id="button1" />
+    <input type="button" value="end" id="button2" />
+</body>
+</html>
