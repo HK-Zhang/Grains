@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/APPLEShared/_Layout.cshtml";
+}
+
+@section MasterPart{
+    
+@*<script src="~/Scripts/jquery-2.2.0.min.js"></script>*@
+    <script type="text/javascript">
+        $(function () {
+            $("#btn1").click(function () {
+                var url = "TellMeDate";
+                $.get(url, null, function (data) {
+                    $("#rData").html(data);
+                });
+            });
+            $("#btn2").click(function () {
+                var url = "WelcomeMsg";
+                var name = $("#exampleInputName2").val();
+                $.get(url, { input: name }, function (data) {
+                    $("#rData").html(data);
+                });
+            });
+            $("#btn3").click(function () {
+                var url = "WelcomeMsg";
+                var name = $("#exampleInputName2").val();
+                $.get(url, { input: name }, function (data) {
+                    $("#retData").html(data);
+                });
+            });
+
+            $("#GetEmps").click(function () {
+                $.getJSON('EmpList?city=' + $('#City').val(), function (data) {
+
+                    var items = '<table class="table table-bordered"><tr><th>Name</th><th>Address</th></tr>';
+                    
+                    $.each(data.result, function (i, emp) {
+                        items += "<tr><td>" + emp.name + "</td><td>" + emp.address + "</td></tr>";
+                    });
+                    items += "</table>";
+
+
+                    $('#rData').html(items);
+                });
+
+            });
+
+
+            $("#GetAbpEmps").click(function () {
+                $.getJSON('AbpEmpList?city=' + $('#City').val(), function (data) {
+
+                    var items = '<table class="table table-bordered"><tr><th>Name</th><th>Address</th></tr>';
+
+                    $.each(data, function (i, emp) {
+                        items += "<tr><td>" + emp.name + "</td><td>" + emp.address + "</td></tr>";
+                    });
+                    items += "</table>";
+
+
+                    $('#rData').html(items);
+                });
+
+            });
+
+            $("#GetAbpEmpsWithInput").click(function () {
+                $.getJSON('AbpEmpListWithInput', { City: $('#City').val() }, function (data) {
+
+                    var items = '<table class="table table-bordered"><tr><th>Name</th><th>Address</th></tr>';
+
+                    $.each(data, function (i, emp) {
+                        items += "<tr><td>" + emp.name + "</td><td>" + emp.address + "</td></tr>";
+                    });
+                    items += "</table>";
+
+
+                    $('#rData').html(items);
+                });
+
+            });
+        })
+    </script>
+    }
+
+<h2>Index</h2>
+
+<p class="text-left" id="rData"></p>
+<button class="btn btn-default" id="btn1">TellMeDate</button>
+<form class="form-inline">
+    <div class="form-group">
+        <label for="exampleInputName2">Enter your name</label>
+        <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+    </div>
+    <button class="btn btn-primary" id="btn2">WelcomeMsg</button>
+</form>
+
+    
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="btn3">
+    WelcomeMsg
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-left" id="retData"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>
+    Enter City name @Html.TextBox("City")
+    <input type="submit" id="GetEmps" value="Submit" />
+    <input type="submit" id="GetAbpEmps" value="Submit" />
+    <input type="submit" id="GetAbpEmpsWithInput" value="Submit" />
+</p>

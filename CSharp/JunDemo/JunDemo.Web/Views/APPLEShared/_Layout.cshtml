@@ -1,0 +1,20 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Bundles/vendor/css")
+</head>
+
+<body>
+    <div class="container">
+        @* 主要部分*@
+        @RenderBody()
+        <br />
+        <br />
+    </div>
+        @Scripts.Render("~/Bundles/vendor/js/bottom")
+    @*其他部份内容*@
+    @RenderSection("MasterPart", false)
+</body>
+</html>

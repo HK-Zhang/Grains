@@ -1,0 +1,30 @@
+﻿@using Abp.Web.Mvc.Extensions
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HtmlHelp</title>
+</head>
+<body>
+    <div> 
+        @Html.ActionLink("这是一个连接", "Index", "APPLEEmp")
+        带有QueryString的写法
+        @Html.ActionLink("这是一个连接", "Index", "APPLEEmp", new { page = 1 }, null)
+        @Html.ActionLink("这是一个连接", "Index", new { page=1 })
+        有其它Html属性的写法
+        @Html.ActionLink("这是一个连接", "Index", "APPLEEmp", new { id = "link1" })
+        @Html.ActionLink("这是一个连接", "Index",null, new { id="link1" })
+        QueryString与Html属性同时存在
+        @Html.ActionLink("这是一个连接", "Index", "APPLEEmp", new { page = 1 }, new { id = "link1" })
+        @Html.ActionLink("这是一个连接", "Index" , new { page = 1 }, new { id = "link1" })
+        <br />
+        @Html.Encode("<p>哈哈</p>") 
+        @Html.Raw("<p>哈哈</p>")
+    </div>
+</body>
+</html>

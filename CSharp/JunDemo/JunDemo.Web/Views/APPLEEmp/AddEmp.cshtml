@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "AddEmp";
+    Layout = "~/Views/APPLEShared/_Layout.cshtml";
+}
+
+@section MasterPart{
+<script>
+    $(document).ready(function () {
+        $("#btnSave").click(function () {
+            $.ajax(
+            {
+                type: "POST", //HTTP POST Method
+                url: "AddEmp", // Controller/View
+                data: { //Passing data
+                    Name: $("#txtName").val(), //Reading text box values using Jquery
+                    City: $("#txtAddress").val(),
+                    Address: $("#txtcity").val()
+                }
+
+            });
+
+        });
+    });
+
+</script>
+}
+<fieldset>
+    <div class="form-horizontal">
+        <div class="editor-label">
+            Name
+        </div>
+        <div class="editor-label">
+            <input type="text" id="txtName" />
+        </div>
+
+        <div class="editor-label">
+            Address
+        </div>
+        <div class="editor-label">
+            <input type="text" id="txtAddress" />
+        </div>
+
+        <div class="editor-label">
+            City
+        </div>
+        <div class="editor-label">
+            <input type="text" id="txtcity" />
+        </div>
+        <div class="editor-label">
+            <br />
+            <input class="btn-default" type="button" id="btnSave" value="Save" />
+        </div>
+    </div>
+</fieldset>  
+

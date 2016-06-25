@@ -1,0 +1,33 @@
+﻿@using Abp.Web.Mvc.Extensions
+@model JunDemo.APPLEs.Dto.EmpDto
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/APPLEShared/_Layout.cshtml";
+}
+
+<h2>About</h2>
+@Html.DropDownListFor(model => model.City, new SelectList(ViewBag.City), "Select City", new { @class = "form-control" })
+<p id="rData">
+</p>
+
+@section MasterPart{
+    <script type="text/javascript">
+        $(function () {
+            $("#City").click(function () {
+                $.getJSON('AbpEmpList?city=' + $("#City").val(), function (data) {
+
+                    var items = '<table class="table table-bordered"><tr><th>Name</th><th>Address</th></tr>';
+
+                    $.each(data, function (i, emp) {
+                        items += "<tr><td>" + emp.name + "</td><td>" + emp.address + "</td></tr>";
+                    });
+                    items += "</table>";
+
+
+                    $('#rData').html(items);
+                });
+
+            });
+        })
+    </script>
+    }
