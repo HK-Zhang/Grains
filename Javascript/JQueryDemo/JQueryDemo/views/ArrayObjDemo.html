@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../public/scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#iterateArray").click(function(event){
+                $.each(['a', 'b', 'c'], function (i, n) {
+                    console.log("Item #" + i + ": " + n);
+                    console.log(this);
+
+                    if (i >= 1) {
+                        return false;
+                    }
+                });
+            });
+
+            $("#iterateObject").click(function (event) {
+                $.each({ name: "ziqiu.zhang", sex: "male", status: "single" }, function (i, n) {
+                    console.log("Item# " + i.toString() + ": " + n);
+                });
+            });
+
+            $("#grep").click(function (event) {
+                $.grep([1, 2, 3], function (n, i) {
+                    return n > 2;
+                }).forEach(function (v, i) {
+                    console.log(v);
+                });
+            });
+
+            $("#map").click(function (event) {
+                var arr = ['a', 'b', 'c', 'd', 'e'];
+                arr = $.map(arr, function (n, i) {
+                    return (n.toUpperCase() + i);
+                });
+
+                console.log(arr.join(", "));
+            });
+
+            $("#merge").click(function (event) {
+                var first = [1, 3, 5];
+                var second = [2, 4, 6];
+                var result = $.merge(first, second);
+
+                console.log(result.join(", "));
+                console.log(first.join("; "));
+                console.log(second.join(". "));
+            });
+
+            $("#extend").click(function (event) {
+                var empty = {};
+                var defaults = { validate: false, limit: 5, name: 'bar' };
+                var options = { validate: true, limit: 5 };
+                var setting = $.extend(empty, defaults, options);
+                $.each(setting, function (i, n) {
+                    console.log("Item# " + i.toString() + ": " + n);
+                });
+            });
+
+            $("#typeTest").click(function (event) {
+                var test = '123';
+                console.log($.isFunction(test));
+                console.log($.isArray(test));
+            });
+
+            $("#stringOperation").click(function (event) {
+                console.log($.trim("  hello, how are you?  "));
+            });
+
+            $("#urlOperation").click(function (event) {
+                var params = { height: 100, width: 200 };
+                var str = $.param(params);
+                console.log(str);
+
+                var params = { "height": "100", "width": "200" };
+                var str = $.param(params);
+                console.log(str);
+            });
+    
+        })
+    </script>
+</head>
+<body>
+    <input type="button" name="iterateArray" value="iterateArray" id="iterateArray" />
+    <input type="button" name="iterateObject" value="iterateObject" id="iterateObject" />
+    <input type="button" name="grep" value="grep" id="grep" />
+    <input type="button" name="map" value="map" id="map" />
+    <input type="button" name="merge" value="merge" id="merge" />
+    <input type="button" name="extend" value="extend" id="extend" />
+    <input type="button" name="typeTest" value="typeTest" id="typeTest" />
+    <input type="button" name="stringOperation" value="stringOperation" id="stringOperation" />
+    <input type="button" name="urlOperation" value="urlOperation" id="urlOperation" />
+
+</body>
+</html>
