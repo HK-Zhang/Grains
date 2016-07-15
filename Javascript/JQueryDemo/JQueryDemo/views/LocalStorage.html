@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Local Storage Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../content/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="logDiv"></div>
+    <button id="setterButton">Set Local Storage</button>
+    <button id="getterButton">Get Local Storage</button>
+    <button id="iterateButton">Iterate Local Storage</button>
+    <button id="removeButton">remove Local Storage</button>
+    <script src="../public/scripts/jquery-2.2.4.min.js"></script>
+    <script src="../public/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            if (window.localStorage) {
+                $('#logDiv').html('Do support local storage');
+            }
+            else {
+                $('#logDiv').html('Do not support local storage');
+            }
+
+            $('#setterButton').click(function (event) {
+                localStorage.a = 3;//设置a为"3"
+                localStorage["b"] = "sfsf";//设置a为"sfsf"，覆盖上面的值
+                localStorage.setItem("c", "isaac");//设置b为"isaac"
+            })
+
+            $('#getterButton').click(function (event) {
+                $('#logDiv').html(localStorage.a + "/" + localStorage["b"] + localStorage.getItem("c"));
+            })
+
+            $('#iterateButton').click(function (event) {
+                var storage = window.localStorage;
+                var log = "";
+                for (var i = 0; i < storage.length; i++) {
+                    log += storage.key(i) + ":" + storage.getItem(storage.key(i));
+                }
+
+                $('#logDiv').html(log);
+            })
+
+            $('#removeButton').click(function (event) {
+                localStorage.removeItem("c")
+            })
+
+        })
+    </script>
+</body>
+</html>
