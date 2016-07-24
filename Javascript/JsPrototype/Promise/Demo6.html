@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script type="text/javascript">
+function get(url){
+    return new Promise(function(resolve,reject){
+        var req = new XMLHttpRequest();
+        req.open('GET',url);
+
+        req.onload = function(){
+            if(req.status==200){
+                resolve(req.response);
+            }
+            else{
+                reject(Error(req.statusText));
+            }
+        };
+
+        req.onerror = function(){
+            reject(Error('Network Error'));
+        };
+
+        req.send();
+
+    });
+}
+
+function getJson(url){
+    return get(url).then(JSON.parse);
+}
+
+
+getJson('story.json').then(function(story) {
+  console.log(story.heading);
+
+  // Take an array of promises and wait on them all
+  return Promise.all(
+    // Map our array of chapter urls to
+    // an array of chapter json promises
+    story.chapterUrls.map(getJson)
+  );
+}).then(function(chapters) {
+  // Now we have the chapters jsons in order! Loop through…
+  chapters.forEach(function(chapter) {
+    // …and add to the page
+    console.log(chapter.html);
+  });
+  console.log("All done");
+}).catch(function(err) {
+  // catch any error that happened so far
+  console.log("Argh, broken: " + err.message);
+}).then(function() {
+  console.log("All Dsiplay");
+});
+</script>
+</body>
+</html>

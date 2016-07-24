@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script type="text/javascript">
+function get(url){
+    return new Promise(function(resolve,reject){
+        var req = new XMLHttpRequest();
+        req.open('GET',url);
+
+        req.onload = function(){
+            if(req.status==200){
+                resolve(req.response);
+            }
+            else{
+                reject(Error(req.statusText));
+            }
+        };
+
+        req.onerror = function(){
+            reject(Error('Network Error'));
+        };
+
+        req.send();
+
+    });
+}
+
+function getJson(url){
+    return get(url).then(JSON.parse);
+}
+
+getJson('story.json').then(function(story) {
+// Start off with a promise that always resolves
+var sequence = Promise.resolve();
+
+// Loop through our chapter urls
+story.chapterUrls.forEach(function(chapterUrl) {
+  // Add these actions to the end of the sequence
+  sequence = sequence.then(function() {
+    return getJson(chapterUrl);
+  }).then(function(chapter) {
+    console.log(chapter.html);
+  });
+
+});
+});
+</script>
+</body>
+</html>

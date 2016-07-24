@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script type="text/javascript">
+function get(url){
+    return new Promise(function(resolve,reject){
+        var req = new XMLHttpRequest();
+        req.open('GET',url);
+
+        req.onload = function(){
+            if(req.status==200){
+                resolve(req.response);
+            }
+            else{
+                reject(Error(req.statusText));
+            }
+        };
+
+        req.onerror = function(){
+            reject(Error('Network Error'));
+        };
+
+        req.send();
+
+    });
+}
+
+function getJson(url){
+    return get(url).then(JSON.parse);
+}
+
+getJson('story.json').then(function(story) {
+  console.log(story.heading);
+
+  return story.chapterUrls.reduce(function(sequence, chapterUrl) {
+    // Once the last chapter's promise is done…
+    return sequence.then(function() {
+      // …fetch the next chapter
+      return getJson(chapterUrl);
+    }).then(function(chapter) {
+      // and add it to the page
+      console.log(chapter.html);
+    });
+  }, Promise.resolve());
+}).then(function() {
+  // And we're all done!
+  console.log("All done");
+}).catch(function(err) {
+  // Catch any error that happened along the way
+  console.log("Argh, broken: " + err.message);
+}).then(function() {
+  // Always hide the spinner
+  console.log("All Display");
+});
+</script>
+</body>
+</html>
