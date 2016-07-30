@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .shade{
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,.6) ;
+            z-index: 20;
+        }
+        .modal{
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            height: 300px;
+            width: 400px;
+            margin-top: -150px;
+            margin-left: -200px;
+            z-index: 30;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+        .hide{
+            display: none;
+        }
+        .modal form {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            height: 200px;
+            width: 229px;
+            border: 1px;
+            margin-left: -115px;
+            margin-top: -100px;
+        }
+        .modal form p {
+            float: right;
+            margin-top: 12px;
+        }
+        .modal form span {
+            float: right;
+            display: inline-block;
+            height: 18px;
+            width: 170px;
+            background-color: #FFEBEB;
+            text-align: center;
+            border: 1px solid #ffbdbe;
+            color: #e4393c;
+            font-size: 14px;
+            visibility: hidden;
+        }
+        .modal form [type="button"] {
+            position: absolute;
+            bottom: -30px;
+            left: 115px;
+        }
+        .modal form [value="提交"]{
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 300px; margin: 0 auto">
+        <input type="button" value="添加主机" onclick="return Add();" />
+        <table style="border: 2px solid #F5F5F5; width: 300px;">
+            <thead>
+                <tr>
+                    <th >主机名</th>
+                    <th >IP</th>
+                    <th >端口</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td target="host">c1.com</td>
+                    <td target="ip">1.1.1.1</td>
+                    <td target="port">8888</td>
+                    <td onclick="Edit(this);">Edit</td>
+                </tr>
+               <tr>
+                    <td target="host">c2.com</td>
+                    <td target="ip">1.1.1.1</td>
+                    <td target="port">8888</td>
+                    <td onclick="Edit(this);">Edit</td>
+                </tr>
+                <tr>
+                    <td target="host">c3.com</td>
+                    <td target="ip">1.1.1.1</td>
+                    <td target="port">8888</td>
+                    <td onclick="Edit(this);">Edit</td>
+                </tr>
+                <tr>
+                    <td target="host">.com</td>
+                    <td target="ip">1.1.1.1</td>
+                    <td target="port">8888</td>
+                    <td onclick="Edit(this);">Edit</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="shade hide"></div>
+    <div  class="modal hide">
+        <form action="" method="get">
+            <p>主机名:<input type="text" id="host" name="host"><br><span></span></p>
+            <p>IP地址:<input type="text" id='ip' name="ip"><br><span></span></p>
+            <p>端口号:<input type="text" id='port' name="port"><br><span></span><br></p>
+            <input type="button" value="提交" onclick="return SubmitForm();">
+            <input type="button" value="取消" onclick="HideModal();">
+        </form>
+    </div>
+
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+        $(function () {
+           $("tr:even").css("background-color","#f5f5f5");
+        });
+        function Edit(ths) {
+            $(".shade,.modal").removeClass("hide");
+            prevList = $(ths).prevAll();
+            prevList.each(function () {
+                var text = $(this).text();
+                var target = $(this).attr("target");
+                $("#"+target).val(text);
+            });
+        }
+        function HideModal() {
+            $(".shade,.modal").addClass("hide");
+            $(".modal").find("input[type='text']").val("");
+            Addd = false;
+        }
+        function SubmitForm() {
+            var flag = Detection();
+
+            try {
+                    if (Addd && flag){
+                    $("tbody").append($("tr").last().clone());
+                    $(".modal").find("input[type='text']").each(function () {
+                        var value = $(this).val();
+                        var name = $(this).attr("name");
+                        ($("tr").last().children()).each(function () {
+                            if ($(this).attr("target") == name){
+                                $(this).text(value);
+                                return
+                            }
+                                }
+                        )});
+                    Addd = false;
+                    HideModal();
+                    return false;
+                }
+            }catch (e){}
+
+
+            if (flag){
+                $(".modal").find("input[type='text']").each(function () {
+                    var value = $(this).val();
+                    var name = $(this).attr("name");
+                    $(prevList).each(function () {
+                        if ($(this).attr("target") == name){
+                            $(this).text(value);
+                            return
+                        }
+                            }
+                    )});
+                    $(".modal,.shade").addClass("hide");
+                    HideModal();
+                }
+            return flag;
+            }
+
+        
+        function Detection() {
+            var flag = true;
+            $(".modal").find("input[type='text']").each(function () {
+                var value = $(this).val();
+                if (value.length == 0){
+                    $(this).next().next().css("visibility","visible").text("亲，不能为空");
+                    flag = false;
+                    return false;
+                }else {
+                    $(this).next().next().css("visibility","hidden").text("");
+                }
+
+                if ($(this).attr('name') == "host"){
+                    var r = /(\.com)$/;
+                    if (r.test(value) == false){
+                        $(this).next().next().css("visibility","visible").text("主机名必须以.com结尾");
+                        flag = false;
+                        return false;
+                }
+                }else if ($(this).attr('name') == "ip"){
+                    var r2 = /^(([0-2]?[0-9][0-9]?)\.){3}([0-2]?[0-9][0-9]?)$/;
+                    if (r2.test(value) == false){
+                        $(this).next().next().css("visibility","visible").text("ip 地址格式有误");
+                        flag = false;
+                        return false;
+                    }
+                }else if ($(this).attr('name') == "port"){
+                    var r3 = /^([0-9]{1,5})$/;
+                    if ((r3.test(value) == false) || (value > 65535)){
+                        $(this).next().next().css("visibility","visible").text("端口必须为0-65535");
+                        flag = false;
+                        return false;
+                    }
+                }else {
+                    $(this).next().next().css("visibility","hidden").text("");
+                }
+        });
+        return flag;
+        }
+
+        function Add() {
+            Addd = true;
+            $(".shade,.modal").removeClass("hide");
+        }
+    </script>
+</body>
+</html>

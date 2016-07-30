@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--1 隐藏与显示-->
+    <!--2 淡入淡出-->
+    <!--3 滑动-->
+    <!--4 效果-回调:每一个动画执行完毕之后所能执行的函数方法或者所能做的一件事-->
+
+    <p>hello</p>
+    <button id="hide">隐藏</button>
+    <button id="show">显示</button>
+    <button id="toggle">隐藏/显示</button>
+
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("p").hide(1000);
+            });
+            $("#show").click(function(){
+                $("p").show(1000);
+            });
+
+        //用于切换被选元素的 hide() 与 show() 方法。
+            $("#toggle").click(function(){
+                $("p").toggle(2000);
+            });
+        });
+
+    </script>
+</body>
+</html>

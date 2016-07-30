@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #dddddd;
+        }
+        .w{
+            margin: 0 auto;
+            width: 980px;
+        }
+        .pg-header{
+            background-color: black;
+            color: white;
+            height: 48px;
+        }
+        .pg-body .menu{
+            position: absolute;
+            left: 200px;
+            width: 180px;
+            background-color: white;
+            float: left;
+        }
+        li {
+            list-style-type: none;
+        }
+        .pg-body .menu .active{
+            background-color: #425a66;
+            color: white;
+        }
+        .pg-body .fixed{
+            position: fixed;
+            top: 10px;
+        }
+        .pg-body .content{
+            position: absolute;
+            left: 385px;
+            right: 200px;
+            background-color: white;
+            float: left;
+        }
+        .pg-body .content .item{
+            height: 900px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="pg-header">
+        <div class="w"></div>
+    </div>
+    <div class="pg-body">
+        <div id="menu" class="menu">
+            <ul>
+                <li menu="funcOne">第一章</li>
+                <li menu="funcTwo">第二章</li>
+                <li menu="funcStree">第三章</li>
+            </ul>
+        </div>
+        <div id="content" class="content">
+            <div class="item" con="funcOne">床前明月管</div>
+            <div class="item" con="funcTwo">疑是地上霜</div>
+            <div class="item" con="funcStree" style="height: 100px">我是郭德纲</div>
+        </div>
+    </div>
+
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+        window.onscroll = function () {
+            var onTop = $(window).scrollTop();
+            if (onTop >= 48){
+                $("#menu").addClass("fixed");
+            }else {
+                $("#menu").removeClass("fixed");
+            }
+
+            var flag = false;
+            $(".item").each(function () {
+                var topH = $(this).offset().top;
+                var HH = $(this).height() + topH;
+                var wH = $(window).height();
+
+                if ((wH + onTop) == HH){
+                    $("ul .active").removeClass("active");
+                    $("li:last").addClass("active");
+                    flag = true;
+                    return
+                }
+                if (flag){
+                    return
+                }
+
+                var menuCon = $(this).attr("con");
+                if ((topH < onTop) && (onTop < HH)){
+                    $("ul [menu='" + menuCon +"']").addClass("active");
+                }else {
+                    $("ul [menu='" + menuCon +"']").removeClass("active");
+                }
+            })
+        }
+    </script>
+</body>
+</html>

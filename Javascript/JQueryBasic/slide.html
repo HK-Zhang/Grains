@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #flipshow,#content,#fliphide,#toggle{
+            padding: 5px;
+            text-align: center;
+            background-color: blueviolet;
+            border:solid 1px red;
+
+        }
+        #content{
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="flipshow">出现</div>
+    <div id="fliphide">隐藏</div>
+    <div id="toggle">toggle</div>
+    <div id="content">helloworld</div>
+
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+              $("#flipshow").click(function(){
+                 $("#content").slideDown(1000);
+              });
+              $("#fliphide").click(function(){
+                 $("#content").slideUp(1000);
+              });
+              $("#toggle").click(function(){
+                 $("#content").slideToggle(1000);
+              })
+          });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="outer">
+           <div class="section">
+               <div class="icons" style="display: inline-block">
+                   <a onclick="Add(this);"><button>+</button></a>
+               </div>
+               <div class="inputs" style="display: inline-block">
+                   <input type="checkbox">
+                   <input type="text" value="IP">
+               </div>
+           </div>
+       </div>
+
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+        function Add(self) {
+            $(self).parentsUntil("outer").clone().find("a").html("<button>-</button>").attr("onclick","Remove(this);").end().eq(1).appendTo(".outer");
+        }
+        function Remove(self) {
+            $(self).parentsUntil("outer").eq(1).remove();
+        }
+    </script>
+</body>
+</html>

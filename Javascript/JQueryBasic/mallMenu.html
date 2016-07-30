@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .hide{
+            display:none;
+        }
+        .header-nav {
+            height: 39px;
+            background: #c9033b;
+        }
+        .header-nav .bg{
+            background: #c9033b;
+        }
+        .header-nav .nav-allgoods .menuEvent {
+            display: block;
+            height: 39px;
+            line-height: 39px;
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            font-family: 微软雅黑;
+            color: #fff;
+            width: 100px;
+        }
+        .header-nav .nav-allgoods .menuEvent .catName {
+            height: 39px;
+            line-height: 39px;
+            font-size: 15px;
+        }
+        .header-nav .nav-allmenu a {
+            display: inline-block;
+            height: 39px;
+            vertical-align: top;
+            padding: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            float: left;
+        }
+        .header-menu a{
+            color:#656565;
+        }
+        .header-menu .menu-catagory{
+            position: absolute;
+            background-color: #fff;
+            border-left:1px solid #fff;
+            height: 316px;
+            width: 230px;
+             z-index: 4;
+             float: left;
+        }
+        .header-menu .menu-catagory .catagory {
+            border-left:4px solid #fff;
+            height: 104px;
+            border-bottom: solid 1px #eaeaea;
+        }
+        .header-menu .menu-catagory .catagory:hover {
+            height: 102px;
+            border-left:4px solid #c9033b;
+            border-bottom: solid 1px #bcbcbc;
+            border-top: solid 1px #bcbcbc;
+        }
+        .header-menu .menu-content .item{
+            margin-left:230px;
+            position:absolute;
+            background-color:white;
+            height:314px;
+            width:500px;
+            z-index:4;
+            float:left;
+            border: solid 1px #bcbcbc;
+            border-left:0;
+            box-shadow: 1px 1px 5px #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="pg-header">
+
+    <div class="header-nav">
+        <div class="container narrow bg">
+            <div class="nav-allgoods left">
+                <a id="all_menu_catagory" href="#" class="menuEvent">
+                    <b class="catName">全部商品分类</b>>
+                    <span class="arrow" style="display: inline-block;vertical-align: top;"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="header-menu">
+        <div class="container narrow hide">
+            <div id="nav_all_menu" class="menu-catagory">
+                <div class="catagory" float-content="one">
+                    <div class="title">家电</div>
+                    <div class="body">
+                        <a href="#">空调</a>
+                    </div>
+                </div>
+                <div class="catagory" float-content="two">
+                    <div class="title">床上用品</div>
+                    <div class="body">
+                        <a href="http://www.baidu.com">床单</a>
+                    </div>
+                </div>
+                <div class="catagory" float-content="three">
+                    <div class="title">水果</div>
+                    <div class="body">
+                        <a href="#">橘子</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="nav_all_content" class="menu-content">
+                <div class="item hide" float-id="one">
+
+                    <dl>
+                        <dt><a href="#" class="red">厨房用品</a></dt>
+                        <dd>
+                            <span>| <a href="#" target="_blank" title="勺子">勺子</a> </span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="#" class="red">厨房用品</a></dt>
+                        <dd>
+                            <span>| <a href="#" target="_blank" title="菜刀">菜刀</a> </span>
+
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="#" class="red">厨房用品</a></dt>
+                        <dd>
+                            <span>| <a href="#">菜板</a> </span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="#" class="red">厨房用品</a></dt>
+                        <dd>
+                            <span>| <a href="#" target="_blank" title="碗">碗</a> </span>
+
+                        </dd>
+                    </dl>
+
+                </div>
+                <div class="item hide" float-id="two">
+                    <dl>
+                        <dt><a href="#" class="red">床上用品</a></dt>
+                        <dd>
+                            <span>| <a href="#" target="_blank" title="">枕头</a> </span>
+
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="#" class="red">床上用品</a></dt>
+                        <dd>
+                            <span>| <a href="#" target="_blank" title="角阀">夏凉被</a> </span>
+
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="#" class="red">床上用品</a></dt>
+                        <dd>
+                            <span>| <a href="#" target="_blank" title="角阀">嘿嘿嘿</a> </span>
+
+                        </dd>
+                    </dl>
+                </div>
+                <div class="item hide" float-id="three">
+                    <dl>
+                        <dt><a href="#" class="red">厨房用品</a></dt>
+                        <dd>
+                            <span>| <a href="#" target="_blank" title="角阀">微波炉</a> </span>
+
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="#" class="red">厨房用品</a></dt>
+                        <dd>
+                            <span>| <a href="http://www.meilele.com/category-jiaofa" target="_blank" title="角阀">金菜刀</a> </span>
+
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="jquery-3.0.0.min.js"></script>
+<script>
+    $(function () {
+        Change("#all_menu_catagory","#nav_all_menu","#nav_all_content")
+    });
+
+    function Change(menuF,menuS,menuT) {
+        $(menuF).bind({
+            "mouseover":function () {
+            $(menuS).parent().removeClass("hide");
+        },"mouseout":function () {
+            $(menuS).parent().addClass("hide");
+        }
+        });
+
+        $(menuS).children().bind({
+            "mouseover":function () {
+                $(menuS).parent().removeClass("hide");
+                var $item = $(menuT).find('[float-id="' +　$(this).attr("float-content") + '"]');
+                $item.removeClass("hide").siblings().addClass("hide");
+            },
+            "mouseout":function () {
+                $(menuS).parent().addClass("hide");
+                $(menuT).parent().addClass("hide");
+            }
+        });
+        
+        $(menuT).children().bind({
+            "mouseover":function () {
+                $(menuS).parent().removeClass("hide");
+                $(this).removeClass("hide");
+            },
+            "mouseout":function () {
+                $(menuS).parent().addClass("hide");
+                $(this).addClass("hide");
+            }
+        })
+    }
+</script>
+</body>
+</html>

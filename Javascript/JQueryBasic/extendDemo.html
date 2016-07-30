@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='jquery-3.0.0.min.js'></script>
+</head>
+
+<body>
+    <div class="title">111</div>
+    <div class="title">222</div>
+
+
+    <script>
+        jQuery.fn.extend({
+            show1: function () {
+                var val = this.text();
+                val = val + "sb";
+                return val;
+            },
+            show2: function () {
+
+            }
+        });
+        var ret = $(".title").show1();
+        console.log(ret);
+
+
+        jQuery.extend({
+            s1: function (arg) {
+                var val = $(arg).text();
+                return val + "sb";
+            },
+            s2: function () {
+
+            }
+        });
+        var ret2 = $.s1(".title");
+        console.log(ret2);
+    </script>
+</body>
+
+</html>
