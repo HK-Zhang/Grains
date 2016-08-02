@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='jquery-1.8.3.min.js'></script>
+    <script src='fixTable.js'></script>
+    <script type='text/javascript'>
+    $(function(){
+     FixTable('MyTable', 3, 500, 500);
+    });
+    </script>
+</head>
+<body>
+<table id="MyTable" style="width: 960px; font-family: 微软雅黑; color: #000000; font-size: medium; border-color: black;" border="1" cellspacing="0" cellpadding="0">
+<thead>
+<tr><th style="text-align: center; width: 80px;" rowspan="3">姓名</th><th style="text-align: center; width: 80px;" rowspan="3">班级</th><th style="text-align: center;" colspan="10">成绩</th></tr>
+<tr><th style="text-align: center;" colspan="3">主科</th><th style="text-align: center;" colspan="3">文科</th><th style="text-align: center;" colspan="3">理科</th><th style="text-align: center; width: 80px;" rowspan="2">总分</th></tr>
+<tr><th style="text-align: center; width: 80px;">语文</th><th style="text-align: center; width: 80px;">数学</th><th style="text-align: center; width: 80px;">英语</th><th style="text-align: center; width: 80px;">政治</th><th style="text-align: center; width: 80px;">历史</th><th style="text-align: center; width: 80px;">地理</th><th style="text-align: center; width: 80px;">物理</th><th style="text-align: center; width: 80px;">化学</th><th style="text-align: center; width: 80px;">生物</th></tr>
+<!--
+<tr>
+<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					姓名
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					班级
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					语文
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					数学
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					英语
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					政治
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					历史
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					地理
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					物理
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					化学
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					生物
+				</th>
+				<th style="width: 80px; text-align: center;" _mce_style="width: 80px; text-align: center;">
+					总分
+				</th>
+			
+</tr>
+--></thead>
+<tbody>
+<tr>
+<td>学生1</td>
+<td>班级3</td>
+<td style="text-align: right;">64&nbsp;</td>
+<td style="text-align: right;">104&nbsp;</td>
+<td style="text-align: right;">150&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">32&nbsp;</td>
+<td style="text-align: right;">82&nbsp;</td>
+<td style="text-align: right;">26&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">83&nbsp;</td>
+<td style="text-align: right;">678&nbsp;</td>
+</tr>
+<tr>
+<td>学生2</td>
+<td>班级2</td>
+<td style="text-align: right;">120&nbsp;</td>
+<td style="text-align: right;">66&nbsp;</td>
+<td style="text-align: right;">150&nbsp;</td>
+<td style="text-align: right;">85&nbsp;</td>
+<td style="text-align: right;">5&nbsp;</td>
+<td style="text-align: right;">50&nbsp;</td>
+<td style="text-align: right;">72&nbsp;</td>
+<td style="text-align: right;">32&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">670&nbsp;</td>
+</tr>
+<tr>
+<td>学生3</td>
+<td>班级2</td>
+<td style="text-align: right;">133&nbsp;</td>
+<td style="text-align: right;">61&nbsp;</td>
+<td style="text-align: right;">49&nbsp;</td>
+<td style="text-align: right;">97&nbsp;</td>
+<td style="text-align: right;">67&nbsp;</td>
+<td style="text-align: right;">13&nbsp;</td>
+<td style="text-align: right;">64&nbsp;</td>
+<td style="text-align: right;">8&nbsp;</td>
+<td style="text-align: right;">60&nbsp;</td>
+<td style="text-align: right;">552&nbsp;</td>
+</tr>
+<tr>
+<td>学生4</td>
+<td>班级3</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">136&nbsp;</td>
+<td style="text-align: right;">105&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">56&nbsp;</td>
+<td style="text-align: right;">11&nbsp;</td>
+<td style="text-align: right;">98&nbsp;</td>
+<td style="text-align: right;">29&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">546&nbsp;</td>
+</tr>
+<tr>
+<td>学生5</td>
+<td>班级2</td>
+<td style="text-align: right;">129&nbsp;</td>
+<td style="text-align: right;">146&nbsp;</td>
+<td style="text-align: right;">62&nbsp;</td>
+<td style="text-align: right;">64&nbsp;</td>
+<td style="text-align: right;">67&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">57&nbsp;</td>
+<td style="text-align: right;">16&nbsp;</td>
+<td style="text-align: right;">612&nbsp;</td>
+</tr>
+<tr>
+<td>学生6</td>
+<td>班级2</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">29&nbsp;</td>
+<td style="text-align: right;">51&nbsp;</td>
+<td style="text-align: right;">91&nbsp;</td>
+<td style="text-align: right;">9&nbsp;</td>
+<td style="text-align: right;">2&nbsp;</td>
+<td style="text-align: right;">37&nbsp;</td>
+<td style="text-align: right;">3&nbsp;</td>
+<td style="text-align: right;">26&nbsp;</td>
+<td style="text-align: right;">293&nbsp;</td>
+</tr>
+<tr>
+<td>学生7</td>
+<td>班级1</td>
+<td style="text-align: right;">28&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">127&nbsp;</td>
+<td style="text-align: right;">96&nbsp;</td>
+<td style="text-align: right;">43&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">75&nbsp;</td>
+<td style="text-align: right;">13&nbsp;</td>
+<td style="text-align: right;">28&nbsp;</td>
+<td style="text-align: right;">525&nbsp;</td>
+</tr>
+<tr>
+<td>学生8</td>
+<td>班级3</td>
+<td style="text-align: right;">78&nbsp;</td>
+<td style="text-align: right;">64&nbsp;</td>
+<td style="text-align: right;">20&nbsp;</td>
+<td style="text-align: right;">29&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">92&nbsp;</td>
+<td style="text-align: right;">100&nbsp;</td>
+<td style="text-align: right;">69&nbsp;</td>
+<td style="text-align: right;">30&nbsp;</td>
+<td style="text-align: right;">552&nbsp;</td>
+</tr>
+<tr>
+<td>学生9</td>
+<td>班级2</td>
+<td style="text-align: right;">65&nbsp;</td>
+<td style="text-align: right;">10&nbsp;</td>
+<td style="text-align: right;">139&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">57&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">57&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">76&nbsp;</td>
+<td style="text-align: right;">588&nbsp;</td>
+</tr>
+<tr>
+<td>学生10</td>
+<td>班级2</td>
+<td style="text-align: right;">113&nbsp;</td>
+<td style="text-align: right;">142&nbsp;</td>
+<td style="text-align: right;">4&nbsp;</td>
+<td style="text-align: right;">100&nbsp;</td>
+<td style="text-align: right;">41&nbsp;</td>
+<td style="text-align: right;">69&nbsp;</td>
+<td style="text-align: right;">12&nbsp;</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">20&nbsp;</td>
+<td style="text-align: right;">546&nbsp;</td>
+</tr>
+<tr>
+<td>学生11</td>
+<td>班级3</td>
+<td style="text-align: right;">41&nbsp;</td>
+<td style="text-align: right;">84&nbsp;</td>
+<td style="text-align: right;">42&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">89&nbsp;</td>
+<td style="text-align: right;">88&nbsp;</td>
+<td style="text-align: right;">6&nbsp;</td>
+<td style="text-align: right;">4&nbsp;</td>
+<td style="text-align: right;">21&nbsp;</td>
+<td style="text-align: right;">398&nbsp;</td>
+</tr>
+<tr>
+<td>学生12</td>
+<td>班级1</td>
+<td style="text-align: right;">4&nbsp;</td>
+<td style="text-align: right;">102&nbsp;</td>
+<td style="text-align: right;">111&nbsp;</td>
+<td style="text-align: right;">61&nbsp;</td>
+<td style="text-align: right;">76&nbsp;</td>
+<td style="text-align: right;">12&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">66&nbsp;</td>
+<td style="text-align: right;">39&nbsp;</td>
+<td style="text-align: right;">496&nbsp;</td>
+</tr>
+<tr>
+<td>学生13</td>
+<td>班级2</td>
+<td style="text-align: right;">49&nbsp;</td>
+<td style="text-align: right;">144&nbsp;</td>
+<td style="text-align: right;">56&nbsp;</td>
+<td style="text-align: right;">75&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">39&nbsp;</td>
+<td style="text-align: right;">13&nbsp;</td>
+<td style="text-align: right;">88&nbsp;</td>
+<td style="text-align: right;">540&nbsp;</td>
+</tr>
+<tr>
+<td>学生14</td>
+<td>班级1</td>
+<td style="text-align: right;">119&nbsp;</td>
+<td style="text-align: right;">81&nbsp;</td>
+<td style="text-align: right;">73&nbsp;</td>
+<td style="text-align: right;">53&nbsp;</td>
+<td style="text-align: right;">37&nbsp;</td>
+<td style="text-align: right;">88&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">69&nbsp;</td>
+<td style="text-align: right;">30&nbsp;</td>
+<td style="text-align: right;">629&nbsp;</td>
+</tr>
+<tr>
+<td>学生15</td>
+<td>班级3</td>
+<td style="text-align: right;">120&nbsp;</td>
+<td style="text-align: right;">78&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">50&nbsp;</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">20&nbsp;</td>
+<td style="text-align: right;">42&nbsp;</td>
+<td style="text-align: right;">24&nbsp;</td>
+<td style="text-align: right;">485&nbsp;</td>
+</tr>
+<tr>
+<td>学生16</td>
+<td>班级1</td>
+<td style="text-align: right;">65&nbsp;</td>
+<td style="text-align: right;">71&nbsp;</td>
+<td style="text-align: right;">9&nbsp;</td>
+<td style="text-align: right;">64&nbsp;</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">31&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">53&nbsp;</td>
+<td style="text-align: right;">5&nbsp;</td>
+<td style="text-align: right;">361&nbsp;</td>
+</tr>
+<tr>
+<td>学生17</td>
+<td>班级1</td>
+<td style="text-align: right;">72&nbsp;</td>
+<td style="text-align: right;">139&nbsp;</td>
+<td style="text-align: right;">24&nbsp;</td>
+<td style="text-align: right;">20&nbsp;</td>
+<td style="text-align: right;">39&nbsp;</td>
+<td style="text-align: right;">49&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">21&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">406&nbsp;</td>
+</tr>
+<tr>
+<td>学生18</td>
+<td>班级3</td>
+<td style="text-align: right;">50&nbsp;</td>
+<td style="text-align: right;">84&nbsp;</td>
+<td style="text-align: right;">53&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">77&nbsp;</td>
+<td style="text-align: right;">81&nbsp;</td>
+<td style="text-align: right;">38&nbsp;</td>
+<td style="text-align: right;">80&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">558&nbsp;</td>
+</tr>
+<tr>
+<td>学生19</td>
+<td>班级1</td>
+<td style="text-align: right;">56&nbsp;</td>
+<td style="text-align: right;">147&nbsp;</td>
+<td style="text-align: right;">134&nbsp;</td>
+<td style="text-align: right;">59&nbsp;</td>
+<td style="text-align: right;">57&nbsp;</td>
+<td style="text-align: right;">31&nbsp;</td>
+<td style="text-align: right;">48&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">625&nbsp;</td>
+</tr>
+<tr>
+<td>学生20</td>
+<td>班级1</td>
+<td style="text-align: right;">103&nbsp;</td>
+<td style="text-align: right;">38&nbsp;</td>
+<td style="text-align: right;">96&nbsp;</td>
+<td style="text-align: right;">100&nbsp;</td>
+<td style="text-align: right;">21&nbsp;</td>
+<td style="text-align: right;">88&nbsp;</td>
+<td style="text-align: right;">36&nbsp;</td>
+<td style="text-align: right;">37&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">537&nbsp;</td>
+</tr>
+<tr>
+<td>学生21</td>
+<td>班级1</td>
+<td style="text-align: right;">133&nbsp;</td>
+<td style="text-align: right;">150&nbsp;</td>
+<td style="text-align: right;">28&nbsp;</td>
+<td style="text-align: right;">37&nbsp;</td>
+<td style="text-align: right;">96&nbsp;</td>
+<td style="text-align: right;">88&nbsp;</td>
+<td style="text-align: right;">12&nbsp;</td>
+<td style="text-align: right;">36&nbsp;</td>
+<td style="text-align: right;">87&nbsp;</td>
+<td style="text-align: right;">667&nbsp;</td>
+</tr>
+<tr>
+<td>学生22</td>
+<td>班级2</td>
+<td style="text-align: right;">140&nbsp;</td>
+<td style="text-align: right;">59&nbsp;</td>
+<td style="text-align: right;">42&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">94&nbsp;</td>
+<td style="text-align: right;">50&nbsp;</td>
+<td style="text-align: right;">3&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">63&nbsp;</td>
+<td style="text-align: right;">604&nbsp;</td>
+</tr>
+<tr>
+<td>学生23</td>
+<td>班级1</td>
+<td style="text-align: right;">2&nbsp;</td>
+<td style="text-align: right;">51&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">17&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">35&nbsp;</td>
+<td style="text-align: right;">49&nbsp;</td>
+<td style="text-align: right;">292&nbsp;</td>
+</tr>
+<tr>
+<td>学生24</td>
+<td>班级3</td>
+<td style="text-align: right;">67&nbsp;</td>
+<td style="text-align: right;">2&nbsp;</td>
+<td style="text-align: right;">91&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">22&nbsp;</td>
+<td style="text-align: right;">37&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">52&nbsp;</td>
+<td style="text-align: right;">63&nbsp;</td>
+<td style="text-align: right;">436&nbsp;</td>
+</tr>
+<tr>
+<td>学生25</td>
+<td>班级3</td>
+<td style="text-align: right;">29&nbsp;</td>
+<td style="text-align: right;">17&nbsp;</td>
+<td style="text-align: right;">149&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">13&nbsp;</td>
+<td style="text-align: right;">29&nbsp;</td>
+<td style="text-align: right;">98&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">6&nbsp;</td>
+<td style="text-align: right;">455&nbsp;</td>
+</tr>
+<tr>
+<td>学生26</td>
+<td>班级3</td>
+<td style="text-align: right;">126&nbsp;</td>
+<td style="text-align: right;">117&nbsp;</td>
+<td style="text-align: right;">112&nbsp;</td>
+<td style="text-align: right;">11&nbsp;</td>
+<td style="text-align: right;">100&nbsp;</td>
+<td style="text-align: right;">55&nbsp;</td>
+<td style="text-align: right;">87&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">627&nbsp;</td>
+</tr>
+<tr>
+<td>学生27</td>
+<td>班级3</td>
+<td style="text-align: right;">144&nbsp;</td>
+<td style="text-align: right;">115&nbsp;</td>
+<td style="text-align: right;">131&nbsp;</td>
+<td style="text-align: right;">97&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">92&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">4&nbsp;</td>
+<td style="text-align: right;">72&nbsp;</td>
+<td style="text-align: right;">753&nbsp;</td>
+</tr>
+<tr>
+<td>学生28</td>
+<td>班级2</td>
+<td style="text-align: right;">107&nbsp;</td>
+<td style="text-align: right;">77&nbsp;</td>
+<td style="text-align: right;">143&nbsp;</td>
+<td style="text-align: right;">94&nbsp;</td>
+<td style="text-align: right;">89&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">35&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">3&nbsp;</td>
+<td style="text-align: right;">708&nbsp;</td>
+</tr>
+<tr>
+<td>学生29</td>
+<td>班级3</td>
+<td style="text-align: right;">14&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">78&nbsp;</td>
+<td style="text-align: right;">5&nbsp;</td>
+<td style="text-align: right;">67&nbsp;</td>
+<td style="text-align: right;">27&nbsp;</td>
+<td style="text-align: right;">49&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">340&nbsp;</td>
+</tr>
+<tr>
+<td>学生30</td>
+<td>班级3</td>
+<td style="text-align: right;">77&nbsp;</td>
+<td style="text-align: right;">117&nbsp;</td>
+<td style="text-align: right;">51&nbsp;</td>
+<td style="text-align: right;">75&nbsp;</td>
+<td style="text-align: right;">74&nbsp;</td>
+<td style="text-align: right;">43&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">2&nbsp;</td>
+<td style="text-align: right;">24&nbsp;</td>
+<td style="text-align: right;">488&nbsp;</td>
+</tr>
+<tr>
+<td>学生31</td>
+<td>班级1</td>
+<td style="text-align: right;">76&nbsp;</td>
+<td style="text-align: right;">140&nbsp;</td>
+<td style="text-align: right;">148&nbsp;</td>
+<td style="text-align: right;">50&nbsp;</td>
+<td style="text-align: right;">100&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">83&nbsp;</td>
+<td style="text-align: right;">81&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">734&nbsp;</td>
+</tr>
+<tr>
+<td>学生32</td>
+<td>班级1</td>
+<td style="text-align: right;">29&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">146&nbsp;</td>
+<td style="text-align: right;">28&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">73&nbsp;</td>
+<td style="text-align: right;">47&nbsp;</td>
+<td style="text-align: right;">8&nbsp;</td>
+<td style="text-align: right;">91&nbsp;</td>
+<td style="text-align: right;">526&nbsp;</td>
+</tr>
+<tr>
+<td>学生33</td>
+<td>班级2</td>
+<td style="text-align: right;">96&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">121&nbsp;</td>
+<td style="text-align: right;">3&nbsp;</td>
+<td style="text-align: right;">4&nbsp;</td>
+<td style="text-align: right;">94&nbsp;</td>
+<td style="text-align: right;">17&nbsp;</td>
+<td style="text-align: right;">20&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">418&nbsp;</td>
+</tr>
+<tr>
+<td>学生34</td>
+<td>班级2</td>
+<td style="text-align: right;">97&nbsp;</td>
+<td style="text-align: right;">48&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">82&nbsp;</td>
+<td style="text-align: right;">39&nbsp;</td>
+<td style="text-align: right;">16&nbsp;</td>
+<td style="text-align: right;">24&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">532&nbsp;</td>
+</tr>
+<tr>
+<td>学生35</td>
+<td>班级3</td>
+<td style="text-align: right;">126&nbsp;</td>
+<td style="text-align: right;">69&nbsp;</td>
+<td style="text-align: right;">40&nbsp;</td>
+<td style="text-align: right;">13&nbsp;</td>
+<td style="text-align: right;">48&nbsp;</td>
+<td style="text-align: right;">34&nbsp;</td>
+<td style="text-align: right;">81&nbsp;</td>
+<td style="text-align: right;">5&nbsp;</td>
+<td style="text-align: right;">97&nbsp;</td>
+<td style="text-align: right;">513&nbsp;</td>
+</tr>
+<tr>
+<td>学生36</td>
+<td>班级1</td>
+<td style="text-align: right;">144&nbsp;</td>
+<td style="text-align: right;">24&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">71&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">21&nbsp;</td>
+<td style="text-align: right;">12&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">488&nbsp;</td>
+</tr>
+<tr>
+<td>学生37</td>
+<td>班级1</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">94&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">78&nbsp;</td>
+<td style="text-align: right;">46&nbsp;</td>
+<td style="text-align: right;">88&nbsp;</td>
+<td style="text-align: right;">72&nbsp;</td>
+<td style="text-align: right;">15&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">599&nbsp;</td>
+</tr>
+<tr>
+<td>学生38</td>
+<td>班级2</td>
+<td style="text-align: right;">73&nbsp;</td>
+<td style="text-align: right;">103&nbsp;</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">17&nbsp;</td>
+<td style="text-align: right;">69&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">3&nbsp;</td>
+<td style="text-align: right;">67&nbsp;</td>
+<td style="text-align: right;">55&nbsp;</td>
+<td style="text-align: right;">450&nbsp;</td>
+</tr>
+<tr>
+<td>学生39</td>
+<td>班级3</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">16&nbsp;</td>
+<td style="text-align: right;">36&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">50&nbsp;</td>
+<td style="text-align: right;">48&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">75&nbsp;</td>
+<td style="text-align: right;">24&nbsp;</td>
+<td style="text-align: right;">305&nbsp;</td>
+</tr>
+<tr>
+<td>学生40</td>
+<td>班级1</td>
+<td style="text-align: right;">6&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">50&nbsp;</td>
+<td style="text-align: right;">73&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">21&nbsp;</td>
+<td style="text-align: right;">84&nbsp;</td>
+<td style="text-align: right;">49&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">453&nbsp;</td>
+</tr>
+<tr>
+<td>学生41</td>
+<td>班级2</td>
+<td style="text-align: right;">94&nbsp;</td>
+<td style="text-align: right;">98&nbsp;</td>
+<td style="text-align: right;">24&nbsp;</td>
+<td style="text-align: right;">34&nbsp;</td>
+<td style="text-align: right;">52&nbsp;</td>
+<td style="text-align: right;">27&nbsp;</td>
+<td style="text-align: right;">87&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">512&nbsp;</td>
+</tr>
+<tr>
+<td>学生42</td>
+<td>班级2</td>
+<td style="text-align: right;">27&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">60&nbsp;</td>
+<td style="text-align: right;">75&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">4&nbsp;</td>
+<td style="text-align: right;">38&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">27&nbsp;</td>
+<td style="text-align: right;">436&nbsp;</td>
+</tr>
+<tr>
+<td>学生43</td>
+<td>班级3</td>
+<td style="text-align: right;">102&nbsp;</td>
+<td style="text-align: right;">146&nbsp;</td>
+<td style="text-align: right;">138&nbsp;</td>
+<td style="text-align: right;">72&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">34&nbsp;</td>
+<td style="text-align: right;">57&nbsp;</td>
+<td style="text-align: right;">60&nbsp;</td>
+<td style="text-align: right;">686&nbsp;</td>
+</tr>
+<tr>
+<td>学生44</td>
+<td>班级2</td>
+<td style="text-align: right;">51&nbsp;</td>
+<td style="text-align: right;">81&nbsp;</td>
+<td style="text-align: right;">150&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">8&nbsp;</td>
+<td style="text-align: right;">48&nbsp;</td>
+<td style="text-align: right;">96&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">66&nbsp;</td>
+<td style="text-align: right;">685&nbsp;</td>
+</tr>
+<tr>
+<td>学生45</td>
+<td>班级1</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">37&nbsp;</td>
+<td style="text-align: right;">109&nbsp;</td>
+<td style="text-align: right;">84&nbsp;</td>
+<td style="text-align: right;">100&nbsp;</td>
+<td style="text-align: right;">59&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">59&nbsp;</td>
+<td style="text-align: right;">81&nbsp;</td>
+<td style="text-align: right;">712&nbsp;</td>
+</tr>
+<tr>
+<td>学生46</td>
+<td>班级2</td>
+<td style="text-align: right;">125&nbsp;</td>
+<td style="text-align: right;">60&nbsp;</td>
+<td style="text-align: right;">32&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">65&nbsp;</td>
+<td style="text-align: right;">74&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">77&nbsp;</td>
+<td style="text-align: right;">640&nbsp;</td>
+</tr>
+<tr>
+<td>学生47</td>
+<td>班级1</td>
+<td style="text-align: right;">139&nbsp;</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">52&nbsp;</td>
+<td style="text-align: right;">54&nbsp;</td>
+<td style="text-align: right;">6&nbsp;</td>
+<td style="text-align: right;">64&nbsp;</td>
+<td style="text-align: right;">46&nbsp;</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">66&nbsp;</td>
+<td style="text-align: right;">517&nbsp;</td>
+</tr>
+<tr>
+<td>学生48</td>
+<td>班级2</td>
+<td style="text-align: right;">14&nbsp;</td>
+<td style="text-align: right;">73&nbsp;</td>
+<td style="text-align: right;">118&nbsp;</td>
+<td style="text-align: right;">4&nbsp;</td>
+<td style="text-align: right;">36&nbsp;</td>
+<td style="text-align: right;">43&nbsp;</td>
+<td style="text-align: right;">24&nbsp;</td>
+<td style="text-align: right;">8&nbsp;</td>
+<td style="text-align: right;">73&nbsp;</td>
+<td style="text-align: right;">393&nbsp;</td>
+</tr>
+<tr>
+<td>学生49</td>
+<td>班级3</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">114&nbsp;</td>
+<td style="text-align: right;">114&nbsp;</td>
+<td style="text-align: right;">6&nbsp;</td>
+<td style="text-align: right;">65&nbsp;</td>
+<td style="text-align: right;">94&nbsp;</td>
+<td style="text-align: right;">32&nbsp;</td>
+<td style="text-align: right;">30&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">501&nbsp;</td>
+</tr>
+<tr>
+<td>学生50</td>
+<td>班级2</td>
+<td style="text-align: right;">112&nbsp;</td>
+<td style="text-align: right;">77&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">30&nbsp;</td>
+<td style="text-align: right;">32&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">77&nbsp;</td>
+<td style="text-align: right;">488&nbsp;</td>
+</tr>
+<tr>
+<td>学生51</td>
+<td>班级2</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">66&nbsp;</td>
+<td style="text-align: right;">140&nbsp;</td>
+<td style="text-align: right;">36&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">34&nbsp;</td>
+<td style="text-align: right;">62&nbsp;</td>
+<td style="text-align: right;">17&nbsp;</td>
+<td style="text-align: right;">34&nbsp;</td>
+<td style="text-align: right;">452&nbsp;</td>
+</tr>
+<tr>
+<td>学生52</td>
+<td>班级2</td>
+<td style="text-align: right;">61&nbsp;</td>
+<td style="text-align: right;">98&nbsp;</td>
+<td style="text-align: right;">107&nbsp;</td>
+<td style="text-align: right;">78&nbsp;</td>
+<td style="text-align: right;">2&nbsp;</td>
+<td style="text-align: right;">17&nbsp;</td>
+<td style="text-align: right;">54&nbsp;</td>
+<td style="text-align: right;">28&nbsp;</td>
+<td style="text-align: right;">89&nbsp;</td>
+<td style="text-align: right;">534&nbsp;</td>
+</tr>
+<tr>
+<td>学生53</td>
+<td>班级1</td>
+<td style="text-align: right;">48&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">65&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">36&nbsp;</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">75&nbsp;</td>
+<td style="text-align: right;">443&nbsp;</td>
+</tr>
+<tr>
+<td>学生54</td>
+<td>班级1</td>
+<td style="text-align: right;">81&nbsp;</td>
+<td style="text-align: right;">9&nbsp;</td>
+<td style="text-align: right;">46&nbsp;</td>
+<td style="text-align: right;">37&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">87&nbsp;</td>
+<td style="text-align: right;">83&nbsp;</td>
+<td style="text-align: right;">39&nbsp;</td>
+<td style="text-align: right;">63&nbsp;</td>
+<td style="text-align: right;">531&nbsp;</td>
+</tr>
+<tr>
+<td>学生55</td>
+<td>班级1</td>
+<td style="text-align: right;">48&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">145&nbsp;</td>
+<td style="text-align: right;">53&nbsp;</td>
+<td style="text-align: right;">2&nbsp;</td>
+<td style="text-align: right;">9&nbsp;</td>
+<td style="text-align: right;">80&nbsp;</td>
+<td style="text-align: right;">35&nbsp;</td>
+<td style="text-align: right;">31&nbsp;</td>
+<td style="text-align: right;">426&nbsp;</td>
+</tr>
+<tr>
+<td>学生56</td>
+<td>班级1</td>
+<td style="text-align: right;">117&nbsp;</td>
+<td style="text-align: right;">92&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">65&nbsp;</td>
+<td style="text-align: right;">3&nbsp;</td>
+<td style="text-align: right;">98&nbsp;</td>
+<td style="text-align: right;">0&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">67&nbsp;</td>
+<td style="text-align: right;">556&nbsp;</td>
+</tr>
+<tr>
+<td>学生57</td>
+<td>班级3</td>
+<td style="text-align: right;">148&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">63&nbsp;</td>
+<td style="text-align: right;">29&nbsp;</td>
+<td style="text-align: right;">96&nbsp;</td>
+<td style="text-align: right;">34&nbsp;</td>
+<td style="text-align: right;">34&nbsp;</td>
+<td style="text-align: right;">34&nbsp;</td>
+<td style="text-align: right;">92&nbsp;</td>
+<td style="text-align: right;">555&nbsp;</td>
+</tr>
+<tr>
+<td>学生58</td>
+<td>班级1</td>
+<td style="text-align: right;">51&nbsp;</td>
+<td style="text-align: right;">22&nbsp;</td>
+<td style="text-align: right;">97&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">80&nbsp;</td>
+<td style="text-align: right;">16&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">91&nbsp;</td>
+<td style="text-align: right;">20&nbsp;</td>
+<td style="text-align: right;">454&nbsp;</td>
+</tr>
+<tr>
+<td>学生59</td>
+<td>班级2</td>
+<td style="text-align: right;">118&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">20&nbsp;</td>
+<td style="text-align: right;">62&nbsp;</td>
+<td style="text-align: right;">26&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">77&nbsp;</td>
+<td style="text-align: right;">66&nbsp;</td>
+<td style="text-align: right;">34&nbsp;</td>
+<td style="text-align: right;">497&nbsp;</td>
+</tr>
+<tr>
+<td>学生60</td>
+<td>班级3</td>
+<td style="text-align: right;">129&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">109&nbsp;</td>
+<td style="text-align: right;">78&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">15&nbsp;</td>
+<td style="text-align: right;">74&nbsp;</td>
+<td style="text-align: right;">67&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">582&nbsp;</td>
+</tr>
+<tr>
+<td>学生61</td>
+<td>班级3</td>
+<td style="text-align: right;">112&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">65&nbsp;</td>
+<td style="text-align: right;">15&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">63&nbsp;</td>
+<td style="text-align: right;">97&nbsp;</td>
+<td style="text-align: right;">72&nbsp;</td>
+<td style="text-align: right;">85&nbsp;</td>
+<td style="text-align: right;">656&nbsp;</td>
+</tr>
+<tr>
+<td>学生62</td>
+<td>班级3</td>
+<td style="text-align: right;">117&nbsp;</td>
+<td style="text-align: right;">14&nbsp;</td>
+<td style="text-align: right;">73&nbsp;</td>
+<td style="text-align: right;">6&nbsp;</td>
+<td style="text-align: right;">6&nbsp;</td>
+<td style="text-align: right;">98&nbsp;</td>
+<td style="text-align: right;">3&nbsp;</td>
+<td style="text-align: right;">81&nbsp;</td>
+<td style="text-align: right;">2&nbsp;</td>
+<td style="text-align: right;">400&nbsp;</td>
+</tr>
+<tr>
+<td>学生63</td>
+<td>班级1</td>
+<td style="text-align: right;">87&nbsp;</td>
+<td style="text-align: right;">103&nbsp;</td>
+<td style="text-align: right;">0&nbsp;</td>
+<td style="text-align: right;">2&nbsp;</td>
+<td style="text-align: right;">30&nbsp;</td>
+<td style="text-align: right;">21&nbsp;</td>
+<td style="text-align: right;">43&nbsp;</td>
+<td style="text-align: right;">87&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">398&nbsp;</td>
+</tr>
+<tr>
+<td>学生64</td>
+<td>班级2</td>
+<td style="text-align: right;">65&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">49&nbsp;</td>
+<td style="text-align: right;">53&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">57&nbsp;</td>
+<td style="text-align: right;">99&nbsp;</td>
+<td style="text-align: right;">83&nbsp;</td>
+<td style="text-align: right;">604&nbsp;</td>
+</tr>
+<tr>
+<td>学生65</td>
+<td>班级2</td>
+<td style="text-align: right;">144&nbsp;</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">122&nbsp;</td>
+<td style="text-align: right;">47&nbsp;</td>
+<td style="text-align: right;">11&nbsp;</td>
+<td style="text-align: right;">76&nbsp;</td>
+<td style="text-align: right;">64&nbsp;</td>
+<td style="text-align: right;">66&nbsp;</td>
+<td style="text-align: right;">71&nbsp;</td>
+<td style="text-align: right;">608&nbsp;</td>
+</tr>
+<tr>
+<td>学生66</td>
+<td>班级2</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">140&nbsp;</td>
+<td style="text-align: right;">96&nbsp;</td>
+<td style="text-align: right;">54&nbsp;</td>
+<td style="text-align: right;">10&nbsp;</td>
+<td style="text-align: right;">6&nbsp;</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">41&nbsp;</td>
+<td style="text-align: right;">85&nbsp;</td>
+<td style="text-align: right;">495&nbsp;</td>
+</tr>
+<tr>
+<td>学生67</td>
+<td>班级2</td>
+<td style="text-align: right;">30&nbsp;</td>
+<td style="text-align: right;">14&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">20&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">77&nbsp;</td>
+<td style="text-align: right;">97&nbsp;</td>
+<td style="text-align: right;">20&nbsp;</td>
+<td style="text-align: right;">397&nbsp;</td>
+</tr>
+<tr>
+<td>学生68</td>
+<td>班级3</td>
+<td style="text-align: right;">60&nbsp;</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">147&nbsp;</td>
+<td style="text-align: right;">38&nbsp;</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">53&nbsp;</td>
+<td style="text-align: right;">88&nbsp;</td>
+<td style="text-align: right;">54&nbsp;</td>
+<td style="text-align: right;">92&nbsp;</td>
+<td style="text-align: right;">546&nbsp;</td>
+</tr>
+<tr>
+<td>学生69</td>
+<td>班级2</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">115&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">52&nbsp;</td>
+<td style="text-align: right;">50&nbsp;</td>
+<td style="text-align: right;">89&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">42&nbsp;</td>
+<td style="text-align: right;">626&nbsp;</td>
+</tr>
+<tr>
+<td>学生70</td>
+<td>班级3</td>
+<td style="text-align: right;">132&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">21&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">61&nbsp;</td>
+<td style="text-align: right;">3&nbsp;</td>
+<td style="text-align: right;">455&nbsp;</td>
+</tr>
+<tr>
+<td>学生71</td>
+<td>班级3</td>
+<td style="text-align: right;">149&nbsp;</td>
+<td style="text-align: right;">102&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">98&nbsp;</td>
+<td style="text-align: right;">96&nbsp;</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">47&nbsp;</td>
+<td style="text-align: right;">687&nbsp;</td>
+</tr>
+<tr>
+<td>学生72</td>
+<td>班级2</td>
+<td style="text-align: right;">28&nbsp;</td>
+<td style="text-align: right;">138&nbsp;</td>
+<td style="text-align: right;">74&nbsp;</td>
+<td style="text-align: right;">30&nbsp;</td>
+<td style="text-align: right;">0&nbsp;</td>
+<td style="text-align: right;">43&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">57&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">533&nbsp;</td>
+</tr>
+<tr>
+<td>学生73</td>
+<td>班级3</td>
+<td style="text-align: right;">54&nbsp;</td>
+<td style="text-align: right;">148&nbsp;</td>
+<td style="text-align: right;">81&nbsp;</td>
+<td style="text-align: right;">40&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">91&nbsp;</td>
+<td style="text-align: right;">73&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">691&nbsp;</td>
+</tr>
+<tr>
+<td>学生74</td>
+<td>班级1</td>
+<td style="text-align: right;">143&nbsp;</td>
+<td style="text-align: right;">39&nbsp;</td>
+<td style="text-align: right;">76&nbsp;</td>
+<td style="text-align: right;">5&nbsp;</td>
+<td style="text-align: right;">55&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">31&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">552&nbsp;</td>
+</tr>
+<tr>
+<td>学生75</td>
+<td>班级2</td>
+<td style="text-align: right;">83&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">48&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">61&nbsp;</td>
+<td style="text-align: right;">97&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">84&nbsp;</td>
+<td style="text-align: right;">24&nbsp;</td>
+<td style="text-align: right;">646&nbsp;</td>
+</tr>
+<tr>
+<td>学生76</td>
+<td>班级1</td>
+<td style="text-align: right;">138&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">141&nbsp;</td>
+<td style="text-align: right;">9&nbsp;</td>
+<td style="text-align: right;">50&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">14&nbsp;</td>
+<td style="text-align: right;">5&nbsp;</td>
+<td style="text-align: right;">11&nbsp;</td>
+<td style="text-align: right;">370&nbsp;</td>
+</tr>
+<tr>
+<td>学生77</td>
+<td>班级3</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">46&nbsp;</td>
+<td style="text-align: right;">25&nbsp;</td>
+<td style="text-align: right;">62&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">41&nbsp;</td>
+<td style="text-align: right;">43&nbsp;</td>
+<td style="text-align: right;">75&nbsp;</td>
+<td style="text-align: right;">443&nbsp;</td>
+</tr>
+<tr>
+<td>学生78</td>
+<td>班级1</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">114&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">22&nbsp;</td>
+<td style="text-align: right;">38&nbsp;</td>
+<td style="text-align: right;">73&nbsp;</td>
+<td style="text-align: right;">66&nbsp;</td>
+<td style="text-align: right;">69&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">572&nbsp;</td>
+</tr>
+<tr>
+<td>学生79</td>
+<td>班级3</td>
+<td style="text-align: right;">84&nbsp;</td>
+<td style="text-align: right;">10&nbsp;</td>
+<td style="text-align: right;">72&nbsp;</td>
+<td style="text-align: right;">94&nbsp;</td>
+<td style="text-align: right;">30&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">32&nbsp;</td>
+<td style="text-align: right;">41&nbsp;</td>
+<td style="text-align: right;">56&nbsp;</td>
+<td style="text-align: right;">514&nbsp;</td>
+</tr>
+<tr>
+<td>学生80</td>
+<td>班级2</td>
+<td style="text-align: right;">113&nbsp;</td>
+<td style="text-align: right;">39&nbsp;</td>
+<td style="text-align: right;">10&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">28&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">32&nbsp;</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">308&nbsp;</td>
+</tr>
+<tr>
+<td>学生81</td>
+<td>班级3</td>
+<td style="text-align: right;">83&nbsp;</td>
+<td style="text-align: right;">36&nbsp;</td>
+<td style="text-align: right;">13&nbsp;</td>
+<td style="text-align: right;">13&nbsp;</td>
+<td style="text-align: right;">89&nbsp;</td>
+<td style="text-align: right;">15&nbsp;</td>
+<td style="text-align: right;">39&nbsp;</td>
+<td style="text-align: right;">71&nbsp;</td>
+<td style="text-align: right;">72&nbsp;</td>
+<td style="text-align: right;">431&nbsp;</td>
+</tr>
+<tr>
+<td>学生82</td>
+<td>班级3</td>
+<td style="text-align: right;">52&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">39&nbsp;</td>
+<td style="text-align: right;">22&nbsp;</td>
+<td style="text-align: right;">16&nbsp;</td>
+<td style="text-align: right;">9&nbsp;</td>
+<td style="text-align: right;">75&nbsp;</td>
+<td style="text-align: right;">37&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">413&nbsp;</td>
+</tr>
+<tr>
+<td>学生83</td>
+<td>班级3</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">0&nbsp;</td>
+<td style="text-align: right;">132&nbsp;</td>
+<td style="text-align: right;">20&nbsp;</td>
+<td style="text-align: right;">36&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">69&nbsp;</td>
+<td style="text-align: right;">39&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">567&nbsp;</td>
+</tr>
+<tr>
+<td>学生84</td>
+<td>班级1</td>
+<td style="text-align: right;">61&nbsp;</td>
+<td style="text-align: right;">89&nbsp;</td>
+<td style="text-align: right;">67&nbsp;</td>
+<td style="text-align: right;">10&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">31&nbsp;</td>
+<td style="text-align: right;">99&nbsp;</td>
+<td style="text-align: right;">34&nbsp;</td>
+<td style="text-align: right;">4&nbsp;</td>
+<td style="text-align: right;">428&nbsp;</td>
+</tr>
+<tr>
+<td>学生85</td>
+<td>班级1</td>
+<td style="text-align: right;">83&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">105&nbsp;</td>
+<td style="text-align: right;">79&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">30&nbsp;</td>
+<td style="text-align: right;">0&nbsp;</td>
+<td style="text-align: right;">84&nbsp;</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">500&nbsp;</td>
+</tr>
+<tr>
+<td>学生86</td>
+<td>班级1</td>
+<td style="text-align: right;">88&nbsp;</td>
+<td style="text-align: right;">143&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">56&nbsp;</td>
+<td style="text-align: right;">9&nbsp;</td>
+<td style="text-align: right;">56&nbsp;</td>
+<td style="text-align: right;">36&nbsp;</td>
+<td style="text-align: right;">89&nbsp;</td>
+<td style="text-align: right;">77&nbsp;</td>
+<td style="text-align: right;">573&nbsp;</td>
+</tr>
+<tr>
+<td>学生87</td>
+<td>班级1</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">0&nbsp;</td>
+<td style="text-align: right;">115&nbsp;</td>
+<td style="text-align: right;">66&nbsp;</td>
+<td style="text-align: right;">36&nbsp;</td>
+<td style="text-align: right;">76&nbsp;</td>
+<td style="text-align: right;">0&nbsp;</td>
+<td style="text-align: right;">16&nbsp;</td>
+<td style="text-align: right;">89&nbsp;</td>
+<td style="text-align: right;">468&nbsp;</td>
+</tr>
+<tr>
+<td>学生88</td>
+<td>班级3</td>
+<td style="text-align: right;">17&nbsp;</td>
+<td style="text-align: right;">60&nbsp;</td>
+<td style="text-align: right;">49&nbsp;</td>
+<td style="text-align: right;">80&nbsp;</td>
+<td style="text-align: right;">12&nbsp;</td>
+<td style="text-align: right;">99&nbsp;</td>
+<td style="text-align: right;">30&nbsp;</td>
+<td style="text-align: right;">8&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">356&nbsp;</td>
+</tr>
+<tr>
+<td>学生89</td>
+<td>班级1</td>
+<td style="text-align: right;">129&nbsp;</td>
+<td style="text-align: right;">128&nbsp;</td>
+<td style="text-align: right;">48&nbsp;</td>
+<td style="text-align: right;">76&nbsp;</td>
+<td style="text-align: right;">47&nbsp;</td>
+<td style="text-align: right;">46&nbsp;</td>
+<td style="text-align: right;">46&nbsp;</td>
+<td style="text-align: right;">89&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">610&nbsp;</td>
+</tr>
+<tr>
+<td>学生90</td>
+<td>班级3</td>
+<td style="text-align: right;">143&nbsp;</td>
+<td style="text-align: right;">14&nbsp;</td>
+<td style="text-align: right;">86&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">69&nbsp;</td>
+<td style="text-align: right;">55&nbsp;</td>
+<td style="text-align: right;">85&nbsp;</td>
+<td style="text-align: right;">3&nbsp;</td>
+<td style="text-align: right;">43&nbsp;</td>
+<td style="text-align: right;">499&nbsp;</td>
+</tr>
+<tr>
+<td>学生91</td>
+<td>班级2</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">127&nbsp;</td>
+<td style="text-align: right;">143&nbsp;</td>
+<td style="text-align: right;">22&nbsp;</td>
+<td style="text-align: right;">7&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">62&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">44&nbsp;</td>
+<td style="text-align: right;">500&nbsp;</td>
+</tr>
+<tr>
+<td>学生92</td>
+<td>班级1</td>
+<td style="text-align: right;">37&nbsp;</td>
+<td style="text-align: right;">41&nbsp;</td>
+<td style="text-align: right;">130&nbsp;</td>
+<td style="text-align: right;">71&nbsp;</td>
+<td style="text-align: right;">17&nbsp;</td>
+<td style="text-align: right;">61&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">445&nbsp;</td>
+</tr>
+<tr>
+<td>学生93</td>
+<td>班级3</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">17&nbsp;</td>
+<td style="text-align: right;">22&nbsp;</td>
+<td style="text-align: right;">10&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">83&nbsp;</td>
+<td style="text-align: right;">31&nbsp;</td>
+<td style="text-align: right;">11&nbsp;</td>
+<td style="text-align: right;">310&nbsp;</td>
+</tr>
+<tr>
+<td>学生94</td>
+<td>班级2</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">40&nbsp;</td>
+<td style="text-align: right;">99&nbsp;</td>
+<td style="text-align: right;">59&nbsp;</td>
+<td style="text-align: right;">77&nbsp;</td>
+<td style="text-align: right;">1&nbsp;</td>
+<td style="text-align: right;">90&nbsp;</td>
+<td style="text-align: right;">9&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">462&nbsp;</td>
+</tr>
+<tr>
+<td>学生95</td>
+<td>班级1</td>
+<td style="text-align: right;">126&nbsp;</td>
+<td style="text-align: right;">19&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">91&nbsp;</td>
+<td style="text-align: right;">53&nbsp;</td>
+<td style="text-align: right;">68&nbsp;</td>
+<td style="text-align: right;">23&nbsp;</td>
+<td style="text-align: right;">87&nbsp;</td>
+<td style="text-align: right;">85&nbsp;</td>
+<td style="text-align: right;">620&nbsp;</td>
+</tr>
+<tr>
+<td>学生96</td>
+<td>班级1</td>
+<td style="text-align: right;">131&nbsp;</td>
+<td style="text-align: right;">126&nbsp;</td>
+<td style="text-align: right;">126&nbsp;</td>
+<td style="text-align: right;">53&nbsp;</td>
+<td style="text-align: right;">13&nbsp;</td>
+<td style="text-align: right;">18&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">85&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">655&nbsp;</td>
+</tr>
+<tr>
+<td>学生97</td>
+<td>班级1</td>
+<td style="text-align: right;">53&nbsp;</td>
+<td style="text-align: right;">47&nbsp;</td>
+<td style="text-align: right;">33&nbsp;</td>
+<td style="text-align: right;">87&nbsp;</td>
+<td style="text-align: right;">98&nbsp;</td>
+<td style="text-align: right;">98&nbsp;</td>
+<td style="text-align: right;">62&nbsp;</td>
+<td style="text-align: right;">28&nbsp;</td>
+<td style="text-align: right;">95&nbsp;</td>
+<td style="text-align: right;">601&nbsp;</td>
+</tr>
+<tr>
+<td>学生98</td>
+<td>班级1</td>
+<td style="text-align: right;">107&nbsp;</td>
+<td style="text-align: right;">88&nbsp;</td>
+<td style="text-align: right;">49&nbsp;</td>
+<td style="text-align: right;">91&nbsp;</td>
+<td style="text-align: right;">6&nbsp;</td>
+<td style="text-align: right;">17&nbsp;</td>
+<td style="text-align: right;">66&nbsp;</td>
+<td style="text-align: right;">24&nbsp;</td>
+<td style="text-align: right;">58&nbsp;</td>
+<td style="text-align: right;">506&nbsp;</td>
+</tr>
+<tr>
+<td>学生99</td>
+<td>班级1</td>
+<td style="text-align: right;">118&nbsp;</td>
+<td style="text-align: right;">145&nbsp;</td>
+<td style="text-align: right;">69&nbsp;</td>
+<td style="text-align: right;">4&nbsp;</td>
+<td style="text-align: right;">70&nbsp;</td>
+<td style="text-align: right;">29&nbsp;</td>
+<td style="text-align: right;">43&nbsp;</td>
+<td style="text-align: right;">13&nbsp;</td>
+<td style="text-align: right;">45&nbsp;</td>
+<td style="text-align: right;">536&nbsp;</td>
+</tr>
+<tr>
+<td>学生100</td>
+<td>班级2</td>
+<td style="text-align: right;">48&nbsp;</td>
+<td style="text-align: right;">8&nbsp;</td>
+<td style="text-align: right;">115&nbsp;</td>
+<td style="text-align: right;">63&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">53&nbsp;</td>
+<td style="text-align: right;">91&nbsp;</td>
+<td style="text-align: right;">59&nbsp;</td>
+<td style="text-align: right;">93&nbsp;</td>
+<td style="text-align: right;">623&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
