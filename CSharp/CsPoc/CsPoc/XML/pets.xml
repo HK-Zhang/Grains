@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet  type="text/xsl" href="pets-templates.xsl"?>
+
+<pets>
+  <pig color="blue" weight="100">
+    <price>100</price>
+    <desc>this is a blue pig</desc>
+  </pig>
+
+  <cat color="red" weight="9">
+    <price>80</price>
+    <desc>this is a red cat</desc>
+  </cat>
+
+  <dog color="green" weight="15">
+    <price>80</price>
+    <desc>this is a green dog</desc>
+  </dog>
+
+  <cat color="green" weight="15">
+    <price>80</price>
+    <desc>this is a green cat</desc>
+  </cat>
+
+  <dog color="blue" weight="10">
+    <price>100</price>
+    <desc>this is a blue dog</desc>
+  </dog>
+
+  <dog color="red" weight="9">
+    <price>80</price>
+    <desc>this is a red dog</desc>
+  </dog>
+</pets>
