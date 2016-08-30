@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+    <table id="tablesorter-instance" class="tablesorter" width="100%" border="0" cellpadding="0" cellspacing="1">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>基金代码</th>
+                <th>基金简称</th>
+                <th>
+                    当日净值
+                </th>
+                <th>
+                    累计净值
+                </th>
+                <th>估值日期 </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">1</td>
+                <td align="center">688888</td>
+                <td align="center">
+                    <a href="/web/fund_detail.fund?fundId=808080802fdcf1fc012ffd2ffba96c01&amp;classification=2030-1030" target="_blank">
+                        浙商聚潮产业成长股票
+                    </a>
+                </td>
+                <td align="center">0.840</td>
+                <td align="center">0.840</td>
+                <td align="center">2012-01-12</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td align="center">710001</td>
+                <td align="center">
+                    <a href="/web/fund_detail.fund?fundId=80808080317379bd01328b3fc41e73eb&amp;classification=2030-1030" target="_blank">
+                        富安达优势成长股票
+                    </a>
+                </td>
+                <td align="center">0.9561</td>
+                <td align="center">0.9561</td>
+                <td align="center">2012-01-12</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td align="center">162006</td>
+                <td align="center">
+                    <a href="/web/fund_detail.fund?fundId=4028928d1ab44ebf011ab44ec4a400b7&amp;classification=2030-1030" target="_blank">
+                        长城久富股票(LOF)
+                    </a>
+                </td>
+                <td align="center">0.9407</td>
+                <td align="center">3.3315</td>
+                <td align="center">2012-01-12</td>
+            </tr>
+        </tbody>
+    </table>
+</Root>
