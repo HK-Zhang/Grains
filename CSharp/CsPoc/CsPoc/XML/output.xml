@@ -1,0 +1,20 @@
+<CSRCNAVSet xmlns:csfun="urn:csharp-functions">
+  <CSRCNAV>
+    <Symbol>688888</Symbol>
+    <Name>浙商聚潮产业成长股票</Name>
+    <ClosePrice>0.840</ClosePrice>
+    <EffectiveDate>2012-01-12</EffectiveDate>
+  </CSRCNAV>
+  <CSRCNAV>
+    <Symbol>710001</Symbol>
+    <Name>富安达优势成长股票</Name>
+    <ClosePrice>0.9561</ClosePrice>
+    <EffectiveDate>2012-01-12</EffectiveDate>
+  </CSRCNAV>
+  <CSRCNAV>
+    <Symbol>162006</Symbol>
+    <Name>长城久富股票(LOF)</Name>
+    <ClosePrice>0.9407</ClosePrice>
+    <EffectiveDate>2012-01-12</EffectiveDate>
+  </CSRCNAV>
+</CSRCNAVSet>
