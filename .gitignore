@@ -6,3 +6,8 @@
 /CSharp/CsPoc/.vs/CsPoc/v15/.suo
 *.cache
 /CSharp/CsPoc/.vs/CsPoc/v15
+/CSharp/CsPoc/ODataApiClient/bin/Debug
+/CSharp/CsPoc/packages
+/CSharp/CsPoc/CsPoc/obj/Debug/build.force
+/CSharp/CsPoc/CsPoc/obj/Debug
+/CSharp/CsPoc/CsPoc/obj
