@@ -3,3 +3,6 @@
 ################################################################################
 
 /CSharp/CsPoc/ODataApiClient/obj/Debug
+/CSharp/CsPoc/.vs/CsPoc/v15/.suo
+*.cache
+/CSharp/CsPoc/.vs/CsPoc/v15
