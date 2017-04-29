@@ -9,5 +9,7 @@
 /CSharp/CsPoc/ODataApiClient/bin/Debug
 /CSharp/CsPoc/packages
 /CSharp/CsPoc/CsPoc/obj/Debug/build.force
-/CSharp/CsPoc/CsPoc/obj/Debug
-/CSharp/CsPoc/CsPoc/obj
+/CSharp/CsPoc/CsPoc/obj/Debug/*.*
+/CSharp/CsPoc/CsPoc/obj/*
+/CSharp/CsPoc/CsPoc/bin/*
+/CSharp/CsPoc/CsPoc/bin/Debug/*.*
