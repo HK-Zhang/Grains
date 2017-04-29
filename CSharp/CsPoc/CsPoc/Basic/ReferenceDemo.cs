@@ -15,11 +15,20 @@ namespace CsPoc
             t.a = 2;
         }
 
+        static void test2(ref MyReferenceClass t)
+        {
+
+            t = new MyReferenceClass();
+            t.a = 2;
+        }
+
         public static void Execute() 
         {
             MyReferenceClass t1 = new MyReferenceClass();
             Console.WriteLine(t1.a);
             test(t1);
+            Console.WriteLine(t1.a);
+            test2(ref t1);
             Console.WriteLine(t1.a);
         }
 

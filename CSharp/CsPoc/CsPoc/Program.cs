@@ -1,4 +1,4 @@
-﻿//using CsPoc.Basic;
+﻿using CsPoc.Basic;
 using CsPoc.Collection;
 using CsPoc.ThreadTest;
 using CsPoc.ThreadNS;
@@ -13,7 +13,9 @@ using CsPoc.Advanced;
 using CsPoc.Reflections;
 using CsPoc.Network;
 using CsPoc.DynamicFramework;
-using CsPoc.Basic;
+using CSDemo;
+using CsPoc.ThreadDemos;
+using CsPoc.XML;
 
 namespace CsPoc
 {
@@ -141,27 +143,46 @@ namespace CsPoc
             //TaskCompletionSourceDemo rcsd = new TaskCompletionSourceDemo();
             //rcsd.Execute();
 
+            //WaitAwaitDemo.Execute();
+
             //HttpBindingDemo hd = new HttpBindingDemo();
             //hd.Execute();
 
             //CastleProxyDemo cd = new CastleProxyDemo();
-
-            SteramIODemo sid = new SteramIODemo();
-            sid.Execute();
+            //cd.Execute();
 
 
+            //InheritenceDemo.Execute();
+            //EqualsDemo.Execute();
+
+            //CastleAutoDemo.Execute();
+
+            //CastleDIDemo cd = new CastleDIDemo();
+            //cd.Execute();
+
+            //ThreadUniqueID td = new ThreadUniqueID();
+            //td.Execute();
+
+            //XSLTExt xb = new XSLTExt();
+            //xb.Execute();
+
+            //XsltBasic xb = new XsltBasic();
+            //xb.Execute();
+
+            XSLTCS xs = new XSLTCS();
+            xs.Execute();
 
             Console.ReadLine();
         }
 
         static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            File.WriteAllText(@"F:\VS\CsPoc\CsPoc\bin\log.txt", ((Exception)e.ExceptionObject).StackTrace);
+            File.WriteAllText(@"C:\Users\yxzhk\WorkSpace\CodeDemo\CsPoc\CsPoc\bin\log.txt", ((Exception)e.ExceptionObject).StackTrace);
         }
 
         private static void CurrentDomain_ProcessExit(object sender, EventArgs e)
         {
-            File.WriteAllText(@"F:\VS\CsPoc\CsPoc\bin\log.txt", ((AppDomain)sender).FriendlyName);
+            File.WriteAllText(@"C:\Users\yxzhk\WorkSpace\CodeDemo\CsPoc\CsPoc\bin\log.txt", ((AppDomain)sender).FriendlyName);
         }
     }
 }

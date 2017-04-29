@@ -109,8 +109,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Advanced\ExpressionTreeDemo.cs" />
+    <Compile Include="Basic\EqualsDemo.cs" />
+    <Compile Include="Basic\HexaDecimalDemo.cs" />
+    <Compile Include="Basic\MemoryCacheDemo.cs" />
     <Compile Include="Basic\SteramIODemo.cs" />
+    <Compile Include="Basic\TaskDemo.cs" />
     <Compile Include="DynamicFramework\CastleAutoDemo.cs" />
+    <Compile Include="DynamicFramework\CastleDIDemo.cs" />
     <Compile Include="DynamicFramework\CastleDynamicProxy.cs" />
     <Compile Include="DynamicFramework\CastleInterceptor.cs" />
     <Compile Include="Advanced\DataValidationDemo.cs" />
@@ -177,6 +183,8 @@
     <Compile Include="Basic\Team.cs" />
     <Compile Include="Thread\ThreadDemo.cs" />
     <Compile Include="Thread\ThreadIsolation.cs" />
+    <Compile Include="Thread\ThreadUniqueID.cs" />
+    <Compile Include="Thread\WaitAwaitDemo.cs" />
     <Compile Include="Toolkit\DictionaryExtension.cs" />
     <Compile Include="Advanced\ExpressionDemo.cs" />
     <Compile Include="Toolkit\ExtenssionGroupDemo.cs" />
@@ -185,13 +193,38 @@
     <Compile Include="Toolkit\Log4NetDemo.cs" />
     <Compile Include="Toolkit\LogHelper.cs" />
     <Compile Include="Toolkit\SynchronizedCache.cs" />
+    <Compile Include="XML\XPath.cs" />
+    <Compile Include="XML\XsltBasic.cs" />
+    <Compile Include="XML\XSLTExt.cs" />
+    <Compile Include="XSLTCS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="log4net.config" />
     <None Include="packages.config" />
+    <None Include="XML\CSRCNAV.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="XML\CSharpFunctions.xslt" />
+    <Content Include="XML\CSRCNAV.xslt" />
+    <Content Include="XML\output.xml" />
+    <Content Include="XML\pets-out.htm" />
+    <Content Include="XML\pets-out2.htm" />
+    <Content Include="XML\pets-templates.xsl" />
+    <Content Include="XML\pets.xml" />
+    <Content Include="XML\pets.xsl" />
+    <Content Include="XML\split-out.xml" />
+    <Content Include="XML\split.xml" />
+    <Content Include="XML\split.xsl" />
+    <Content Include="XML\splitEx-out.xml" />
+    <Content Include="XML\splitEx.xml" />
+    <Content Include="XML\splitEx.xsl" />
+    <Content Include="XML\target.xml" />
+    <Content Include="XML\xmlDoc.xml" />
+    <Content Include="XML\xslDoc.xsl" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

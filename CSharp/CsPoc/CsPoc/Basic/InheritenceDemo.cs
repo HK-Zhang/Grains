@@ -10,6 +10,12 @@ namespace CsPoc
     {
         public static void Execute() 
         {
+
+            CClass c = new CClass();
+        }
+
+        private static void Foo1()
+        {
             ParentDef pdf = new ParentDef();
             ParentDef pc = new ChildDef();
             ChildDef cdf = new ChildDef();
@@ -18,14 +24,13 @@ namespace CsPoc
             Console.WriteLine("V1");
             Console.WriteLine(pdf.value);
 
-    
+
             Console.WriteLine("V2");
             Console.WriteLine(pc.value);
 
             Console.WriteLine("V3");
             Console.WriteLine(cdf.value);
             Console.WriteLine(cdf.READONLYSTRING);
-
         }
     }
 
@@ -49,4 +54,31 @@ namespace CsPoc
             //READONLYSTATICSTRING = "NEW Child readonly  static variable"; ERROR as satatic readonly variable can not be reassianged in instant constructor
         }
     }
+
+    public class AClass
+    {
+        public virtual void Print() 
+        { }
+
+        public AClass()
+        {
+            Print();
+        }
+    }
+
+    public class CClass:AClass
+    {
+        int y = 1;
+        public override void Print()
+        {
+            Console.WriteLine(y);
+        }
+
+        public CClass() 
+        {
+            y = 2;
+        }
+    }
+
+
 }
