@@ -13,6 +13,7 @@ using CsPoc.Advanced;
 using CsPoc.Reflections;
 using CsPoc.Network;
 using CsPoc.DynamicFramework;
+using CsPoc.Basic;
 
 namespace CsPoc
 {
@@ -24,7 +25,7 @@ namespace CsPoc
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
             #region
-            
+
             //DynamicDemo dd = new DynamicDemo();
             //dd.VsObject();
             //dd.PropertyDemo();
@@ -37,7 +38,7 @@ namespace CsPoc
             //ExtensionDemo.Execute();
             //LambdaDemo.Execute();
 
-           // DelegateDemo ddemo = new DelegateDemo();
+            // DelegateDemo ddemo = new DelegateDemo();
             //ReferenceDemo.Execute();
             //ReflectionDemo.RelectionTest();
             //PerformanceTest.Execute();
@@ -143,8 +144,10 @@ namespace CsPoc
             //HttpBindingDemo hd = new HttpBindingDemo();
             //hd.Execute();
 
-            CastleProxyDemo cd = new CastleProxyDemo();
-            cd.Execute();
+            //CastleProxyDemo cd = new CastleProxyDemo();
+
+            SteramIODemo sid = new SteramIODemo();
+            sid.Execute();
 
 
 

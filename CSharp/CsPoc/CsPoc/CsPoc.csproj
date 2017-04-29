@@ -109,6 +109,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basic\SteramIODemo.cs" />
     <Compile Include="DynamicFramework\CastleAutoDemo.cs" />
     <Compile Include="DynamicFramework\CastleDynamicProxy.cs" />
     <Compile Include="DynamicFramework\CastleInterceptor.cs" />
