@@ -16,6 +16,7 @@ using CsPoc.DynamicFramework;
 using CSDemo;
 using CsPoc.ThreadDemos;
 using CsPoc.XML;
+using CsPoc.Azure;
 
 namespace CsPoc
 {
@@ -169,8 +170,11 @@ namespace CsPoc
             //XsltBasic xb = new XsltBasic();
             //xb.Execute();
 
-            XSLTCS xs = new XSLTCS();
-            xs.Execute();
+            //XSLTCS xs = new XSLTCS();
+            //xs.Execute();
+
+            AzureStorageDemo asd = new AzureStorageDemo();
+            asd.Execute();
 
             Console.ReadLine();
         }

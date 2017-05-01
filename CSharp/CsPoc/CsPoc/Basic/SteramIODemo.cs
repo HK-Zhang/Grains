@@ -44,7 +44,7 @@ namespace CsPoc.Basic
             }
         }
 
-        private void ReadFromStream(Stream s)
+        internal void ReadFromStream(Stream s)
         {
             using (var sr = new StreamReader(s))
             {

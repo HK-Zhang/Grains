@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advanced\ExpressionTreeDemo.cs" />
+    <Compile Include="Azure\AzureStorageDemo.cs" />
     <Compile Include="Basic\EqualsDemo.cs" />
     <Compile Include="Basic\HexaDecimalDemo.cs" />
     <Compile Include="Basic\MemoryCacheDemo.cs" />
@@ -246,9 +247,7 @@
     <Content Include="XML\xmlDoc.xml" />
     <Content Include="XML\xslDoc.xsl" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Azure\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
