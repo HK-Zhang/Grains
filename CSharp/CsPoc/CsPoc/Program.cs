@@ -180,6 +180,9 @@ namespace CsPoc
             {
                 AzureSearchDemo asd = new AzureSearchDemo();
                 asd.Execute();
+
+                //ParallelDemo.RunDemo();
+
             }
             catch (Exception ex)
             {

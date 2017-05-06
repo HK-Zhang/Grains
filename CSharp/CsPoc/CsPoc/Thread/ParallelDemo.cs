@@ -25,19 +25,20 @@ namespace CsPoc
             ThreadPool.GetMaxThreads(out maxThreadNum, out portThreadNum);
 
             ThreadPool.SetMinThreads(10, portThreadNum);
-            ThreadPool.SetMaxThreads(250, portThreadNum);
+            //ThreadPool.SetMaxThreads(250, portThreadNum);
 
             ThreadPool.GetMaxThreads(out maxThreadNum, out portThreadNum);
             ThreadPool.GetMinThreads(out minThreadNum, out portThreadNum);
 
  
 
-            Console.WriteLine("最大线程数：{0}", maxThreadNum);
+            Console.WriteLine("max thead number in thread pool：{0}", maxThreadNum);
 
-            Console.WriteLine("最小空闲线程数：{0}", minThreadNum);
+            Console.WriteLine("min idle thead number in thread pool：{0}", minThreadNum);
 
             //Foo3();
-            Foo4();
+            //Foo4();
+            Foo2();
 
         }
 
@@ -47,6 +48,10 @@ namespace CsPoc
             System.Threading.Tasks.Parallel.For(0, 100000, new ParallelOptions { MaxDegreeOfParallelism = 100 }, (i) =>
             {
                 a++;
+                //while (true)
+                //{
+
+                //}
             });
             Console.Write(a);
         }

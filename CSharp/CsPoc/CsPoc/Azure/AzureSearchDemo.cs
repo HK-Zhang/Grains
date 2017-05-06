@@ -19,6 +19,7 @@ namespace CsPoc.Azure
         private SearchServiceClient serviceClient;
         private SearchIndexClient projectIndexClient;
         private SearchIndexClient taskIndexClient;
+        private int loopsum;
 
 
         public async void Execute()
@@ -122,7 +123,7 @@ namespace CsPoc.Azure
             ThreadPool.GetMaxThreads(out maxThreadNum, out portThreadNum);
 
             ThreadPool.SetMinThreads(200, portThreadNum);
-            ThreadPool.SetMaxThreads(250, portThreadNum);
+            //ThreadPool.SetMaxThreads(250, portThreadNum);
 
             ThreadPool.GetMaxThreads(out maxThreadNum, out portThreadNum);
             ThreadPool.GetMinThreads(out minThreadNum, out portThreadNum);
@@ -143,52 +144,131 @@ namespace CsPoc.Azure
 
             Stopwatch timer = new Stopwatch();
             timer.Start();
-
-            System.Threading.Tasks.Parallel.For(0, 200, new ParallelOptions { MaxDegreeOfParallelism = 200 }, (i) =>
+            loopsum = 0;
+            System.Threading.Tasks.Parallel.For(0, 200, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
             {
                 //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
-                var r = projectIndexClient.Documents.Search<CostProjectAzureSearchModel>("10006685", parameters);
+                try
+                {
+                    await projectIndexClient.Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
+                    //Console.WriteLine(r.Results[0].Document.ProjectName);
+                    Interlocked.Add(ref loopsum, 1);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+
+                }
+                
                 //WriteProjectDocuments(r);
             });
+
+            
+
+            while (loopsum!=200)
+            {
+                Thread.Sleep(100);
+            }
 
             timer.Stop();
             Console.WriteLine("Elapsed 1" + ": " + timer.Elapsed.ToString());
 
             timer.Restart();
-
-            System.Threading.Tasks.Parallel.For(0, 200, new ParallelOptions { MaxDegreeOfParallelism = 200 }, (i) =>
+            loopsum = 0;
+            System.Threading.Tasks.Parallel.For(0, 200, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
             {
                 //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
-                var r = projectIndexClient.Documents.Search<CostProjectAzureSearchModel>("10006685", parameters);
+                try
+                {
+                    await projectIndexClient.Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
+                    //Console.WriteLine(r.Results[0].Document.ProjectName);
+                    Interlocked.Add(ref loopsum, 1);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+
+                }
+
                 //WriteProjectDocuments(r);
             });
+
+            while (loopsum != 200)
+            {
+                Thread.Sleep(100);
+            }
 
             timer.Stop();
             Console.WriteLine("Elapsed 2" + ": " + timer.Elapsed.ToString());
 
             timer.Restart();
-
-            System.Threading.Tasks.Parallel.For(0, 200, new ParallelOptions { MaxDegreeOfParallelism = 200 }, (i) =>
+            loopsum = 0;
+            System.Threading.Tasks.Parallel.For(0, 200, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
             {
                 //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
-                var r = projectIndexClient.Documents.Search<CostProjectAzureSearchModel>("10006685", parameters);
+                try
+                {
+                    await projectIndexClient.Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
+                    //Console.WriteLine(r.Results[0].Document.ProjectName);
+                    Interlocked.Add(ref loopsum, 1);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+
+                }
+
                 //WriteProjectDocuments(r);
             });
+
+            while (loopsum != 200)
+            {
+                Thread.Sleep(100);
+            }
 
             timer.Stop();
             Console.WriteLine("Elapsed 3" + ": " + timer.Elapsed.ToString());
 
             timer.Restart();
-
-            System.Threading.Tasks.Parallel.For(0, 200, new ParallelOptions { MaxDegreeOfParallelism = 200 }, (i) =>
+            loopsum = 0;
+            System.Threading.Tasks.Parallel.For(0, 200, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
             {
                 //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
-                var r = projectIndexClient.Documents.Search<CostProjectAzureSearchModel>("10006685", parameters);
+                try
+                {
+                    await projectIndexClient.Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
+                    //Console.WriteLine(r.Results[0].Document.ProjectName);
+                    Interlocked.Add(ref loopsum, 1);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+
+                }
+
                 //WriteProjectDocuments(r);
             });
 
+            while (loopsum != 200)
+            {
+                Thread.Sleep(100);
+            }
+
             timer.Stop();
             Console.WriteLine("Elapsed 4" + ": " + timer.Elapsed.ToString());
+
         }
     }
 }
