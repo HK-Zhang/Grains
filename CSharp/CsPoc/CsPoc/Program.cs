@@ -173,8 +173,18 @@ namespace CsPoc
             //XSLTCS xs = new XSLTCS();
             //xs.Execute();
 
-            AzureStorageDemo asd = new AzureStorageDemo();
-            asd.Execute();
+            //AzureStorageDemo asd = new AzureStorageDemo();
+            //asd.Execute();
+
+            try
+            {
+                AzureSearchDemo asd = new AzureSearchDemo();
+                asd.Execute();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.ReadLine();
         }
