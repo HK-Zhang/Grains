@@ -17,7 +17,8 @@ namespace CSDemo
             //Foo2();
             //Foo3();
             //Foo1();
-            FooSplit();
+            //FooSplit();
+            Foo1();
         }
 
 
@@ -29,7 +30,13 @@ namespace CSDemo
 
         private void Foo1()
         {
-            bool t = Regex.IsMatch("abracadabra", "(a|b|r)+");
+            //bool t = Regex.IsMatch("abracadabra", "(a|b|r)+");
+            bool t = Regex.IsMatch("1241243", @"[^\d]");
+
+            Console.WriteLine(t);
+
+            t = Regex.IsMatch("12adf", @"[^\d]");
+
             Console.WriteLine(t);
         }
 

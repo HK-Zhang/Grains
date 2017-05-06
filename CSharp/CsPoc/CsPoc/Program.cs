@@ -178,8 +178,11 @@ namespace CsPoc
 
             try
             {
-                AzureSearchDemo asd = new AzureSearchDemo();
-                asd.Execute();
+                //AzureSearchDemo asd = new AzureSearchDemo();
+                //asd.Execute();
+
+                RegexDemo rd = new RegexDemo();
+                rd.Execute();
 
                 //ParallelDemo.RunDemo();
 
