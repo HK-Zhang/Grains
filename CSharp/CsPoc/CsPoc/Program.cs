@@ -181,10 +181,13 @@ namespace CsPoc
                 //AzureSearchDemo asd = new AzureSearchDemo();
                 //asd.Execute();
 
-                RegexDemo rd = new RegexDemo();
-                rd.Execute();
+                //RegexDemo rd = new RegexDemo();
+                //rd.Execute();
 
                 //ParallelDemo.RunDemo();
+
+                TypeConvertor tc = new TypeConvertor();
+                tc.Execute();
 
             }
             catch (Exception ex)
