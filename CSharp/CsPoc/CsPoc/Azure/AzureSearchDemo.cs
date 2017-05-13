@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,19 +21,29 @@ namespace CsPoc.Azure
         private SearchIndexClient projectIndexClient;
         private SearchIndexClient taskIndexClient;
         private int loopsum;
-        private const int batchs = 500;
-
+        private const int batchs = 10000;
+        private List<SearchIndexClient> projectIndexClients;
 
         public async void Execute()
         {
+            ServicePointManager.DefaultConnectionLimit = 1000;
             serviceClient = new SearchServiceClient(searchServiceName, new SearchCredentials(adminApiKey));
 
             projectIndexClient = new SearchIndexClient(searchServiceName, "costproject", new SearchCredentials(adminApiKey));
             taskIndexClient = new SearchIndexClient(searchServiceName, "costtask", new SearchCredentials(adminApiKey));
+            projectIndexClient.HttpClient.Timeout = new TimeSpan(0,5,0);
             //downlaod();
             //await FindIndex("costproject");
             //await Search();
 
+            projectIndexClients = new List<SearchIndexClient>();
+            for (int i = 0; i <= 10; i++)
+            {
+                projectIndexClients.Add(new SearchIndexClient(searchServiceName, "costproject", new SearchCredentials(adminApiKey)));
+                projectIndexClients[i].HttpClient.Timeout = new TimeSpan(0, 5, 0);
+            }
+
+            
             PerformanceTest();
         }
 
@@ -151,15 +162,16 @@ namespace CsPoc.Azure
 
             Stopwatch timer = new Stopwatch();
             timer.Start();
+            int successreq = 0;
             loopsum = 0;
             System.Threading.Tasks.Parallel.For(0, batchs, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
             {
                 //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
                 try
                 {
-                    await projectIndexClient.Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
+                    await projectIndexClients[i / 1000].Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
                     //Console.WriteLine(r.Results[0].Document.ProjectName);
-                    
+                    Interlocked.Add(ref successreq, 1);
                 }
                 catch (Exception ex)
                 {
@@ -181,104 +193,108 @@ namespace CsPoc.Azure
             }
 
             timer.Stop();
-            Console.WriteLine("Elapsed 1" + ": " + timer.Elapsed.ToString());
+            Console.WriteLine("Elapsed 1" + ": " + timer.Elapsed.ToString() + "," + successreq);
 
 
-
-            timer.Restart();
-            loopsum = 0;
-            System.Threading.Tasks.Parallel.For(0, batchs, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
+            for (int j = 2; j < 10; j++)
             {
-                //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
-                try
+                timer.Restart();
+                loopsum = 0;
+                successreq = 0;
+                System.Threading.Tasks.Parallel.For(0, batchs, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
                 {
-                    await projectIndexClient.Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
-                    //Console.WriteLine(r.Results[0].Document.ProjectName);
-                    
-                }
-                catch (Exception ex)
+                    //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+                    try
+                    {
+                        await projectIndexClients[i/1000].Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
+                        //Console.WriteLine(r.Results[0].Document.ProjectName);
+                        Interlocked.Add(ref successreq, 1);
+                    }
+                    catch (Exception ex)
+                    {
+                        //Console.WriteLine(ex.Message);
+                    }
+                    finally
+                    {
+                        Interlocked.Add(ref loopsum, 1);
+                    }
+
+                    //WriteProjectDocuments(r);
+                });
+
+                while (loopsum != batchs)
                 {
-                    //Console.WriteLine(ex.Message);
-                }
-                finally
-                {
-                    Interlocked.Add(ref loopsum, 1);
+                    Thread.Sleep(100);
                 }
 
-                //WriteProjectDocuments(r);
-            });
-
-            while (loopsum != batchs)
-            {
-                Thread.Sleep(100);
+                timer.Stop();
+                Console.WriteLine("Elapsed " + j + ": " + timer.Elapsed.ToString()+","+ successreq);
             }
 
-            timer.Stop();
-            Console.WriteLine("Elapsed 2" + ": " + timer.Elapsed.ToString());
 
             //return;
 
-            timer.Restart();
-            loopsum = 0;
-            System.Threading.Tasks.Parallel.For(0, batchs, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
-            {
-                //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
-                try
-                {
-                    await projectIndexClient.Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
-                    //Console.WriteLine(r.Results[0].Document.ProjectName);
-                    
-                }
-                catch (Exception ex)
-                {
-                    //Console.WriteLine(ex.Message);
-                }
-                finally
-                {
-                    Interlocked.Add(ref loopsum, 1);
-                }
+            //timer.Restart();
+            //loopsum = 0;
+            //System.Threading.Tasks.Parallel.For(0, batchs, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
+            //{
+            //    Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+            //    try
+            //    {
+            //        await projectIndexClient.Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
+            //        Console.WriteLine(r.Results[0].Document.ProjectName);
 
-                //WriteProjectDocuments(r);
-            });
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex.Message);
+            //    }
+            //    finally
+            //    {
+            //        Interlocked.Add(ref loopsum, 1);
+            //    }
 
-            while (loopsum != batchs)
-            {
-                Thread.Sleep(100);
-            }
+            //    WriteProjectDocuments(r);
+            //});
 
-            timer.Stop();
-            Console.WriteLine("Elapsed 3" + ": " + timer.Elapsed.ToString());
+            //while (loopsum != batchs)
+            //{
+            //    Thread.Sleep(100);
+            //}
 
-            timer.Restart();
-            loopsum = 0;
-            System.Threading.Tasks.Parallel.For(0, batchs, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
-            {
-                //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
-                try
-                {
-                    await projectIndexClient.Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
-                    //Console.WriteLine(r.Results[0].Document.ProjectName);
-                    
-                }
-                catch (Exception ex)
-                {
-                    //Console.WriteLine(ex.Message);
-                }
-                finally
-                {
-                    Interlocked.Add(ref loopsum, 1);
-                }
+            //timer.Stop();
+            //Console.WriteLine("Elapsed 3" + ": " + timer.Elapsed.ToString());
 
-                //WriteProjectDocuments(r);
-            });
+            //timer.Restart();
+            //loopsum = 0;
+            //System.Threading.Tasks.Parallel.For(0, batchs, /*new ParallelOptions { MaxDegreeOfParallelism = 200 },*/ async (i) =>
+            //{
+            //    Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
+            //    try
+            //    {
+            //        await projectIndexClient.Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
+            //        Console.WriteLine(r.Results[0].Document.ProjectName);
 
-            while (loopsum != batchs)
-            {
-                Thread.Sleep(100);
-            }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex.Message);
+            //    }
+            //    finally
+            //    {
+            //        Interlocked.Add(ref loopsum, 1);
+            //    }
 
-            timer.Stop();
-            Console.WriteLine("Elapsed 4" + ": " + timer.Elapsed.ToString());
+            //    WriteProjectDocuments(r);
+            //});
+
+            //while (loopsum != batchs)
+            //{
+            //    Thread.Sleep(100);
+            //}
+
+            //timer.Stop();
+            //Console.WriteLine("Elapsed 4" + ": " + timer.Elapsed.ToString());
 
         }
     }

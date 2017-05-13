@@ -178,16 +178,16 @@ namespace CsPoc
 
             try
             {
-                //AzureSearchDemo asd = new AzureSearchDemo();
-                //asd.Execute();
+                AzureSearchDemo asd = new AzureSearchDemo();
+                asd.Execute();
 
                 //RegexDemo rd = new RegexDemo();
                 //rd.Execute();
 
                 //ParallelDemo.RunDemo();
 
-                TypeConvertor tc = new TypeConvertor();
-                tc.Execute();
+                //TypeConvertor tc = new TypeConvertor();
+                //tc.Execute();
 
             }
             catch (Exception ex)
