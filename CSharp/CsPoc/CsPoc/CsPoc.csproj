@@ -145,10 +145,12 @@
   <ItemGroup>
     <Compile Include="Advanced\ExpressionTreeDemo.cs" />
     <Compile Include="Azure\AzureSearchDemo.cs" />
+    <Compile Include="Azure\AzureSearchLoadingTesting.cs" />
     <Compile Include="Azure\AzureSearchModel.cs" />
     <Compile Include="Azure\AzureStorageDemo.cs" />
     <Compile Include="Azure\CostProjectAzureSearchModel.cs" />
     <Compile Include="Azure\CostTaskAzureSearchModel.cs" />
+    <Compile Include="Azure\ProjectNumbers.cs" />
     <Compile Include="Basic\EqualsDemo.cs" />
     <Compile Include="Basic\HexaDecimalDemo.cs" />
     <Compile Include="Basic\MemoryCacheDemo.cs" />

@@ -21,17 +21,20 @@ namespace CsPoc.Azure
         private SearchIndexClient projectIndexClient;
         private SearchIndexClient taskIndexClient;
         private int loopsum;
-        private const int batchs = 10000;
+        private const int batchs = 5000;
         private List<SearchIndexClient> projectIndexClients;
-
+        private Random ro = new Random(10);
         public async void Execute()
         {
+
+            //long a = 1;
+            //Console.WriteLine(string.Format("{0}",a));
             ServicePointManager.DefaultConnectionLimit = 1000;
             serviceClient = new SearchServiceClient(searchServiceName, new SearchCredentials(adminApiKey));
 
             projectIndexClient = new SearchIndexClient(searchServiceName, "costproject", new SearchCredentials(adminApiKey));
             taskIndexClient = new SearchIndexClient(searchServiceName, "costtask", new SearchCredentials(adminApiKey));
-            projectIndexClient.HttpClient.Timeout = new TimeSpan(0,5,0);
+            projectIndexClient.HttpClient.Timeout = new TimeSpan(0, 5, 0);
             //downlaod();
             //await FindIndex("costproject");
             //await Search();
@@ -43,7 +46,7 @@ namespace CsPoc.Azure
                 projectIndexClients[i].HttpClient.Timeout = new TimeSpan(0, 5, 0);
             }
 
-            
+
             PerformanceTest();
         }
 
@@ -62,7 +65,7 @@ namespace CsPoc.Azure
             }
             catch (CloudException e)
             {
-                
+
                 Console.WriteLine(e.Message);
             }
             catch (Exception ex)
@@ -127,7 +130,8 @@ namespace CsPoc.Azure
             Console.WriteLine();
         }
 
-        private void PerformanceTest() {
+        private void PerformanceTest()
+        {
             int maxThreadNum, maxPortThreadNum;
 
             int minThreadNum, minPortThreadNum;
@@ -156,8 +160,8 @@ namespace CsPoc.Azure
               new SearchParameters()
               {
                   SearchFields = new[] { "ProjectNo" },
-                    //Select = new[] { "ProjectName" }
-                };
+                  //Select = new[] { "ProjectName" }
+              };
 
 
             Stopwatch timer = new Stopwatch();
@@ -169,7 +173,7 @@ namespace CsPoc.Azure
                 //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
                 try
                 {
-                    await projectIndexClients[i / 1000].Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
+                    await projectIndexClients[i / 500].Documents.SearchAsync<CostProjectAzureSearchModel>(ProjectNumbers.list[i / 5], parameters);
                     //Console.WriteLine(r.Results[0].Document.ProjectName);
                     Interlocked.Add(ref successreq, 1);
                 }
@@ -181,13 +185,13 @@ namespace CsPoc.Azure
                 {
                     Interlocked.Add(ref loopsum, 1);
                 }
-                
+
                 //WriteProjectDocuments(r);
             });
 
-            
 
-            while (loopsum!= batchs)
+
+            while (loopsum != batchs)
             {
                 Thread.Sleep(100);
             }
@@ -206,7 +210,7 @@ namespace CsPoc.Azure
                     //Console.WriteLine("{0},{1},{2}", i, DateTime.Now, Thread.CurrentThread.ManagedThreadId);
                     try
                     {
-                        await projectIndexClients[i/1000].Documents.SearchAsync<CostProjectAzureSearchModel>("10006685", parameters);
+                        await projectIndexClients[i / 500].Documents.SearchAsync<CostProjectAzureSearchModel>(ProjectNumbers.list[i / 5], parameters);
                         //Console.WriteLine(r.Results[0].Document.ProjectName);
                         Interlocked.Add(ref successreq, 1);
                     }
@@ -228,7 +232,7 @@ namespace CsPoc.Azure
                 }
 
                 timer.Stop();
-                Console.WriteLine("Elapsed " + j + ": " + timer.Elapsed.ToString()+","+ successreq);
+                Console.WriteLine("Elapsed " + j + ": " + timer.Elapsed.ToString() + "," + successreq);
             }
 
 
