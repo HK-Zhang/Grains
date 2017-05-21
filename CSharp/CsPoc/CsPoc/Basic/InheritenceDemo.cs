@@ -12,6 +12,7 @@ namespace CsPoc
         {
 
             CClass c = new CClass();
+            c.Print();
         }
 
         private static void Foo1()
@@ -58,7 +59,9 @@ namespace CsPoc
     public class AClass
     {
         public virtual void Print() 
-        { }
+        {
+            Console.WriteLine("AClass");
+        }
 
         public AClass()
         {
@@ -71,6 +74,7 @@ namespace CsPoc
         int y = 1;
         public override void Print()
         {
+            base.Print();
             Console.WriteLine(y);
         }
 

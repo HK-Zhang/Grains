@@ -70,7 +70,6 @@ namespace CsPoc.Azure
             var projectIndexClients = new SearchIndexClient(searchServiceName, "costproject", new SearchCredentials(adminApiKey));
 
             projectIndexClients.HttpClient.Timeout = RequestTimeout;
-          
             projectIndexClients.SetRetryPolicy(retryPolicy);
 
             List<Task> tasks = new List<Task>();
