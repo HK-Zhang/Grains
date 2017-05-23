@@ -4,11 +4,29 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TERS.Infrastructure.Search.Model;
 
 namespace CsPoc
 {
     class StringFormatDemo
     {
+
+        public static void Execute()
+        {
+            Foo5();
+        }
+
+
+        public static void Foo5()
+        {
+            var projects = new List<CostTaskAzureSearchModel>();
+            projects.Add(new CostTaskAzureSearchModel() { ProjectNo = "1001" });
+            projects.Add(new CostTaskAzureSearchModel() { ProjectNo = "1002" });
+            projects.Add(new CostTaskAzureSearchModel() { ProjectNo = "1003" });
+            projects.Add(new CostTaskAzureSearchModel() { ProjectNo = "1004" });
+            Console.WriteLine(string.Join(" or ", projects.Select(t => $"{nameof(CostTaskAzureSearchModel.ProjectNo)} eq '{t.ProjectNo}'")));
+        }
+
         public static void Foo()
         {
             int x = 16;
