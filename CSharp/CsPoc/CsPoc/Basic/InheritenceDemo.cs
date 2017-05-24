@@ -13,6 +13,12 @@ namespace CsPoc
 
             CClass c = new CClass();
             c.Print();
+
+            Console.WriteLine("----");
+            BClass bc = new BClass();
+            bc.Print();
+
+            Console.WriteLine("----");
         }
 
         private static void Foo1()
@@ -83,6 +89,23 @@ namespace CsPoc
             y = 2;
         }
     }
+
+    public class BClass : AClass
+    {
+        int y = 1;
+        public new void Print()
+        {
+            base.Print();
+            Console.WriteLine(y);
+        }
+
+        public BClass()
+        {
+            y = 2;
+        }
+    }
+
+
 
 
 }

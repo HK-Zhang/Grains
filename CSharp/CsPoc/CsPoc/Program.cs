@@ -184,8 +184,8 @@ namespace CsPoc
                 //AzureSearchLoadingTesting asd = new AzureSearchLoadingTesting();
                 //asd.Execute();
 
-                //InheritenceDemo.Execute();
-                StringFormatDemo.Execute();
+                InheritenceDemo.Execute();
+                //StringFormatDemo.Execute();
 
                 //RegexDemo rd = new RegexDemo();
                 //rd.Execute();
