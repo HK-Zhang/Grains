@@ -9,6 +9,15 @@ namespace CsPoc
 {
     class AttributeDemo
     {
+
+        public static void Execute() {
+            //var attrs = Attribute.GetCustomAttributes(typeof(CountryAttribute));
+            //AttributeUsageAttribute attr = attrs.OfType<AttributeUsageAttribute>().First();
+
+            var attr =  (AttributeUsageAttribute)Attribute.GetCustomAttribute(typeof(CountryAttribute), typeof(AttributeUsageAttribute));
+            Console.WriteLine(attr.AllowMultiple);
+        }
+
         public static void RunDemo()
         {
             Hoopster hr = new Hoopster();
