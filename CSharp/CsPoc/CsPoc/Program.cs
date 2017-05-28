@@ -195,7 +195,10 @@ namespace CsPoc
                 //TypeConvertor tc = new TypeConvertor();
                 //tc.Execute();
 
-                AttributeDemo.Execute();
+                //AttributeDemo.Execute();
+
+                DynamicDemo dd = new DynamicDemo();
+                dd.Execute();
 
             }
             catch (Exception ex)

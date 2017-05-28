@@ -8,11 +8,19 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+//using Microsoft.CSharp.RuntimeBinder;
+//using System.Runtime.CompilerServices;
 
 namespace CsPoc
 {
     class DynamicDemo
     {
+        public void Execute() {
+            dynamic dyn = new ExpandoObject();
+            dyn.Add("a", 1);
+            Console.WriteLine(dyn.a);
+        }
+
         public void VsObject()
         {
             dynamic dyn = 1;
