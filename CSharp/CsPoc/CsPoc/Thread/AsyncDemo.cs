@@ -22,10 +22,18 @@ namespace CSDemo
             //CallViaThread();
             //CallViaThreadPool();
             //CallViaBackgroundWorker();
-            CallViaTask();
+            //CallViaTask();
+            Console.WriteLine(GetAsync().Result);
         }
 
+        public async Task<String> GetAsync() {
+            //return "abc";
 
+            return await Task<string>.Run(() => {
+                Thread.Sleep(2000);
+                return "abc";
+            });
+        }
 
         private string Foo(string msg) 
         {

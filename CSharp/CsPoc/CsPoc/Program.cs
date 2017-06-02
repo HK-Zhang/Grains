@@ -197,8 +197,16 @@ namespace CsPoc
 
                 //AttributeDemo.Execute();
 
-                DynamicDemo dd = new DynamicDemo();
-                dd.Execute();
+                //DynamicDemo dd = new DynamicDemo();
+                //dd.Execute();
+
+                //AzureStorageDemo asd = new AzureStorageDemo();
+                //asd.Execute();
+
+                //AsyncDemonstration ad = new AsyncDemonstration();
+                //ad.Run();
+
+                LockDemo.RunDemo();
 
             }
             catch (Exception ex)

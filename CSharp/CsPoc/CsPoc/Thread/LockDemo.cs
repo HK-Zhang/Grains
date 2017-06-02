@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -14,7 +15,43 @@ namespace CSDemo
         public static void RunDemo()
         {
             //InterLockDemo();
-            ReadWriteLockDemo();
+            //ReadWriteLockDemo();
+            //InterLockComoare();
+            ParallelDe();
+        }
+
+        static void ParallelDe()
+        {
+            Parallel.For(0,5,(i)=> {
+                try
+                {
+                    throw new Exception("abc");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    Console.WriteLine(i);
+                }
+            });
+        }
+
+        static void InterLockComoare()
+        {
+            int taskCount = 0;
+
+            Interlocked.Increment(ref taskCount);
+            Interlocked.Increment(ref taskCount);
+
+
+            int c = Interlocked.CompareExchange(ref taskCount, 2, 2);
+            Console.WriteLine(c);
+
+            Interlocked.Decrement(ref taskCount);
+            c = Interlocked.CompareExchange(ref taskCount, 2, 3);
+            Console.WriteLine(c);
         }
 
         static void InterLockDemo()
