@@ -178,35 +178,8 @@ namespace CsPoc
 
             try
             {
-                //AzureSearchDemo asd = new AzureSearchDemo();
-                //asd.Execute();
-
-                //AzureSearchLoadingTesting asd = new AzureSearchLoadingTesting();
-                //asd.Execute();
-
-                //InheritenceDemo.Execute();
-                //StringFormatDemo.Execute();
-
-                //RegexDemo rd = new RegexDemo();
-                //rd.Execute();
-
-                //ParallelDemo.RunDemo();
-
-                //TypeConvertor tc = new TypeConvertor();
-                //tc.Execute();
-
-                //AttributeDemo.Execute();
-
-                //DynamicDemo dd = new DynamicDemo();
-                //dd.Execute();
-
-                //AzureStorageDemo asd = new AzureStorageDemo();
-                //asd.Execute();
-
-                //AsyncDemonstration ad = new AsyncDemonstration();
-                //ad.Run();
-
-                LockDemo.RunDemo();
+                AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
+                d.Execute();
 
             }
             catch (Exception ex)
