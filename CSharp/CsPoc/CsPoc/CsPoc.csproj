@@ -157,6 +157,7 @@
     <Compile Include="Basic\SteramIODemo.cs" />
     <Compile Include="Basic\TaskDemo.cs" />
     <Compile Include="Basic\TypeConvertor.cs" />
+    <Compile Include="Collection\HashSetDemo.cs" />
     <Compile Include="DynamicFramework\CastleAutoDemo.cs" />
     <Compile Include="DynamicFramework\CastleDIDemo.cs" />
     <Compile Include="DynamicFramework\CastleDynamicProxy.cs" />

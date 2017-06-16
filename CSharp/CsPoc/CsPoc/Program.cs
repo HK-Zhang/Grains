@@ -178,8 +178,11 @@ namespace CsPoc
 
             try
             {
-                AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
-                d.Execute();
+                //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
+                //d.Execute();
+
+                HashSetDemo hd = new HashSetDemo();
+                hd.Execute();
 
             }
             catch (Exception ex)
