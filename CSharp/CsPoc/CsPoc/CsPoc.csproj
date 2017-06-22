@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advanced\ExpressionTreeDemo.cs" />
+    <Compile Include="Advanced\MiddleDesign.cs" />
     <Compile Include="Azure\AzureSearchDemo.cs" />
     <Compile Include="Azure\AzureSearchLoadingTesting.cs" />
     <Compile Include="Azure\AzureSearchModel.cs" />

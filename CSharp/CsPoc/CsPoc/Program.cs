@@ -181,8 +181,11 @@ namespace CsPoc
                 //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
                 //d.Execute();
 
-                HashSetDemo hd = new HashSetDemo();
-                hd.Execute();
+                //HashSetDemo hd = new HashSetDemo();
+                //hd.Execute();
+
+                MiddleDesign md = new MiddleDesign();
+                md.Execute();
 
             }
             catch (Exception ex)

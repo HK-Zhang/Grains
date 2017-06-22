@@ -62,5 +62,6 @@ namespace CsPoc.Advanced
             Person person2 = Deserialize<Person>(json, str);
             Console.WriteLine(person2.Birthday);
         }
+
     }
 }
