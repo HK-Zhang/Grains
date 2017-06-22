@@ -13,3 +13,11 @@
 /CSharp/CsPoc/CsPoc/obj/*
 /CSharp/CsPoc/CsPoc/bin/*
 /CSharp/CsPoc/CsPoc/bin/Debug/*.*
+/CSharp/CsPoc/CoreOne/obj/*
+/CSharp/CsPoc/CoreOne/bin/*
+/CSharp/CsPoc/CoreOne/obj/Debug/*.*
+/CSharp/CsPoc/CoreOne/bin/Debug/*.*
+/CSharp/CsPoc/CoreOne/obj/Debug/*
+/CSharp/CsPoc/CoreOne/bin/Debug/*
+/CSharp/CsPoc/CoreOne/bin/Debug/netcoreapp1.1/*.*
+/CSharp/CsPoc/CoreOne/obj/Debug/netcoreapp1.1/*.*
