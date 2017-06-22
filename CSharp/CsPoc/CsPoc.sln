@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsPoc", "CsPoc\CsPoc.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataApiClient", "ODataApiClient\ODataApiClient.csproj", "{42454741-255B-4990-A1E5-DD37F20CE6F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreOne", "CoreOne\CoreOne.csproj", "{ADFA578F-D7B0-47BD-85FF-AA87148AB62D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{42454741-255B-4990-A1E5-DD37F20CE6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42454741-255B-4990-A1E5-DD37F20CE6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42454741-255B-4990-A1E5-DD37F20CE6F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADFA578F-D7B0-47BD-85FF-AA87148AB62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADFA578F-D7B0-47BD-85FF-AA87148AB62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADFA578F-D7B0-47BD-85FF-AA87148AB62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADFA578F-D7B0-47BD-85FF-AA87148AB62D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

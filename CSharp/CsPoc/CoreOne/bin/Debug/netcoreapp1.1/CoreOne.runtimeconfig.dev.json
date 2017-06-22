@@ -1,7 +1,7 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/zhk/.nuget/packages"
+      "C:\\Users\\zhk\\.nuget\\packages"
     ]
   }
 }
