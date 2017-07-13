@@ -26,7 +26,6 @@ namespace CsPoc
         {
             AppDomain.CurrentDomain.ProcessExit+=CurrentDomain_ProcessExit;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-
             #region
 
             //DynamicDemo dd = new DynamicDemo();
@@ -184,7 +183,7 @@ namespace CsPoc
                 //HashSetDemo hd = new HashSetDemo();
                 //hd.Execute();
 
-                MiddleDesign md = new MiddleDesign();
+                Log4NetDemo md = new Log4NetDemo();
                 md.Execute();
 
             }

@@ -1,5 +1,9 @@
+using log4net.Layout.Pattern;
 using System;
 using System.IO;
+using log4net.Core;
+using log4net.Layout;
+
 namespace CSDemo
 {
     public class LogHelper
@@ -25,7 +29,8 @@ namespace CSDemo
         {
             if (loginfo.IsInfoEnabled)
             {
-                loginfo.Info(info);
+                //loginfo.Info(info);
+                loginfo.Info(new Message {SuportCode = "abc", MessageBody = "body"});
             }
         }
         /// <summary>
@@ -37,8 +42,64 @@ namespace CSDemo
         {
             if (logerror.IsErrorEnabled)
             {
-                logerror.Error(info, se);
+                //logerror.Error(info, se);
+                logerror.Error(new Message{SuportCode="abc", MessageBody="body"}, se);
+
+
             }
+        }
+    }
+
+    public class Message
+    {
+        public string SuportCode { get; set; }
+
+        public string MessageBody { get; set; }
+
+        public LoggingEvent LogEvent { get; set; }
+
+    }
+
+    public class SuportCodePatternConvert : PatternLayoutConverter
+    {
+
+        protected override void Convert(TextWriter writer, LoggingEvent loggingEvent)
+        {
+            var LogMessage = loggingEvent.MessageObject as Message;
+            if (LogMessage != null)
+                writer.Write(LogMessage.SuportCode);
+        }
+    }
+
+    public class CsPocLayout : PatternLayout
+    {
+        public CsPocLayout()
+        {
+            this.AddConverter("SuportCode", typeof(SuportCodePatternConvert));
+        }
+    }
+
+    public class JsonLayout : LayoutSkeleton
+    {
+        public override void ActivateOptions()
+        {
+            IgnoresException = false;
+        }
+
+        public JsonLayout()
+        {
+            //this.AddConverter("SuportCode", typeof(SuportCodePatternConvert));
+        }
+
+        public override void Format(TextWriter writer, LoggingEvent loggingEvent)
+        {
+
+            //loggingEvent.Properties["SuportCode"] = (loggingEvent.MessageObject as Message).SuportCode;
+            //loggingEvent.Properties["MessageBody"] = (loggingEvent.MessageObject as Message).MessageBody;
+            var obj = loggingEvent.MessageObject as Message;
+            obj.LogEvent = loggingEvent;
+
+            writer.Write(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
         }
     }
 }
