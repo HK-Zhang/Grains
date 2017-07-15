@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using log4net.Core;
 using log4net.Layout;
+using System.Collections.Generic;
 
 namespace CSDemo
 {
@@ -30,7 +31,10 @@ namespace CSDemo
             if (loginfo.IsInfoEnabled)
             {
                 //loginfo.Info(info);
-                loginfo.Info(new Message {SuportCode = "abc", MessageBody = "body"});
+                var msg = new YourMessage { SuportCode = "abc", MessageBody = "body" };
+                msg["ServerID"] = "abc";
+                msg.CluserName = "WWW"
+                loginfo.Info(msg);
             }
         }
         /// <summary>
@@ -43,18 +47,55 @@ namespace CSDemo
             if (logerror.IsErrorEnabled)
             {
                 //logerror.Error(info, se);
-                logerror.Error(new Message{SuportCode="abc", MessageBody="body"}, se);
+                var msg = new YourMessage { SuportCode = "abc", MessageBody = "body"};
+                msg["ServerID"] = "abc";
+
+                logerror.Error(msg, se);
 
 
             }
         }
     }
 
+    public class YourMessage : Message
+    {
+        public string CluserName
+        {
+            get => this["CluserName"];
+            set => this["CluserName"] = value;
+        }
+    }
+
     public class Message
     {
+        private IDictionary<string, string> Attributes { get; set; }
+
         public string SuportCode { get; set; }
 
         public string MessageBody { get; set; }
+
+        public Message()
+        {
+            Attributes = new Dictionary<string, string>();
+        }
+
+
+        public string this[string key]
+        {
+
+            get
+            {
+                string tmp;
+                return Attributes.TryGetValue(key, out tmp) ? tmp : string.Empty;
+            }
+            set => Attributes[key] = value;
+        }
+
+        /// <summary>
+        /// Arbitrary objects related to this object.
+        /// These objects must be serializable.
+        /// </summary>
+
 
         public LoggingEvent LogEvent { get; set; }
 
