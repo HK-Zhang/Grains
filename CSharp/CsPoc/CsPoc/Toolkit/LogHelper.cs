@@ -33,7 +33,7 @@ namespace CSDemo
                 //loginfo.Info(info);
                 var msg = new YourMessage { SuportCode = "abc", MessageBody = "body" };
                 msg["ServerID"] = "abc";
-                msg.CluserName = "WWW"
+                msg.CluserName = "WWW";
                 loginfo.Info(msg);
             }
         }

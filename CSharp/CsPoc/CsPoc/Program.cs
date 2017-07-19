@@ -183,8 +183,11 @@ namespace CsPoc
                 //HashSetDemo hd = new HashSetDemo();
                 //hd.Execute();
 
-                Log4NetDemo md = new Log4NetDemo();
-                md.Execute();
+                //Log4NetDemo md = new Log4NetDemo();
+                //md.Execute();
+
+                ThreadExceptionDemo td = new ThreadExceptionDemo();
+                td.Execute();
 
             }
             catch (Exception ex)

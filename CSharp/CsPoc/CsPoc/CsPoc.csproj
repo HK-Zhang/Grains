@@ -227,6 +227,7 @@
     <Compile Include="Thread\SynchronizationDemo.cs" />
     <Compile Include="Basic\Team.cs" />
     <Compile Include="Thread\ThreadDemo.cs" />
+    <Compile Include="Thread\ThreadExceptionDemo.cs" />
     <Compile Include="Thread\ThreadIsolation.cs" />
     <Compile Include="Thread\ThreadUniqueID.cs" />
     <Compile Include="Thread\WaitAwaitDemo.cs" />
