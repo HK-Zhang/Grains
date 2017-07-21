@@ -186,7 +186,7 @@ namespace CsPoc
                 //Log4NetDemo md = new Log4NetDemo();
                 //md.Execute();
 
-                ThreadExceptionDemo td = new ThreadExceptionDemo();
+                EnumeratorDemo td = new EnumeratorDemo();
                 td.Execute();
 
             }
