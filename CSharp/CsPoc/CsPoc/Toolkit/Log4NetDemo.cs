@@ -13,20 +13,20 @@ namespace CSDemo
             LogHelper.SetConfig(new System.IO.FileInfo("log4net.config"));
             LogHelper.WriteLog("App start");
 
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception e)
-            {
-                LogHelper.WriteLog("error", e);
-                //throw;
-            }
+            //try
+            //{
+            //    throw new NotImplementedException();
+            //}
+            //catch (Exception e)
+            //{
+            //    LogHelper.WriteLog("error", e);
+            //    //throw;
+            //}
 
-            char c = '\uDC1B';
+            //char c = '\uDC1B';
 
-            String a = c.ToString();
-            Console.WriteLine(c);
+            //String a = c.ToString();
+            //Console.WriteLine(c);
         }
     }
 }
