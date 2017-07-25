@@ -21,3 +21,5 @@
 /CSharp/CsPoc/CoreOne/bin/Debug/*
 /CSharp/CsPoc/CoreOne/bin/Debug/netcoreapp1.1/*.*
 /CSharp/CsPoc/CoreOne/obj/Debug/netcoreapp1.1/*.*
+/CSharp/CsPoc/UtPoc/bin/Debug
+/CSharp/CsPoc/UtPoc/obj/Debug
