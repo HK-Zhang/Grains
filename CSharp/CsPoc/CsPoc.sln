@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataApiClient", "ODataApiC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtPoc", "UtPoc\UtPoc.csproj", "{51AE12C5-0188-4A96-9D07-C237A0045F2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureAdWeb", "AzureAdWeb\AzureAdWeb.csproj", "{D5F7C02A-BB22-4D38-9FE6-4DF4C86DFB49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureAdWebApi", "AzureAdWebApi\AzureAdWebApi.csproj", "{4AEA4562-1320-48A2-AAC8-89AF87550011}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{51AE12C5-0188-4A96-9D07-C237A0045F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51AE12C5-0188-4A96-9D07-C237A0045F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51AE12C5-0188-4A96-9D07-C237A0045F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F7C02A-BB22-4D38-9FE6-4DF4C86DFB49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F7C02A-BB22-4D38-9FE6-4DF4C86DFB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F7C02A-BB22-4D38-9FE6-4DF4C86DFB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F7C02A-BB22-4D38-9FE6-4DF4C86DFB49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AEA4562-1320-48A2-AAC8-89AF87550011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AEA4562-1320-48A2-AAC8-89AF87550011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AEA4562-1320-48A2-AAC8-89AF87550011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AEA4562-1320-48A2-AAC8-89AF87550011}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
