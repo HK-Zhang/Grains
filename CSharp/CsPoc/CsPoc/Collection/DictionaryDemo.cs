@@ -21,5 +21,17 @@ namespace CsPoc.Collection
 
             return cnt;
         }
+
+        public static void SetValue<T>(this IDictionary<object, object> self, string key, T value)
+        {
+            if (self.ContainsKey(key))
+            {
+                self[key] = value;
+            }
+            else
+            {
+                self.Add(key, value);
+            }
+        }
     }
 }

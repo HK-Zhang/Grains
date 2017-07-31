@@ -21,5 +21,18 @@ namespace CsPoc.Collection.Tests
             Assert.AreEqual(5, rst);
             Assert.AreEqual(0, defaultrst);
         }
+
+        [TestMethod()]
+        public void SetValueTest()
+        {
+            Dictionary<object, object> dict = new Dictionary<object, object>();
+            dict.SetValue("abc", 5);
+            int rst = dict.GetValue<int>("abc");
+            Assert.AreEqual(5, rst);
+
+            dict.SetValue("abc", 6);
+            rst = dict.GetValue<int>("abc");
+            Assert.AreEqual(6, rst);
+        }
     }
 }
