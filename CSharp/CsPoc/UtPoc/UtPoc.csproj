@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collection\ConcurrentQueueDemoTests.cs" />
+    <Compile Include="Collection\DectionaryHelperTests.cs" />
     <Compile Include="Toolkit\Log4NetDemoTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
