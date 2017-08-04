@@ -177,13 +177,13 @@ namespace CsPoc
 
             try
             {
-                //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
-                //d.Execute();
+				//AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
+				//d.Execute();
 
-                //HashSetDemo hd = new HashSetDemo();
-                //hd.Execute();
+				//HashSetDemo hd = new HashSetDemo();
+				//hd.Execute();
 
-                Log4NetDemo md = new Log4NetDemo();
+	            EnumDemo md = new EnumDemo();
                 md.Execute();
 
                 //EnumeratorDemo td = new EnumeratorDemo();
