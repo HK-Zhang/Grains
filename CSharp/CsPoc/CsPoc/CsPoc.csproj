@@ -161,6 +161,7 @@
     <Compile Include="Basic\TaskDemo.cs" />
     <Compile Include="Basic\TypeConvertor.cs" />
     <Compile Include="Collection\DictionaryDemo.cs" />
+    <Compile Include="Collection\ConcurrentQueueDemo.cs" />
     <Compile Include="Collection\EnumeratorDemo.cs" />
     <Compile Include="Collection\HashSetDemo.cs" />
     <Compile Include="DynamicFramework\CastleAutoDemo.cs" />
