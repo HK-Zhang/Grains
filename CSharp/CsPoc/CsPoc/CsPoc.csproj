@@ -239,6 +239,7 @@
     <Compile Include="Advanced\ExpressionDemo.cs" />
     <Compile Include="Toolkit\ExtenssionGroupDemo.cs" />
     <Compile Include="Toolkit\GlimpseAppender.cs" />
+    <Compile Include="Toolkit\JsonDemo.cs" />
     <Compile Include="Toolkit\JsonNetDemo.cs" />
     <Compile Include="Toolkit\LinqDistinctDemo.cs" />
     <Compile Include="Toolkit\Log4NetDemo.cs" />
