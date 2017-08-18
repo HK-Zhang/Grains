@@ -21,7 +21,7 @@ namespace CsPoc.Toolkit
                 ContractResolver = new CamelCasePropertyNamesContractResolver(),
                 DateTimeZoneHandling = DateTimeZoneHandling.Unspecified,
                 DateFormatHandling = DateFormatHandling.IsoDateFormat,
-                DateFormatString = "yyyy-MM-dd HH:mm:ss"
+                //DateFormatString = "yyyy-MM-dd HH:mm:ss"
             };
 
 

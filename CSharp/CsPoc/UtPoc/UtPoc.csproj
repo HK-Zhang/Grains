@@ -51,6 +51,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collection\CollectionOptsDemoTests.cs" />
     <Compile Include="Collection\ConcurrentQueueDemoTests.cs" />
     <Compile Include="Collection\DectionaryHelperTests.cs" />
     <Compile Include="Toolkit\Log4NetDemoTests.cs" />
