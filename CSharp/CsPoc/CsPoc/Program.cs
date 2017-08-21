@@ -17,6 +17,7 @@ using CSDemo;
 using CsPoc.ThreadDemos;
 using CsPoc.XML;
 using CsPoc.Azure;
+using CsPoc.STD;
 
 namespace CsPoc
 {
@@ -183,7 +184,7 @@ namespace CsPoc
                 //HashSetDemo hd = new HashSetDemo();
                 //hd.Execute();
 
-                CollectionOptsDemo md = new CollectionOptsDemo();
+                ConfigDemo md = new ConfigDemo();
                 md.Execute();
 
                 //EnumeratorDemo td = new EnumeratorDemo();

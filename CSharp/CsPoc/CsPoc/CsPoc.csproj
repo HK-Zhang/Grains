@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CsPoc</RootNamespace>
     <AssemblyName>CsPoc</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -179,6 +180,7 @@
     <Compile Include="DynamicFramework\CastleProxyDemo.cs" />
     <Compile Include="Network\HttpBindingDemo.cs" />
     <Compile Include="Reflections\MethodDemo.cs" />
+    <Compile Include="STD\ConfigDemo.cs" />
     <Compile Include="Thread\AwaitDemo.cs" />
     <Compile Include="Basic\MarshalDemo.cs" />
     <Compile Include="Basic\RegexDemo.cs" />
@@ -283,7 +285,12 @@
     <Content Include="XML\xmlDoc.xml" />
     <Content Include="XML\xslDoc.xsl" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\StdTwoLib\StdTwoLib.csproj">
+      <Project>{fe77aaca-6ec7-4714-b823-327a42dd5d2b}</Project>
+      <Name>StdTwoLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

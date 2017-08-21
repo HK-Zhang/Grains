@@ -27,3 +27,7 @@
 /CSharp/CsPoc/AzureAdWebApi/bin/Debug/netcoreapp1.1
 /CSharp/CsPoc/AzureAdWeb/bin/Debug/netcoreapp1.1
 /CSharp/CsPoc/AzureAdWeb/obj
+/CSharp/CsPoc/CorePoc/obj
+/CSharp/CsPoc/CorePoc/bin/Debug/netcoreapp2.0
+/CSharp/CsPoc/StdTwoLib/bin/Debug/netstandard2.0
+/CSharp/CsPoc/StdTwoLib/obj
