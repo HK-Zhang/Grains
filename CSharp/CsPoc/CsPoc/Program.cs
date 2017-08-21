@@ -183,7 +183,7 @@ namespace CsPoc
                 //HashSetDemo hd = new HashSetDemo();
                 //hd.Execute();
 
-                JsonDemo md = new JsonDemo();
+                CollectionOptsDemo md = new CollectionOptsDemo();
                 md.Execute();
 
                 //EnumeratorDemo td = new EnumeratorDemo();

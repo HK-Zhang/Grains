@@ -12,5 +12,27 @@ namespace CsPoc.Collection
         {
             return source.Concat(target).ToArray();
         }
+
+        public List<string> SelectManyDemo(List<Person> people)
+        {
+            return people.SelectMany(t => t.PhoneNumber).ToList();
+        }
+
+        public void Execute()
+        {
+            List<Person> people = new List<Person>
+            {
+                new Person {PhoneNumber = new List<string> {"a", "b"}},
+                new Person {PhoneNumber = new List<string> {"c", "d"}}
+            };
+
+            var rst = SelectManyDemo(people);
+        }
+    }
+
+    public class Person
+    {
+        public List<string> PhoneNumber { get; set; }
+
     }
 }
