@@ -1,0 +1,7 @@
+{
+  "logconfig": {
+    "name": "log",
+    "key": "logkey"
+  },
+  "option2": 2
+}

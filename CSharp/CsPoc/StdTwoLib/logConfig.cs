@@ -23,4 +23,11 @@ namespace StdTwoLib
         }
 
     }
+
+    public class logMod
+    {
+        public string name { get; set; }
+        public string key { get; set; }
+
+    }
 }

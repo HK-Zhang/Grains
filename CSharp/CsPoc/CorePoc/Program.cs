@@ -1,5 +1,6 @@
 ﻿using StdTwoLib;
 using System;
+using System.Configuration;
 
 namespace CorePoc
 {
@@ -9,6 +10,7 @@ namespace CorePoc
         {
             var r = new ConfigReader();
             r.ReadConfig();
+
             Console.WriteLine("Hello World!");
         }
     }

@@ -9,4 +9,10 @@
     <ProjectReference Include="..\StdTwoLib\StdTwoLib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="log.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
