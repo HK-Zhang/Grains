@@ -15,6 +15,7 @@ namespace StdTwoLib
             var builder = new ConfigurationBuilder()
                 .SetBasePath(System.AppContext.BaseDirectory)
                 .AddJsonFile("log.json", optional: true, reloadOnChange: true)
+                .AddXmlFile("App.config")
                 .AddInMemoryCollection(new[]
                 {
                     new KeyValuePair<string, string>("the-key", "the-value"),
@@ -22,13 +23,15 @@ namespace StdTwoLib
 
             var configuration = builder.Build();
 
+            var configValue = configuration["appSettings"];
+
             var b = configuration["option2"];
             var c = configuration["logConfig:name"];
             logMod e = new logMod();
             configuration.Bind("logconfig", e);
             //var d = configuration.GetValue<logMod>("logconfig");
             //var a = configuration.GetSection("logConfig");
-            //var configValue = configuration["StorageConnectionString"];
+
 
         }
     }
