@@ -7,7 +7,7 @@ namespace StdTwoLib
 {
     public class ConfigReader
     {
-        public void ReadConfig()
+        public string ReadConfig()
         {
             //var b = ConfigurationManager.AppSettings["StorageConnectionString"];
             //var a = ConfigurationManager.GetSection("logConfig") as logConfig;
@@ -15,7 +15,8 @@ namespace StdTwoLib
             var builder = new ConfigurationBuilder()
                 .SetBasePath(System.AppContext.BaseDirectory)
                 .AddJsonFile("log.json", optional: true, reloadOnChange: true)
-                .AddXmlFile("App.config")
+                .AddXmlFile("App.config", optional: true, reloadOnChange: true)
+                //.AddXmlFile("CsPoc.exe.config", optional: true, reloadOnChange: true)
                 .AddInMemoryCollection(new[]
                 {
                     new KeyValuePair<string, string>("the-key", "the-value"),
@@ -23,7 +24,9 @@ namespace StdTwoLib
 
             var configuration = builder.Build();
 
-            var configValue = configuration["appSettings"];
+            IndexMod f = new IndexMod();
+            configuration.Bind("serConfig", f);
+            var configValue = configuration["serConfig"];
 
             var b = configuration["option2"];
             var c = configuration["logConfig:name"];
@@ -31,6 +34,8 @@ namespace StdTwoLib
             configuration.Bind("logconfig", e);
             //var d = configuration.GetValue<logMod>("logconfig");
             //var a = configuration.GetSection("logConfig");
+
+            return b;
 
 
         }
