@@ -28,6 +28,7 @@ namespace StdTwoLib
             var b = configuration["option2"];
             var c = configuration["logConfig:name"];
             logMod e = new logMod();
+            e= configuration.GetSection("logconfig").Get<logMod>();
             configuration.Bind("logconfig", e);
             //var d = configuration.GetValue<logMod>("logconfig");
             //var a = configuration.GetSection("logConfig");
