@@ -5,10 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using AzureAdWeb.AutofacPoc;
+using Autofac;
+
 
 namespace AzureAdWeb.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()
@@ -27,7 +30,9 @@ namespace AzureAdWeb.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            var a = StaticContainer.ApplicationContainer.Resolve<IPoc>();
+
+            ViewData["Message"] = string.Format("{0},{1}", StaticContainer.ApplicationContainer.GetHashCode(), a.GetHashCode());
 
             return View();
         }

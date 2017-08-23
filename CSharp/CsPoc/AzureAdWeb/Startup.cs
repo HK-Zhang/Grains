@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using AzureAdWeb.AutofacPoc;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,15 +33,37 @@ namespace AzureAdWeb
         }
 
         public IConfigurationRoot Configuration { get; }
-
+        public IContainer ApplicationContainer { get; private set; }
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+
             // Add framework services.
             services.AddMvc();
 
-            services.AddAuthentication(
-                SharedOptions => SharedOptions.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme);
+            // Create the Autofac container builder.
+            var builder = new ContainerBuilder();
+
+            // Add any Autofac modules or registrations.
+            builder.RegisterModule(new AutofacModule());
+
+            // Populate the services.
+            builder.Populate(services);
+
+            // Build the container.
+            this.ApplicationContainer = builder.Build();
+            StaticContainer.ApplicationContainer = this.ApplicationContainer;
+            //using (var scope = ApplicationContainer.BeginLifetimeScope())
+            //{
+            //    var a = ApplicationContainer.Resolve<ISupportFeatures>();
+            //}
+
+
+            // Create and return the service provider.
+            return new AutofacServiceProvider(this.ApplicationContainer);
+
+            //services.AddAuthentication(
+            //    SharedOptions => SharedOptions.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,14 +84,14 @@ namespace AzureAdWeb
 
             app.UseStaticFiles();
 
-            app.UseCookieAuthentication();
+            //app.UseCookieAuthentication();
 
-            app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
-            {
-                ClientId = Configuration["Authentication:AzureAd:ClientId"],
-                Authority = Configuration["Authentication:AzureAd:AADInstance"] + Configuration["Authentication:AzureAd:TenantId"],
-                CallbackPath = Configuration["Authentication:AzureAd:CallbackPath"]
-            });
+            //app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
+            //{
+            //    ClientId = Configuration["Authentication:AzureAd:ClientId"],
+            //    Authority = Configuration["Authentication:AzureAd:AADInstance"] + Configuration["Authentication:AzureAd:TenantId"],
+            //    CallbackPath = Configuration["Authentication:AzureAd:CallbackPath"]
+            //});
 
             app.UseMvc(routes =>
             {
