@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureAdWeb", "AzureAdWeb\Az
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureAdWebApi", "AzureAdWebApi\AzureAdWebApi.csproj", "{4AEA4562-1320-48A2-AAC8-89AF87550011}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StdTwoLib", "StdTwoLib\StdTwoLib.csproj", "{FE77AACA-6EC7-4714-B823-327A42DD5D2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StdTwoLib", "StdTwoLib\StdTwoLib.csproj", "{FE77AACA-6EC7-4714-B823-327A42DD5D2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorePoc", "CorePoc\CorePoc.csproj", "{31ABE875-9548-45C4-BF1C-A2ABB24C6ACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorePoc", "CorePoc\CorePoc.csproj", "{31ABE875-9548-45C4-BF1C-A2ABB24C6ACE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveAnytime", "RemoveAnytime\RemoveAnytime.csproj", "{5732EDEE-45FF-44D5-9EC0-D03E54794569}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{31ABE875-9548-45C4-BF1C-A2ABB24C6ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31ABE875-9548-45C4-BF1C-A2ABB24C6ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31ABE875-9548-45C4-BF1C-A2ABB24C6ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5732EDEE-45FF-44D5-9EC0-D03E54794569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5732EDEE-45FF-44D5-9EC0-D03E54794569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5732EDEE-45FF-44D5-9EC0-D03E54794569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5732EDEE-45FF-44D5-9EC0-D03E54794569}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
