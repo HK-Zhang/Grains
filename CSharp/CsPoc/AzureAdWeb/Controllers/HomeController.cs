@@ -14,6 +14,11 @@ namespace AzureAdWeb.Controllers
     //[Authorize]
     public class HomeController : Controller
     {
+        private IPoc ppoc;
+        public HomeController(IPoc poc)
+        {
+            ppoc = poc;
+        }
         public IActionResult Index()
         {
             var claims = ((ClaimsIdentity)User.Identity).Claims;
@@ -32,7 +37,7 @@ namespace AzureAdWeb.Controllers
         {
             var a = StaticContainer.ApplicationContainer.Resolve<IPoc>();
 
-            ViewData["Message"] = string.Format("{0},{1}", StaticContainer.ApplicationContainer.GetHashCode(), a.GetHashCode());
+            ViewData["Message"] = string.Format("{0},{1},{2}", StaticContainer.ApplicationContainer.GetHashCode(), a.GetHashCode(), ppoc.GetHashCode());
 
             return View();
         }

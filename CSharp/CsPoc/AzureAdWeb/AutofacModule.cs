@@ -12,8 +12,9 @@ namespace AzureAdWeb
         protected override void Load(ContainerBuilder builder)
         {
 
-            builder.RegisterType<Poc>().As<IPoc>();
-
+            //builder.RegisterType<Poc>().As<IPoc>();
+            builder.RegisterType<Poc>().As<IPoc>().InstancePerLifetimeScope();
+            //builder.RegisterType<Poc>().As<IPoc>().InstancePerDependency();
         }
     }
 }
