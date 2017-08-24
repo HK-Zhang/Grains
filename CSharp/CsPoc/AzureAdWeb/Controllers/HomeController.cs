@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using AzureAdWeb.AutofacPoc;
 using Autofac;
+using Microsoft.Extensions.DependencyInjection;
 
 
 namespace AzureAdWeb.Controllers
@@ -35,9 +36,10 @@ namespace AzureAdWeb.Controllers
 
         public IActionResult Contact()
         {
+            var c = HttpContext.RequestServices.GetRequiredService<IPoc>();
             var a = StaticContainer.ApplicationContainer.Resolve<IPoc>();
 
-            ViewData["Message"] = string.Format("{0},{1},{2}", StaticContainer.ApplicationContainer.GetHashCode(), a.GetHashCode(), ppoc.GetHashCode());
+            ViewData["Message"] = string.Format("{0},{1},{2}.{3}", StaticContainer.ApplicationContainer.GetHashCode(), a.GetHashCode(), ppoc.GetHashCode(),c.GetHashCode());
 
             return View();
         }
