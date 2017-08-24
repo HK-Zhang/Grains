@@ -14,6 +14,48 @@ namespace CsPoc.Toolkit
     {
         public void Execute()
         {
+            var ae = new AggregateException(new Exception[] {new NotImplementedException()});
+            Console.WriteLine(JsonConvert.SerializeObject(ae));
+        }
+
+
+        private void foo2()
+        {
+            var one = new DepthPoc
+            {
+                Name = "one"
+            };
+
+            var two = new DepthPoc
+            {
+                obj = one,
+                Name = "two"
+            };
+
+            var three = new DepthPoc
+            {
+                obj = two,
+                Name = "three"
+            };
+
+            var four = new DepthPoc
+            {
+                obj = three,
+                Name = "four"
+            };
+
+            var five = new DepthPoc
+            {
+                obj = four,
+                Name = "five"
+            };
+
+            var a = JsonConvert.DeserializeObject<DepthPoc>(JsonConvert.SerializeObject(five));
+            Console.WriteLine(JsonConvert.SerializeObject(five));
+        }
+
+        private void foo1()
+        {
             JsonConvert.DefaultSettings = () => new JsonSerializerSettings
             {
                 Formatting = Newtonsoft.Json.Formatting.Indented,
@@ -33,8 +75,7 @@ namespace CsPoc.Toolkit
 
             Console.WriteLine(JsonConvert.SerializeObject(a));
 
-           Console.WriteLine(JsonConvert.SerializeObject(a, Formatting.None, new IsoDateTimeConverter() { DateTimeFormat = "yyyy-MM-dd HH:mm:ss" }));
-
+            Console.WriteLine(JsonConvert.SerializeObject(a, Formatting.None, new IsoDateTimeConverter() { DateTimeFormat = "yyyy-MM-dd HH:mm:ss" }));
         }
 
         internal static JsonSerializer PrepareSerializer()
@@ -52,6 +93,12 @@ namespace CsPoc.Toolkit
         {
             public string P1 { get; set; }
             public DateTime P2 { get; set; }
+        }
+
+        public class DepthPoc
+        {
+            public DepthPoc obj { get; set; }
+            public string Name { get; set; }
         }
     }
 }

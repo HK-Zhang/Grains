@@ -184,7 +184,7 @@ namespace CsPoc
                 //HashSetDemo hd = new HashSetDemo();
                 //hd.Execute();
 
-                ConfigDemo md = new ConfigDemo();
+                JsonDemo md = new JsonDemo();
                 md.Execute();
 
                 //EnumeratorDemo td = new EnumeratorDemo();
