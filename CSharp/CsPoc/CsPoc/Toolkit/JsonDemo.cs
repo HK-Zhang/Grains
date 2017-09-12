@@ -2,11 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using CSDemo;
+using Newtonsoft.Json.Linq;
 
 namespace CsPoc.Toolkit
 {
@@ -14,10 +17,27 @@ namespace CsPoc.Toolkit
     {
         public void Execute()
         {
-            var ae = new AggregateException(new Exception[] {new NotImplementedException()});
-            Console.WriteLine(JsonConvert.SerializeObject(ae));
+            foo3();
+            //var ae = new AggregateException(new Exception[] {new NotImplementedException()});
+            //Console.WriteLine(JsonConvert.SerializeObject(ae));
         }
 
+
+        private void foo3()
+        {
+
+            var msg = new YourMessage { SuportCode = "abc", MessageBody = "body" };
+            msg["ServerID"] = "abc";
+            var s = JsonConvert.SerializeObject(msg);
+
+            JObject jo = JObject.FromObject(msg);
+            jo.Add(new JProperty("ServerID", "abc"));
+
+            Console.WriteLine(jo.ToString());
+
+            Console.WriteLine(s);
+
+        }
 
         private void foo2()
         {
