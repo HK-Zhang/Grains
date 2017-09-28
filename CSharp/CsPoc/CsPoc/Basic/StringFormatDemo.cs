@@ -13,7 +13,13 @@ namespace CsPoc
 
         public static void Execute()
         {
-            Foo5();
+            Foo6();
+        }
+
+        public static void Foo6()
+        {
+            int a = "pl,nl,es".IndexOf("NL".ToLowerInvariant(), StringComparison.Ordinal);
+            Console.WriteLine(a);
         }
 
 

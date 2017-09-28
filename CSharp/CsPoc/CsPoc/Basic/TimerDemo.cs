@@ -9,7 +9,12 @@ namespace CSDemo
 {
     public class TimerDemo
     {
-        public static void Execute() 
+        public static void Execute()
+        {
+            TimespanDemo();
+        }
+
+        private static void foo1()
         {
             TimerObject s = new TimerObject();
             TimerCallback timerdelegate = new TimerCallback(CheckStatus);
@@ -33,6 +38,12 @@ namespace CSDemo
             Console.ReadLine();
         }
 
+
+        public static void TimespanDemo()
+        {
+            var a = new TimeSpan(0, 1, 30);
+            var b = 200 / 9;
+        }
 
 
 
