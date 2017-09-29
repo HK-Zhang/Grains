@@ -184,10 +184,10 @@ namespace CsPoc
                 //HashSetDemo hd = new HashSetDemo();
                 //hd.Execute();
 
-                //AzureStorageDemo md = new AzureStorageDemo();
-                //md.Execute();
+                BasicInheritanceDemo md = new BasicInheritanceDemo();
+                md.Execute();
 
-                TimerDemo.Execute();
+                //TimerDemo.Execute();
 
                 //EnumeratorDemo td = new EnumeratorDemo();
                 //td.Execute();

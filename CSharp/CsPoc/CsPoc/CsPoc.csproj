@@ -193,6 +193,7 @@
     <Compile Include="Basic\EnumDemo.cs" />
     <Compile Include="Basic\EqualsDemo.cs" />
     <Compile Include="Basic\HexaDecimalDemo.cs" />
+    <Compile Include="Basic\InheritanceDemo.cs" />
     <Compile Include="Basic\MemoryCacheDemo.cs" />
     <Compile Include="Basic\SteramIODemo.cs" />
     <Compile Include="Basic\TaskDemo.cs" />
