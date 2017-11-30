@@ -30,7 +30,29 @@ namespace CsPoc.Collection
 
         }
 
+        public void Execute()
+        {
+            var s = new string[] { "a", "b" };
+            var q = new ConcurrentQueue<string>(s);
+
+            string str;
+            while (true)
+            {
+                if (q.TryDequeue(out str))
+                {
+                    Console.WriteLine(str);
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+
+        }
+
     }
+
 
     public class CQDT
     {

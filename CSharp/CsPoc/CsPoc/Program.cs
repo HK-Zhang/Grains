@@ -184,7 +184,7 @@ namespace CsPoc
                 //HashSetDemo hd = new HashSetDemo();
                 //hd.Execute();
 
-                BasicInheritanceDemo md = new BasicInheritanceDemo();
+                RandomDemo md = new RandomDemo();
                 md.Execute();
 
                 //TimerDemo.Execute();
