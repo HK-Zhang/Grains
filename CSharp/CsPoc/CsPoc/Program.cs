@@ -184,10 +184,10 @@ namespace CsPoc
                 //HashSetDemo hd = new HashSetDemo();
                 //hd.Execute();
 
-                RandomDemo md = new RandomDemo();
-                md.Execute();
+                //ReferenceDemo md = new ReferenceDemo();
+                //md.Execute();
 
-                //TimerDemo.Execute();
+                ReferenceDemo.Execute();
 
                 //EnumeratorDemo td = new EnumeratorDemo();
                 //td.Execute();

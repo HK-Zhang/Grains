@@ -11,7 +11,23 @@ namespace CSDemo
     {
         public static void Execute()
         {
-            TimespanDemo();
+            //TimespanDemo();
+            //DayOfWeek();
+            DateParse();
+        }
+
+        private static void DateParse()
+        {
+            var d = DateTime.Parse("2017-12-10T00:00:00Z");
+            var e = DateTime.Parse("2017-12-10T00:00:00.000+01:00");
+
+            Console.WriteLine(d.Day);
+            Console.WriteLine(e.Day);
+        }
+
+        private static void DayOfWeek()
+        {
+            Console.WriteLine(DateTime.Now.Day);
         }
 
         private static void foo1()
