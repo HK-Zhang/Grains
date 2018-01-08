@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsPoc", "CsPoc\CsPoc.csproj", "{102C4EDF-2EFA-473E-81F0-17DB19C125D8}"
 EndProject
@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorePoc", "CorePoc\CorePoc.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoveAnytime", "RemoveAnytime\RemoveAnytime.csproj", "{5732EDEE-45FF-44D5-9EC0-D03E54794569}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPCoreOIDC", "ASPCoreOIDC\ASPCoreOIDC.csproj", "{2BE29AF7-8BAA-4C66-8BF7-0A7D1460FCA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCoreOIDC", "ASPCoreOIDC\ASPCoreOIDC.csproj", "{2BE29AF7-8BAA-4C66-8BF7-0A7D1460FCA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiCoreOIDC", "WebApiCoreOIDC\WebApiCoreOIDC.csproj", "{63FC4A30-CF89-465A-9FBC-D9C716A5FB32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiCoreOIDC", "WebApiCoreOIDC\WebApiCoreOIDC.csproj", "{63FC4A30-CF89-465A-9FBC-D9C716A5FB32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetJavaDocker", "DotnetJavaDocker\DotnetJavaDocker.csproj", "{A8380E33-04E8-465B-841F-0533DE4B2118}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{63FC4A30-CF89-465A-9FBC-D9C716A5FB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63FC4A30-CF89-465A-9FBC-D9C716A5FB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63FC4A30-CF89-465A-9FBC-D9C716A5FB32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8380E33-04E8-465B-841F-0533DE4B2118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8380E33-04E8-465B-841F-0533DE4B2118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8380E33-04E8-465B-841F-0533DE4B2118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8380E33-04E8-465B-841F-0533DE4B2118}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
