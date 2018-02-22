@@ -11,14 +11,23 @@ namespace CsPoc
         public static void Execute() 
         {
 
-            CClass c = new CClass();
-            c.Print();
+            //CClass c = new CClass();
+            //c.Print();
 
-            Console.WriteLine("----");
-            BClass bc = new BClass();
-            bc.Print();
+            //Console.WriteLine("----");
+            //BClass bc = new BClass();
+            //bc.Print();
 
-            Console.WriteLine("----");
+            //Console.WriteLine("----");
+
+
+            var newObj = new NewClass();
+            newObj.integer = "I'm a string";
+            Console.WriteLine(newObj.integer);
+
+            PClass pobj = newObj;
+            Console.WriteLine(pobj.integer);
+
         }
 
         private static void Foo1()
@@ -105,7 +114,19 @@ namespace CsPoc
         }
     }
 
+    public class PClass
+    {
+        public virtual int integer { get; set; }
+    }
 
 
+    public class OverrideClass:PClass
+    {
+        //public override string integer { get; set; }
+    }
 
+    public class NewClass : PClass
+    {
+        public new string integer { get; set; }
+    }
 }

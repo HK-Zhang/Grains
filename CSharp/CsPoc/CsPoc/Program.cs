@@ -153,7 +153,7 @@ namespace CsPoc
             //cd.Execute();
 
 
-            //InheritenceDemo.Execute();
+            InheritenceDemo.Execute();
             //EqualsDemo.Execute();
 
             //CastleAutoDemo.Execute();
@@ -187,7 +187,7 @@ namespace CsPoc
                 //ReferenceDemo md = new ReferenceDemo();
                 //md.Execute();
 
-                ReferenceDemo.Execute();
+                //ReferenceDemo.Execute();
 
                 //EnumeratorDemo td = new EnumeratorDemo();
                 //td.Execute();
