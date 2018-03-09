@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Itenso.TimePeriod;
 
 namespace CSDemo
 {
@@ -13,7 +14,21 @@ namespace CSDemo
         {
             //TimespanDemo();
             //DayOfWeek();
-            DateParse();
+            //            DateParse();
+            TimeblockFun();
+        }
+
+
+        public static void TimeblockFun()
+        {
+            var a = new TimeBlock(new DateTime(2010, 12, 1), new DateTime(2010, 12, 2));
+
+            var v = new DateTime(2010, 12, 2);
+            v = new DateTime(v.Ticks - 1);
+            var b = new TimeBlock(v, new DateTime(2010, 12, 2));
+
+            Console.WriteLine(a.OverlapsWith(b));
+
         }
 
         private static void DateParse()

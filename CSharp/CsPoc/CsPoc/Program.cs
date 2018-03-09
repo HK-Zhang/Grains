@@ -153,7 +153,7 @@ namespace CsPoc
             //cd.Execute();
 
 
-            InheritenceDemo.Execute();
+//            InheritenceDemo.Execute();
             //EqualsDemo.Execute();
 
             //CastleAutoDemo.Execute();
@@ -178,6 +178,7 @@ namespace CsPoc
 
             try
             {
+                TimerDemo.Execute();
                 //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
                 //d.Execute();
 
