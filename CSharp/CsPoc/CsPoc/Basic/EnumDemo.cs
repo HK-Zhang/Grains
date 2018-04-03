@@ -23,7 +23,8 @@ namespace CsPoc.Basic
 
 		public void Execute()
 		{
-			Compare(Level.Fatal);
+		    Console.WriteLine(Level.All.ToString());
+//			Compare(Level.Fatal);
 		}
 
 		public void Compare(Level lv)

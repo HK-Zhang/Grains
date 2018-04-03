@@ -106,9 +106,9 @@ namespace CsPoc
             //SpinLockDemo ad = new SpinLockDemo();
             //TypeListDemo ad = new TypeListDemo();
             //ad.Execute();
-
+            
             //CSDemo.LazySingletonDemo.Execute();
-            //MemoryCacheDemo.Execute();
+            //            MemoryCacheDemo.Execute();
             //TaskDemo td = new TaskDemo();
             //td.Execute();
 
@@ -153,7 +153,7 @@ namespace CsPoc
             //cd.Execute();
 
 
-//            InheritenceDemo.Execute();
+            //            InheritenceDemo.Execute();
             //EqualsDemo.Execute();
 
             //CastleAutoDemo.Execute();
@@ -178,7 +178,10 @@ namespace CsPoc
 
             try
             {
-                TimerDemo.Execute();
+
+                EnumDemo ed = new EnumDemo();
+                ed.Execute();
+//                TimerDemo.Execute();
                 //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
                 //d.Execute();
 

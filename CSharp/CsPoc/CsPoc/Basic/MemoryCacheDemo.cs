@@ -13,8 +13,10 @@ namespace CsPoc.Basic
     {
         public static void Execute()
         {
-            Foo1();
+            //            Foo1();
+            Foo2();
         }
+
 
         private static void Foo1() 
         {
@@ -43,6 +45,11 @@ namespace CsPoc.Basic
             Thread.Sleep(5000);
             fileContents = cache["filecontents"] as string;
             Console.Write(fileContents);
+        }
+
+        private static void Foo2()
+        {
+            var s = Directory.GetDirectories(Directory.GetCurrentDirectory());
         }
     }
 }
