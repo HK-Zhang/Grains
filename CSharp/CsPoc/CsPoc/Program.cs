@@ -179,9 +179,9 @@ namespace CsPoc
             try
             {
 
-                EnumDemo ed = new EnumDemo();
-                ed.Execute();
-//                TimerDemo.Execute();
+//                EnumDemo ed = new EnumDemo();
+//                ed.Execute();
+                TimerDemo.Execute();
                 //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
                 //d.Execute();
 

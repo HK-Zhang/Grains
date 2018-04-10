@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -15,7 +16,8 @@ namespace CSDemo
             //TimespanDemo();
             //DayOfWeek();
             //            DateParse();
-            TimeblockFun();
+//            TimeblockFun();
+            GetFirstDayOfWeekFun();
         }
 
 
@@ -84,6 +86,31 @@ namespace CSDemo
             s.Counter++;
             Console.WriteLine("current time：{0} timer count：{1}", DateTime.Now.ToString(), s.Counter);
 
+        }
+
+        public static void GetFirstDayOfWeekFun()
+        {
+            int i = 1;
+
+            while (i<15)
+            {
+                Console.WriteLine(GetFirstDayOfWeek(2018, i));
+
+                i++;
+            }
+        }
+
+        public static DateTime GetFirstDayOfWeek(int year, int week)
+        {
+            var jan1 = new DateTime(year, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            var daysOffset = System.DayOfWeek.Thursday - jan1.DayOfWeek;
+            var firstThursday = jan1.AddDays(daysOffset);
+            var cal = CultureInfo.CurrentCulture.Calendar;
+            var firstWeek = cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, System.DayOfWeek.Monday);
+            var weekNum = week;
+            if (firstWeek <= 1) weekNum -= 1;
+            var result = firstThursday.AddDays(weekNum * 7);
+            return result.AddDays(-3);
         }
     }
 
