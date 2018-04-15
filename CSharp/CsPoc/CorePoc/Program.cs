@@ -8,10 +8,16 @@ namespace CorePoc
     {
         static void Main(string[] args)
         {
-            var r = new ConfigReader();
-            r.ReadConfig();
+            //var d = new EnvDemo();
+            //d.Execute();
+            //var r = new ConfigReader();
+            //r.ReadConfig();
 
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
+
+            AzureDemo.Blob();
+
+            Console.ReadLine();
         }
     }
 }

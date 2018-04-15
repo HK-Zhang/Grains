@@ -22,9 +22,32 @@ namespace CsPoc
             t.a = 2;
         }
 
+        static MyReferenceClass doNothing()
+        {
+            var a = new MyReferenceClass();
+            return a;
+        }
+
+        //static void doSomething(ref MyReferenceClass t)
+        static void doSomething(MyReferenceClass t)
+        {
+            t = doNothing();
+            t.a = 2;
+        }
+
         public static void Execute() 
         {
             MyReferenceClass t1 = new MyReferenceClass();
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(t1.a);
+                //doSomething(ref t1);
+                doSomething(t1);
+                Console.WriteLine(t1.a);
+            }
+
+
             Console.WriteLine(t1.a);
             test(t1);
             Console.WriteLine(t1.a);
@@ -38,5 +61,7 @@ namespace CsPoc
     class MyReferenceClass
     {
         public int a = 1;
+
+        public decimal? b { get; set; }
     }
 }

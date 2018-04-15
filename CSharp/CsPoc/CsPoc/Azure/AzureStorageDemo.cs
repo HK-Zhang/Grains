@@ -15,16 +15,64 @@ namespace CsPoc.Azure
 {
     public class AzureStorageDemo
     {
-        private CloudStorageAccount saFrom = CloudStorageAccount.Parse("TBD");
-        private CloudStorageAccount saTo = CloudStorageAccount.Parse("TBD");
+        private CloudStorageAccount saFrom = null;
+        private CloudStorageAccount saTo = null;
         private const int limit = 10;
         public void Execute()
         {
+            //saFrom = CloudStorageAccount.Parse("TBD");
+            //saTo = CloudStorageAccount.Parse("TBD");
             //downlaod();
             //readAsStream();
             //copy();
             //readAsStream();
-            SetAttribute();
+            //SetAttribute();
+            Blob();
+        }
+
+
+        private void Blob()
+        {
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse("TBD");
+
+            // Create the blob client.
+            CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+
+            // Retrieve a reference to a container.
+            CloudBlobContainer container = blobClient.GetContainerReference("devmasterdata");
+            CloudAppendBlob appendBlob = container.GetAppendBlobReference("employee_absence_processed.csv");
+
+            //int numBlocks = 10;
+            //Random rnd = new Random();
+            //byte[] bytes = new byte[numBlocks];
+            //rnd.NextBytes(bytes);
+
+            //for (int i = 0; i < numBlocks; i++)
+            //{
+            //    appendBlob.AppendText(String.Format("Timestamp: {0:u} \tLog Entry: {1}{2}",
+            //        DateTime.UtcNow, bytes[i], Environment.NewLine));
+            //}
+
+            Console.WriteLine(appendBlob.DownloadText());
+
+
+            //var dir = container.GetDirectoryReference("");
+            //var cloudBlob = dir.GetBlockBlobReference("employee_absence_processed.csv");
+
+
+            //using (MemoryStream ms = new MemoryStream())
+            //{
+            //    cloudBlob.DownloadToStream(ms);//Read blob data in a stream.
+            //}
+
+
+            //string a = cloudBlob.DownloadText();
+            //StringBuilder sb = new StringBuilder(a);
+            //sb.AppendLine("1|2|3|4");
+            //sb.AppendLine("1|2|3|4");
+            //sb.AppendLine("1|2|3|4");
+            //cloudBlob.UploadText(a);
+
         }
 
         private void SetAttribute()

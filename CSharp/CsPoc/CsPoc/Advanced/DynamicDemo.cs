@@ -16,6 +16,15 @@ namespace CsPoc
     class DynamicDemo
     {
         public void Execute() {
+            dynamic dyn = new Product();
+            object o = dyn;
+            Console.WriteLine(o.GetType().GetProperties().Any(t=>t.Name=="age"));
+            Console.WriteLine(o.GetType().GetProperties().Any(t => t.Name == "ID"));
+
+        }
+
+        public void Foo1()
+        {
             dynamic dyn = new ExpandoObject();
             dyn.Add("a", 1);
             Console.WriteLine(dyn.a);

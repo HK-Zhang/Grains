@@ -20,6 +20,27 @@ namespace CsPoc.Collection
 
         public void Execute()
         {
+           var a=  new Person {PhoneNumber = new List<string> {"a", "c","b"}};
+            a.PhoneNumber = a.PhoneNumber.OrderBy(t => t).ToList();
+
+
+            a.PhoneNumber.ForEach(t => Console.WriteLine(t));
+
+            List<Person> people = new List<Person>
+            {
+                new Person {PhoneNumber = new List<string> {"a", "c", "b" }},
+                new Person {PhoneNumber = new List<string> {"c", "a", "d" }}
+            };
+
+
+            people.ForEach(t => t.PhoneNumber = t.PhoneNumber.OrderBy(p => p).ToList());
+
+            people.ForEach(p => p.PhoneNumber.ForEach(t => Console.WriteLine(t)));
+
+        }
+
+        public void Foo1()
+        {
             List<Person> people = new List<Person>
             {
                 new Person {PhoneNumber = new List<string> {"a", "b"}},

@@ -35,4 +35,11 @@
 /CSharp/CsPoc/RemoveAnytime/obj
 /CSharp/CsPoc/StdTwoLib/bin/Release/netstandard2.0
 /CSharp/CsPoc/StdTwoLib/bin/Release
+/CSharp/CsPoc/ASPCoreOIDC/obj
+/CSharp/CsPoc/ASPCoreOIDC/bin/Debug/netcoreapp2.0
+/CSharp/CsPoc/WebApiCoreOIDC/bin/Debug/netcoreapp2.0
+/CSharp/CsPoc/WebApiCoreOIDC/obj
+/CSharp/CsPoc/DotnetJavaDocker/bin/Debug/netcoreapp2.0
+/CSharp/CsPoc/DotnetJavaDocker/obj
+/CSharp/CsPoc/AngularApp/.vs/AngularApp/v15/.suo
 /CSharp/CsPoc/.vs/CsPoc/lut
