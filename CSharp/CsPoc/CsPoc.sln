@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCoreOIDC", "ASPCoreOIDC\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiCoreOIDC", "WebApiCoreOIDC\WebApiCoreOIDC.csproj", "{63FC4A30-CF89-465A-9FBC-D9C716A5FB32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetJavaDocker", "DotnetJavaDocker\DotnetJavaDocker.csproj", "{A8380E33-04E8-465B-841F-0533DE4B2118}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetJavaDocker", "DotnetJavaDocker\DotnetJavaDocker.csproj", "{A8380E33-04E8-465B-841F-0533DE4B2118}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AZRM", "AZRM\AZRM.deployproj", "{111215E0-D91B-4AF6-A882-63453AE9DC84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{A8380E33-04E8-465B-841F-0533DE4B2118}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8380E33-04E8-465B-841F-0533DE4B2118}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8380E33-04E8-465B-841F-0533DE4B2118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111215E0-D91B-4AF6-A882-63453AE9DC84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111215E0-D91B-4AF6-A882-63453AE9DC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111215E0-D91B-4AF6-A882-63453AE9DC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111215E0-D91B-4AF6-A882-63453AE9DC84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
