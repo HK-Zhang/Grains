@@ -75,6 +75,9 @@ foo="";
 [ -n "$foo" ] && echo "foo is not null"
 [ -z "$foo" ] && echo "foo is null"
 
+temp=$(mktemp)
+echo "temp file $temp"
+
 #The type command is used to find out if command is builtin or external binary file. It also indicate how it would be interpreted if used as a command name. 
 echo "Checking kubectl command"
 type kubectl > /dev/null 2>&1
