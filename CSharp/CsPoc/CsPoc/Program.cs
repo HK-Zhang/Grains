@@ -17,6 +17,7 @@ using CSDemo;
 using CsPoc.ThreadDemos;
 using CsPoc.XML;
 using CsPoc.Azure;
+using CsPoc.FP;
 using CsPoc.STD;
 
 namespace CsPoc
@@ -118,7 +119,10 @@ namespace CsPoc
             //JsonNetDemo jd = new JsonNetDemo();
             //jd.Execute();
 
-            ReadonlyCollectionDemo tcd = new ReadonlyCollectionDemo();
+//            ReadonlyCollectionDemo tcd = new ReadonlyCollectionDemo();
+//            JsonDemo tcd = new JsonDemo();
+
+            FPdemo tcd = new FPdemo();
             tcd.Execute();
 
             //ThreadSafeDicDemo td = new ThreadSafeDicDemo();

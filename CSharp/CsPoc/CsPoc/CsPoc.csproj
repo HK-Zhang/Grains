@@ -219,6 +219,7 @@
     <Compile Include="Advanced\RemotingProxy.cs" />
     <Compile Include="Advanced\SerializeDemo.cs" />
     <Compile Include="DynamicFramework\CastleProxyDemo.cs" />
+    <Compile Include="FP\FPdemo.cs" />
     <Compile Include="Network\HttpBindingDemo.cs" />
     <Compile Include="Reflections\MethodDemo.cs" />
     <Compile Include="STD\ConfigDemo.cs" />
