@@ -44,3 +44,5 @@
 /CSharp/CsPoc/AngularApp/.vs/AngularApp/v15/.suo
 /CSharp/CsPoc/.vs/CsPoc/lut
 /CSharp/CsPoc/.vs/CsPoc/DesignTimeBuild
+/CSharp/CsPoc/DapperMysql/bin/Debug/netcoreapp2.1
+/CSharp/CsPoc/DapperMysql/obj
