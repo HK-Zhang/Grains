@@ -107,7 +107,7 @@ namespace CsPoc
             //SpinLockDemo ad = new SpinLockDemo();
             //TypeListDemo ad = new TypeListDemo();
             //ad.Execute();
-            
+
             //CSDemo.LazySingletonDemo.Execute();
             //            MemoryCacheDemo.Execute();
             //TaskDemo td = new TaskDemo();
@@ -119,10 +119,11 @@ namespace CsPoc
             //JsonNetDemo jd = new JsonNetDemo();
             //jd.Execute();
 
-//            ReadonlyCollectionDemo tcd = new ReadonlyCollectionDemo();
-//            JsonDemo tcd = new JsonDemo();
+            //            ReadonlyCollectionDemo tcd = new ReadonlyCollectionDemo();
+            //            JsonDemo tcd = new JsonDemo();
 
-            FPdemo tcd = new FPdemo();
+            //            FPdemo tcd = new FPdemo();
+            CallerDemo tcd = new CallerDemo();
             tcd.Execute();
 
             //ThreadSafeDicDemo td = new ThreadSafeDicDemo();

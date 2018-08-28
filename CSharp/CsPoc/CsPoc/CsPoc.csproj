@@ -193,6 +193,7 @@
     <Compile Include="Azure\CostProjectAzureSearchModel.cs" />
     <Compile Include="Azure\CostTaskAzureSearchModel.cs" />
     <Compile Include="Azure\ProjectNumbers.cs" />
+    <Compile Include="Basic\CallerDemo.cs" />
     <Compile Include="Basic\EnumDemo.cs" />
     <Compile Include="Basic\EqualsDemo.cs" />
     <Compile Include="Basic\HexaDecimalDemo.cs" />
