@@ -1,0 +1,11 @@
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\bin\Debug\netcoreapp2.1\ConsoleApp.EfSql.deps.json
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\bin\Debug\netcoreapp2.1\ConsoleApp.EfSql.runtimeconfig.json
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\bin\Debug\netcoreapp2.1\ConsoleApp.EfSql.runtimeconfig.dev.json
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\bin\Debug\netcoreapp2.1\ConsoleApp.EfSql.dll
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\obj\Debug\netcoreapp2.1\ConsoleApp.EfSql.csproj.CoreCompileInputs.cache
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\obj\Debug\netcoreapp2.1\ConsoleApp.EfSql.AssemblyInfoInputs.cache
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\obj\Debug\netcoreapp2.1\ConsoleApp.EfSql.AssemblyInfo.cs
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\obj\Debug\netcoreapp2.1\ConsoleApp.EfSql.csprojAssemblyReference.cache
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\bin\Debug\netcoreapp2.1\ConsoleApp.EfSql.pdb
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\obj\Debug\netcoreapp2.1\ConsoleApp.EfSql.dll
+C:\Worksapce\Repos\zhk\Grains\CSharp\CsPoc\ConsoleApp.EfSql\obj\Debug\netcoreapp2.1\ConsoleApp.EfSql.pdb

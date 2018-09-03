@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StdTwoLib", "StdTwoLib\StdT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorePoc", "CorePoc\CorePoc.csproj", "{31ABE875-9548-45C4-BF1C-A2ABB24C6ACE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoveAnytime", "RemoveAnytime\RemoveAnytime.csproj", "{5732EDEE-45FF-44D5-9EC0-D03E54794569}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCoreOIDC", "ASPCoreOIDC\ASPCoreOIDC.csproj", "{2BE29AF7-8BAA-4C66-8BF7-0A7D1460FCA5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiCoreOIDC", "WebApiCoreOIDC\WebApiCoreOIDC.csproj", "{63FC4A30-CF89-465A-9FBC-D9C716A5FB32}"
@@ -23,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetJavaDocker", "DotnetJ
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AZRM", "AZRM\AZRM.deployproj", "{111215E0-D91B-4AF6-A882-63453AE9DC84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperMysql", "DapperMysql\DapperMysql.csproj", "{F0DA6D77-D259-402F-A8C9-66FF0A811CBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperMysql", "DapperMysql\DapperMysql.csproj", "{F0DA6D77-D259-402F-A8C9-66FF0A811CBC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.EfSql", "ConsoleApp.EfSql\ConsoleApp.EfSql.csproj", "{E94B0265-7657-416B-B7F3-74B843BC6C43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,10 +51,6 @@ Global
 		{31ABE875-9548-45C4-BF1C-A2ABB24C6ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31ABE875-9548-45C4-BF1C-A2ABB24C6ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31ABE875-9548-45C4-BF1C-A2ABB24C6ACE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5732EDEE-45FF-44D5-9EC0-D03E54794569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5732EDEE-45FF-44D5-9EC0-D03E54794569}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5732EDEE-45FF-44D5-9EC0-D03E54794569}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5732EDEE-45FF-44D5-9EC0-D03E54794569}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2BE29AF7-8BAA-4C66-8BF7-0A7D1460FCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2BE29AF7-8BAA-4C66-8BF7-0A7D1460FCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BE29AF7-8BAA-4C66-8BF7-0A7D1460FCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +71,10 @@ Global
 		{F0DA6D77-D259-402F-A8C9-66FF0A811CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0DA6D77-D259-402F-A8C9-66FF0A811CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0DA6D77-D259-402F-A8C9-66FF0A811CBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E94B0265-7657-416B-B7F3-74B843BC6C43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E94B0265-7657-416B-B7F3-74B843BC6C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E94B0265-7657-416B-B7F3-74B843BC6C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E94B0265-7657-416B-B7F3-74B843BC6C43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
