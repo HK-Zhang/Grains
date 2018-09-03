@@ -9,7 +9,7 @@ namespace ConsoleApp.EfSql
         {
             Console.WriteLine("Hello EntityFramework Core!");
 
-            var democase = "ExecludeTypesSample";
+            var democase = "ExecludePropertySample";
 
             switch (democase)
             {
@@ -18,6 +18,9 @@ namespace ConsoleApp.EfSql
                     break;
                 case "ExecludeTypesSample":
                     ExecludeTypesSample();
+                    break;
+                case "ExecludePropertySample":
+                    ExecludePropertySample();
                     break;
                 default:
                     break;
@@ -53,6 +56,23 @@ namespace ConsoleApp.EfSql
                 Console.WriteLine();
                 Console.WriteLine("All blogs in database:");
                 foreach (var blog in db.BlogExculudeTypes)
+                {
+                    Console.WriteLine(" - {0}", blog.Url);
+                }
+            }
+        }
+
+        static void ExecludePropertySample()
+        {
+            using (var db = new BloggingContext())
+            {
+                db.BlogExcludePropertys.Add(new BlogExcludeProperty { Url = "http://blogs.msdn.com/adonet", LoadedFromDatabase = DateTime.Now });
+                var count = db.SaveChanges();
+                Console.WriteLine("{0} records saved to database", count);
+
+                Console.WriteLine();
+                Console.WriteLine("All blogs in database:");
+                foreach (var blog in db.BlogExcludePropertys)
                 {
                     Console.WriteLine(" - {0}", blog.Url);
                 }

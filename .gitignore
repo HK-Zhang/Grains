@@ -47,3 +47,6 @@
 /CSharp/CsPoc/DapperMysql/bin/Debug/netcoreapp2.1
 /CSharp/CsPoc/DapperMysql/obj
 /CSharp/CsPoc/ConsoleApp.EfSql/bin/Debug/netcoreapp2.1
+**/obj/**
+**/bin/**
+**/.vs/**
