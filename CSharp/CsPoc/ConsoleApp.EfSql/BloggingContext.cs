@@ -10,6 +10,7 @@ namespace ConsoleApp.EfSql
     {
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<BlogExculudeType> BlogExculudeTypes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -21,6 +22,8 @@ namespace ConsoleApp.EfSql
             modelBuilder.Entity<Blog>()
                 .Property(b => b.Url)
                 .IsRequired();
+
+            modelBuilder.Ignore<BlogMetadata>();
         }
     }
 }
