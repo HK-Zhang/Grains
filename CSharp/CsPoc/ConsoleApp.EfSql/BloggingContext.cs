@@ -12,6 +12,8 @@ namespace ConsoleApp.EfSql
         public DbSet<Post> Posts { get; set; }
         public DbSet<BlogExculudeType> BlogExculudeTypes { get; set; }
         public DbSet<BlogExcludeProperty> BlogExcludePropertys { get; set; }
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<CarComKey> CarComKeys { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -29,6 +31,12 @@ namespace ConsoleApp.EfSql
 
             modelBuilder.Entity<BlogExcludeProperty>()
                 .Ignore(b => b.LoadedFromDatabase);
+
+            modelBuilder.Entity<Car>()
+                .HasKey(c => c.LicensePlate);
+
+            modelBuilder.Entity<CarComKey>()
+                .HasKey(c => new { c.State, c.LicensePlate });
         }
     }
 }
