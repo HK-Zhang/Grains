@@ -50,3 +50,5 @@
 **/obj/**
 **/bin/**
 **/.vs/**
+/ABP
+/ABPCore
