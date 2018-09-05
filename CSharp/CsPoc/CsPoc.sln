@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperMysql", "DapperMysql\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.EfSql", "ConsoleApp.EfSql\ConsoleApp.EfSql.csproj", "{E94B0265-7657-416B-B7F3-74B843BC6C43}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EfSqlDatabase", "EfSqlDatabase\EfSqlDatabase.sqlproj", "{3362518E-D20F-4EFD-83D7-F948541E5885}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,12 @@ Global
 		{E94B0265-7657-416B-B7F3-74B843BC6C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E94B0265-7657-416B-B7F3-74B843BC6C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E94B0265-7657-416B-B7F3-74B843BC6C43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3362518E-D20F-4EFD-83D7-F948541E5885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3362518E-D20F-4EFD-83D7-F948541E5885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3362518E-D20F-4EFD-83D7-F948541E5885}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3362518E-D20F-4EFD-83D7-F948541E5885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3362518E-D20F-4EFD-83D7-F948541E5885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3362518E-D20F-4EFD-83D7-F948541E5885}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

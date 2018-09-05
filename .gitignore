@@ -52,3 +52,4 @@
 **/.vs/**
 /ABP
 /ABPCore
+/CSharp/CsPoc/EfSqlDatabase/Import Schema Logs
