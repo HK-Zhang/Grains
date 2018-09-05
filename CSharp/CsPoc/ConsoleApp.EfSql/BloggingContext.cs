@@ -14,8 +14,7 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogExcludeProperty> BlogExcludePropertys { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<CarComKey> CarComKeys { get; set; }
-
-
+        public DbSet<BlogValueGenerated> BlogValueGenerteds { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EfSql;Trusted_Connection=True;MultipleActiveResultSets=true");
@@ -37,6 +36,18 @@ namespace ConsoleApp.EfSql
 
             modelBuilder.Entity<CarComKey>()
                 .HasKey(c => new { c.State, c.LicensePlate });
+
+            modelBuilder.Entity<BlogValueGenerated>()
+                .Property(b => b.Id)
+                .ValueGeneratedNever();
+
+            modelBuilder.Entity<BlogValueGenerated>()
+                .Property(b => b.LastUpdated)
+                .ValueGeneratedOnAddOrUpdate();
+
+            modelBuilder.Entity<BlogValueGenerated>()
+                .Property(b => b.LastUpdated)
+                .ValueGeneratedOnAddOrUpdate();
         }
     }
 }
