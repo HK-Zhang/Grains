@@ -18,6 +18,7 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogMaxLength> BlogMaxLengths { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<BlogTimestamp> BlogTimestamps { get; set; }
+        public DbSet<BlogShadowProperty> BlogShadowPropertys { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -65,6 +66,10 @@ namespace ConsoleApp.EfSql
             modelBuilder.Entity<BlogTimestamp>()
                 .Property(p => p.Timestamp)
                 .IsRowVersion();
+
+            modelBuilder.Entity<BlogShadowProperty>()
+                .Property<DateTime>("LastUpdated");
+
         }
     }
 }

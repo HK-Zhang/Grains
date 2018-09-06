@@ -76,5 +76,6 @@
     <Build Include="dbo\Tables\BlogMaxLengths.sql" />
     <Build Include="dbo\Tables\People.sql" />
     <Build Include="dbo\Tables\BlogTimestamps.sql" />
+    <Build Include="dbo\Tables\BlogShadowPropertys.sql" />
   </ItemGroup>
 </Project>
