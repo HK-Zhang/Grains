@@ -16,6 +16,10 @@ namespace ConsoleApp.EfSql
         public DbSet<CarComKey> CarComKeys { get; set; }
         public DbSet<BlogValueGenerated> BlogValueGenerteds { get; set; }
         public DbSet<BlogMaxLength> BlogMaxLengths { get; set; }
+        public DbSet<Person> People { get; set; }
+        public DbSet<BlogTimestamp> BlogTimestamps { get; set; }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EfSql;Trusted_Connection=True;MultipleActiveResultSets=true");
@@ -53,6 +57,14 @@ namespace ConsoleApp.EfSql
             modelBuilder.Entity<BlogMaxLength>()
                 .Property(b => b.Url)
                 .HasMaxLength(500);
+
+            modelBuilder.Entity<Person>()
+                .Property(p => p.LastName)
+                .IsConcurrencyToken();
+
+            modelBuilder.Entity<BlogTimestamp>()
+                .Property(p => p.Timestamp)
+                .IsRowVersion();
         }
     }
 }
