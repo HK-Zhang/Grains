@@ -79,5 +79,7 @@
     <Build Include="dbo\Tables\BlogShadowPropertys.sql" />
     <Build Include="dbo\Tables\PostAs.sql" />
     <Build Include="dbo\Tables\BlogAs.sql" />
+    <Build Include="dbo\Tables\PostBs.sql" />
+    <Build Include="dbo\Tables\BlogB.sql" />
   </ItemGroup>
 </Project>
