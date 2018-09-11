@@ -4,14 +4,16 @@ using ConsoleApp.EfSql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ConsoleApp.EfSql.Migrations.Relationships
 {
     [DbContext(typeof(RelationshipsContext))]
-    partial class RelationshipsContextModelSnapshot : ModelSnapshot
+    [Migration("20180911010247_ForeignCompositeKey")]
+    partial class ForeignCompositeKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
