@@ -15,6 +15,9 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogB> BlogB { get; set; }
         public DbSet<PostB> PostBs { get; set; }
 
+        public DbSet<BlogC> BlogCs { get; set; }
+        public DbSet<PostC> PostCs { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EfSql;Trusted_Connection=True;MultipleActiveResultSets=true");
@@ -29,6 +32,11 @@ namespace ConsoleApp.EfSql
             modelBuilder.Entity<BlogB>()
                 .HasMany(b => b.Posts)
                 .WithOne();
+
+            modelBuilder.Entity<PostC>()
+                .HasOne(p => p.Blog)
+                .WithMany(b => b.Posts)
+                .HasForeignKey(p => p.BlogForeignKey);
         }
     }
 }
