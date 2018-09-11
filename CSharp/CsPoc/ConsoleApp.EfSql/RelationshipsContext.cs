@@ -21,6 +21,8 @@ namespace ConsoleApp.EfSql
         public DbSet<CarA> CarAs { get; set; }
         public DbSet<RecordOfSale> RecordOfSales { get; set; }
 
+        public DbSet<BlogD> BlogDs { get; set; }
+        public DbSet<PostD> PostDs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -49,6 +51,17 @@ namespace ConsoleApp.EfSql
                 .HasOne(s => s.Car)
                 .WithMany(c => c.SaleHistory)
                 .HasForeignKey(s => new { s.CarState, s.CarLicensePlate });
+
+            // Add the shadow property to the model
+            modelBuilder.Entity<PostD>()
+                .Property<int>("BlogForeignKey");
+
+            // Use the shadow property as a foreign key
+            modelBuilder.Entity<PostD>()
+                .HasOne(p => p.Blog)
+                .WithMany(b => b.Posts)
+                .HasForeignKey("BlogForeignKey");
+
 
         }
     }
