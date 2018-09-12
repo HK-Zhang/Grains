@@ -85,5 +85,9 @@
     <Build Include="dbo\Tables\BlogCs.sql" />
     <Build Include="dbo\Tables\RecordOfSales.sql" />
     <Build Include="dbo\Tables\CarAs.sql" />
+    <Build Include="dbo\Tables\RecordOfSaleBs.sql" />
+    <Build Include="dbo\Tables\PostDs.sql" />
+    <Build Include="dbo\Tables\CarBs.sql" />
+    <Build Include="dbo\Tables\BlogDs.sql" />
   </ItemGroup>
 </Project>

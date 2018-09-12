@@ -24,6 +24,9 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogD> BlogDs { get; set; }
         public DbSet<PostD> PostDs { get; set; }
 
+        public DbSet<CarB> CarBs { get; set; }
+        public DbSet<RecordOfSaleB> RecordOfSaleBs { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EfSql;Trusted_Connection=True;MultipleActiveResultSets=true");
@@ -62,7 +65,11 @@ namespace ConsoleApp.EfSql
                 .WithMany(b => b.Posts)
                 .HasForeignKey("BlogForeignKey");
 
-
+            modelBuilder.Entity<RecordOfSaleB>()
+                .HasOne(s => s.Car)
+                .WithMany(c => c.SaleHistory)
+                .HasForeignKey(s => s.CarLicensePlate)
+                .HasPrincipalKey(c => c.LicensePlate);
         }
     }
 }
