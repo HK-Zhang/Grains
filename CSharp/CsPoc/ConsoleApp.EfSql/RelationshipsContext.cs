@@ -27,6 +27,9 @@ namespace ConsoleApp.EfSql
         public DbSet<CarB> CarBs { get; set; }
         public DbSet<RecordOfSaleB> RecordOfSaleBs { get; set; }
 
+        public DbSet<CarC> CarCs { get; set; }
+        public DbSet<RecordOfSaleC> RecordOfSaleCs { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EfSql;Trusted_Connection=True;MultipleActiveResultSets=true");
@@ -70,6 +73,12 @@ namespace ConsoleApp.EfSql
                 .WithMany(c => c.SaleHistory)
                 .HasForeignKey(s => s.CarLicensePlate)
                 .HasPrincipalKey(c => c.LicensePlate);
+
+            modelBuilder.Entity<RecordOfSaleC>()
+                .HasOne(s => s.Car)
+                .WithMany(c => c.SaleHistory)
+                .HasForeignKey(s => new { s.CarState, s.CarLicensePlate })
+                .HasPrincipalKey(c => new { c.State, c.LicensePlate });
         }
     }
 }
