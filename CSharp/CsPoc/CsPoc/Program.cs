@@ -122,8 +122,8 @@ namespace CsPoc
             //            ReadonlyCollectionDemo tcd = new ReadonlyCollectionDemo();
             //            JsonDemo tcd = new JsonDemo();
 
-            //            FPdemo tcd = new FPdemo();
-            CallerDemo tcd = new CallerDemo();
+            FPdemo tcd = new FPdemo();
+//            CallerDemo tcd = new CallerDemo();
             tcd.Execute();
 
             //ThreadSafeDicDemo td = new ThreadSafeDicDemo();
