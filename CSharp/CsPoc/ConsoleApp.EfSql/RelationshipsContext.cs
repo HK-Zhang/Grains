@@ -33,6 +33,10 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogE> BlogEs { get; set; }
         public DbSet<BlogImage> BlogImageS { get; set; }
 
+        public DbSet<PostF> PostFs { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EfSql;Trusted_Connection=True;MultipleActiveResultSets=true");
@@ -87,6 +91,19 @@ namespace ConsoleApp.EfSql
                 .HasOne(p => p.BlogImage)
                 .WithOne(i => i.Blog)
                 .HasForeignKey<BlogImage>(b => b.BlogForeignKey);
+
+            modelBuilder.Entity<PostTag>()
+                .HasKey(t => new { t.PostFId, t.TagId });
+
+            modelBuilder.Entity<PostTag>()
+                .HasOne(pt => pt.Post)
+                .WithMany(p => p.PostTags)
+                .HasForeignKey(pt => pt.PostFId);
+
+            modelBuilder.Entity<PostTag>()
+                .HasOne(pt => pt.Tag)
+                .WithMany(t => t.PostTags)
+                .HasForeignKey(pt => pt.TagId);
         }
     }
 }

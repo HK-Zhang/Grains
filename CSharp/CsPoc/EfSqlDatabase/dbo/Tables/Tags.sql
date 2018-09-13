@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Tags] (
+    [TagId] NVARCHAR (450) NOT NULL,
+    CONSTRAINT [PK_Tags] PRIMARY KEY CLUSTERED ([TagId] ASC)
+);
+
