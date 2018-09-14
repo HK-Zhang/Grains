@@ -19,6 +19,7 @@ namespace ConsoleApp.EfSql
         public DbSet<Person> People { get; set; }
         public DbSet<BlogTimestamp> BlogTimestamps { get; set; }
         public DbSet<BlogShadowProperty> BlogShadowPropertys { get; set; }
+        public DbSet<BlogF> BlogFs { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -69,6 +70,17 @@ namespace ConsoleApp.EfSql
 
             modelBuilder.Entity<BlogShadowProperty>()
                 .Property<DateTime>("LastUpdated");
+
+            modelBuilder.Entity<BlogF>()
+                .HasIndex(b => b.Url);
+
+            //            modelBuilder.Entity<BlogF>()
+            //                .HasIndex(b => b.Url)
+            //                .IsUnique();
+
+            modelBuilder.Entity<PersonB>()
+                .HasIndex(p => new { p.FirstName, p.LastName });
+
 
         }
     }
