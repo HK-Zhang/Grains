@@ -98,5 +98,7 @@
     <Build Include="dbo\Tables\PostFs.sql" />
     <Build Include="dbo\Tables\PersonB.sql" />
     <Build Include="dbo\Tables\BlogFs.sql" />
+    <Build Include="dbo\Tables\CarEs.sql" />
+    <Build Include="dbo\Tables\CarDs.sql" />
   </ItemGroup>
 </Project>

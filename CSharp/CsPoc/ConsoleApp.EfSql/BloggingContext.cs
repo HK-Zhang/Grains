@@ -20,6 +20,10 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogTimestamp> BlogTimestamps { get; set; }
         public DbSet<BlogShadowProperty> BlogShadowPropertys { get; set; }
         public DbSet<BlogF> BlogFs { get; set; }
+        public DbSet<CarD> CarDs { get; set; }
+        public DbSet<CarE> CarEs { get; set; }
+
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -81,7 +85,11 @@ namespace ConsoleApp.EfSql
             modelBuilder.Entity<PersonB>()
                 .HasIndex(p => new { p.FirstName, p.LastName });
 
+            modelBuilder.Entity<CarD>()
+                .HasAlternateKey(c => c.LicensePlate);
 
+            modelBuilder.Entity<CarE>()
+                .HasAlternateKey(c => new { c.State, c.LicensePlate });
         }
     }
 }
