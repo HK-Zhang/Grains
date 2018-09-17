@@ -4,14 +4,16 @@ using ConsoleApp.EfSql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ConsoleApp.EfSql.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    partial class BloggingContextModelSnapshot : ModelSnapshot
+    [Migration("20180917012304_Backingfields")]
+    partial class Backingfields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,19 +105,6 @@ namespace ConsoleApp.EfSql.Migrations
                     b.ToTable("BlogHs");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("BlogH");
-                });
-
-            modelBuilder.Entity("ConsoleApp.EfSql.Model.BlogI", b =>
-                {
-                    b.Property<int>("BlogIId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Url");
-
-                    b.HasKey("BlogIId");
-
-                    b.ToTable("BlogIs");
                 });
 
             modelBuilder.Entity("ConsoleApp.EfSql.Model.BlogMaxLength", b =>

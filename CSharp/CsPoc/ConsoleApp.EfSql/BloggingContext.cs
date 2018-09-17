@@ -23,8 +23,8 @@ namespace ConsoleApp.EfSql
         public DbSet<CarD> CarDs { get; set; }
         public DbSet<CarE> CarEs { get; set; }
         public DbSet<BlogH> BlogHs { get; set; }
-
-
+        public DbSet<BlogG> BlogGs { get; set; }
+        public DbSet<BlogI> BlogIs { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -94,6 +94,14 @@ namespace ConsoleApp.EfSql
 
             modelBuilder.Entity<RssBlog>().HasBaseType<BlogH>();
 
+            modelBuilder.Entity<BlogG>()
+                .Property(b => b.Url)
+                .HasField("_validatedUrl")
+                .UsePropertyAccessMode(PropertyAccessMode.Field);
+
+            modelBuilder.Entity<BlogI>()
+                .Property<string>("Url")
+                .HasField("_validatedUrl");
         }
     }
 }

@@ -101,5 +101,7 @@
     <Build Include="dbo\Tables\CarEs.sql" />
     <Build Include="dbo\Tables\CarDs.sql" />
     <Build Include="dbo\Tables\BlogHs.sql" />
+    <Build Include="dbo\Tables\BlogIs.sql" />
+    <Build Include="dbo\Tables\BlogGs.sql" />
   </ItemGroup>
 </Project>
