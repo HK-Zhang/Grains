@@ -22,6 +22,7 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogF> BlogFs { get; set; }
         public DbSet<CarD> CarDs { get; set; }
         public DbSet<CarE> CarEs { get; set; }
+        public DbSet<BlogH> BlogHs { get; set; }
 
 
 
@@ -90,6 +91,9 @@ namespace ConsoleApp.EfSql
 
             modelBuilder.Entity<CarE>()
                 .HasAlternateKey(c => new { c.State, c.LicensePlate });
+
+            modelBuilder.Entity<RssBlog>().HasBaseType<BlogH>();
+
         }
     }
 }
