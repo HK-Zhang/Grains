@@ -103,5 +103,6 @@
     <Build Include="dbo\Tables\BlogHs.sql" />
     <Build Include="dbo\Tables\BlogIs.sql" />
     <Build Include="dbo\Tables\BlogGs.sql" />
+    <Build Include="dbo\Tables\Riders.sql" />
   </ItemGroup>
 </Project>

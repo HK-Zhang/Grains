@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ConsoleApp.EfSql.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ConsoleApp.EfSql
 {
@@ -25,7 +26,11 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogH> BlogHs { get; set; }
         public DbSet<BlogG> BlogGs { get; set; }
         public DbSet<BlogI> BlogIs { get; set; }
+        public DbSet<Rider> Riders { get; set; }
 
+        private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
+            v => v.ToString(),
+            v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -102,6 +107,11 @@ namespace ConsoleApp.EfSql
             modelBuilder.Entity<BlogI>()
                 .Property<string>("Url")
                 .HasField("_validatedUrl");
+
+            modelBuilder
+                .Entity<Rider>()
+                .Property(e => e.Mount)
+                .HasConversion(_converter);
         }
     }
 }
