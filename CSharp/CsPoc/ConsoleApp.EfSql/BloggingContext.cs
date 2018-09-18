@@ -43,6 +43,12 @@ namespace ConsoleApp.EfSql
                 .Property(b => b.Url)
                 .IsRequired();
 
+            modelBuilder.Entity<Blog>().HasData(new Blog { BlogId = 1, Url = "http://sample.com" });
+
+            modelBuilder.Entity<Post>().HasData(
+                new { BlogId = 3, PostId = 1, Title = "First post", Content = "Test 1" },
+                new { BlogId = 3, PostId = 2, Title = "Second post", Content = "Test 2" });
+
             modelBuilder.Ignore<BlogMetadata>();
 
             modelBuilder.Entity<BlogExcludeProperty>()
