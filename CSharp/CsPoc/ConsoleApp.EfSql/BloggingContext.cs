@@ -29,7 +29,8 @@ namespace ConsoleApp.EfSql
         public DbSet<Rider> Riders { get; set; }
         public DbSet<BlogJ> BlogJs { get; set; }
         public DbSet<PostJ> PostJs { get; set; }
-
+        public DbSet<BlogK> BlogKs { get; set; }
+        public DbSet<PostK> PostKs { get; set; }
 
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
             v => v.ToString(),
