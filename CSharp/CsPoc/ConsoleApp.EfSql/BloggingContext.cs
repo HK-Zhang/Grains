@@ -31,6 +31,8 @@ namespace ConsoleApp.EfSql
         public DbSet<PostJ> PostJs { get; set; }
         public DbSet<BlogK> BlogKs { get; set; }
         public DbSet<PostK> PostKs { get; set; }
+        public DbSet<BlogL> BlogLs { get; set; }
+        public DbSet<PostL> PostLs { get; set; }
 
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
             v => v.ToString(),
@@ -122,6 +124,22 @@ namespace ConsoleApp.EfSql
                 .Entity<Rider>()
                 .Property(e => e.Mount)
                 .HasConversion(_converter);
+
+            modelBuilder.Entity<BlogL>(
+                b =>
+                {
+                    b.HasKey("_id");
+                    b.Property(e => e.Author);
+                    b.Property(e => e.Name);
+                });
+
+            modelBuilder.Entity<PostL>(
+                b =>
+                {
+                    b.HasKey("_id");
+                    b.Property(e => e.Title);
+                    b.Property(e => e.PostedOn);
+                });
         }
     }
 }
