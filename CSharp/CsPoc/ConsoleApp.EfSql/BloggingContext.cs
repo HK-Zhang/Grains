@@ -34,7 +34,7 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogL> BlogLs { get; set; }
         public DbSet<PostL> PostLs { get; set; }
         public DbSet<Order> Orders { get; set; }
-
+        public DbSet<OrderA> OrderAs { get; set; }
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
             v => v.ToString(),
             v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
@@ -145,6 +145,14 @@ namespace ConsoleApp.EfSql
             modelBuilder.Entity<Order>().OwnsOne(p => p.ShippingAddress);
             //In case ShippingAddress is private.
             //modelBuilder.Entity<Order>().OwnsOne(typeof(StreetAddress), "ShippingAddress");
+
+            modelBuilder.Entity<OrderA>().OwnsOne(
+                o => o.ShippingAddress,
+                sa =>
+                {
+                    sa.Property(p => p.Street).HasColumnName("ShipsToStreet");
+                    sa.Property(p => p.City).HasColumnName("ShipsToCity");
+                });
         }
     }
 }
