@@ -35,6 +35,7 @@ namespace ConsoleApp.EfSql
         public DbSet<PostL> PostLs { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderA> OrderAs { get; set; }
+        public DbSet<OrderC> OrderCs { get; set; }
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
             v => v.ToString(),
             v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
@@ -153,6 +154,14 @@ namespace ConsoleApp.EfSql
                     sa.Property(p => p.Street).HasColumnName("ShipsToStreet");
                     sa.Property(p => p.City).HasColumnName("ShipsToCity");
                 });
+
+            modelBuilder.Entity<OrderC>().OwnsOne(p => p.OrderDetails, od =>
+            {
+                od.OwnsOne(c => c.BillingAddress);
+                od.OwnsOne(c => c.ShippingAddress);
+                //                od.ToTable("OrderDetails"); Storing owned types in separate tables
+
+            });
         }
     }
 }
