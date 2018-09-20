@@ -110,5 +110,6 @@
     <Build Include="dbo\Tables\BlogKs.sql" />
     <Build Include="dbo\Tables\PostLs.sql" />
     <Build Include="dbo\Tables\BlogLs.sql" />
+    <Build Include="dbo\Tables\Orders.sql" />
   </ItemGroup>
 </Project>
