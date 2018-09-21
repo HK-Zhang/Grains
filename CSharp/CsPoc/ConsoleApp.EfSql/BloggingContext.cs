@@ -36,6 +36,8 @@ namespace ConsoleApp.EfSql
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderA> OrderAs { get; set; }
         public DbSet<OrderC> OrderCs { get; set; }
+        public DbSet<BlogM> BlogMs { get; set; }
+        public DbSet<PostM> PostMs { get; set; }
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
             v => v.ToString(),
             v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
@@ -162,6 +164,10 @@ namespace ConsoleApp.EfSql
                 //                od.ToTable("OrderDetails"); Storing owned types in separate tables
 
             });
+
+            modelBuilder
+                .Query<BlogPostsCount>().ToView("View_BlogPostCounts")
+                .Property(v => v.BlogName).HasColumnName("Name");
         }
     }
 }
