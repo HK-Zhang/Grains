@@ -9,6 +9,6 @@ namespace ConsoleApp.EfSql.Model
         public int BlogMId { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
-        public ICollection<Post> Posts { get; set; }
+        public ICollection<PostM> Posts { get; set; }
     }
 }
