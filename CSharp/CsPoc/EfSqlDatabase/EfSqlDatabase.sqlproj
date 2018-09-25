@@ -117,5 +117,6 @@
     <Build Include="dbo\Tables\PostMs.sql" />
     <Build Include="dbo\Tables\BlogMs.sql" />
     <Build Include="dbo\Views\View_BlogPostCounts.sql" />
+    <Build Include="dbo\Tables\tblBlogNs.sql" />
   </ItemGroup>
 </Project>

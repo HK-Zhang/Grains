@@ -38,6 +38,7 @@ namespace ConsoleApp.EfSql
         public DbSet<OrderC> OrderCs { get; set; }
         public DbSet<BlogM> BlogMs { get; set; }
         public DbSet<PostM> PostMs { get; set; }
+        public DbSet<BlogN> BlogNs { get; set; }
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
             v => v.ToString(),
             v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
@@ -168,6 +169,9 @@ namespace ConsoleApp.EfSql
             modelBuilder
                 .Query<BlogPostsCount>().ToView("View_BlogPostCounts")
                 .Property(v => v.BlogName).HasColumnName("Name");
+
+            modelBuilder.Entity<BlogN>()
+                .ToTable("tblBlogNs");
         }
     }
 }
