@@ -39,6 +39,8 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogM> BlogMs { get; set; }
         public DbSet<PostM> PostMs { get; set; }
         public DbSet<BlogN> BlogNs { get; set; }
+        public DbSet<BlogO> BlogOs { get; set; }
+
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
             v => v.ToString(),
             v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
@@ -50,6 +52,9 @@ namespace ConsoleApp.EfSql
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+//            modelBuilder.HasDefaultSchema("blogging");
+
             modelBuilder.Entity<Blog>()
                 .Property(b => b.Url)
                 .IsRequired();
@@ -172,6 +177,18 @@ namespace ConsoleApp.EfSql
 
             modelBuilder.Entity<BlogN>()
                 .ToTable("tblBlogNs");
+            //                .ToTable("tblBlogNs", schema: "blogging");
+
+            modelBuilder.Entity<BlogO>(eb =>
+            {
+                eb.HasKey(b => b.BlogOId)
+                    .HasName("PrimaryKey_BlogId");
+                eb.Property(b => b.BlogOId)
+                    .HasColumnName("blog_id");
+                eb.Property(b => b.Url).HasColumnType("varchar(200)");
+                eb.Property(b => b.Rating).HasColumnType("decimal(5, 2)");
+            });
+
         }
     }
 }
