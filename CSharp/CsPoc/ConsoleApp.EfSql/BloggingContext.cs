@@ -41,7 +41,7 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogN> BlogNs { get; set; }
         public DbSet<BlogO> BlogOs { get; set; }
         public DbSet<PersonC> PeopleC { get; set; }
-
+        public DbSet<OrderD> OrderDs { get; set; }
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
             v => v.ToString(),
             v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
@@ -54,7 +54,12 @@ namespace ConsoleApp.EfSql
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-//            modelBuilder.HasDefaultSchema("blogging");
+            //            modelBuilder.HasDefaultSchema("blogging");
+
+//            modelBuilder.HasSequence<int>("OrderNumbers");
+            modelBuilder.HasSequence<int>("OrderNumbers", schema: "shared")
+                .StartsAt(1000)
+                .IncrementsBy(5);
 
             modelBuilder.Entity<Blog>()
                 .Property(b => b.Url)
@@ -193,6 +198,11 @@ namespace ConsoleApp.EfSql
             modelBuilder.Entity<PersonC>()
                 .Property(p => p.DisplayName)
                 .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
+
+            modelBuilder.Entity<OrderD>()
+                .Property(o => o.OrderNo)
+                .HasDefaultValueSql("NEXT VALUE FOR shared.OrderNumbers");
+
 
         }
     }
