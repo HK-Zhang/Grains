@@ -40,6 +40,7 @@ namespace ConsoleApp.EfSql
         public DbSet<PostM> PostMs { get; set; }
         public DbSet<BlogN> BlogNs { get; set; }
         public DbSet<BlogO> BlogOs { get; set; }
+        public DbSet<PersonC> PeopleC { get; set; }
 
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
             v => v.ToString(),
@@ -188,6 +189,10 @@ namespace ConsoleApp.EfSql
                 eb.Property(b => b.Url).HasColumnType("varchar(200)");
                 eb.Property(b => b.Rating).HasColumnType("decimal(5, 2)");
             });
+
+            modelBuilder.Entity<PersonC>()
+                .Property(p => p.DisplayName)
+                .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
 
         }
     }
