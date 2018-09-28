@@ -43,7 +43,7 @@ namespace ConsoleApp.EfSql
         public DbSet<PersonC> PeopleC { get; set; }
         public DbSet<OrderD> OrderDs { get; set; }
         public DbSet<BlogP> BlogPs { get; set; }
-
+        public DbSet<BlogR> BlogRs { get; set; }
 
 
 
@@ -217,6 +217,15 @@ namespace ConsoleApp.EfSql
                 eb.Property(b => b.Created)
                     .HasDefaultValueSql("getdate()");
             });
+
+            modelBuilder.Entity<BlogR>()
+                .HasIndex(b => b.Url)
+                .HasFilter("[Url] IS NOT NULL");
+
+//            modelBuilder.Entity<BlogR>()
+//                .HasIndex(b => b.Url)
+//                .IsUnique()
+//                .HasFilter(null);
         }
     }
 }
