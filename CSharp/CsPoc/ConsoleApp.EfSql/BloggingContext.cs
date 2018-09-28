@@ -42,6 +42,12 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogO> BlogOs { get; set; }
         public DbSet<PersonC> PeopleC { get; set; }
         public DbSet<OrderD> OrderDs { get; set; }
+        public DbSet<BlogP> BlogPs { get; set; }
+
+
+
+
+
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
             v => v.ToString(),
             v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
@@ -203,7 +209,14 @@ namespace ConsoleApp.EfSql
                 .Property(o => o.OrderNo)
                 .HasDefaultValueSql("NEXT VALUE FOR shared.OrderNumbers");
 
+            modelBuilder.Entity<BlogP>(eb =>
+            {
+                eb.Property(b => b.Rating)
+                    .HasDefaultValue(3);
 
+                eb.Property(b => b.Created)
+                    .HasDefaultValueSql("getdate()");
+            });
         }
     }
 }

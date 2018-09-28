@@ -126,5 +126,6 @@
     <Build Include="dbo\Tables\OrderDs.sql" />
     <Build Include="Security\shared.sql" />
     <Build Include="shared\Sequences\OrderNumbers.sql" />
+    <Build Include="dbo\Tables\BlogPs.sql" />
   </ItemGroup>
 </Project>
