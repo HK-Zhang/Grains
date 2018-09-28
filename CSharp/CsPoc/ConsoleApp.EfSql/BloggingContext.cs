@@ -44,7 +44,8 @@ namespace ConsoleApp.EfSql
         public DbSet<OrderD> OrderDs { get; set; }
         public DbSet<BlogP> BlogPs { get; set; }
         public DbSet<BlogR> BlogRs { get; set; }
-
+        public DbSet<BlogS> BlogSs { get; set; }
+        public DbSet<PostS> PostSs { get; set; }
 
 
 
@@ -222,10 +223,16 @@ namespace ConsoleApp.EfSql
                 .HasIndex(b => b.Url)
                 .HasFilter("[Url] IS NOT NULL");
 
-//            modelBuilder.Entity<BlogR>()
-//                .HasIndex(b => b.Url)
-//                .IsUnique()
-//                .HasFilter(null);
+            //            modelBuilder.Entity<BlogR>()
+            //                .HasIndex(b => b.Url)
+            //                .IsUnique()
+            //                .HasFilter(null);
+
+            modelBuilder.Entity<PostS>()
+                .HasOne(p => p.Blog)
+                .WithMany(b => b.Posts)
+                .HasForeignKey(p => p.BlogSId)
+                .HasConstraintName("ForeignKey_PostS_BlogS");
         }
     }
 }

@@ -128,5 +128,7 @@
     <Build Include="shared\Sequences\OrderNumbers.sql" />
     <Build Include="dbo\Tables\BlogPs.sql" />
     <Build Include="dbo\Tables\BlogRs.sql" />
+    <Build Include="dbo\Tables\PostSs.sql" />
+    <Build Include="dbo\Tables\BlogSs.sql" />
   </ItemGroup>
 </Project>
