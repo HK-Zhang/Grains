@@ -47,7 +47,8 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogS> BlogSs { get; set; }
         public DbSet<PostS> PostSs { get; set; }
         public DbSet<CarF> CarFs { get; set; }
-
+        public DbSet<BlogT> BlogTs { get; set; }
+        public DbSet<BlogU> BlogUs { get; set; }
 
 
         private readonly ValueConverter _converter = new ValueConverter<EquineBeast, string>(
@@ -239,6 +240,21 @@ namespace ConsoleApp.EfSql
             modelBuilder.Entity<CarF>()
                 .HasAlternateKey(c => c.LicensePlate)
                 .HasName("AlternateKey_LicensePlate");
+
+            modelBuilder.Entity<BlogT>()
+                .HasDiscriminator<string>("blog_type")
+                .HasValue<BlogT>("blog_base")
+                .HasValue<RssBlogT>("blog_rss");
+
+
+            modelBuilder.Entity<BlogU>(b =>
+            {
+                b.HasDiscriminator<string>("BlogType");
+
+                b.Property(e => e.BlogType)
+                    .HasMaxLength(200)
+                    .HasColumnName("blog_type");
+            });
         }
     }
 }

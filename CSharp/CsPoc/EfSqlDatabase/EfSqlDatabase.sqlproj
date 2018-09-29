@@ -131,5 +131,7 @@
     <Build Include="dbo\Tables\PostSs.sql" />
     <Build Include="dbo\Tables\BlogSs.sql" />
     <Build Include="dbo\Tables\CarFs.sql" />
+    <Build Include="dbo\Tables\BlogUs.sql" />
+    <Build Include="dbo\Tables\BlogTs.sql" />
   </ItemGroup>
 </Project>

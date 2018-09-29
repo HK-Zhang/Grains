@@ -4,14 +4,16 @@ using ConsoleApp.EfSql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ConsoleApp.EfSql.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    partial class BloggingContextModelSnapshot : ModelSnapshot
+    [Migration("20180929010536_Inheritance2")]
+    partial class Inheritance2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -327,26 +329,6 @@ namespace ConsoleApp.EfSql.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BlogTimestamps");
-                });
-
-            modelBuilder.Entity("ConsoleApp.EfSql.Model.BlogU", b =>
-                {
-                    b.Property<int>("BlogUId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("BlogType")
-                        .IsRequired()
-                        .HasColumnName("blog_type")
-                        .HasMaxLength(200);
-
-                    b.Property<string>("Url");
-
-                    b.HasKey("BlogUId");
-
-                    b.ToTable("BlogUs");
-
-                    b.HasDiscriminator<string>("BlogType");
                 });
 
             modelBuilder.Entity("ConsoleApp.EfSql.Model.BlogValueGenerated", b =>
