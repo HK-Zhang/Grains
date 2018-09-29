@@ -46,6 +46,7 @@ namespace ConsoleApp.EfSql
         public DbSet<BlogR> BlogRs { get; set; }
         public DbSet<BlogS> BlogSs { get; set; }
         public DbSet<PostS> PostSs { get; set; }
+        public DbSet<CarF> CarFs { get; set; }
 
 
 
@@ -233,6 +234,11 @@ namespace ConsoleApp.EfSql
                 .WithMany(b => b.Posts)
                 .HasForeignKey(p => p.BlogSId)
                 .HasConstraintName("ForeignKey_PostS_BlogS");
+
+
+            modelBuilder.Entity<CarF>()
+                .HasAlternateKey(c => c.LicensePlate)
+                .HasName("AlternateKey_LicensePlate");
         }
     }
 }
