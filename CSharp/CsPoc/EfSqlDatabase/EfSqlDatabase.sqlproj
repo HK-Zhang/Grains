@@ -133,5 +133,14 @@
     <Build Include="dbo\Tables\CarFs.sql" />
     <Build Include="dbo\Tables\BlogUs.sql" />
     <Build Include="dbo\Tables\BlogTs.sql" />
+    <Build Include="dbo\Tables\Schools.sql" />
+    <Build Include="dbo\Tables\RenMen.sql" />
+    <Build Include="dbo\Tables\Ren.sql" />
+    <Build Include="dbo\Tables\QPost.sql" />
+    <Build Include="dbo\Tables\QBlogs.sql" />
+    <Build Include="dbo\Tables\PTag.sql" />
+    <Build Include="dbo\Tables\Picture.sql" />
+    <Build Include="dbo\Tables\LZPost.sql" />
+    <Build Include="dbo\Tables\LZBlogs.sql" />
   </ItemGroup>
 </Project>
