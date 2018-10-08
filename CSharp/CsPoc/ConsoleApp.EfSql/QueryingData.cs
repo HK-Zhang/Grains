@@ -56,7 +56,7 @@ namespace ConsoleApp.EfSql
 
             using (var context = new QueryingContext())
             {
-                var students = context.RenMen.Include(person => ((Student) person).School).ToList();
+                var students = context.RenMen.Include(person => ((Student)person).School).ToList();
 
                 //context.RenMen.Include(person => (person as Student).School).ToList();
 
@@ -102,6 +102,32 @@ namespace ConsoleApp.EfSql
                     .Collection(b => b.Posts)
                     .Query()
                     .Where(p => p.PostId > 3)
+                    .ToList();
+            }
+        }
+
+        public static string StandardizeUrl(string url)
+        {
+            url = url.ToLower();
+
+            if (!url.StartsWith("http://"))
+            {
+                url = string.Concat("http://", url);
+            }
+
+            return url;
+        }
+
+        public static void ClientEvaluation()
+        {
+            using (var context = new QueryingContext())
+            {
+                var blogs = context.QBlogs
+                    .Select(blog => new
+                    {
+                        Id = blog.BlogId,
+                        Url = StandardizeUrl(blog.Url)
+                    })
                     .ToList();
             }
         }
