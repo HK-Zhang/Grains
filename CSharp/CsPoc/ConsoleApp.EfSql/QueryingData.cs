@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using ConsoleApp.EfSql.QueryModel;
@@ -148,5 +149,50 @@ namespace ConsoleApp.EfSql
                 var blogs = context.Blogs.ToList();
             }
         }
+
+        public static void RunRawQuery()
+        {
+            using (var context = new BloggingContext())
+            {
+                var blogs = context.Blogs
+                    .FromSql("SELECT * FROM dbo.Blogs")
+                    .ToList();
+            }
+
+            using (var context = new BloggingContext())
+            {
+                var blogs = context.Blogs
+                    .FromSql("EXECUTE dbo.GetMostPopularBlogs")
+                    .ToList();
+            }
+
+            using (var context = new BloggingContext())
+            {
+                var user = "johndoe";
+
+                var blogs = context.Blogs
+                    .FromSql("EXECUTE dbo.GetMostPopularBlogsForUser {0}", user)
+                    .ToList();
+            }
+
+            using (var context = new BloggingContext())
+            {
+                var user = "johndoe";
+
+                var blogs = context.Blogs
+                    .FromSql($"EXECUTE dbo.GetMostPopularBlogsForUser {user}")
+                    .ToList();
+            }
+
+            using (var context = new BloggingContext())
+            {
+                var user = new SqlParameter("user", "johndoe");
+
+                var blogs = context.Blogs
+                    .FromSql("EXECUTE dbo.GetMostPopularBlogsForUser @user", user)
+                    .ToList();
+            }
+        }
+
     }
 }
