@@ -17,6 +17,8 @@ namespace ConsoleApp.EfSql
         public DbSet<Ren> Ren { get; set; }
         public DbSet<LZBlog> LZBlogs { get; set; }
 
+        public DbSet<BlogV> BlogVs { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EfSql;Trusted_Connection=True;MultipleActiveResultSets=true");
@@ -24,6 +26,7 @@ namespace ConsoleApp.EfSql
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            var _tenantId = "to replace";
             modelBuilder.Entity<School>().HasMany(s => s.Students).WithOne(s => s.School);
 
             modelBuilder.Entity<Blog>()
@@ -37,6 +40,12 @@ namespace ConsoleApp.EfSql
             modelBuilder.Entity<LZBlog>()
                 .HasMany(b => b.Posts)
                 .WithOne();
+
+            modelBuilder.Entity<BlogV>().Property<string>("TenantId").HasField("_tenantId");
+
+            // Configure entity filters
+            modelBuilder.Entity<BlogV>().HasQueryFilter(b => EF.Property<string>(b, "TenantId") == _tenantId);
+            modelBuilder.Entity<PostV>().HasQueryFilter(p => !p.IsDeleted);
 
         }
     }

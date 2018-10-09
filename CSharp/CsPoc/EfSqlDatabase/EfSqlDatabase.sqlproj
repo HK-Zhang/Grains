@@ -142,5 +142,7 @@
     <Build Include="dbo\Tables\Picture.sql" />
     <Build Include="dbo\Tables\LZPost.sql" />
     <Build Include="dbo\Tables\LZBlogs.sql" />
+    <Build Include="dbo\Tables\PostV.sql" />
+    <Build Include="dbo\Tables\BlogVs.sql" />
   </ItemGroup>
 </Project>
