@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using ConsoleApp.EfSql.QueryModel;
 using Microsoft.EntityFrameworkCore;
+using Blog = ConsoleApp.EfSql.Model.Blog;
 
 namespace ConsoleApp.EfSql
 {
@@ -191,6 +193,14 @@ namespace ConsoleApp.EfSql
                 var blogs = context.Blogs
                     .FromSql("EXECUTE dbo.GetMostPopularBlogsForUser @user", user)
                     .ToList();
+            }
+        }
+
+        public async Task<List<Blog>> GetBlogsAsync()
+        {
+            using (var context = new BloggingContext())
+            {
+                return await context.Blogs.ToListAsync();
             }
         }
 
