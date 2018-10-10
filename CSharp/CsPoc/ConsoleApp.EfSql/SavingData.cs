@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ConsoleApp.EfSql.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApp.EfSql
 {
@@ -60,6 +61,62 @@ namespace ConsoleApp.EfSql
                 var lastBlog = context.BlogFs.Last();
                 context.BlogFs.Remove(lastBlog);
 
+                context.SaveChanges();
+            }
+        }
+
+        public void RelatedData()
+        {
+            using (var context = new BloggingContext())
+            {
+                var blog = new Blog
+                {
+                    Url = "http://blogs.msdn.com/dotnet",
+                    Posts = new List<Post>
+                    {
+                        new Post { Title = "Intro to C#" },
+                        new Post { Title = "Intro to VB.NET" },
+                        new Post { Title = "Intro to F#" }
+                    }
+                };
+
+                context.Blogs.Add(blog);
+                context.SaveChanges();
+            }
+        }
+
+        public void RelatedDataAddRelatedEntity()
+        {
+            using (var context = new BloggingContext())
+            {
+                var blog = context.Blogs.Include(b => b.Posts).First();
+                var post = new Post { Title = "Intro to EF Core" };
+
+                blog.Posts.Add(post);
+                context.SaveChanges();
+            }
+        }
+
+        public void RealtedDataRelationships()
+        {
+            using (var context = new BloggingContext())
+            {
+                var blog = new Blog { Url = "http://blogs.msdn.com/visualstudio" };
+                var post = context.Posts.First();
+
+                post.Blog = blog;
+                context.SaveChanges();
+            }
+        }
+
+        public void RelatedDataRemoveRelationship()
+        {
+            using (var context = new BloggingContext())
+            {
+                var blog = context.Blogs.Include(b => b.Posts).First();
+                var post = blog.Posts.First();
+
+                blog.Posts.Remove(post);
                 context.SaveChanges();
             }
         }
