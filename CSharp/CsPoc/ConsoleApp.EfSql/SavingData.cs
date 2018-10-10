@@ -9,6 +9,7 @@ namespace ConsoleApp.EfSql
 {
     public class SavingData
     {
+
         public void BasicSaveAdd()
         {
             using (var context = new BloggingContext())
@@ -118,6 +119,74 @@ namespace ConsoleApp.EfSql
 
                 blog.Posts.Remove(post);
                 context.SaveChanges();
+            }
+        }
+
+        public void CascadeDelete()
+        {
+            using (var context = new BloggingContext())
+            {
+                var blog = context.Blogs.Include(b => b.Posts).First();
+                var posts = blog.Posts.ToList();
+
+//                DumpEntities("  After loading entities:", context, blog, posts);
+
+                context.Remove(blog);
+
+//                DumpEntities($"  After deleting blog '{blog.BlogId}':", context, blog, posts);
+
+                try
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("  Saving changes:");
+
+                    context.SaveChanges();
+
+//                    DumpSql();
+//
+//                    DumpEntities("  After SaveChanges:", context, blog, posts);
+                }
+                catch (Exception e)
+                {
+//                    DumpSql();
+
+                    Console.WriteLine();
+                    Console.WriteLine($"  SaveChanges threw {e.GetType().Name}: {(e is DbUpdateException ? e.InnerException.Message : e.Message)}");
+                }
+            }
+        }
+
+        public void DeleteOrphansExample()
+        {
+            using (var context = new BloggingContext())
+            {
+                var blog = context.Blogs.Include(b => b.Posts).First();
+                var posts = blog.Posts.ToList();
+
+//                DumpEntities("  After loading entities:", context, blog, posts);
+
+                blog.Posts.Clear();
+
+//                DumpEntities("  After making posts orphans:", context, blog, posts);
+
+                try
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("  Saving changes:");
+
+                    context.SaveChanges();
+
+//                    DumpSql();
+
+//                    DumpEntities("  After SaveChanges:", context, blog, posts);
+                }
+                catch (Exception e)
+                {
+//                    DumpSql();
+
+                    Console.WriteLine();
+                    Console.WriteLine($"  SaveChanges threw {e.GetType().Name}: {(e is DbUpdateException ? e.InnerException.Message : e.Message)}");
+                }
             }
         }
     }
