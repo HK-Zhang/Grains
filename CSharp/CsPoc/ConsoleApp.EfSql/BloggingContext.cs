@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Text;
 using ConsoleApp.EfSql.Model;
 using Microsoft.EntityFrameworkCore;
@@ -55,9 +57,21 @@ namespace ConsoleApp.EfSql
             v => v.ToString(),
             v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
 
+        private DbConnection _connection;
+
+        public BloggingContext(DbConnection connection)
+        {
+            _connection = connection;
+        }
+
+        public BloggingContext()
+        {
+            _connection = new SqlConnection("Server=(localdb)\\mssqllocaldb;Database=EfSql;Trusted_Connection=True;MultipleActiveResultSets=true");
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=EfSql;Trusted_Connection=True;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer(_connection);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
