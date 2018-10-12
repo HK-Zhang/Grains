@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Transactions;
 using ConsoleApp.EfSql.Model;
 using Microsoft.EntityFrameworkCore;
@@ -424,5 +425,178 @@ namespace ConsoleApp.EfSql
                 }
             }
         }
+
+        public static async Task AddBlogAsync(string url)
+        {
+            using (var context = new BloggingContext())
+            {
+                var blog = new Blog { Url = url };
+                context.Blogs.Add(blog);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public static bool IsItNew(Blog blog)
+            => blog.BlogId == 0;
+
+        public static bool IsItNew(DbContext context, object entity)
+            => !context.Entry(entity).IsKeySet;
+
+        public static bool IsItNew(BloggingContext context, Blog blog)
+            => context.Blogs.Find(blog.BlogId) == null;
+
+        public static void Insert(DbContext context, object entity)
+        {
+            context.Add(entity);
+            context.SaveChanges();
+        }
+
+        public static void Update(DbContext context, object entity)
+        {
+            context.Update(entity);
+            context.SaveChanges();
+        }
+
+        // if the entity uses auto-generated key values, then the Update method can be used for both cases
+        public static void InsertOrUpdate(DbContext context, object entity)
+        {
+            context.Update(entity);
+            context.SaveChanges();
+        }
+
+        // If the entity is not using auto-generated keys, then the application must decide whether the entity should be inserted or updated
+        public static void InsertOrUpdate(BloggingContext context, Blog blog)
+        {
+            var existingBlog = context.Blogs.Find(blog.BlogId);
+            if (existingBlog == null)
+            {
+                context.Add(blog);
+            }
+            else
+            {
+                context.Entry(existingBlog).CurrentValues.SetValues(blog);
+            }
+
+            context.SaveChanges();
+        }
+
+        public static void InsertGraph(DbContext context, object rootEntity)
+        {
+            context.Add(rootEntity);
+            context.SaveChanges();
+        }
+
+        public static void UpdateGraph(DbContext context, object rootEntity)
+        {
+            context.Update(rootEntity);
+            context.SaveChanges();
+        }
+
+        // With auto-generated keys, Update can again be used for both inserts and updates, even if the graph contains a mix of entities that require inserting and those that require updating
+        public static void InsertOrUpdateGraph(DbContext context, object rootEntity)
+        {
+            context.Update(rootEntity);
+            context.SaveChanges();
+        }
+
+        // when not using auto-generated keys, a query and some processing can be used
+        public static void InsertOrUpdateGraph(BloggingContext context, Blog blog)
+        {
+            var existingBlog = context.Blogs
+                .Include(b => b.Posts)
+                .FirstOrDefault(b => b.BlogId == blog.BlogId);
+
+            if (existingBlog == null)
+            {
+                context.Add(blog);
+            }
+            else
+            {
+                context.Entry(existingBlog).CurrentValues.SetValues(blog);
+                foreach (var post in blog.Posts)
+                {
+                    var existingPost = existingBlog.Posts
+                        .FirstOrDefault(p => p.PostId == post.PostId);
+
+                    if (existingPost == null)
+                    {
+                        existingBlog.Posts.Add(post);
+                    }
+                    else
+                    {
+                        context.Entry(existingPost).CurrentValues.SetValues(post);
+                    }
+                }
+            }
+
+            context.SaveChanges();
+        }
+
+        // For true deletes, a common pattern is to use an extension of the query pattern to perform what is essentially a graph diff
+        public static void InsertUpdateOrDeleteGraph(BloggingContext context, Blog blog)
+        {
+            var existingBlog = context.Blogs
+                .Include(b => b.Posts)
+                .FirstOrDefault(b => b.BlogId == blog.BlogId);
+
+            if (existingBlog == null)
+            {
+                context.Add(blog);
+            }
+            else
+            {
+                context.Entry(existingBlog).CurrentValues.SetValues(blog);
+                foreach (var post in blog.Posts)
+                {
+                    var existingPost = existingBlog.Posts
+                        .FirstOrDefault(p => p.PostId == post.PostId);
+
+                    if (existingPost == null)
+                    {
+                        existingBlog.Posts.Add(post);
+                    }
+                    else
+                    {
+                        context.Entry(existingPost).CurrentValues.SetValues(post);
+                    }
+                }
+
+                foreach (var post in existingBlog.Posts)
+                {
+                    if (blog.Posts.All(p => p.PostId != post.PostId))
+                    {
+                        context.Remove(post);
+                    }
+                }
+            }
+
+            context.SaveChanges();
+        }
+
+        public static void SaveAnnotatedGraph(DbContext context, object rootEntity)
+        {
+            context.ChangeTracker.TrackGraph(
+                rootEntity,
+                n =>
+                {
+                    var entity = (EntityBase)n.Entry.Entity;
+                    n.Entry.State = entity.IsNew
+                        ? EntityState.Added
+                        : entity.IsChanged
+                            ? EntityState.Modified
+                            : entity.IsDeleted
+                                ? EntityState.Deleted
+                                : EntityState.Unchanged;
+                });
+
+            context.SaveChanges();
+        }
+    }
+
+    internal class EntityBase
+    {
+        public bool IsNew { get; set; }
+        public bool IsChanged { get; internal set; }
+        public bool IsDeleted { get; internal set; }
     }
 }
