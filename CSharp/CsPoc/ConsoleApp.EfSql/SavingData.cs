@@ -591,6 +591,68 @@ namespace ConsoleApp.EfSql
 
             context.SaveChanges();
         }
+
+        public static void SavingExplicitValue()
+        {
+            using (var context = new EmployeeContext())
+            {
+                context.Employees.Add(new Employee { Name = "John Doe" });
+                context.Employees.Add(new Employee { Name = "Jane Doe", EmploymentStarted = new DateTime(2000, 1, 1) });
+                context.SaveChanges();
+
+                foreach (var employee in context.Employees)
+                {
+                    Console.WriteLine(employee.EmployeeId + ": " + employee.Name + ", " + employee.EmploymentStarted);
+                }
+            }
+        }
+
+        public static void SavingExplicitIdentityValue()
+        {
+            using (var context = new EmployeeContext())
+            {
+                context.Employees.Add(new Employee { EmployeeId = 100, Name = "John Doe" });
+                context.Employees.Add(new Employee { EmployeeId = 101, Name = "Jane Doe" });
+
+                context.Database.OpenConnection();
+                try
+                {
+                    context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Employees ON");
+                    context.SaveChanges();
+                    context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Employees OFF");
+                }
+                finally
+                {
+                    context.Database.CloseConnection();
+                }
+
+
+                foreach (var employee in context.Employees)
+                {
+                    Console.WriteLine(employee.EmployeeId + ": " + employee.Name);
+                }
+            }
+        }
+
+        public static void UpdateExplicitIdentityValue()
+        {
+            using (var context = new EmployeeContext())
+            {
+                var john = context.Employees.Single(e => e.Name == "John Doe");
+                john.Salary = 200;
+
+                var jane = context.Employees.Single(e => e.Name == "Jane Doe");
+                jane.Salary = 200;
+                jane.LastPayRaise = DateTime.Today.AddDays(-7);
+
+                context.SaveChanges();
+
+                foreach (var employee in context.Employees)
+                {
+                    Console.WriteLine(employee.EmployeeId + ": " + employee.Name + ", " + employee.LastPayRaise);
+                }
+            }
+        }
     }
 
     internal class EntityBase
