@@ -56,7 +56,7 @@ namespace CsPoc
             Console.WriteLine("T6 step2 end");
         }
 
-        public void Test1Foo() 
+        public void Test1Foo()
         {
             Thread t1 = new Thread(Thread1Foo);
             t1.Start();
@@ -74,7 +74,7 @@ namespace CsPoc
 
         }
 
-        public void Test3Foo() 
+        public void Test3Foo()
         {
             Task.Factory.StartNew(Thread3Foo);
             Task.Factory.StartNew(Thread4Foo);
@@ -93,7 +93,7 @@ namespace CsPoc
 
         public void Test5Foo()
         {
-            Thread thread = new Thread(new ThreadStart(delegate()
+            Thread thread = new Thread(new ThreadStart(delegate ()
                 {
                     Thread.Sleep(2000);
                     _autoResetEvent.Set();
@@ -128,25 +128,29 @@ namespace CsPoc
             Console.Read();
         }
 
-        public void Test7Foo()
+        public void CancelTask()
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-            Task t = new Task(() => LongRunTask(cts.Token));
-            t.Start();
-            Thread.Sleep(2000);
-            cts.Cancel(); 
+            using (var cts = new CancellationTokenSource())
+            {
+                Task t = new Task(() => LongRunTask(cts.Token));
+                t.Start();
+                Thread.Sleep(2000);
+                cts.Cancel();
+            }
 
         }
 
-        public void Test8Foo()
+        public void CancelTasks()
         {
             Task parent = new Task(() =>
             {
-                CancellationTokenSource cts = new CancellationTokenSource();
-                TaskFactory tf = new TaskFactory(cts.Token);
-                var childTask = new[] { tf.StartNew(() => LongRunTask(cts.Token)), tf.StartNew(() => LongRunTask(cts.Token)), tf.StartNew(() => LongRunTask(cts.Token)) };
-                Thread.Sleep(2000);
-                cts.Cancel();
+                using (var cts = new CancellationTokenSource())
+                {
+                    TaskFactory tf = new TaskFactory(cts.Token);
+                    var childTask = new[] { tf.StartNew(() => LongRunTask(cts.Token)), tf.StartNew(() => LongRunTask(cts.Token)), tf.StartNew(() => LongRunTask(cts.Token)) };
+                    Thread.Sleep(2000);
+                    cts.Cancel();
+                }
             });
 
             parent.Start();
@@ -164,9 +168,9 @@ namespace CsPoc
                 else
                 {
                     Console.WriteLine("Thread is abort");
-                    break; 
+                    break;
                 }
-                
+
             }
         }
 
@@ -256,7 +260,7 @@ namespace CsPoc
     class AsyncTest
     {
 
-        static AsyncDemo demo2 = new AsyncDemo("jiangnii");  
+        static AsyncDemo demo2 = new AsyncDemo("jiangnii");
         public static void Run()
         {
             AsyncDemo demo = new AsyncDemo("jiangnii");
@@ -316,7 +320,7 @@ namespace CsPoc
 
             // You can do other thins here  
             // Wait until callback finished  
-            System.Threading.Thread.Sleep(1000);  
+            System.Threading.Thread.Sleep(1000);
         }
 
         // Callback method  
@@ -335,8 +339,8 @@ namespace CsPoc
                 Console.WriteLine(demoName + ", isn't it?");
             }
 
-        }  
+        }
 
-    } 
+    }
 
 }
