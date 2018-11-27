@@ -122,9 +122,9 @@ namespace CsPoc
             //            ReadonlyCollectionDemo tcd = new ReadonlyCollectionDemo();
             //            JsonDemo tcd = new JsonDemo();
 
-            FPdemo tcd = new FPdemo();
+//            FPdemo tcd = new FPdemo();
 //            CallerDemo tcd = new CallerDemo();
-            tcd.Execute();
+//            tcd.Execute();
 
             //ThreadSafeDicDemo td = new ThreadSafeDicDemo();
             //td.Execute();
@@ -186,7 +186,7 @@ namespace CsPoc
 
 //                EnumDemo ed = new EnumDemo();
 //                ed.Execute();
-//                TimerDemo.Execute();
+                TimerDemo.Execute();
                 //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
                 //d.Execute();
 

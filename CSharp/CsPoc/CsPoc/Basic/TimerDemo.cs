@@ -17,7 +17,21 @@ namespace CSDemo
             //DayOfWeek();
             //            DateParse();
 //            TimeblockFun();
-            GetFirstDayOfWeekFun();
+//            GetFirstDayOfWeekFun();
+
+//            var n = DateTime.Now;
+//            var n2 = DateTime.Now.AddHours(1);
+//            Console.WriteLine(TimeDifference(n, n2));
+
+            var r = new DateTime(2018, 12, 1, 1, 1, 16);
+            Console.WriteLine(RoundTime(r, 30));
+            Console.WriteLine(RoundTime(new DateTime(2018, 12, 1, 1, 1, 15), 30));
+            Console.WriteLine(RoundTime(new DateTime(2018, 12, 1, 1, 1, 14), 30));
+            Console.WriteLine(RoundTime(new DateTime(2018, 12, 1, 1, 1, 44), 30));
+            Console.WriteLine(RoundTime(new DateTime(2018, 12, 1, 1, 1, 45), 30));
+            Console.WriteLine(RoundTime(new DateTime(2018, 12, 1, 1, 1, 46), 30));
+
+
         }
 
 
@@ -78,7 +92,17 @@ namespace CSDemo
             var b = 200 / 9;
         }
 
+        public static DateTime RoundTime(DateTime date, int nearestSeconds)
+        {
+            TimeSpan span = new TimeSpan(0, 0, nearestSeconds);
+            long ticks = (date.Ticks + (span.Ticks / 2) + 1) / span.Ticks;
+            return new DateTime(ticks * span.Ticks);
+        }
 
+        public static int TimeDifference(DateTime date1, DateTime date2)
+        {
+            return Math.Abs(Convert.ToInt32((date1 - date2).TotalSeconds));
+        }
 
         static void CheckStatus(object state)
         {
