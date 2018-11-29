@@ -26,7 +26,7 @@ namespace CsPoc
     {
         static void Main(string[] args)
         {
-            AppDomain.CurrentDomain.ProcessExit+=CurrentDomain_ProcessExit;
+            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             #region
 
@@ -122,9 +122,9 @@ namespace CsPoc
             //            ReadonlyCollectionDemo tcd = new ReadonlyCollectionDemo();
             //            JsonDemo tcd = new JsonDemo();
 
-//            FPdemo tcd = new FPdemo();
-//            CallerDemo tcd = new CallerDemo();
-//            tcd.Execute();
+            //            FPdemo tcd = new FPdemo();
+            //            CallerDemo tcd = new CallerDemo();
+            //            tcd.Execute();
 
             //ThreadSafeDicDemo td = new ThreadSafeDicDemo();
             //td.Execute();
@@ -184,9 +184,10 @@ namespace CsPoc
             try
             {
 
-//                EnumDemo ed = new EnumDemo();
-//                ed.Execute();
-                TimerDemo.Execute();
+                //                EnumDemo ed = new EnumDemo();
+                //                ed.Execute();
+                //                TimerDemo.Execute();
+                SqlGeographyDemo.Execute();
                 //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
                 //d.Execute();
 

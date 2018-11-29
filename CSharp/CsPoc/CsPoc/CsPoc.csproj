@@ -110,6 +110,9 @@
     <Reference Include="Microsoft.Spatial, Version=6.15.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Spatial.6.15.0\lib\portable-net45+win+wpa81\Microsoft.Spatial.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
     </Reference>
@@ -186,6 +189,7 @@
   <ItemGroup>
     <Compile Include="Advanced\ExpressionTreeDemo.cs" />
     <Compile Include="Advanced\MiddleDesign.cs" />
+    <Compile Include="Advanced\SqlGeographyDemo.cs" />
     <Compile Include="Azure\AzureSearchDemo.cs" />
     <Compile Include="Azure\AzureSearchLoadingTesting.cs" />
     <Compile Include="Azure\AzureSearchModel.cs" />
@@ -223,6 +227,7 @@
     <Compile Include="FP\FPdemo.cs" />
     <Compile Include="Network\HttpBindingDemo.cs" />
     <Compile Include="Reflections\MethodDemo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="STD\ConfigDemo.cs" />
     <Compile Include="Thread\AwaitDemo.cs" />
     <Compile Include="Basic\MarshalDemo.cs" />
@@ -313,6 +318,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="XML\CSharpFunctions.xslt" />
     <Content Include="XML\CSRCNAV.xslt" />
     <Content Include="XML\output.xml" />
