@@ -11,6 +11,7 @@ namespace CsPoc.Collection
 
     }
 
+
     public static class DectionaryHelper
     {
         public static T GetValue<T>(this IDictionary<object, object> self, string key)
@@ -34,4 +35,31 @@ namespace CsPoc.Collection
             }
         }
     }
+
+    //internal class CopyOnWriteDictionary<TKey, TValue> : IDictionary<TKey, TValue>
+    //{
+    //    private readonly IDictionary<TKey, TValue> _sourceDictionary;
+    //    private IDictionary<TKey, TValue> _innerDictionary;
+
+    //    private IEqualityComparer<TKey> _comparer;
+    //    public CopyOnWriteDictionary(IDictionary<TKey, TValue> sourceDictionary, IEqualityComparer<TKey> comparer)
+    //    {
+    //        _sourceDictionary = sourceDictionary;
+    //        _comparer = comparer;
+    //    }
+
+    //    private IDictionary<TKey, TValue> ReadDictionary => _innerDictionary ?? _sourceDictionary;
+
+    //    private IDictionary<TKey, TValue> WriteDictionary
+    //    {
+    //        get
+    //        {
+    //            if (_innerDictionary == null)
+    //            {
+    //                _innerDictionary = new Dictionary<TKey, TValue>(_sourceDictionary, _comparer);
+    //            }
+    //            return _innerDictionary;
+    //        }
+    //    }
+    //}
 }
