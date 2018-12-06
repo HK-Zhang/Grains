@@ -187,7 +187,8 @@ namespace CsPoc
                 //                EnumDemo ed = new EnumDemo();
                 //                ed.Execute();
                 //                TimerDemo.Execute();
-                SqlGeographyDemo.Execute();
+                //SqlGeographyDemo.Execute();
+                ActionDemo.Execute();
                 //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
                 //d.Execute();
 
