@@ -189,8 +189,8 @@ namespace CsPoc
                 //                TimerDemo.Execute();
                 //SqlGeographyDemo.Execute();
                 //ActionDemo.Execute();
-                YieldDemo yd = new YieldDemo();
-                yd.Execute();
+                //YieldDemo yd = new YieldDemo();
+                //yd.Execute();
                 //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
                 //d.Execute();
 
@@ -204,6 +204,8 @@ namespace CsPoc
 
                 //EnumeratorDemo td = new EnumeratorDemo();
                 //td.Execute();
+
+                TAPDemo.Execute();
 
             }
             catch (Exception ex)

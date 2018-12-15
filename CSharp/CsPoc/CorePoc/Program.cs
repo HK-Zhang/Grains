@@ -1,12 +1,14 @@
-﻿using StdTwoLib;
+﻿using CorePoc.TAPDemo;
+using StdTwoLib;
 using System;
 using System.Configuration;
+using System.Threading.Tasks;
 
 namespace CorePoc
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //var d = new EnvDemo();
             //d.Execute();
@@ -15,7 +17,19 @@ namespace CorePoc
 
             //Console.WriteLine("Hello World!");
 
-            AzureDemo.Blob();
+            //AzureDemo.Blob();
+
+            //Console.ReadLine();
+            try
+            {
+                await Retry.ExecuteAsync();
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
 
             Console.ReadLine();
         }
