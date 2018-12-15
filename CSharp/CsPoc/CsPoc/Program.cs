@@ -188,7 +188,9 @@ namespace CsPoc
                 //                ed.Execute();
                 //                TimerDemo.Execute();
                 //SqlGeographyDemo.Execute();
-                ActionDemo.Execute();
+                //ActionDemo.Execute();
+                YieldDemo yd = new YieldDemo();
+                yd.Execute();
                 //AzureSearchLoadingTesting d = new AzureSearchLoadingTesting();
                 //d.Execute();
 

@@ -33,7 +33,11 @@ namespace CSDemo
 
         static IEnumerable<int> FromTo(int from, int to)
         {
-            while (from <= to) yield return from++;
+            while (from <= to)
+            {
+                yield return from++;
+                //yield return 0;
+            }
         }
 
     }
