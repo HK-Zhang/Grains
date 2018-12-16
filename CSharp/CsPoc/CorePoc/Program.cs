@@ -22,7 +22,8 @@ namespace CorePoc
             //Console.ReadLine();
             try
             {
-                await Retry.ExecuteAsync();
+                //await Retry.ExecuteAsync();
+                await NeedOnlyOneDemo.ExecuteAsync();
 
             }
             catch (Exception ex)
