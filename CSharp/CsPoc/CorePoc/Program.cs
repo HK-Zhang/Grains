@@ -24,7 +24,8 @@ namespace CorePoc
             {
                 //await Retry.ExecuteAsync();
                 //await NeedOnlyOneDemo.ExecuteAsync();
-                await InterleavedDemo.ExecuteAsync();
+                //await InterleavedDemo.ExecuteAsync();
+                await WhenAllOrFirstExceptionDemo.ExecuteAsync();
             }
             catch (Exception ex)
             {
