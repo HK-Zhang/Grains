@@ -1,4 +1,5 @@
-﻿using CorePoc.TAPDemo;
+﻿using CorePoc.DataflowDemo;
+using CorePoc.TAPDemo;
 using StdTwoLib;
 using System;
 using System.Configuration;
@@ -28,7 +29,8 @@ namespace CorePoc
                 //await WhenAllOrFirstExceptionDemo.ExecuteAsync();
                 //await AsyncCacheDemo.ExecuteAsync();
                 //await AsyncProducerConsumerDemo.ExecuteAsync();
-                await BufferBlockDemocs.ExecuteAsync();
+                //await BufferBlockDemocs.ExecuteAsync();
+                DataflowBlockCompletition.ExecuteAsync();
             }
             catch (Exception ex)
             {
