@@ -27,7 +27,8 @@ namespace CorePoc
                 //await InterleavedDemo.ExecuteAsync();
                 //await WhenAllOrFirstExceptionDemo.ExecuteAsync();
                 //await AsyncCacheDemo.ExecuteAsync();
-                await AsyncProducerConsumerDemo.ExecuteAsync();
+                //await AsyncProducerConsumerDemo.ExecuteAsync();
+                await BufferBlockDemocs.ExecuteAsync();
             }
             catch (Exception ex)
             {
