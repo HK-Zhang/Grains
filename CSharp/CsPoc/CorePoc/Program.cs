@@ -30,7 +30,8 @@ namespace CorePoc
                 //await AsyncCacheDemo.ExecuteAsync();
                 //await AsyncProducerConsumerDemo.ExecuteAsync();
                 //await BufferBlockDemocs.ExecuteAsync();
-                DataflowBlockCompletition.ExecuteAsync();
+                //DataflowBlockCompletition.ExecuteAsync();
+                await ThrottlingDemo.ExecuteAsync();
             }
             catch (Exception ex)
             {
