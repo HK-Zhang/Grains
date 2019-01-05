@@ -11,7 +11,8 @@ namespace CorePoc.DataflowDemo
         public static void ExecuteAsync()
         {
             //foo();
-            foo1();
+            //foo1();
+            foo2();
         }
 
         private static void foo1()
@@ -39,6 +40,35 @@ namespace CorePoc.DataflowDemo
                1
                2
              */
+        }
+
+        private static void foo2()
+        {
+            // Create a BufferBlock<int> object.
+            var bufferBlock = new BufferBlock<int>();
+
+            // Post several messages to the block.
+
+            // Receive the messages back from the block.
+            for (int i = 0; i < 4; i++)
+            {
+                Task.Run(() =>
+                {
+                    Console.WriteLine(bufferBlock.Receive());
+                });
+            }
+
+            /* Output:
+               0
+               1
+               2
+             */
+
+            for (int i = 0; i < 3; i++)
+            {
+                bufferBlock.Post(i);
+            }
+
         }
     }
 }
