@@ -34,8 +34,8 @@ namespace CorePoc
                 //await ThrottlingDemo.ExecuteAsync();
                 //await EarlyBailout.ExecuteAsync();
                 //BufferingBlocks.ExecuteAsync();
-                //BroadcastingBlock.ExecuteAsync();
-                WritingOnceBlock.ExecuteAsync();
+                BroadcastingBlock.ExecuteAsync();
+                //WritingOnceBlock.ExecuteAsync();
             }
             catch (Exception ex)
             {

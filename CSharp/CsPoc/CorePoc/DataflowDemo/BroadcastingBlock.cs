@@ -20,6 +20,8 @@ namespace CorePoc.DataflowDemo
 
             // Post a message to the block.
             broadcastBlock.Post(Math.PI);
+            broadcastBlock.Post(Math.E);
+
 
             // Receive the messages back from the block several times.
             for (int i = 0; i < 3; i++)
