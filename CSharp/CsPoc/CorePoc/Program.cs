@@ -38,7 +38,8 @@ namespace CorePoc
                 //WritingOnceBlock.ExecuteAsync();
                 //ActionBlockDemo.ExecuteAsync();
                 //TransformingBlock.ExecuteAsync();
-                TransformingManyBlock.ExecuteAsync();
+                //TransformingManyBlock.ExecuteAsync();
+                BatchingBlock.ExecuteAsync();
             }
             catch (Exception ex)
             {
