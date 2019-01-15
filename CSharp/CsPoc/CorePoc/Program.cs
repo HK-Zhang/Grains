@@ -29,7 +29,7 @@ namespace CorePoc
                 //await WhenAllOrFirstExceptionDemo.ExecuteAsync();
                 //await AsyncCacheDemo.ExecuteAsync();
                 //await AsyncProducerConsumerDemo.ExecuteAsync();
-                await BufferBlockDemocs.ExecuteAsync();
+                //await BufferBlockDemocs.ExecuteAsync();
                 //DataflowBlockCompletition.ExecuteAsync();
                 //await ThrottlingDemo.ExecuteAsync();
                 //await EarlyBailout.ExecuteAsync();
@@ -42,6 +42,7 @@ namespace CorePoc
                 //BatchingBlock.ExecuteAsync();
                 //JoiningBlock.ExecuteAsync();
                 //BatchedJoiningBlock.ExecuteAsync();
+                DataflowProducerConsumer.ExecuteAsync();
             }
             catch (Exception ex)
             {
