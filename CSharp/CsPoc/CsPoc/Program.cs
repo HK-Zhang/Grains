@@ -205,8 +205,9 @@ namespace CsPoc
                 //EnumeratorDemo td = new EnumeratorDemo();
                 //td.Execute();
 
-                TAPDemo.Execute();
+                //                TAPDemo.Execute();
 
+                QRCodeCreator.Execute();
             }
             catch (Exception ex)
             {
