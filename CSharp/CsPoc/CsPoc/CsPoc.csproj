@@ -352,6 +352,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DNVGLStamp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="favicon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
