@@ -42,7 +42,8 @@ namespace CorePoc
                 //BatchingBlock.ExecuteAsync();
                 //JoiningBlock.ExecuteAsync();
                 //BatchedJoiningBlock.ExecuteAsync();
-                DataflowProducerConsumer.ExecuteAsync();
+                //DataflowProducerConsumer.ExecuteAsync();
+                DataflowExecutionBlocks.ExecuteAsync();
             }
             catch (Exception ex)
             {
