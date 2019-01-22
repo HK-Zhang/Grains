@@ -52,6 +52,9 @@
     <Reference Include="Itenso.TimePeriod, Version=2.1.1.0, Culture=neutral, PublicKeyToken=8cb6db75b4e81486, processorArchitecture=MSIL">
       <HintPath>..\packages\TimePeriodLibrary.NET.2.1.1\lib\net46\Itenso.TimePeriod.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -328,6 +331,7 @@
     <Compile Include="Toolkit\LinqDistinctDemo.cs" />
     <Compile Include="Toolkit\Log4NetDemo.cs" />
     <Compile Include="Toolkit\LogHelper.cs" />
+    <Compile Include="Toolkit\PdfReaderDemo.cs" />
     <Compile Include="Toolkit\QRCodeCreator.cs" />
     <Compile Include="Toolkit\SynchronizedCache.cs" />
     <Compile Include="XML\XPath.cs" />

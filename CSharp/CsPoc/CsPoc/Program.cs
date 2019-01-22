@@ -207,7 +207,8 @@ namespace CsPoc
 
                 //                TAPDemo.Execute();
 
-                QRCodeCreator.Execute();
+                //                QRCodeCreator.Execute();
+                PdfReaderDemo.Execute();
             }
             catch (Exception ex)
             {
