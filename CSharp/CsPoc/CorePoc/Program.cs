@@ -43,7 +43,8 @@ namespace CorePoc
                 //JoiningBlock.ExecuteAsync();
                 //BatchedJoiningBlock.ExecuteAsync();
                 //DataflowProducerConsumer.ExecuteAsync();
-                DataflowExecutionBlocks.ExecuteAsync();
+                //DataflowExecutionBlocks.ExecuteAsync();
+                DataflowReversedWords.ExecuteAsync();
             }
             catch (Exception ex)
             {
