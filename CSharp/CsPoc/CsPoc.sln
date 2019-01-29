@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.EfSql", "Console
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EfSqlDatabase", "EfSqlDatabase\EfSqlDatabase.sqlproj", "{3362518E-D20F-4EFD-83D7-F948541E5885}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docker.NetCore.MySql", "Docker.NetCore.MySql\Docker.NetCore.MySql.csproj", "{B393206C-3FDD-46F8-B71A-9E10F898E85F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{3362518E-D20F-4EFD-83D7-F948541E5885}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3362518E-D20F-4EFD-83D7-F948541E5885}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3362518E-D20F-4EFD-83D7-F948541E5885}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B393206C-3FDD-46F8-B71A-9E10F898E85F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B393206C-3FDD-46F8-B71A-9E10F898E85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B393206C-3FDD-46F8-B71A-9E10F898E85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B393206C-3FDD-46F8-B71A-9E10F898E85F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
