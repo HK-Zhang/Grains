@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace ConsoleApp.DapperSql.Model
 {
 
-    [Table("glb_cidade")]
+    [Table("GLB_Cidade")]
     public class Cidade
     {
         [Key]
