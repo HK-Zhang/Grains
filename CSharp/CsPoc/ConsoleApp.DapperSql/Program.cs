@@ -1,4 +1,5 @@
 ﻿using ConsoleApp.DapperSql.Model;
+using ConsoleApp.DapperSql.SQLite;
 using Dapper;
 using MySql.Data.MySqlClient;
 using System;
@@ -14,11 +15,18 @@ namespace ConsoleApp.DapperSql
         {
 
             //BasicSample();
-            MultiMapping();
+            //MultiMapping();
+            SQLiteDeom();
 
             Console.Read();
         }
 
+        static void SQLiteDeom()
+        {
+            SqliteDemo.CreateAndOpenDb();
+            SqliteDemo.SeedDatabase();
+            SqliteDemo.GetAdmin();
+        }
         static void BasicSample()
         {
             var bank = new Repository();
