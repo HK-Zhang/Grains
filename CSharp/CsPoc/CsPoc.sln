@@ -29,7 +29,9 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EfSqlDatabase", "EfSqlDatab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docker.NetCore.MySql", "Docker.NetCore.MySql\Docker.NetCore.MySql.csproj", "{B393206C-3FDD-46F8-B71A-9E10F898E85F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.DapperSql", "ConsoleApp.DapperSql\ConsoleApp.DapperSql.csproj", "{46513703-9A03-4691-A6AF-E4D2A26A7200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.DapperSql", "ConsoleApp.DapperSql\ConsoleApp.DapperSql.csproj", "{46513703-9A03-4691-A6AF-E4D2A26A7200}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspIdentity", "AspIdentity\AspIdentity.csproj", "{20452EFB-F557-4451-96A1-E6BDFB2F62D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,10 @@ Global
 		{46513703-9A03-4691-A6AF-E4D2A26A7200}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46513703-9A03-4691-A6AF-E4D2A26A7200}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46513703-9A03-4691-A6AF-E4D2A26A7200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20452EFB-F557-4451-96A1-E6BDFB2F62D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20452EFB-F557-4451-96A1-E6BDFB2F62D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20452EFB-F557-4451-96A1-E6BDFB2F62D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20452EFB-F557-4451-96A1-E6BDFB2F62D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
