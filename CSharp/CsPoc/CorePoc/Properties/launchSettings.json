@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CorePoc": {
+      "commandName": "Project",
+      "commandLineArgs": "c:\\windows\\"
+    }
+  }
+}
