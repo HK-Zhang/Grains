@@ -17,6 +17,7 @@ namespace CsPoc.Toolkit
 
             var a = fields.GetField("controlno");
 
+            var b = fields.GetField("zhk");
             Console.WriteLine(a);
         }
     }
