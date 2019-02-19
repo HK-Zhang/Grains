@@ -1,4 +1,5 @@
 ﻿using CorePoc.DataflowDemo;
+using CorePoc.DataParallelism;
 using CorePoc.TAPDemo;
 using StdTwoLib;
 using System;
@@ -44,7 +45,11 @@ namespace CorePoc
                 //BatchedJoiningBlock.ExecuteAsync();
                 //DataflowProducerConsumer.ExecuteAsync();
                 //DataflowExecutionBlocks.ExecuteAsync();
-                DataflowReversedWords.ExecuteAsync();
+                //DataflowReversedWords.ExecuteAsync();
+                //DataflowReceiveAny.ExecuteAsync();
+                //JointMutipleResource.Execute();
+                //ParallelismDegree.ExecuteAsync();
+                SimpleParallelFor.Execute();
             }
             catch (Exception ex)
             {
