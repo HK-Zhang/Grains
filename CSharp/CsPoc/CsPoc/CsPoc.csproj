@@ -322,6 +322,7 @@
     <Compile Include="Thread\ThreadIsolation.cs" />
     <Compile Include="Thread\ThreadUniqueID.cs" />
     <Compile Include="Thread\WaitAwaitDemo.cs" />
+    <Compile Include="Toolkit\ByteHelper.cs" />
     <Compile Include="Toolkit\DictionaryExtension.cs" />
     <Compile Include="Advanced\ExpressionDemo.cs" />
     <Compile Include="Toolkit\ExtenssionGroupDemo.cs" />
