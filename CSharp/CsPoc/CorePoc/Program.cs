@@ -49,7 +49,8 @@ namespace CorePoc
                 //DataflowReceiveAny.ExecuteAsync();
                 //JointMutipleResource.Execute();
                 //ParallelismDegree.ExecuteAsync();
-                SimpleParallelFor.Execute();
+                //SimpleParallelFor.Execute();
+                LoopThreadLocal.Execute();
             }
             catch (Exception ex)
             {
