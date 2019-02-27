@@ -50,7 +50,8 @@ namespace CorePoc
                 //JointMutipleResource.Execute();
                 //ParallelismDegree.ExecuteAsync();
                 //SimpleParallelFor.Execute();
-                LoopThreadLocal.Execute();
+                //LoopThreadLocal.Execute();
+                ParalleCancel.Execute();
             }
             catch (Exception ex)
             {
