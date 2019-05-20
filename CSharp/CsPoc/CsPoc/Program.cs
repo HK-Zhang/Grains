@@ -209,7 +209,9 @@ namespace CsPoc
 
                 //                QRCodeCreator.Execute();
                 PdfReaderDemo.Execute();
+//                ReplaceListItemDemo.Execute();
             }
+
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);

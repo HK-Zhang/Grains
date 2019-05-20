@@ -246,6 +246,7 @@
     <Compile Include="Collection\ConcurrentQueueDemo.cs" />
     <Compile Include="Collection\EnumeratorDemo.cs" />
     <Compile Include="Collection\HashSetDemo.cs" />
+    <Compile Include="Collection\ReplaceListItemDemo.cs" />
     <Compile Include="DynamicFramework\CastleAutoDemo.cs" />
     <Compile Include="DynamicFramework\CastleDIDemo.cs" />
     <Compile Include="DynamicFramework\CastleDynamicProxy.cs" />
