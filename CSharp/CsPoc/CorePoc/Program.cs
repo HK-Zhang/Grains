@@ -5,6 +5,7 @@ using StdTwoLib;
 using System;
 using System.Configuration;
 using System.Threading.Tasks;
+using CorePoc.Tools;
 
 namespace CorePoc
 {
@@ -51,8 +52,10 @@ namespace CorePoc
                 //ParallelismDegree.ExecuteAsync();
                 //SimpleParallelFor.Execute();
                 //LoopThreadLocal.Execute();
-                ParalleCancel.Execute();
+                //                ParalleCancel.Execute();
+                HtmlToDoc.Execute();
             }
+
             catch (Exception ex)
             {
 
