@@ -14,28 +14,34 @@ namespace PerfCounter
     {
         static void Main(string[] args)
         {
-            TelemetryConfiguration.Active.InstrumentationKey = "to be replaced";
+
+            TelemetryConfiguration.Active.InstrumentationKey = "25bed5a8-9bfe-4907-90e0-65a4155ed7f9";
             _ = TelemetryConfiguration.Active;
-            
-            TelemetryConfiguration configuration = TelemetryConfiguration.CreateDefault();
-            configuration.InstrumentationKey = "to be replaced";
-            var telemetryClient = new TelemetryClient(configuration);
-            telemetryClient.TrackTrace("Hello World5!");
-            //
-            //            var perfCollectorModule = new PerformanceCollectorModule();
-            ////            perfCollectorModule.Counters.Add(new PerformanceCounterCollectionRequest(
-            ////                @"\Memory\Available Bytes", "Available Bytes"));
-            //            perfCollectorModule.Initialize(configuration);
+//            
+//            TelemetryConfiguration configuration = TelemetryConfiguration.CreateDefault();
+//            configuration.InstrumentationKey = "to be replaced";
+//            var telemetryClient = new TelemetryClient(configuration);
+//            telemetryClient.TrackTrace("Hello World5!");
 
-            telemetryClient.TrackTrace("Hello World6!");
+            var perfCollectorModule = new PerformanceCollectorModule();
+            perfCollectorModule.Counters.Add(new PerformanceCounterCollectionRequest(
+                @"\Process(_Total)\Working Set", "Working Set"));
+            perfCollectorModule.Counters.Add(new PerformanceCounterCollectionRequest(
+                @"\LogicalDisk(_Total)\% Free Space", "Total Free Space"));
+            perfCollectorModule.Counters.Add(new PerformanceCounterCollectionRequest(
+                $@"\LogicalDisk({Environment.CurrentDirectory.Split(':')[0] + ":"})\% Free Space", "Free Space"));
+            perfCollectorModule.Initialize(TelemetryConfiguration.Active);
 
-            telemetryClient.Flush();
+//
+//            telemetryClient.TrackTrace("Hello World6!");
+//
+//            telemetryClient.Flush();
             Console.WriteLine("Hello World6!");
 
             while (true)
             {
                 Thread.Sleep(1000);
-                telemetryClient.Flush();
+//                telemetryClient.Flush();
 
             }
             Console.ReadKey();

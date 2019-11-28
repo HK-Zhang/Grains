@@ -53,7 +53,8 @@ namespace CorePoc
                 //SimpleParallelFor.Execute();
                 //LoopThreadLocal.Execute();
                 //                ParalleCancel.Execute();
-                HtmlToDoc.Execute();
+                //                HtmlToDoc.Execute();
+                StringCipher.Execute();
             }
 
             catch (Exception ex)
