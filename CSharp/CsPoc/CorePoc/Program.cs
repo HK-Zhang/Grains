@@ -54,8 +54,11 @@ namespace CorePoc
                 //LoopThreadLocal.Execute();
                 //                ParalleCancel.Execute();
                 //                HtmlToDoc.Execute();
-                StringCipher.Execute();
+                //                StringCipher.Execute();
+//                TextPDF.Execute();
+                DigitalSigning.Execute();
             }
+
 
             catch (Exception ex)
             {
