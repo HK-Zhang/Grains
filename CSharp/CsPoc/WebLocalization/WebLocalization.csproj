@@ -5,26 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="Resources\AspNetLocalization03.Startup.de-DE.resx" />
-    <EmbeddedResource Remove="Resources\AspNetLocalization03.Startup.es-ES.resx" />
-    <EmbeddedResource Remove="Resources\AspNetLocalization03.Startup.fr-FR.resx" />
-    <EmbeddedResource Remove="Resources\AspNetLocalization03.Startup.ko-KR.resx" />
     <EmbeddedResource Remove="Resources\Shared.de-DE.resx" />
     <EmbeddedResource Remove="Resources\Shared.es-ES.resx" />
     <EmbeddedResource Remove="Resources\Shared.fr-FR.resx" />
+    <EmbeddedResource Remove="Resources\WebLocalization.Startup.de-DE.resx" />
+    <EmbeddedResource Remove="Resources\WebLocalization.Startup.es-ES.resx" />
+    <EmbeddedResource Remove="Resources\WebLocalization.Startup.fr-FR.resx" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\AspNetLocalization03.Startup.de-DE.resx">
+    <Content Include="Resources\WebLocalization.Startup.de-DE.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\AspNetLocalization03.Startup.es-ES.resx">
+    <Content Include="Resources\WebLocalization.Startup.es-ES.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\AspNetLocalization03.Startup.fr-FR.resx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\AspNetLocalization03.Startup.ko-KR.resx">
+    <Content Include="Resources\WebLocalization.Startup.fr-FR.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Shared.de-DE.resx">
@@ -40,6 +36,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\WebLocalization.Startup.ko-KR.resx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
 
