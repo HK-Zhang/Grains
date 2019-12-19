@@ -11,14 +11,14 @@ namespace CorePoc.Tools
     {
         public static void Execute()
         {
-//            FillForm();
+            FillForm();
 
-            var fileList = new List<string>();
-            fileList.Add("RT Report Template1.pdf");
-            fileList.Add("RT Report Template1 2.pdf");
-
-
-            mergePDFFiles(fileList,"rst.pdf");
+//            var fileList = new List<string>();
+//            fileList.Add("RT Report Template1.pdf");
+//            fileList.Add("RT Report Template2.pdf");
+//
+//
+//            mergePDFFiles(fileList,"rst.pdf");
             Console.WriteLine("ok");
         }
 
@@ -30,8 +30,8 @@ namespace CorePoc.Tools
                 LastName = "Doe",
                 AwesomeCheck = true
             };
-            using (Stream pdfInputStream = new FileStream(path: "SamplePDFForm.pdf", mode: FileMode.Open))
-            using (Stream resultPDFOutputStream = new FileStream(path: "SamplePDFFormFilled.pdf", mode: FileMode.Create))
+            using (Stream pdfInputStream = new FileStream(path: "T0.pdf", mode: FileMode.Open))
+            using (Stream resultPDFOutputStream = new FileStream(path: "T0R.pdf", mode: FileMode.Create))
             using (Stream resultPDFStream = FillForm(pdfInputStream, sampleFormModel))
             {
                 // set the position of the stream to 0 to avoid corrupted PDF. 
@@ -51,9 +51,9 @@ namespace CorePoc.Tools
                 pdfReader = new PdfReader(inputStream);
                 pdfStamper = new PdfStamper(pdfReader, outStream);
                 AcroFields form = pdfStamper.AcroFields;
-                form.SetField(SampleFormFieldNames.FirstName, model.FirstName);
-                form.SetField(SampleFormFieldNames.LastName, model.LastName);
-                form.SetField(SampleFormFieldNames.IAmAwesomeCheck, model.AwesomeCheck ? "Yes" : "Off");
+                form.SetField("ReportNo", model.FirstName);
+                form.SetField("DigitalSignature", model.LastName);
+                form.SetField("IDate","Yes");
                 // set this if you want the result PDF to not be editable. 
                 pdfStamper.FormFlattening = true;
                 pdfStamper.AddSignature("He Ke Zhang", 1, 0, 0, 0,0);

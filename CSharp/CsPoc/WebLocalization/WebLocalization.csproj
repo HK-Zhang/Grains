@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\AspNetLocalization03.Startup.de-DE.resx" />
+    <EmbeddedResource Remove="Resources\AspNetLocalization03.Startup.es-ES.resx" />
+    <EmbeddedResource Remove="Resources\AspNetLocalization03.Startup.fr-FR.resx" />
+    <EmbeddedResource Remove="Resources\AspNetLocalization03.Startup.ko-KR.resx" />
+    <EmbeddedResource Remove="Resources\Shared.de-DE.resx" />
+    <EmbeddedResource Remove="Resources\Shared.es-ES.resx" />
+    <EmbeddedResource Remove="Resources\Shared.fr-FR.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\AspNetLocalization03.Startup.de-DE.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AspNetLocalization03.Startup.es-ES.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AspNetLocalization03.Startup.fr-FR.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AspNetLocalization03.Startup.ko-KR.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Shared.de-DE.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Shared.es-ES.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Shared.fr-FR.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+  </ItemGroup>
+
+
+
+</Project>

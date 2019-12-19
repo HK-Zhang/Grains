@@ -16,7 +16,7 @@ namespace CorePoc.Tools
 
         public static void Execute()
         {
-            SignPdfFile("SamplePDFForm.pdf", "SamplePDFFormSigned.pdf", "Content/demo.pfx");
+            SignPdfFile("Test.pdf", "TestSigned.pdf", "Content/demo.pfx");
             Console.WriteLine("done");
         }
 
@@ -71,7 +71,7 @@ namespace CorePoc.Tools
             PdfStamper stamper = PdfStamper.CreateSignature(PdfReader, new FileStream(outputFileName, FileMode.Create), '\0', null, true);
 
             PdfSignatureAppearance appearance = stamper.SignatureAppearance;
-            BaseFont bf = BaseFont.CreateFont("Content/BRUSHSCI.TTF", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+//            BaseFont bf = BaseFont.CreateFont("Content/BRUSHSCI.TTF", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
 //            iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 11);
 //            appearance.Layer2Font = font;
 //            appearance.Image = new iTextSharp.text.pdf.PdfImage();
@@ -81,14 +81,14 @@ namespace CorePoc.Tools
 //            appearance.SignDate = DateTime.Now;
             appearance.Acro6Layers = true;
             appearance.Layer2Text = "Henry Zhang";
-            appearance.Layer2Font = new iTextSharp.text.Font(bf, 11);
+//            appearance.Layer2Font = new iTextSharp.text.Font(bf, 11);
 
-            appearance.Render = PdfSignatureAppearance.SignatureRender.GraphicAndDescription;
-            appearance.SignatureGraphic = Image.GetInstance(System.Drawing.Image.FromFile("Content/Stamp2.png"), BaseColor.White);
+//            appearance.Render = PdfSignatureAppearance.SignatureRender.GraphicAndDescription;
+//            appearance.SignatureGraphic = Image.GetInstance(System.Drawing.Image.FromFile("Content/Stamp2.png"), BaseColor.White);
             //            appearance.Render = PdfSignatureAppearance.SignatureRender.GraphicAndDescription;
 
             //            appearance.SetVisibleSignature(new iTextSharp.text.Rectangle(20, 10, 170, 60), 1, null);
-            appearance.SetVisibleSignature(new iTextSharp.text.Rectangle(220, 50, 370, 100), 1, null);
+            appearance.SetVisibleSignature(new iTextSharp.text.Rectangle(620, 70, 770, 120), 1, null);
 
             var cp = new X509CertificateParser();
 //            var chain = new[] { cp.ReadCertificate(certificate.RawData) };
