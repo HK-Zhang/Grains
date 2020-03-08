@@ -7,8 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Content\DNVGLStamp2.png" />
     <None Remove="Tools\DigitalSigning.cs~RF4cf1c4e.TMP" />
     <None Remove="Tools\DigitalSigning.cs~RF4fbfa25.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Content\DNVGLStamp2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

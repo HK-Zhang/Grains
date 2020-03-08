@@ -5,6 +5,8 @@ using StdTwoLib;
 using System;
 using System.Configuration;
 using System.Threading.Tasks;
+using CorePoc.Basic;
+using CorePoc.Picture;
 using CorePoc.Tools;
 
 namespace CorePoc
@@ -57,7 +59,10 @@ namespace CorePoc
                 //                StringCipher.Execute();
 //                TextPDF.Execute();
                 DigitalSigning.Execute();
+                //                IdGenerator.Execute();
+//                ImageConvertor.Execute();
             }
+
 
 
             catch (Exception ex)

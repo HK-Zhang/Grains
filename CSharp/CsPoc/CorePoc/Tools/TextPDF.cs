@@ -53,10 +53,10 @@ namespace CorePoc.Tools
                 AcroFields form = pdfStamper.AcroFields;
                 form.SetField("ReportNo", model.FirstName);
                 form.SetField("DigitalSignature", model.LastName);
-                form.SetField("IDate","Yes");
+                form.SetField("IPScannerType", "1");
                 // set this if you want the result PDF to not be editable. 
-                pdfStamper.FormFlattening = true;
-                pdfStamper.AddSignature("He Ke Zhang", 1, 0, 0, 0,0);
+//                pdfStamper.FormFlattening = true;
+//                pdfStamper.AddSignature("He Ke Zhang", 1, 0, 0, 0,0);
 
                 return outStream;
             }

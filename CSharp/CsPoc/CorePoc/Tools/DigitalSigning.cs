@@ -16,7 +16,7 @@ namespace CorePoc.Tools
 
         public static void Execute()
         {
-            SignPdfFile("Test.pdf", "TestSigned.pdf", "Content/demo.pfx");
+            SignPdfFile("test.pdf", "TestSigned.pdf", "Content/demo.pfx");
             Console.WriteLine("done");
         }
 
@@ -75,20 +75,20 @@ namespace CorePoc.Tools
 //            iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 11);
 //            appearance.Layer2Font = font;
 //            appearance.Image = new iTextSharp.text.pdf.PdfImage();
-            appearance.Reason = "Reason";
-            appearance.Contact = "Contact";
-            appearance.Location = "Location";
+//            appearance.Reason = "Reason";
+//            appearance.Contact = "Contact";
+//            appearance.Location = "Location";
 //            appearance.SignDate = DateTime.Now;
             appearance.Acro6Layers = true;
-            appearance.Layer2Text = "Henry Zhang";
+            appearance.Layer2Text = "";
 //            appearance.Layer2Font = new iTextSharp.text.Font(bf, 11);
 
-//            appearance.Render = PdfSignatureAppearance.SignatureRender.GraphicAndDescription;
-//            appearance.SignatureGraphic = Image.GetInstance(System.Drawing.Image.FromFile("Content/Stamp2.png"), BaseColor.White);
+            appearance.Render = PdfSignatureAppearance.SignatureRender.GraphicAndDescription;
+            appearance.SignatureGraphic = Image.GetInstance(System.Drawing.Image.FromFile("Content/DNVGLStamp2.png"), BaseColor.White);
             //            appearance.Render = PdfSignatureAppearance.SignatureRender.GraphicAndDescription;
 
             //            appearance.SetVisibleSignature(new iTextSharp.text.Rectangle(20, 10, 170, 60), 1, null);
-            appearance.SetVisibleSignature(new iTextSharp.text.Rectangle(620, 70, 770, 120), 1, null);
+            appearance.SetVisibleSignature(new iTextSharp.text.Rectangle(540, 50, 780, 140), 1, null);
 
             var cp = new X509CertificateParser();
 //            var chain = new[] { cp.ReadCertificate(certificate.RawData) };

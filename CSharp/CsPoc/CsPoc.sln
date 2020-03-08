@@ -41,7 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerfCounter", "PerfCounter\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "permweb", "permweb\permweb.csproj", "{66470319-8B4B-40B7-A9B1-DE07173B3332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLocalization", "WebLocalization\WebLocalization.csproj", "{BBFDFC5C-AD83-4B3C-95DE-F6D2518BEB07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebLocalization", "WebLocalization\WebLocalization.csproj", "{BBFDFC5C-AD83-4B3C-95DE-F6D2518BEB07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
