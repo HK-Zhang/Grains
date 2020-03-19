@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "permweb", "permweb\permweb.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebLocalization", "WebLocalization\WebLocalization.csproj", "{BBFDFC5C-AD83-4B3C-95DE-F6D2518BEB07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSLCheck", "SSLCheck\SSLCheck.csproj", "{116D7008-1C36-4759-A45D-B09FFB917625}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{BBFDFC5C-AD83-4B3C-95DE-F6D2518BEB07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBFDFC5C-AD83-4B3C-95DE-F6D2518BEB07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBFDFC5C-AD83-4B3C-95DE-F6D2518BEB07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{116D7008-1C36-4759-A45D-B09FFB917625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{116D7008-1C36-4759-A45D-B09FFB917625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{116D7008-1C36-4759-A45D-B09FFB917625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{116D7008-1C36-4759-A45D-B09FFB917625}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

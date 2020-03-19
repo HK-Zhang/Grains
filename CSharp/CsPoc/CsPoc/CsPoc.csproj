@@ -262,6 +262,7 @@
     <Compile Include="FP\ActionDemo.cs" />
     <Compile Include="FP\FPdemo.cs" />
     <Compile Include="Network\HttpBindingDemo.cs" />
+    <Compile Include="Network\SSLCheck.cs" />
     <Compile Include="Reflections\MethodDemo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="STD\ConfigDemo.cs" />

@@ -58,9 +58,10 @@ namespace CorePoc
                 //                HtmlToDoc.Execute();
                 //                StringCipher.Execute();
 //                TextPDF.Execute();
-                DigitalSigning.Execute();
+//                DigitalSigning.Execute();
+                EncryptImage.Execute();
                 //                IdGenerator.Execute();
-//                ImageConvertor.Execute();
+                //                ImageConvertor.Execute();
             }
 
 
