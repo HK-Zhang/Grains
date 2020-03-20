@@ -13,7 +13,30 @@ namespace CorePoc.Tools
         {
             var img = Image.FromFile("I000001238_sketch.jpg");
             var waterimg = Image.FromFile("012f3b58-9c9d-3cce-9bcf-0f67aa9f0826.png");
-            var targetImage = AddImgToImg(img, waterimg, 3417, 376, -0.5f, ".jpg", "LackPene","7909432574239IUHOIHLLK678","Henry Zhang", 14.0f);
+
+            var imgList = new List<ImageSpot> {new ImageSpot {AttachedText = "LackPene", ImageByte= waterimg,X=3417,Y=376,Opacity=-0.5f,FontSize=14,Width=19,Height=19 } };
+
+            var imageNoTextSpot = new TextSpot {Text = "7909432574239IUHOIHLLK678", FontSize = 14};
+            imageNoTextSpot.X = img.Width - imageNoTextSpot.Width;
+            imageNoTextSpot.Y = img.Height - 2 * imageNoTextSpot.Height;
+
+            var approverTextSpot = new TextSpot { Text = "Henry Zhang", FontSize = 14 };
+            approverTextSpot.X = img.Width - imageNoTextSpot.Width;
+            approverTextSpot.Y = img.Height - imageNoTextSpot.Height;
+
+            if (approverTextSpot.X < imageNoTextSpot.X)
+                imageNoTextSpot.X = approverTextSpot.X;
+            else
+                approverTextSpot.X = imageNoTextSpot.X;
+
+            var txtList = new List<TextSpot> { imageNoTextSpot , approverTextSpot };
+
+
+            var axis = new Axis {CenterX = 1521, CenterY = img.Height - 142, FontSize = 14, PixelSpacing = 0.084667 };
+
+            var targetImage = AddImgToImg(img, imgList, txtList, axis,".jpg");
+
+
             targetImage.Save("I000001238_sketch_out.jpg");
             
         }
@@ -64,98 +87,84 @@ namespace CorePoc.Tools
 
         }
 
-        public static Image AddImgToImg(Image image, Image watermark, float rectX, float rectY, float opacity, string externName, 
-            string text,string imageNo,string user, float fontSize)
+        public static Image AddImgToImg(Image image, List<ImageSpot> images, List<TextSpot> txts, Axis axis,string externName)
         {
-
+            Brush blackBrush = new SolidBrush(Color.Black);
+            Font font = new Font("Arial", 14, FontStyle.Bold);
             Bitmap bitmap = new Bitmap(image, image.Width, image.Height);
             Graphics g = Graphics.FromImage(bitmap);
-
-//            float rectWidth = watermark.Width + 10;
-//            float rectHeight = watermark.Height + 10;
-
-            float rectWidth = watermark.Width;
-            float rectHeight = watermark.Height;
-
-            float txtrectWidth = text.Length * fontSize;
-            float txtrectHeight = fontSize+10;
-            float txtTop = rectY + rectHeight;
-            float txtLeft = rectX + (rectWidth - txtrectWidth) / 2;
-            if (txtLeft < 0) txtLeft = 0;
-            if (txtLeft + txtrectWidth > image.Width) txtLeft = image.Width - txtrectWidth;
-
-
-
-            //            RectangleF textArea = new RectangleF(rectX - rectWidth, rectY - rectHeight, rectWidth, rectHeight);
-            RectangleF textArea = new RectangleF(rectX, rectY, rectWidth, rectHeight);
-
-            Bitmap w_bitmap = ChangeOpacity(watermark, opacity);
-
-            g.DrawImage(w_bitmap, textArea);
-
-            RectangleF textArea2 = new RectangleF(txtLeft, txtTop, txtrectWidth, txtrectHeight);
-
-            Font font = new Font("Arial", fontSize, FontStyle.Bold);
-
-            Brush whiteBrush = new SolidBrush(Color.Black);
-            g.DrawString(text, font, whiteBrush, textArea2);
-
-            float imagerectWidth = imageNo.Length * fontSize;
-            float imagerectHeight = fontSize + 10;
-
-            float imageTop = image.Height - 2* imagerectHeight;
-            float imageLeft = image.Width - imagerectWidth;
-
-            float UserrectWidth = user.Length * fontSize;
-            float UserrectHeight = fontSize + 10;
-            float UserTop = image.Height - UserrectHeight;
-            float UserLeft = image.Width - UserrectWidth;
-
-            if (UserLeft < imageLeft)
-                imageLeft = UserLeft;
-            else
-                UserLeft = imageLeft;
-
-            RectangleF imageArea = new RectangleF(imageLeft, imageTop, imagerectWidth, imagerectHeight);
-            g.DrawString(imageNo, font, whiteBrush, imageArea);
-
-
-            RectangleF UserArea = new RectangleF(UserLeft, UserTop, UserrectWidth, UserrectHeight);
-            g.DrawString(user, font, whiteBrush, UserArea);
-
-
+            Brush grayBrush = new SolidBrush(Color.Gray);
             Pen pen = new Pen(Color.Gray, 1);
             pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             pen.DashPattern = new float[] { 5, 5 };
 
-            //            g.DrawLine(pen, 1521, image.Height - 142, image.Width, image.Height - 142);
+            Pen solidPen = new Pen(Color.Gray, 1);
 
-            g.DrawLine(pen, 0, image.Height - 142, image.Width, image.Height - 142);
+            images.ForEach(t =>
+            {
+                var area = new RectangleF(t.X, t.Y, t.Width, t.Height);
+                var sbitmap = ChangeOpacity(t.ImageByte, t.Opacity);
+                g.DrawImage(sbitmap, area);
 
-            g.DrawLine(pen, 1521, 0, 1521, image.Height);
+                if (!string.IsNullOrWhiteSpace(t.AttachedText))
+                {
+                    var textX = t.TextX;
+                    if (textX + t.TextWidth > image.Width) textX = image.Width - t.TextWidth;
+                    var textY = t.TextY;
+                    if (textY + t.TextHeight > image.Height) textY = image.Height - t.TextHeight;
+                    var textArea = new RectangleF(textX, textY, t.TextWidth, t.TextHeight);
+                    g.DrawString(t.AttachedText, font, blackBrush, textArea);
+                }
+            });
 
-            var cm = (int)(10 / 0.084667);
-            Pen pen2 = new Pen(Color.Gray, 1);
-            g.DrawLine(pen2, 1521 + cm, image.Height - 142, 1521 + cm, image.Height - 142 - 10);
+            txts.ForEach(t =>
+            {
+                var area = new RectangleF(t.X, t.Y, t.Width, t.Height);
+                g.DrawString(t.Text, font, blackBrush, area);
+            });
 
-            float numberWidth = "1".Length * fontSize;
-            float numberHeight = fontSize + 10;
-            float numberTop = image.Height - 142 - 10 - numberHeight;
-            float numberLeft = 1521 + cm - numberWidth/2;
-            RectangleF numberArea = new RectangleF(numberLeft, numberTop, numberWidth, numberHeight);
-            Brush grayBrush = new SolidBrush(Color.Gray);
-            g.DrawString("1", font, grayBrush, numberArea);
+            g.DrawLine(pen, 0, axis.CenterY, image.Width, axis.CenterY);
+            g.DrawLine(pen, axis.CenterX, 0, axis.CenterX, image.Height);
 
+            var axisXTop = axis.CenterY - 10;
+            var axisYLeft = axis.CenterX + 10;
+            var numberHeight = axis.FontSize + 10;
+            var count = (image.Width - axis.CenterX) / axis.CMPixels;
 
+            for (var i = 1; i <= count; i++)
+            {
+                g.DrawLine(solidPen, axis.CenterX + i * axis.CMPixels, axis.CenterY, axis.CenterX + i * axis.CMPixels, axisXTop);
 
-            g.DrawLine(pen2, 1521, image.Height - 142 - cm, 1521 + 10, image.Height - 142 - cm);
+                var area = new RectangleF(axis.CenterX + i * axis.CMPixels - i.ToString().Length * axis.FontSize / 2, axisXTop - numberHeight, i.ToString().Length * axis.FontSize, numberHeight);
+                g.DrawString(i.ToString(), font, grayBrush, area);
 
-            float number2Width = "1".Length * fontSize;
-            float number2Height = fontSize + 10;
-            float number2Top = image.Height - 142 - cm - number2Height/2;
-            float number2Left = 1521 + 10;
-            RectangleF number2Area = new RectangleF(number2Left, number2Top, number2Width, number2Height);
-            g.DrawString("1", font, grayBrush, number2Area);
+            }
+
+            count = axis.CenterX / axis.CMPixels;
+
+            for (var i = 1; i <= count; i++)
+            {
+                g.DrawLine(solidPen, axis.CenterX - i * axis.CMPixels, axis.CenterY, axis.CenterX - i * axis.CMPixels, axisXTop);
+                var area = new RectangleF(axis.CenterX - i * axis.CMPixels - i.ToString().Length * axis.FontSize / 2, axisXTop - numberHeight, i.ToString().Length * axis.FontSize, numberHeight);
+                g.DrawString(i.ToString(), font, grayBrush, area);
+            }
+
+            count = axis.CenterY / axis.CMPixels;
+            for (var i = 1; i <= count; i++)
+            {
+                g.DrawLine(solidPen, axis.CenterX, axis.CenterY - i * axis.CMPixels, axisYLeft, axis.CenterY - i * axis.CMPixels);
+                var area = new RectangleF(axisYLeft, axis.CenterY - i*axis.CMPixels - numberHeight / 2, i.ToString().Length * axis.FontSize, numberHeight);
+                g.DrawString(i.ToString(), font, grayBrush, area);
+
+            }
+
+            count = (image.Height - axis.CenterY) / axis.CMPixels;
+            for (var i = 1; i <= count; i++)
+            {
+                g.DrawLine(solidPen, axis.CenterX, axis.CenterY + i * axis.CMPixels, axisYLeft, axis.CenterY + i * axis.CMPixels);
+                var area = new RectangleF(axisYLeft, axis.CenterY + i * axis.CMPixels - numberHeight / 2, i.ToString().Length * axis.FontSize, numberHeight);
+                g.DrawString(i.ToString(), font, grayBrush, area);
+            }
 
             MemoryStream ms = new MemoryStream();
 
@@ -219,5 +228,50 @@ namespace CorePoc.Tools
             return resultImage;
         }
 
+    }
+
+    public class ImageSpot
+    {
+        public Image ImageByte { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public int FontSize { get; set; }
+        public int TextWidth => AttachedText.Length * FontSize;
+        public int TextHeight => FontSize + 10;
+        public int TextX
+        {
+            get
+            {
+                var t = X + (Width - TextWidth) / 2;
+                return t < 0 ? 0 : t;
+            }
+        }
+
+        public int TextY=> Y + Height;
+        public string AttachedText { get; set; }
+        public float Opacity { get; set; }
+    }
+
+
+    public class TextSpot
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+        public string Text { get; set; }
+        public int FontSize { get; set; }
+        public int Width => Text.Length * FontSize;
+        public int Height => FontSize + 10;
+
+    }
+
+    public class Axis
+    {
+        public int CenterX { get; set; }
+        public int CenterY { get; set; }
+        public int FontSize { get; set; }
+        public double PixelSpacing { get; set; }
+        public int CMPixels => (int) (10 / PixelSpacing);
     }
 }
