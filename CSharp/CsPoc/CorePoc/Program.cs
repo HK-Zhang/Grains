@@ -59,9 +59,10 @@ namespace CorePoc
                 //                StringCipher.Execute();
 //                TextPDF.Execute();
 //                DigitalSigning.Execute();
-                EncryptImage.Execute();
+//                EncryptImage.Execute();
                 //                IdGenerator.Execute();
                 //                ImageConvertor.Execute();
+                ImageHelper.Execute();
             }
 
 
@@ -72,6 +73,7 @@ namespace CorePoc
                 Console.WriteLine(ex.Message);
             }
 
+            Console.WriteLine("done");
             Console.ReadLine();
         }
     }
