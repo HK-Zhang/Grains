@@ -114,6 +114,16 @@ namespace CorePoc.Tools
                     if (textY + t.TextHeight > image.Height) textY = image.Height - t.TextHeight;
                     var textArea = new RectangleF(textX, textY, t.TextWidth, t.TextHeight);
                     g.DrawString(t.AttachedText, font, blackBrush, textArea);
+
+                    var positionX = Math.Abs(t.X + t.Width/2 - axis.CenterX) / (1.0f * axis.CMPixels);
+                    var positionY = Math.Abs(t.Y + t.Height/2 - axis.CenterY) / (1.0f * axis.CMPixels);
+                    var position = $"({positionX:F1},{positionY:F1})";
+                    var positionWidth = position.Length * 14;
+                    var positionHeight = t.FontSize + 10;
+                    if (textX + positionWidth > image.Width) textX = image.Width - positionWidth;
+                    if (textY + positionHeight > image.Height) textY = image.Height - positionHeight;
+                    var positionArea = new RectangleF(textX, textY + positionHeight, positionWidth, positionHeight);
+                    g.DrawString(position, font, blackBrush, positionArea);
                 }
             });
 
