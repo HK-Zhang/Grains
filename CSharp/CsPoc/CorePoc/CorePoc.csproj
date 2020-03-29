@@ -10,6 +10,7 @@
     <None Remove="Content\DNVGLStamp2.png" />
     <None Remove="Tools\DigitalSigning.cs~RF4cf1c4e.TMP" />
     <None Remove="Tools\DigitalSigning.cs~RF4fbfa25.TMP" />
+    <None Remove="Tools\FileMonitor.cs~RF20836fae.TMP" />
   </ItemGroup>
 
   <ItemGroup>

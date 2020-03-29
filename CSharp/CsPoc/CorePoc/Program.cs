@@ -57,12 +57,13 @@ namespace CorePoc
                 //                ParalleCancel.Execute();
                 //                HtmlToDoc.Execute();
                 //                StringCipher.Execute();
-//                TextPDF.Execute();
-//                DigitalSigning.Execute();
-//                EncryptImage.Execute();
+                //                TextPDF.Execute();
+                //                DigitalSigning.Execute();
+                //                EncryptImage.Execute();
                 //                IdGenerator.Execute();
                 //                ImageConvertor.Execute();
-                ImageHelper.Execute();
+                //                ImageHelper.Execute();
+                FileMonitor.Execute();
             }
 
 
