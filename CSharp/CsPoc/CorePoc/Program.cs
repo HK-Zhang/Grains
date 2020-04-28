@@ -63,7 +63,8 @@ namespace CorePoc
                 //                IdGenerator.Execute();
                 //                ImageConvertor.Execute();
                 //                ImageHelper.Execute();
-                FileMonitor.Execute();
+                //FileMonitor.Execute();
+                HttpClientDemo.Execute();
             }
 
 
