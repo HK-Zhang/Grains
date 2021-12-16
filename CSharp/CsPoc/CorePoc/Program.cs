@@ -64,7 +64,9 @@ namespace CorePoc
                 //                ImageConvertor.Execute();
                 //                ImageHelper.Execute();
                 //FileMonitor.Execute();
-                HttpClientDemo.Execute();
+                //HttpClientDemo.Execute();
+                //DatePro.Execute();
+                Jsonfy.Execute();
             }
 
 
