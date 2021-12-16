@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29418.71
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsPoc", "CsPoc\CsPoc.csproj", "{102C4EDF-2EFA-473E-81F0-17DB19C125D8}"
 EndProject
@@ -14,8 +14,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.DapperSql", "ConsoleApp.DapperSql\ConsoleApp.DapperSql.csproj", "{1AB5B332-7934-46BC-BFCE-45DCBA702DD9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Docker.NetCore.MySql", "Docker.NetCore.MySql\Docker.NetCore.MySql.csproj", "{BE812F94-D9F1-4C7B-99DC-33CE0DC37560}"
-EndProject
-Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AZRM", "AZRM\AZRM.deployproj", "{111215E0-D91B-4AF6-A882-63453AE9DC84}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StdTwoLib", "StdTwoLib\StdTwoLib.csproj", "{B22301D5-64AB-43FA-8A2E-42D8985EBC75}"
 EndProject
@@ -39,8 +37,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerformanceCounter", "Perfo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerfCounter", "PerfCounter\PerfCounter.csproj", "{945A4B3F-DD44-40A4-A4CC-5EB2BF122369}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "permweb", "permweb\permweb.csproj", "{66470319-8B4B-40B7-A9B1-DE07173B3332}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebLocalization", "WebLocalization\WebLocalization.csproj", "{BBFDFC5C-AD83-4B3C-95DE-F6D2518BEB07}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSLCheck", "SSLCheck\SSLCheck.csproj", "{116D7008-1C36-4759-A45D-B09FFB917625}"
@@ -48,12 +44,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfCore", "WpfCore\WpfCore.csproj", "{C4699441-9F79-4A7D-A6C0-CAC084C6E2DE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityDemo", "IdentityDemo\IdentityDemo.csproj", "{A3D5ADE2-2E0B-405C-A1F1-B9E9C1ADDC0C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Permission", "Permission\Permission.csproj", "{54CA210A-3361-4507-AC7B-42D2C5B92AB2}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Permission.Tests", "Permission.Tests\Permission.Tests.csproj", "{64175F61-F103-4A31-BC8C-108805E77D38}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization", "Authorization\Authorization.csproj", "{3D5A75CE-D532-4885-A930-A898479CDF6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,10 +75,6 @@ Global
 		{BE812F94-D9F1-4C7B-99DC-33CE0DC37560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE812F94-D9F1-4C7B-99DC-33CE0DC37560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE812F94-D9F1-4C7B-99DC-33CE0DC37560}.Release|Any CPU.Build.0 = Release|Any CPU
-		{111215E0-D91B-4AF6-A882-63453AE9DC84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{111215E0-D91B-4AF6-A882-63453AE9DC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{111215E0-D91B-4AF6-A882-63453AE9DC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{111215E0-D91B-4AF6-A882-63453AE9DC84}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B22301D5-64AB-43FA-8A2E-42D8985EBC75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B22301D5-64AB-43FA-8A2E-42D8985EBC75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B22301D5-64AB-43FA-8A2E-42D8985EBC75}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -133,10 +119,6 @@ Global
 		{945A4B3F-DD44-40A4-A4CC-5EB2BF122369}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{945A4B3F-DD44-40A4-A4CC-5EB2BF122369}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{945A4B3F-DD44-40A4-A4CC-5EB2BF122369}.Release|Any CPU.Build.0 = Release|Any CPU
-		{66470319-8B4B-40B7-A9B1-DE07173B3332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66470319-8B4B-40B7-A9B1-DE07173B3332}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66470319-8B4B-40B7-A9B1-DE07173B3332}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66470319-8B4B-40B7-A9B1-DE07173B3332}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BBFDFC5C-AD83-4B3C-95DE-F6D2518BEB07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBFDFC5C-AD83-4B3C-95DE-F6D2518BEB07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBFDFC5C-AD83-4B3C-95DE-F6D2518BEB07}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -153,18 +135,6 @@ Global
 		{A3D5ADE2-2E0B-405C-A1F1-B9E9C1ADDC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3D5ADE2-2E0B-405C-A1F1-B9E9C1ADDC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3D5ADE2-2E0B-405C-A1F1-B9E9C1ADDC0C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54CA210A-3361-4507-AC7B-42D2C5B92AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54CA210A-3361-4507-AC7B-42D2C5B92AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54CA210A-3361-4507-AC7B-42D2C5B92AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54CA210A-3361-4507-AC7B-42D2C5B92AB2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64175F61-F103-4A31-BC8C-108805E77D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64175F61-F103-4A31-BC8C-108805E77D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64175F61-F103-4A31-BC8C-108805E77D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64175F61-F103-4A31-BC8C-108805E77D38}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D5A75CE-D532-4885-A930-A898479CDF6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D5A75CE-D532-4885-A930-A898479CDF6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D5A75CE-D532-4885-A930-A898479CDF6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D5A75CE-D532-4885-A930-A898479CDF6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
