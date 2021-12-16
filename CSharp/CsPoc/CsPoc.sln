@@ -47,6 +47,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityDemo", "IdentityDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCClient", "gRPCClient\gRPCClient.csproj", "{0E4DACC3-9063-4C47-A6A0-02B530A2BCB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRpcWeb", "gRpcWeb\gRpcWeb.csproj", "{C9013F49-85DB-41C3-8F45-95A7529A1CED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{0E4DACC3-9063-4C47-A6A0-02B530A2BCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E4DACC3-9063-4C47-A6A0-02B530A2BCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E4DACC3-9063-4C47-A6A0-02B530A2BCB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9013F49-85DB-41C3-8F45-95A7529A1CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9013F49-85DB-41C3-8F45-95A7529A1CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9013F49-85DB-41C3-8F45-95A7529A1CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9013F49-85DB-41C3-8F45-95A7529A1CED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
